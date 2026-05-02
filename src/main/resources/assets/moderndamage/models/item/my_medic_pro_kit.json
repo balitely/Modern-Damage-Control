@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/my_medic_pro_kit"
+  }
+}

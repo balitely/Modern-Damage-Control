@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.moderndamage.control.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "moderndamage.refmap.json",
+  "mixins": [
+    "EntityKineticBulletHitCaptureMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
