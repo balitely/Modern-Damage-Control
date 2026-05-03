@@ -12,15 +12,17 @@ public class ModAttributes {
             DeferredRegister.create(ForgeRegistries.ATTRIBUTES, ModernDamage.MODID);
 
     public static final RegistryObject<Attribute> HEAD_NATURAL_ARMOR =
-            register("head_natural_armor", 0.0, 0.0, 100.0);
+            register("head_natural_armor", 0.0, 0.0, 1000.0);
     public static final RegistryObject<Attribute> CHEST_NATURAL_ARMOR =
-            register("chest_natural_armor", 0.0, 0.0, 100.0);
+            register("chest_natural_armor", 0.0, 0.0, 1000.0);
     public static final RegistryObject<Attribute> STOMACH_NATURAL_ARMOR =
-            register("stomach_natural_armor", 0.0, 0.0, 100.0);
+            register("stomach_natural_armor", 0.0, 0.0, 1000.0);
     public static final RegistryObject<Attribute> ARM_NATURAL_ARMOR =
-            register("arm_natural_armor", 0.0, 0.0, 100.0);
+            register("arm_natural_armor", 0.0, 0.0, 1000.0);
     public static final RegistryObject<Attribute> LEG_NATURAL_ARMOR =
-            register("leg_natural_armor", 0.0, 0.0, 100.0);
+            register("leg_natural_armor", 0.0, 0.0, 1000.0);
+    public static final RegistryObject<Attribute> PENETRATION =
+            register("penetration", 0.0, 0.0, 1000.0);
 
     private static RegistryObject<Attribute> register(String name, double defaultValue, double min, double max) {
         return ATTRIBUTES.register(name, () -> new RangedAttribute(name, defaultValue, min, max).setSyncable(true));

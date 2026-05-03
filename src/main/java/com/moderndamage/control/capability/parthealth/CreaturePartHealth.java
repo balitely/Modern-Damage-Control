@@ -8,6 +8,7 @@ import com.moderndamage.control.config.ModClothConfig;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -37,17 +38,38 @@ public class CreaturePartHealth implements IPartHealth {
         return true;
     }
 
+    private ModClothConfig.CreaturePartRatios getPartRatios() {
+        ModClothConfig config = ModClothConfig.get();
+        String key = ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString();
+        return config.entityPartRatios.getOrDefault(key, null);
+    }
+
     private float calculateMaxHealth(ModDamagePart part) {
         float total = entity.getMaxHealth();
-        switch (part) {
-            case HEAD: return total * ModClothConfig.get().creatureHeadRatio;
-            case CHEST: return total * ModClothConfig.get().creatureChestRatio;
-            case STOMACH: return total * ModClothConfig.get().creatureStomachRatio;
-            case LEFT_ARM: return total * ModClothConfig.get().creatureLeftArmRatio;
-            case RIGHT_ARM: return total * ModClothConfig.get().creatureRightArmRatio;
-            case LEFT_LEG: return total * ModClothConfig.get().creatureLeftLegRatio;
-            case RIGHT_LEG: return total * ModClothConfig.get().creatureRightLegRatio;
-            default: return 0;
+        ModClothConfig.CreaturePartRatios custom = getPartRatios();
+        if (custom != null) {
+            switch (part) {
+                case HEAD: return total * custom.head;
+                case CHEST: return total * custom.chest;
+                case STOMACH: return total * custom.stomach;
+                case LEFT_ARM: return total * custom.leftArm;
+                case RIGHT_ARM: return total * custom.rightArm;
+                case LEFT_LEG: return total * custom.leftLeg;
+                case RIGHT_LEG: return total * custom.rightLeg;
+                default: return 0;
+            }
+        } else {
+            ModClothConfig config = ModClothConfig.get();
+            switch (part) {
+                case HEAD: return total * config.creatureHeadRatio;
+                case CHEST: return total * config.creatureChestRatio;
+                case STOMACH: return total * config.creatureStomachRatio;
+                case LEFT_ARM: return total * config.creatureLeftArmRatio;
+                case RIGHT_ARM: return total * config.creatureRightArmRatio;
+                case LEFT_LEG: return total * config.creatureLeftLegRatio;
+                case RIGHT_LEG: return total * config.creatureRightLegRatio;
+                default: return 0;
+            }
         }
     }
 

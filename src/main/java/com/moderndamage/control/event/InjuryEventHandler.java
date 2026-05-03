@@ -3,6 +3,7 @@ package com.moderndamage.control.event;
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.armor.ArmorCalculator;
+import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
 import com.moderndamage.control.capability.parthealth.PartHealthCapability;
 import com.moderndamage.control.compat.hitbox.BodypartHitbox;
@@ -163,6 +164,11 @@ public class InjuryEventHandler {
                         if (val instanceof Float) penetration = (Float) val;
                     }
                 }
+                double attrPen = 0.0;
+                if (livingShooter.getAttribute(ModAttributes.PENETRATION.get()) != null) {
+                    attrPen = livingShooter.getAttributeValue(ModAttributes.PENETRATION.get());
+                }
+                penetration += (float) attrPen;
             }
             ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, hitPart, originalDamage, penetration);
             float finalDamage = result.finalDamage;

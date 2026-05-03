@@ -1,6 +1,7 @@
 package com.moderndamage.control.event;
 
 import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.armor.ArmorCalculator;
 import com.moderndamage.control.armor.ArmorData;
 import com.moderndamage.control.armor.ArmorDataLoader;
 import com.moderndamage.control.api.ModDamagePart;
@@ -25,11 +26,11 @@ public class ArmorTooltipHandler {
 
         for (Map.Entry<ModDamagePart, Integer> entry : data.getCoverage().entrySet()) {
             ModDamagePart part = entry.getKey();
-            int level = entry.getValue();
-            String roman = RomanNumberHelper.toRomanGrade(level);
+            int dynamicLevel = ArmorCalculator.getDynamicProtectionLevel(stack, part);
+            String roman = RomanNumberHelper.toRomanGrade(dynamicLevel);
             String partKey = "tooltip.moderndamage.part." + part.name().toLowerCase();
             Component partName = Component.translatable(partKey);
-            Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", partName, roman, level)
+            Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", partName, roman, dynamicLevel)
                     .withStyle(ChatFormatting.DARK_GREEN);
             event.getToolTip().add(line);
         }

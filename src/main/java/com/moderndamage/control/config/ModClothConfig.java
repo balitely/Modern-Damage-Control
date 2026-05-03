@@ -32,13 +32,13 @@ public class ModClothConfig implements ConfigData {
     public int minorBleedingIntervalTicks = 100;
 
     @ConfigEntry.Gui.Tooltip
-    public float minorBleedingDamagePerLevel = 0.5f;
+    public float minorBleedingDamagePerLevel = 1f;
 
     @ConfigEntry.Gui.Tooltip
     public int majorBleedingIntervalTicks = 50;
 
     @ConfigEntry.Gui.Tooltip
-    public float majorBleedingDamagePerLevel = 0.5f;
+    public float majorBleedingDamagePerLevel = 1f;
 
     // ========== 凝血增强配置 ==========
     @ConfigEntry.Gui.Tooltip
@@ -49,11 +49,15 @@ public class ModClothConfig implements ConfigData {
     public int traumaDamageIntervalTicks = 80;
 
     @ConfigEntry.Gui.Tooltip
-    public float traumaDamagePerTick = 0.5f;
+    public float traumaDamagePerTick = 1f;
 
     // ========== 骨折自然愈合时间（秒） ==========
     @ConfigEntry.Gui.Tooltip
-    public int splintedHealTimeSeconds = 1200;
+    public int splintedHealTimeSeconds = 300;
+
+    // ========== 输血效果治疗量缩放 ==========
+    @ConfigEntry.Gui.Tooltip
+    public float ivFluidHealMultiplier = 1.0f;
 
     // ========== 钝伤与穿透相关配置 ==========
     @ConfigEntry.Gui.Tooltip
@@ -65,8 +69,13 @@ public class ModClothConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public float bluntDamageMinRatio = 0.08f;
 
+    // ========== 防护能力系统相关配置 ==========
+
     @ConfigEntry.Gui.Tooltip
-    public float penetrationDamageCap = 1.0f;
+    public float armorStackingFactor = 0.2f;
+
+    @ConfigEntry.Gui.Tooltip
+    public int armorCap = 0;
 
     // ========== 耐久损耗配置 ==========
     @ConfigEntry.Gui.Tooltip
@@ -145,15 +154,36 @@ public class ModClothConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public Map<String, EntityEffectConfig> entityEffects = new HashMap<>();
 
+    @ConfigEntry.Gui.CollapsibleObject
+    @ConfigEntry.Gui.Tooltip
+    public Map<String, CreaturePartRatios> entityPartRatios = new HashMap<>();
+
     public static class BodyPartConfig {
         public List<EffectEntry> generic = new ArrayList<>();
         public List<EffectEntry> destroy = new ArrayList<>();
     }
 
+    public static class CreaturePartRatios {
+        @ConfigEntry.Gui.Tooltip
+        public float head = 0.20f;
+        @ConfigEntry.Gui.Tooltip
+        public float chest = 0.38f;
+        @ConfigEntry.Gui.Tooltip
+        public float stomach = 0.20f;
+        @ConfigEntry.Gui.Tooltip
+        public float leftArm = 0.01f;
+        @ConfigEntry.Gui.Tooltip
+        public float rightArm = 0.01f;
+        @ConfigEntry.Gui.Tooltip
+        public float leftLeg = 0.10f;
+        @ConfigEntry.Gui.Tooltip
+        public float rightLeg = 0.10f;
+    }
+
     public static void register() {
         AutoConfig.register(ModClothConfig.class, JanksonConfigSerializer::new);
         ModClothConfig config = get();
-        if (config.bodyParts.isEmpty() || config.playerPartHealthRatios.isEmpty()) {
+        if (config.bodyParts.isEmpty() || config.playerPartHealthRatios.isEmpty() || config.entityPartRatios.isEmpty()) {
             config.setDefaultConfig();
             AutoConfig.getConfigHolder(ModClothConfig.class).save();
         }
@@ -292,6 +322,16 @@ public class ModClothConfig implements ConfigData {
         playerMaxHealthBonus = 0;
         entityMaxHealthBonus.put("minecraft:zombie", 10.0);
         entityMaxHealthBonus.put("minecraft:skeleton", 5.0);
+
+        CreaturePartRatios zombieRatios = new CreaturePartRatios();
+        zombieRatios.head = 0.25f;
+        zombieRatios.chest = 0.35f;
+        zombieRatios.stomach = 0.15f;
+        zombieRatios.leftArm = 0.05f;
+        zombieRatios.rightArm = 0.05f;
+        zombieRatios.leftLeg = 0.10f;
+        zombieRatios.rightLeg = 0.05f;
+        entityPartRatios.put("minecraft:zombie", zombieRatios);
     }
 
     public static float getPlayerPartRatio(ModDamagePart part) {

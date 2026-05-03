@@ -1,6 +1,13 @@
 {
   "itemGroup.moderndamage.medical": "现代伤害控制 - 医疗物品",
 
+  "attribute.moderndamage.head_natural_armor": "头部天然护甲",
+  "attribute.moderndamage.chest_natural_armor": "胸部天然护甲",
+  "attribute.moderndamage.stomach_natural_armor": "胃部天然护甲",
+  "attribute.moderndamage.arm_natural_armor": "手臂天然护甲",
+  "attribute.moderndamage.leg_natural_armor": "腿部天然护甲",
+  "attribute.moderndamage.penetration": "自然穿透能力",
+
   "tooltip.moderndamage.armor_protection": "§7[现代伤害控制] 防护水平:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",
   "tooltip.moderndamage.part.head": "头部",

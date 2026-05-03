@@ -1,6 +1,13 @@
 {
   "itemGroup.moderndamage.medical": "Modern Damage Control - Medical",
 
+  "attribute.moderndamage.head_natural_armor": "Head Natural Armor",
+  "attribute.moderndamage.chest_natural_armor": "Chest Natural Armor",
+  "attribute.moderndamage.stomach_natural_armor": "Stomach Natural Armor",
+  "attribute.moderndamage.arm_natural_armor": "Arm Natural Armor",
+  "attribute.moderndamage.leg_natural_armor": "Leg Natural Armor",
+  "attribute.moderndamage.penetration": "Penetration",
+
   "tooltip.moderndamage.armor_protection": "§7ModernDamageControl Protection:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",
   "tooltip.moderndamage.part.head": "Head",

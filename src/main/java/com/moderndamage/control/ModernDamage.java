@@ -91,6 +91,7 @@ public class ModernDamage {
             event.add(type, ModAttributes.STOMACH_NATURAL_ARMOR.get());
             event.add(type, ModAttributes.ARM_NATURAL_ARMOR.get());
             event.add(type, ModAttributes.LEG_NATURAL_ARMOR.get());
+            event.add(type, ModAttributes.PENETRATION.get());
         }
         LOGGER.info("添加天然护甲属性到所有实体");
     }

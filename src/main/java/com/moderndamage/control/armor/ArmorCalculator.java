@@ -8,6 +8,9 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class ArmorCalculator {
@@ -98,7 +101,7 @@ public class ArmorCalculator {
         return Math.max(ratio, minRatio);
     }
 
-    private static int getDynamicProtectionLevel(ItemStack armorStack, ModDamagePart part) {
+    public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamagePart part) {
         ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
         if (data == null) return 0;
         int baseLevel = data.getProtectionLevel(part);
@@ -113,19 +116,31 @@ public class ArmorCalculator {
     }
 
     private static int getArmorLevel(LivingEntity target, ModDamagePart hitPart) {
-        int bestLevel = 0;
+        List<Integer> levels = new ArrayList<>();
+        int natural = EntityHitboxHelper.getNaturalArmor(target, hitPart);
+        if (natural > 0) levels.add(natural);
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
             ItemStack stack = target.getItemBySlot(slot);
             if (stack.isEmpty()) continue;
             ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
             if (data != null && data.protects(hitPart)) {
-                int level = getDynamicProtectionLevel(stack, hitPart); // 替换原来的 data.getProtectionLevel
-                if (level > bestLevel) bestLevel = level;
+                int level = getDynamicProtectionLevel(stack, hitPart);
+                levels.add(level);
             }
         }
-        int natural = EntityHitboxHelper.getNaturalArmor(target, hitPart);
-        return Math.max(bestLevel, natural);
+        if (levels.isEmpty()) return 0;
+        levels.sort(Collections.reverseOrder());
+        int base = levels.get(0);
+        if (levels.size() == 1) return base;
+        int otherSum = 0;
+        for (int i = 1; i < levels.size(); i++) otherSum += levels.get(i);
+        ModClothConfig config = ModClothConfig.get();
+        float factor = config.armorStackingFactor;
+        int total = base + Math.round(otherSum * factor);
+        int cap = config.armorCap;
+        if (cap > 0 && total > cap) total = cap;
+        return total;
     }
 
     private static ItemStack getProtectingItem(LivingEntity target, ModDamagePart hitPart) {
