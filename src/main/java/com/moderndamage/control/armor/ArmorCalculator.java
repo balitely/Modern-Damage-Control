@@ -2,11 +2,14 @@ package com.moderndamage.control.armor;
 
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.event.ArmorHitEvent;
+import com.moderndamage.control.api.event.GetArmorLevelEvent;
 import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.entity.EntityHitboxHelper;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,8 +21,8 @@ public class ArmorCalculator {
 
     public static class PenetrationResult {
         public final float finalDamage;
-        public final boolean penetrated;   // 完全穿透
-        public final boolean partial;      // 部分穿透
+        public final boolean penetrated;
+        public final boolean partial;
 
         public PenetrationResult(float finalDamage, boolean penetrated, boolean partial) {
             this.finalDamage = finalDamage;
@@ -50,34 +53,38 @@ public class ArmorCalculator {
         int diff = armorLevel - penetrationValue;
 
         if (penetrationValue >= armorLevel) {
-            // 完全穿透
             finalDamage = originalDamage;
             int extra = (int) Math.ceil((penetrationValue - armorLevel) * extraPerPen);
             durabilityLoss = Math.min(maxLoss, baseDurabilityLoss + extra);
             penetrated = true;
         } else if (diff <= 9) {
-            // 部分穿透区域 (差值 1~9)
             double chance = (10.0 - diff) / 10.0;
             if (RANDOM.nextDouble() <= chance) {
-                // 部分穿透成功，伤害比例 0.5 ~ 0.8
                 float ratio = 0.5f + RANDOM.nextFloat() * 0.3f;
                 finalDamage = originalDamage * ratio;
                 partial = true;
                 durabilityLoss = baseDurabilityLoss;
             } else {
-                // 部分穿透失败
                 finalDamage = originalDamage * calculateBluntRatio(config, diff);
                 durabilityLoss = baseDurabilityLoss;
             }
         } else {
-            // 钝伤区域
             finalDamage = originalDamage * calculateBluntRatio(config, diff);
             durabilityLoss = baseDurabilityLoss;
         }
 
-        // 扣除耐久
+        boolean cancelDurabilityLoss = false;
+        if (!target.level().isClientSide) {
+            ArmorHitEvent event = new ArmorHitEvent(target, hitPart, originalDamage, finalDamage, armorLevel);
+            MinecraftForge.EVENT_BUS.post(event);
+            if (event.isCanceled()) {
+                cancelDurabilityLoss = true;
+            }
+            finalDamage = event.getFinalDamage();
+        }
+
         ItemStack protectingItem = getProtectingItem(target, hitPart);
-        if (protectingItem != null && !protectingItem.isEmpty()) {
+        if (protectingItem != null && !protectingItem.isEmpty() && !cancelDurabilityLoss) {
             EquipmentSlot slot = getSlotForItem(target, protectingItem);
             if (slot != null) {
                 protectingItem.hurtAndBreak(durabilityLoss, target, (p) -> p.broadcastBreakEvent(slot));
@@ -93,7 +100,7 @@ public class ArmorCalculator {
     }
 
     private static float calculateBluntRatio(ModClothConfig config, int diff) {
-        float base = config.bluntDamageRatio;          // diff=10时的基准比例
+        float base = config.bluntDamageRatio;
         float halveDist = config.bluntDamageHalveDistance;
         float minRatio = config.bluntDamageMinRatio;
         float exponent = (diff - 10) / halveDist;
@@ -115,6 +122,10 @@ public class ArmorCalculator {
         return dynamic;
     }
 
+    public static int getProtectionLevel(LivingEntity target, ModDamagePart hitPart) {
+        return getArmorLevel(target, hitPart);
+    }
+
     private static int getArmorLevel(LivingEntity target, ModDamagePart hitPart) {
         List<Integer> levels = new ArrayList<>();
         int natural = EntityHitboxHelper.getNaturalArmor(target, hitPart);
@@ -132,7 +143,15 @@ public class ArmorCalculator {
         if (levels.isEmpty()) return 0;
         levels.sort(Collections.reverseOrder());
         int base = levels.get(0);
-        if (levels.size() == 1) return base;
+        if (levels.size() == 1) {
+            int total = base;
+            if (!target.level().isClientSide) {
+                GetArmorLevelEvent event = new GetArmorLevelEvent(target, hitPart, total);
+                MinecraftForge.EVENT_BUS.post(event);
+                total = event.getArmorLevel();
+            }
+            return total;
+        }
         int otherSum = 0;
         for (int i = 1; i < levels.size(); i++) otherSum += levels.get(i);
         ModClothConfig config = ModClothConfig.get();
@@ -140,6 +159,12 @@ public class ArmorCalculator {
         int total = base + Math.round(otherSum * factor);
         int cap = config.armorCap;
         if (cap > 0 && total > cap) total = cap;
+
+        if (!target.level().isClientSide) {
+            GetArmorLevelEvent event = new GetArmorLevelEvent(target, hitPart, total);
+            MinecraftForge.EVENT_BUS.post(event);
+            total = event.getArmorLevel();
+        }
         return total;
     }
 
