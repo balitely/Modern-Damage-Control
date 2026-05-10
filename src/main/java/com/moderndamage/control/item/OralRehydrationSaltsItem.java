@@ -41,7 +41,7 @@ public class OralRehydrationSaltsItem extends Item {
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 1.0f, 1.0f);
             if (!player.getAbilities().instabuild) {
-                stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(player.getUsedItemHand()));
+                stack.shrink(1);
             }
         }
         return stack;

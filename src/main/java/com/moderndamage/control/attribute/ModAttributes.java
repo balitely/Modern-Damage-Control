@@ -24,6 +24,17 @@ public class ModAttributes {
     public static final RegistryObject<Attribute> PENETRATION =
             register("penetration", 0.0, 0.0, 1000.0);
 
+    public static final RegistryObject<Attribute> HEAD_NATURAL_TOUGHNESS =
+            register("head_natural_toughness", 0.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> CHEST_NATURAL_TOUGHNESS =
+            register("chest_natural_toughness", 0.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> STOMACH_NATURAL_TOUGHNESS =
+            register("stomach_natural_toughness", 0.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> ARM_NATURAL_TOUGHNESS =
+            register("arm_natural_toughness", 0.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> LEG_NATURAL_TOUGHNESS =
+            register("leg_natural_toughness", 0.0, 0.0, 100.0);
+
     private static RegistryObject<Attribute> register(String name, double defaultValue, double min, double max) {
         return ATTRIBUTES.register(name, () -> new RangedAttribute(name, defaultValue, min, max).setSyncable(true));
     }

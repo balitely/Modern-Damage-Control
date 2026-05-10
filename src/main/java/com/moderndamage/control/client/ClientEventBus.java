@@ -48,8 +48,20 @@ public class ClientEventBus {
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.END && Minecraft.getInstance().player != null) {
-            ClientPartHealthCache.get(Minecraft.getInstance().player.getUUID())
+            Player player = Minecraft.getInstance().player;
+
+            ClientPartHealthCache.get(player.getUUID())
                     .ifPresent(ClientPartHealthCache::tick);
+
+            if (ModernDamage.enhancedVisuals != null) {
+                boolean hasPain = player.hasEffect(ModEffects.PAIN.get());
+                boolean hasPainSuppression = player.hasEffect(ModEffects.PAIN_SUPPRESSION.get());
+                ModernDamage.enhancedVisuals.updatePainVisual(player, hasPain, hasPainSuppression);
+
+                boolean hasDizzy = player.hasEffect(ModEffects.DIZZINESS.get());
+                boolean hasDizzyResist = player.hasEffect(ModEffects.DIZZINESS_RESISTANCE.get());
+                ModernDamage.enhancedVisuals.updateDizzyVisual(player, hasDizzy, hasDizzyResist);
+            }
         }
     }
 }

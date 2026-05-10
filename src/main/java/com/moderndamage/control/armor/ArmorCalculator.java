@@ -4,12 +4,16 @@ import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.api.event.ArmorHitEvent;
 import com.moderndamage.control.api.event.GetArmorLevelEvent;
+import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
+import com.moderndamage.control.capability.parthealth.PartHealthCapability;
 import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.entity.EntityHitboxHelper;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,59 +35,155 @@ public class ArmorCalculator {
         }
     }
 
-    public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamagePart hitPart, float originalDamage, float penetration) {
+    private static int getTotalToughness(LivingEntity target, ModDamagePart hitPart) {
+        int total = EntityHitboxHelper.getNaturalToughness(target, hitPart);
+        ModernDamage.LOGGER.info("getTotalToughness: natural toughness = {}", total);
+
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            ItemStack stack = target.getItemBySlot(slot);
+            if (stack.isEmpty()) continue;
+            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+            if (data != null && data.protects(hitPart)) {
+                int toughness = getDynamicToughness(stack, hitPart);
+                if (toughness > 0) {
+                    total += toughness;
+                    if (ModClothConfig.get().debugMode) {
+                        ModernDamage.LOGGER.debug("[Toughness] Added armor toughness from {} (part {}): +{} → total {}",
+                                ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total);
+                    }
+                }
+            }
+        }
+        return Math.min(total, 100);
+    }
+
+    public static int getDynamicToughness(ItemStack armorStack, ModDamagePart part) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 0;
+        int base = data.getBaseToughness(part);
+        if (base <= 0) return 0;
+        int maxDurability = armorStack.getMaxDamage();
+        if (maxDurability <= 0) return base;
+        int currentDurability = maxDurability - armorStack.getDamageValue();
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
+        return Math.round(base * durabilityPercent);
+    }
+
+    private static float getMaterialFactor(ItemStack armorStack, ModDamagePart part) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 1.0f;
+        return data.getMaterialFactor(part);
+    }
+
+    private static ItemStack getProtectingItem(LivingEntity target, ModDamagePart hitPart) {
+        int bestLevel = 0;
+        ItemStack bestItem = ItemStack.EMPTY;
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            ItemStack stack = target.getItemBySlot(slot);
+            if (stack.isEmpty()) continue;
+            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+            if (data != null && data.protects(hitPart)) {
+                int level = data.getProtectionLevel(hitPart);
+                if (level > bestLevel) {
+                    bestLevel = level;
+                    bestItem = stack;
+                }
+            }
+        }
+        return bestItem;
+    }
+
+    public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamagePart hitPart,
+                                                          float originalDamage, float penetration) {
         if (originalDamage <= 0) return new PenetrationResult(0, false, false);
 
         int armorLevel = getArmorLevel(target, hitPart);
+        ModClothConfig config = ModClothConfig.get();
+        if (config.enableRicochet) {
+            ItemStack protectingItem = getProtectingItem(target, hitPart);
+            if (!protectingItem.isEmpty()) {
+                ArmorData data = ArmorDataLoader.getArmorData(protectingItem.getItem());
+                if (data != null) {
+                    float chance = data.getRicochetChance(hitPart);
+                    if (chance > 0 && target.getRandom().nextFloat() < chance) {
+                        float ricochetDamage = originalDamage * config.ricochetDamageRatio;
+                        if (ricochetDamage < 1) ricochetDamage = 1;
+                        final float finalRicochetDamage = ricochetDamage;
+                        final ModDamagePart finalHitPart = hitPart;
+                        if (config.debugMode) {
+                            ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} {}! Damage: {} -> {}",
+                                    target.getName().getString(),
+                                    ForgeRegistries.ITEMS.getKey(protectingItem.getItem()),
+                                    hitPart, originalDamage, finalRicochetDamage);
+                        }
+                        if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                            target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
+                        } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
+                        } else {
+                            target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
+                        }
+                        return new PenetrationResult(finalRicochetDamage, false, false);
+                    }
+                }
+            }
+        }
         if (armorLevel == 0) {
             return new PenetrationResult(originalDamage, false, false);
         }
 
         int penetrationValue = (int) (penetration * 100);
-        ModClothConfig config = ModClothConfig.get();
         int baseDurabilityLoss = config.durabilityLossBase;
-        float extraPerPen = config.durabilityLossExtraPerPenetration;
         int maxLoss = config.maxDurabilityLoss;
 
-        float finalDamage;
-        int durabilityLoss;
+        float partialMin = config.partialPenetrationMinRatio;
+        float partialMax = config.partialPenetrationMaxRatio;
+
+        float finalDamageBeforeToughness;
         boolean penetrated = false;
         boolean partial = false;
 
-        int diff = armorLevel - penetrationValue;
-
-        if (penetrationValue >= armorLevel) {
-            finalDamage = originalDamage;
-            int extra = (int) Math.ceil((penetrationValue - armorLevel) * extraPerPen);
-            durabilityLoss = Math.min(maxLoss, baseDurabilityLoss + extra);
+        if (penetrationValue >= armorLevel + 5) {
+            finalDamageBeforeToughness = originalDamage;
             penetrated = true;
-        } else if (diff <= 9) {
-            double chance = (10.0 - diff) / 10.0;
+        } else if (penetrationValue >= armorLevel - 10) {
+            int diff = (armorLevel + 6) - penetrationValue;
+            double chance = (16.0 - diff) / 15.0;
+            chance = Math.min(1.0, Math.max(0.0, chance));
             if (RANDOM.nextDouble() <= chance) {
-                float ratio = 0.5f + RANDOM.nextFloat() * 0.3f;
-                finalDamage = originalDamage * ratio;
+                float ratio = partialMin + RANDOM.nextFloat() * (partialMax - partialMin);
+                finalDamageBeforeToughness = originalDamage * ratio;
                 partial = true;
-                durabilityLoss = baseDurabilityLoss;
             } else {
-                finalDamage = originalDamage * calculateBluntRatio(config, diff);
-                durabilityLoss = baseDurabilityLoss;
+                int bluntDiff = armorLevel - penetrationValue;
+                finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
             }
         } else {
-            finalDamage = originalDamage * calculateBluntRatio(config, diff);
-            durabilityLoss = baseDurabilityLoss;
+            int bluntDiff = armorLevel - penetrationValue;
+            finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
         }
+
+        ItemStack protectingItem = getProtectingItem(target, hitPart);
+        float materialFactor = 1.0f;
+        if (!protectingItem.isEmpty()) {
+            materialFactor = getMaterialFactor(protectingItem, hitPart);
+        }
+        float penRatio = (float) penetrationValue / (float) armorLevel;
+        int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * materialFactor);
+        durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss));
 
         boolean cancelDurabilityLoss = false;
         if (!target.level().isClientSide) {
-            ArmorHitEvent event = new ArmorHitEvent(target, hitPart, originalDamage, finalDamage, armorLevel);
+            ArmorHitEvent event = new ArmorHitEvent(target, hitPart, originalDamage, finalDamageBeforeToughness, armorLevel);
             MinecraftForge.EVENT_BUS.post(event);
             if (event.isCanceled()) {
                 cancelDurabilityLoss = true;
             }
-            finalDamage = event.getFinalDamage();
+            finalDamageBeforeToughness = event.getFinalDamage();
         }
 
-        ItemStack protectingItem = getProtectingItem(target, hitPart);
         if (protectingItem != null && !protectingItem.isEmpty() && !cancelDurabilityLoss) {
             EquipmentSlot slot = getSlotForItem(target, protectingItem);
             if (slot != null) {
@@ -91,9 +191,19 @@ public class ArmorCalculator {
             }
         }
 
+        int totalToughness = getTotalToughness(target, hitPart);
+        float finalDamage = finalDamageBeforeToughness;
+        if (totalToughness > 0) {
+            float reduction = totalToughness / 100.0f;
+            finalDamage = finalDamageBeforeToughness * (1 - reduction);
+            if (finalDamage < 0) finalDamage = 0;
+        }
+
         if (config.debugMode) {
-            ModernDamage.LOGGER.info("[Penetration] target={}, armor={}, pen={}, diff={}, partial={}, finalDamage={}",
-                    target.getName().getString(), armorLevel, penetrationValue, diff, partial, finalDamage);
+            ModernDamage.LOGGER.info("[Penetration] target={}, part={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, durLoss={}, penType={}",
+                    target.getName().getString(), hitPart, armorLevel, penetrationValue,
+                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness, durabilityLoss,
+                    penetrated ? "FULL" : (partial ? "PARTIAL" : "BLUNT"));
         }
 
         return new PenetrationResult(finalDamage, penetrated, partial);
@@ -118,8 +228,7 @@ public class ArmorCalculator {
         int currentDurability = maxDurability - armorStack.getDamageValue();
         float durabilityPercent = (float) currentDurability / maxDurability;
         float multiplier = 0.5f + 0.5f * durabilityPercent;
-        int dynamic = Math.max(1, Math.round(baseLevel * multiplier));
-        return dynamic;
+        return Math.max(1, Math.round(baseLevel * multiplier));
     }
 
     public static int getProtectionLevel(LivingEntity target, ModDamagePart hitPart) {
@@ -166,25 +275,6 @@ public class ArmorCalculator {
             total = event.getArmorLevel();
         }
         return total;
-    }
-
-    private static ItemStack getProtectingItem(LivingEntity target, ModDamagePart hitPart) {
-        int bestLevel = 0;
-        ItemStack bestItem = ItemStack.EMPTY;
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data != null && data.protects(hitPart)) {
-                int level = data.getProtectionLevel(hitPart);
-                if (level > bestLevel) {
-                    bestLevel = level;
-                    bestItem = stack;
-                }
-            }
-        }
-        return bestItem;
     }
 
     private static EquipmentSlot getSlotForItem(LivingEntity target, ItemStack itemStack) {

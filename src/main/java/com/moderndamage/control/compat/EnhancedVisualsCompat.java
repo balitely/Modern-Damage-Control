@@ -70,7 +70,6 @@ public class EnhancedVisualsCompat {
         if (!initialized) return;
         UUID id = player.getUUID();
         if (painVisuals.containsKey(id)) return;
-        // 注意：DecimalCurve 的构造参数根据 EnhancedVisuals 版本可能不同，此处使用原始逻辑
         DecimalCurve curve = new DecimalCurve(0.6f, 0.6f, Integer.MAX_VALUE, 0);
         Visual visual = new Visual(lowHealthType, dummyHandler, curve, 0);
         visual.setOpacityInternal(1.0f);

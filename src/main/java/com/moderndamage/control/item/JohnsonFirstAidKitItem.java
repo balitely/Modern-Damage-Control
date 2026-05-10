@@ -43,11 +43,6 @@ public class JohnsonFirstAidKitItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (entity instanceof Player player && !level.isClientSide) {
-            int durability = stack.getDamageValue();
-            int maxDurability = stack.getMaxDamage();
-            if (durability >= maxDurability - 1) {
-                return stack;
-            }
 
             player.addEffect(new MobEffectInstance(ModEffects.IV_FLUID.get(), 2 * 20, 0));
             stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(player.getUsedItemHand()));

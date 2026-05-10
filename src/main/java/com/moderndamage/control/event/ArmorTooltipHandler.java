@@ -27,11 +27,12 @@ public class ArmorTooltipHandler {
         for (Map.Entry<ModDamagePart, Integer> entry : data.getCoverage().entrySet()) {
             ModDamagePart part = entry.getKey();
             int dynamicLevel = ArmorCalculator.getDynamicProtectionLevel(stack, part);
+            int toughness = ArmorCalculator.getDynamicToughness(stack, part);
             String roman = RomanNumberHelper.toRomanGrade(dynamicLevel);
             String partKey = "tooltip.moderndamage.part." + part.name().toLowerCase();
             Component partName = Component.translatable(partKey);
             Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", partName, roman, dynamicLevel)
-                    .withStyle(ChatFormatting.DARK_GREEN);
+                    .append(Component.literal(" [" + toughness + "]").withStyle(ChatFormatting.GRAY));
             event.getToolTip().add(line);
         }
     }

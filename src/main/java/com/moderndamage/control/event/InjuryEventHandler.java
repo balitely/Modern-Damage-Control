@@ -183,7 +183,6 @@ public class InjuryEventHandler {
                 ModernDamage.LOGGER.info(msg);
             }
 
-            applyPotionEffects(target, hitPart, originalDamage, source);
             event.setCanceled(true);
             if (isHardcore) {
                 applyPartDamage(target, hitPart, finalDamage, true, config);
@@ -192,6 +191,7 @@ public class InjuryEventHandler {
                 if (newHealth <= 0) target.setHealth(0);
                 else target.setHealth(newHealth);
             }
+            applyPotionEffects(target, hitPart, finalDamage, source);
             return;
         }
 
@@ -254,8 +254,8 @@ public class InjuryEventHandler {
             ModernDamage.LOGGER.info(msg);
         }
 
-        applyPotionEffects(target, primaryPart, originalDamage, source);
         event.setCanceled(true);
+        applyPotionEffects(target, primaryPart, finalDamage, source);
 
         if (fullBody) {
             applyFullBodyDamage(target, finalDamage, isHardcore, config);
@@ -327,11 +327,11 @@ public class InjuryEventHandler {
         }
     }
 
-    private void applyPotionEffects(LivingEntity target, ModDamagePart hitPart, float originalDamage, DamageSource source) {
+    private void applyPotionEffects(LivingEntity target, ModDamagePart hitPart, float effectiveDamage, DamageSource source) {
         if (target instanceof Player player) {
             List<EffectEntry> effects = ModClothConfig.getEffects(hitPart);
             for (EffectEntry entry : effects) {
-                if (entry.isValid() && originalDamage > entry.getThreshold() && RANDOM.nextDouble() <= entry.getChance()) {
+                if (entry.isValid() && effectiveDamage > entry.getThreshold() && RANDOM.nextDouble() <= entry.getChance()) {
                     player.addEffect(new MobEffectInstance(entry.getEffect(), entry.getDuration(), entry.getAmplifier()));
                 }
             }
@@ -342,7 +342,7 @@ public class InjuryEventHandler {
                 if (partConfig.enabled) {
                     float thresholdDamage = target.getMaxHealth() * partConfig.thresholdPercent;
                     for (EffectEntry entry : partConfig.effects) {
-                        if (entry.isValid() && originalDamage > thresholdDamage && RANDOM.nextDouble() <= entry.getChance()) {
+                        if (entry.isValid() && effectiveDamage > thresholdDamage && RANDOM.nextDouble() <= entry.getChance()) {
                             target.addEffect(new MobEffectInstance(entry.getEffect(), entry.getDuration(), entry.getAmplifier()));
                         }
                     }

@@ -5,7 +5,10 @@ import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.config.EntityHitboxConfig;
 import com.moderndamage.control.config.EntityHitboxConfigLoader;
+import com.moderndamage.control.config.ModClothConfig;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.phys.Vec3;
 
 public class EntityHitboxHelper {
@@ -62,6 +65,44 @@ public class EntityHitboxHelper {
             return (int) Math.round(value);
         } catch (IllegalArgumentException e) {
             ModernDamage.LOGGER.warn("Failed to get natural armor attribute for {}: {}", part, e.getMessage());
+            return 0;
+        }
+    }
+
+    public static int getNaturalToughness(LivingEntity entity, ModDamagePart part) {
+        try {
+            AttributeInstance instance = null;
+            switch (part) {
+                case HEAD:
+                    instance = entity.getAttribute(ModAttributes.HEAD_NATURAL_TOUGHNESS.get());
+                    break;
+                case CHEST:
+                    instance = entity.getAttribute(ModAttributes.CHEST_NATURAL_TOUGHNESS.get());
+                    break;
+                case STOMACH:
+                    instance = entity.getAttribute(ModAttributes.STOMACH_NATURAL_TOUGHNESS.get());
+                    break;
+                case LEFT_ARM:
+                case RIGHT_ARM:
+                    instance = entity.getAttribute(ModAttributes.ARM_NATURAL_TOUGHNESS.get());
+                    break;
+                case LEFT_LEG:
+                case RIGHT_LEG:
+                    instance = entity.getAttribute(ModAttributes.LEG_NATURAL_TOUGHNESS.get());
+                    break;
+            }
+            if (instance == null) {
+                if (ModClothConfig.get().debugMode) {
+                    ModernDamage.LOGGER.debug("Natural toughness attribute instance missing for {} {}", entity.getName().getString(), part);
+                }
+                return 0;
+            }
+            double value = instance.getBaseValue();
+            int toughness = (int) Math.round(value);
+            ModernDamage.LOGGER.info("getNaturalToughness: {} {} = {}", entity.getName().getString(), part, toughness);
+            return toughness;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.warn("Failed to get natural toughness for {}: {}", part, e.getMessage());
             return 0;
         }
     }

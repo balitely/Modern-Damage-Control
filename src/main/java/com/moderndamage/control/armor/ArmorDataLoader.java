@@ -13,7 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,20 +42,71 @@ public class ArmorDataLoader {
                     continue;
                 }
                 ArmorData armorData = new ArmorData();
-                JsonObject coverage = dataObj.getAsJsonObject("coverage");
-                for (Map.Entry<String, JsonElement> covEntry : coverage.entrySet()) {
-                    String partName = covEntry.getKey().toUpperCase();
-                    try {
-                        ModDamagePart part = ModDamagePart.valueOf(partName);
-                        int level = covEntry.getValue().getAsInt();
-                        armorData.setProtection(part, level);
-                    } catch (IllegalArgumentException e) {
-                        ModernDamage.LOGGER.warn("Invalid part name: {} in armor config for {}", partName, itemId);
+
+                if (dataObj.has("coverage")) {
+                    JsonObject coverage = dataObj.getAsJsonObject("coverage");
+                    for (Map.Entry<String, JsonElement> covEntry : coverage.entrySet()) {
+                        String partName = covEntry.getKey().toUpperCase();
+                        try {
+                            ModDamagePart part = ModDamagePart.valueOf(partName);
+                            int level = covEntry.getValue().getAsInt();
+                            armorData.setProtection(part, level);
+                        } catch (IllegalArgumentException e) {
+                            ModernDamage.LOGGER.warn("Invalid part name: {} in armor config for {}", partName, itemId);
+                        }
                     }
                 }
+
+                if (dataObj.has("toughness")) {
+                    JsonObject toughnessObj = dataObj.getAsJsonObject("toughness");
+                    for (Map.Entry<String, JsonElement> toughEntry : toughnessObj.entrySet()) {
+                        String partName = toughEntry.getKey().toUpperCase();
+                        try {
+                            ModDamagePart part = ModDamagePart.valueOf(partName);
+                            int value = toughEntry.getValue().getAsInt();
+                            armorData.setToughness(part, value);
+                        } catch (IllegalArgumentException e) {
+                            ModernDamage.LOGGER.warn("Invalid part name for toughness: {} in {}", partName, itemId);
+                        }
+                    }
+                }
+
+                if (dataObj.has("material_factor")) {
+                    JsonObject matObj = dataObj.getAsJsonObject("material_factor");
+                    for (Map.Entry<String, JsonElement> matEntry : matObj.entrySet()) {
+                        String partName = matEntry.getKey().toUpperCase();
+                        try {
+                            ModDamagePart part = ModDamagePart.valueOf(partName);
+                            float factor = matEntry.getValue().getAsFloat();
+                            if (factor > 0) {
+                                armorData.setMaterialFactor(part, factor);
+                            } else {
+                                ModernDamage.LOGGER.warn("material_factor for {} must be positive, using default 1.0", partName);
+                            }
+                        } catch (IllegalArgumentException e) {
+                            ModernDamage.LOGGER.warn("Invalid part name for material_factor: {} in {}", partName, itemId);
+                        }
+                    }
+                }
+
+                if (dataObj.has("ricochet_chance")) {
+                    JsonObject rcObj = dataObj.getAsJsonObject("ricochet_chance");
+                    for (Map.Entry<String, JsonElement> rcEntry : rcObj.entrySet()) {
+                        String partName = rcEntry.getKey().toUpperCase();
+                        try {
+                            ModDamagePart part = ModDamagePart.valueOf(partName);
+                            float chance = rcEntry.getValue().getAsFloat();
+                            armorData.setRicochetChance(part, chance);
+                        } catch (IllegalArgumentException e) {
+                            ModernDamage.LOGGER.warn("Invalid part name for ricochet_chance: {} in {}", partName, itemId);
+                        }
+                    }
+                }
+
                 if (dataObj.has("durability")) {
                     armorData.setDurability(dataObj.get("durability").getAsInt());
                 }
+
                 ARMOR_DATA_CACHE.put(item, armorData);
             }
             ModernDamage.LOGGER.info("Loaded {} armor definitions", ARMOR_DATA_CACHE.size());
@@ -70,12 +120,30 @@ public class ArmorDataLoader {
             Files.createDirectories(configPath.getParent());
             JsonObject example = new JsonObject();
             JsonObject ironChest = new JsonObject();
+
+            // coverage
             JsonObject coverage = new JsonObject();
-            coverage.addProperty("chest", 67);   // 原6级 → 60
+            coverage.addProperty("chest", 67);
             coverage.addProperty("stomach", 50);
             coverage.addProperty("left_arm", 40);
             coverage.addProperty("right_arm", 40);
             ironChest.add("coverage", coverage);
+
+            // toughness
+            JsonObject toughness = new JsonObject();
+            toughness.addProperty("chest", 5);
+            toughness.addProperty("stomach", 5);
+            toughness.addProperty("left_arm", 3);
+            toughness.addProperty("right_arm", 3);
+            ironChest.add("toughness", toughness);
+
+            JsonObject materialFactor = new JsonObject();
+            materialFactor.addProperty("chest", 1.0);
+            materialFactor.addProperty("stomach", 1.0);
+            materialFactor.addProperty("left_arm", 0.9);
+            materialFactor.addProperty("right_arm", 0.9);
+            ironChest.add("material_factor", materialFactor);
+
             example.add("minecraft:iron_chestplate", ironChest);
             try (Writer writer = Files.newBufferedWriter(configPath)) {
                 GSON.toJson(example, writer);

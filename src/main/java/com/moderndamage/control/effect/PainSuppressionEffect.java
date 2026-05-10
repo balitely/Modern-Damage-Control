@@ -12,10 +12,13 @@ public class PainSuppressionEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
+        if (entity.hasEffect(ModEffects.PAIN.get())) {
+            entity.removeEffect(ModEffects.PAIN.get());
+        }
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return false;
+        return true;
     }
 }

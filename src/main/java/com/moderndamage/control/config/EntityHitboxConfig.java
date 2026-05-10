@@ -14,6 +14,7 @@ public class EntityHitboxConfig {
     public boolean vitalPartsLethal = true;
 
     public Map<String, Integer> naturalArmor = new HashMap<>();
+    public Map<String, Integer> naturalToughness = new HashMap<>();  // 新增
 
     public EntityHitboxConfig() {}
 }

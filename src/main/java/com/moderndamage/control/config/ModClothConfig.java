@@ -61,6 +61,12 @@ public class ModClothConfig implements ConfigData {
 
     // ========== 钝伤与穿透相关配置 ==========
     @ConfigEntry.Gui.Tooltip
+    public float partialPenetrationMinRatio = 0.5f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float partialPenetrationMaxRatio = 0.8f;
+
+    @ConfigEntry.Gui.Tooltip
     public float bluntDamageRatio = 0.2f;
 
     @ConfigEntry.Gui.Tooltip
@@ -68,6 +74,12 @@ public class ModClothConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public float bluntDamageMinRatio = 0.08f;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableRicochet = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public float ricochetDamageRatio = 0.1f;
 
     // ========== 防护能力系统相关配置 ==========
 
@@ -82,10 +94,7 @@ public class ModClothConfig implements ConfigData {
     public int durabilityLossBase = 1;
 
     @ConfigEntry.Gui.Tooltip
-    public float durabilityLossExtraPerPenetration = 0.2f;
-
-    @ConfigEntry.Gui.Tooltip
-    public int maxDurabilityLoss = 5;
+    public int maxDurabilityLoss = 999;
 
     // ========== 玩家额外最大生命值==========
     @ConfigEntry.Gui.Tooltip
@@ -214,6 +223,8 @@ public class ModClothConfig implements ConfigData {
     }
 
     private void setDefaultConfig() {
+        partialPenetrationMinRatio = 0.5f;
+        partialPenetrationMaxRatio = 0.8f;
 
         // ========== 头部 ==========
         BodyPartConfig head = new BodyPartConfig();
