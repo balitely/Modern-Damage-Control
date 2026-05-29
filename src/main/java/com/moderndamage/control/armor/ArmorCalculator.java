@@ -13,7 +13,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
+import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,8 +40,10 @@ public class ArmorCalculator {
     }
 
     private static int getTotalToughness(LivingEntity target, ModDamagePart hitPart) {
-        int total = EntityHitboxHelper.getNaturalToughness(target, hitPart);
-        ModernDamage.LOGGER.info("getTotalToughness: natural toughness = {}", total);
+        int naturalToughness = EntityHitboxHelper.getNaturalToughness(target, hitPart);
+        ModernDamage.LOGGER.info("getTotalToughness: natural toughness = {}", naturalToughness);
+
+        int[] total = {naturalToughness};
 
         for (EquipmentSlot slot : EquipmentSlot.values()) {
             if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
@@ -47,15 +53,39 @@ public class ArmorCalculator {
             if (data != null && data.protects(hitPart)) {
                 int toughness = getDynamicToughness(stack, hitPart);
                 if (toughness > 0) {
-                    total += toughness;
+                    total[0] += toughness;
                     if (ModClothConfig.get().debugMode) {
                         ModernDamage.LOGGER.debug("[Toughness] Added armor toughness from {} (part {}): +{} → total {}",
-                                ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total);
+                                ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total[0]);
                     }
                 }
             }
         }
-        return Math.min(total, 100);
+
+        if (ModList.get().isLoaded("curios")) {
+            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
+                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks(); // 只取普通槽位
+                    for (int i = 0; i < stackHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.isEmpty()) continue;
+                        ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+                        if (data != null && data.protects(hitPart)) {
+                            int toughness = getDynamicToughness(stack, hitPart);
+                            if (toughness > 0) {
+                                total[0] += toughness;
+                                if (ModClothConfig.get().debugMode) {
+                                    ModernDamage.LOGGER.debug("[Toughness] Added curio toughness from {} (part {}): +{} → total {}",
+                                            ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total[0]);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        return Math.min(total[0], 100);
     }
 
     public static int getDynamicToughness(ItemStack armorStack, ModDamagePart part) {
@@ -101,35 +131,45 @@ public class ArmorCalculator {
 
         int armorLevel = getArmorLevel(target, hitPart);
         ModClothConfig config = ModClothConfig.get();
-        if (config.enableRicochet) {
-            ItemStack protectingItem = getProtectingItem(target, hitPart);
-            if (!protectingItem.isEmpty()) {
-                ArmorData data = ArmorDataLoader.getArmorData(protectingItem.getItem());
-                if (data != null) {
-                    float chance = data.getRicochetChance(hitPart);
-                    if (chance > 0 && target.getRandom().nextFloat() < chance) {
-                        float ricochetDamage = originalDamage * config.ricochetDamageRatio;
-                        if (ricochetDamage < 1) ricochetDamage = 1;
-                        final float finalRicochetDamage = ricochetDamage;
-                        final ModDamagePart finalHitPart = hitPart;
-                        if (config.debugMode) {
-                            ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} {}! Damage: {} -> {}",
-                                    target.getName().getString(),
-                                    ForgeRegistries.ITEMS.getKey(protectingItem.getItem()),
-                                    hitPart, originalDamage, finalRicochetDamage);
-                        }
-                        if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                            target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
-                        } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
-                        } else {
-                            target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
-                        }
-                        return new PenetrationResult(finalRicochetDamage, false, false);
+
+        List<ItemStack> allProtecting = getAllProtectingItems(target, hitPart);
+        ItemStack primaryItem = null;
+        int maxLevel = 0;
+        for (ItemStack stack : allProtecting) {
+            int level = getDynamicProtectionLevel(stack, hitPart);
+            if (level > maxLevel) {
+                maxLevel = level;
+                primaryItem = stack;
+            }
+        }
+
+        if (config.enableRicochet && primaryItem != null && !primaryItem.isEmpty()) {
+            ArmorData data = ArmorDataLoader.getArmorData(primaryItem.getItem());
+            if (data != null) {
+                float chance = data.getRicochetChance(hitPart);
+                if (chance > 0 && target.getRandom().nextFloat() < chance) {
+                    float ricochetDamage = originalDamage * config.ricochetDamageRatio;
+                    if (ricochetDamage < 1) ricochetDamage = 1;
+                    final float finalRicochetDamage = ricochetDamage;
+                    final ModDamagePart finalHitPart = hitPart;
+                    if (config.debugMode) {
+                        ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} {}! Damage: {} -> {}",
+                                target.getName().getString(),
+                                ForgeRegistries.ITEMS.getKey(primaryItem.getItem()),
+                                hitPart, originalDamage, finalRicochetDamage);
                     }
+                    if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                        target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
+                    } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                        target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
+                    } else {
+                        target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
+                    }
+                    return new PenetrationResult(finalRicochetDamage, false, false);
                 }
             }
         }
+
         if (armorLevel == 0) {
             return new PenetrationResult(originalDamage, false, false);
         }
@@ -165,14 +205,15 @@ public class ArmorCalculator {
             finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
         }
 
-        ItemStack protectingItem = getProtectingItem(target, hitPart);
-        float materialFactor = 1.0f;
-        if (!protectingItem.isEmpty()) {
-            materialFactor = getMaterialFactor(protectingItem, hitPart);
+        float primaryMaterialFactor = 1.0f;
+        if (primaryItem != null && !primaryItem.isEmpty()) {
+            primaryMaterialFactor = getMaterialFactor(primaryItem, hitPart);
         }
+
         float penRatio = (float) penetrationValue / (float) armorLevel;
-        int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * materialFactor);
-        durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss));
+
+        int primaryDurabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primaryMaterialFactor);
+        primaryDurabilityLoss = Math.min(maxLoss, Math.max(1, primaryDurabilityLoss));
 
         boolean cancelDurabilityLoss = false;
         if (!target.level().isClientSide) {
@@ -184,10 +225,19 @@ public class ArmorCalculator {
             finalDamageBeforeToughness = event.getFinalDamage();
         }
 
-        if (protectingItem != null && !protectingItem.isEmpty() && !cancelDurabilityLoss) {
-            EquipmentSlot slot = getSlotForItem(target, protectingItem);
-            if (slot != null) {
-                protectingItem.hurtAndBreak(durabilityLoss, target, (p) -> p.broadcastBreakEvent(slot));
+        if (!cancelDurabilityLoss && !allProtecting.isEmpty()) {
+            if (primaryItem != null && !primaryItem.isEmpty()) {
+                hurtItem(primaryItem, target, primaryDurabilityLoss);
+            }
+
+            for (ItemStack stack : allProtecting) {
+                if (stack == primaryItem) continue;
+
+                float materialFactor = getMaterialFactor(stack, hitPart);
+                int itemDurabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * materialFactor);
+                itemDurabilityLoss = Math.min(maxLoss, Math.max(1, itemDurabilityLoss));
+                int halfLoss = Math.max(1, itemDurabilityLoss / 2);
+                hurtItem(stack, target, halfLoss);
             }
         }
 
@@ -200,13 +250,29 @@ public class ArmorCalculator {
         }
 
         if (config.debugMode) {
-            ModernDamage.LOGGER.info("[Penetration] target={}, part={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, durLoss={}, penType={}",
+            ModernDamage.LOGGER.info("[Penetration] target={}, part={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, durLoss(primary)={}, penType={}",
                     target.getName().getString(), hitPart, armorLevel, penetrationValue,
-                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness, durabilityLoss,
+                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness, primaryDurabilityLoss,
                     penetrated ? "FULL" : (partial ? "PARTIAL" : "BLUNT"));
         }
 
         return new PenetrationResult(finalDamage, penetrated, partial);
+    }
+
+    private static void hurtItem(ItemStack stack, LivingEntity target, int amount) {
+        if (stack.isEmpty()) return;
+        int maxDamage = stack.getMaxDamage();
+        if (maxDamage <= 0) return;
+
+        int currentDamage = stack.getDamageValue();
+        int remaining = maxDamage - currentDamage;
+
+        if (remaining <= 1) return;
+
+        int actualAmount = Math.min(amount, remaining - 1);
+        if (actualAmount > 0) {
+            stack.hurtAndBreak(actualAmount, target, (p) -> {});
+        }
     }
 
     private static float calculateBluntRatio(ModClothConfig config, int diff) {
@@ -226,7 +292,8 @@ public class ArmorCalculator {
         int maxDurability = armorStack.getMaxDamage();
         if (maxDurability <= 0) return baseLevel;
         int currentDurability = maxDurability - armorStack.getDamageValue();
-        float durabilityPercent = (float) currentDurability / maxDurability;
+        if (currentDurability <= 1) return 0;
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
         float multiplier = 0.5f + 0.5f * durabilityPercent;
         return Math.max(1, Math.round(baseLevel * multiplier));
     }
@@ -235,20 +302,17 @@ public class ArmorCalculator {
         return getArmorLevel(target, hitPart);
     }
 
-    private static int getArmorLevel(LivingEntity target, ModDamagePart hitPart) {
+    public static int getArmorLevel(LivingEntity target, ModDamagePart hitPart) {
         List<Integer> levels = new ArrayList<>();
         int natural = EntityHitboxHelper.getNaturalArmor(target, hitPart);
         if (natural > 0) levels.add(natural);
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data != null && data.protects(hitPart)) {
-                int level = getDynamicProtectionLevel(stack, hitPart);
-                levels.add(level);
-            }
+
+        List<ItemStack> protectingItems = getAllProtectingItems(target, hitPart);
+        for (ItemStack stack : protectingItems) {
+            int level = getDynamicProtectionLevel(stack, hitPart);
+            if (level > 0) levels.add(level);
         }
+
         if (levels.isEmpty()) return 0;
         levels.sort(Collections.reverseOrder());
         int base = levels.get(0);
@@ -282,5 +346,39 @@ public class ArmorCalculator {
             if (target.getItemBySlot(slot) == itemStack) return slot;
         }
         return null;
+    }
+
+    private static List<ItemStack> getAllProtectingItems(LivingEntity target, ModDamagePart hitPart) {
+        List<ItemStack> result = new ArrayList<>();
+
+        // 1. 遍历盔甲槽位
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            ItemStack stack = target.getItemBySlot(slot);
+            if (stack.isEmpty()) continue;
+            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+            if (data != null && data.protects(hitPart)) {
+                result.add(stack);
+            }
+        }
+
+        // 2. 遍历 Curios 饰品槽位（如果 Curios 已加载）
+        if (ModList.get().isLoaded("curios")) {
+            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
+                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks(); // 只取普通槽位，不取 cosmetic
+                    for (int i = 0; i < stackHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (!stack.isEmpty()) {
+                            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+                            if (data != null && data.protects(hitPart)) {
+                                result.add(stack);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        return result;
     }
 }

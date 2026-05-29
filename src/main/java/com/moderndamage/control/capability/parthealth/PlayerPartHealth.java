@@ -146,12 +146,8 @@ public class PlayerPartHealth implements IPartHealth {
             health.put(part, 0f);
             destroyed.put(part, true);
             float overflow = -newHealth;
-            if (overflow > 0 && part != ModDamagePart.HEAD && part != ModDamagePart.CHEST) {
-                ModClothConfig config = ModClothConfig.get();
-                float factor = (part == ModDamagePart.LEFT_ARM || part == ModDamagePart.RIGHT_ARM)
-                        ? config.armOverflowToChest
-                        : config.legOverflowToChest;
-                damagePart(ModDamagePart.CHEST, overflow * factor);
+            if (overflow > 0) {
+                distributeOverflowDamage(overflow);
             }
         } else {
             health.put(part, newHealth);
@@ -167,6 +163,103 @@ public class PlayerPartHealth implements IPartHealth {
         updateVanillaHealth();
         syncToClient();
         return false;
+    }
+
+    private void distributeOverflowDamage(float overflow) {
+        if (overflow <= 0) return;
+
+        Map<ModDamagePart, Float> currentHealth = new EnumMap<>(ModDamagePart.class);
+        Set<ModDamagePart> destroyedParts = new HashSet<>();
+        for (ModDamagePart p : ModDamagePart.values()) {
+            currentHealth.put(p, getHealth(p));
+            if (destroyed.get(p)) destroyedParts.add(p);
+        }
+
+        float remaining = overflow;
+        while (remaining > 0.001f) {
+            List<ModDamagePart> aliveParts = new ArrayList<>();
+            float totalMaxHealth = 0f;
+            boolean onlyHeadAlive = true;
+            for (ModDamagePart p : ModDamagePart.values()) {
+                if (destroyedParts.contains(p)) continue;
+                if (currentHealth.get(p) > 0) {
+                    aliveParts.add(p);
+                    totalMaxHealth += getMaxHealth(p);
+                    if (p != ModDamagePart.HEAD) onlyHeadAlive = false;
+                }
+            }
+            if (aliveParts.isEmpty()) break;
+
+            if (onlyHeadAlive && currentHealth.get(ModDamagePart.HEAD) <= 1.0f) {
+                break;
+            }
+
+            Map<ModDamagePart, Float> partDamage = new EnumMap<>(ModDamagePart.class);
+            float totalDamageAssigned = 0f;
+            for (ModDamagePart p : aliveParts) {
+                float damage = remaining * (getMaxHealth(p) / totalMaxHealth);
+                partDamage.put(p, damage);
+                totalDamageAssigned += damage;
+            }
+
+            if (totalDamageAssigned > remaining + 0.001f) {
+                float scale = remaining / totalDamageAssigned;
+                for (ModDamagePart p : aliveParts) {
+                    partDamage.put(p, partDamage.get(p) * scale);
+                }
+            }
+
+            boolean hasDestroyed = false;
+            float totalOverflow = 0f;
+            for (ModDamagePart p : aliveParts) {
+                float cur = currentHealth.get(p);
+                float damage = partDamage.get(p);
+                float newVal = cur - damage;
+
+                if (p == ModDamagePart.HEAD) {
+                    if (cur <= 1.0f) continue;
+                    if (newVal < 1.0f) {
+                        float actualDamage = cur - 1.0f;
+                        if (actualDamage < 0) actualDamage = cur;
+                        float overflowFromHead = damage - actualDamage;
+                        if (overflowFromHead > 0) {
+                            totalOverflow += overflowFromHead;
+                        }
+                        newVal = 1.0f;
+                    }
+                    currentHealth.put(p, newVal);
+                } else {
+                    if (newVal <= 0) {
+                        totalOverflow += -newVal;
+                        currentHealth.put(p, 0f);
+                        destroyedParts.add(p);
+                        hasDestroyed = true;
+                    } else {
+                        currentHealth.put(p, newVal);
+                    }
+                }
+            }
+
+            if (hasDestroyed || totalOverflow > 0) {
+                remaining = totalOverflow;
+            } else {
+                remaining = 0;
+            }
+        }
+
+        for (Map.Entry<ModDamagePart, Float> entry : currentHealth.entrySet()) {
+            ModDamagePart p = entry.getKey();
+            float newVal = entry.getValue();
+            float oldVal = health.get(p);
+            if (Math.abs(newVal - oldVal) > 0.001f) {
+                health.put(p, newVal);
+                if (newVal <= 0) {
+                    destroyed.put(p, true);
+                } else if (newVal > 0 && destroyed.get(p)) {
+                    destroyed.put(p, false);
+                }
+            }
+        }
     }
 
     @Override

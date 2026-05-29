@@ -147,12 +147,6 @@ public class ModClothConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public float creatureRightLegRatio = 0.10f;
 
-    @ConfigEntry.Gui.Tooltip
-    public float armOverflowToChest = 1.0f;
-
-    @ConfigEntry.Gui.Tooltip
-    public float legOverflowToChest = 1.0f;
-
     // ========== 玩家部位血量比例 ==========
     @ConfigEntry.Gui.CollapsibleObject
     @ConfigEntry.Gui.Tooltip
