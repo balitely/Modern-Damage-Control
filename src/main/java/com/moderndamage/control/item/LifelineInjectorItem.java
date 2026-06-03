@@ -1,12 +1,9 @@
 package com.moderndamage.control.item;
 
-import com.moderndamage.control.effect.ModEffects;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -14,14 +11,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class MorphineAutoInjectorItem extends Item {
-    public MorphineAutoInjectorItem(Properties properties) {
-        super(properties);
+public abstract class LifelineInjectorItem extends Item {
+    protected final int useDuration;  // ticks
+    protected final int maxStackSize;
+
+    public LifelineInjectorItem(Properties properties, int useDuration, int maxStackSize) {
+        super(properties.stacksTo(maxStackSize));
+        this.useDuration = useDuration;
+        this.maxStackSize = maxStackSize;
     }
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 20;
+        return useDuration;
     }
 
     @Override
@@ -38,14 +40,17 @@ public class MorphineAutoInjectorItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
-        if (entity instanceof Player player && !level.isClientSide) {
-            player.addEffect(new MobEffectInstance(ModEffects.PAIN_SUPPRESSION.get(), 300 * 20, 0));
-            player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 10 * 20, 9));
-            stack.shrink(1);
+        if (!level.isClientSide && entity instanceof Player player) {
+            applyEffect(player);
             playUseSound(level, player);
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
         }
         return stack;
     }
+
+    protected abstract void applyEffect(Player player);
 
     protected void playUseSound(Level level, Player player) {
         level.playSound(null, player.getX(), player.getY(), player.getZ(),

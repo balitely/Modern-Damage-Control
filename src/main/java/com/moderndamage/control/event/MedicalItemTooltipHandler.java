@@ -55,9 +55,25 @@ public class MedicalItemTooltipHandler {
         put("nar_mfak_kit", "tooltip.moderndamage.nar_mfak_kit");
 
         // 注射器
-        put("epinephrine_auto_injector", "tooltip.moderndamage.epinephrine_injector");
-        put("morphine_auto_injector", "tooltip.moderndamage.morphine_injector");
-        put("atropine_auto_injector", "tooltip.moderndamage.atropine_injector");
+        put("lifeline_vg1_stabilizer", "tooltip.moderndamage.lifeline_vg1_stabilizer");
+        put("lifeline_vg2_famexin", "tooltip.moderndamage.lifeline_vg2_famexin");
+        put("lifeline_vg3_barrier", "tooltip.moderndamage.lifeline_vg3_barrier");
+        put("lifeline_vg4_epinephrine", "tooltip.moderndamage.lifeline_vg4_epinephrine");
+        put("lifeline_vg5_kelador", "tooltip.moderndamage.lifeline_vg5_kelador");
+        put("lifeline_vg6_methylphenidate", "tooltip.moderndamage.lifeline_vg6_methylphenidate");
+        put("lifeline_vg8_modafinil_x", "tooltip.moderndamage.lifeline_vg8_modafinil_x");
+        put("lifeline_ag1_thrombin", "tooltip.moderndamage.lifeline_ag1_thrombin");
+        put("lifeline_ag2_tranexamic_acid", "tooltip.moderndamage.lifeline_ag2_tranexamic_acid");
+        put("lifeline_ag3_morphine", "tooltip.moderndamage.lifeline_ag3_morphine");
+        put("lifeline_ag4_ciprofloxacin", "tooltip.moderndamage.lifeline_ag4_ciprofloxacin");
+        put("lifeline_ph1_atropine", "tooltip.moderndamage.lifeline_ph1_atropine");
+        put("lifeline_ph3_clarity", "tooltip.moderndamage.lifeline_ph3_clarity");
+        put("lifeline_ph5_newtype_hemogen", "tooltip.moderndamage.lifeline_ph5_newtype_hemogen");
+        put("lifeline_ph6_vitalis", "tooltip.moderndamage.lifeline_ph6_vitalis");
+        put("lifeline_ph11_c1_compound", "tooltip.moderndamage.lifeline_ph11_c1_compound");
+        put("lifeline_ph12_c1_extender", "tooltip.moderndamage.lifeline_ph12_c1_extender");
+        put("lifeline_ph16_xenodyne", "tooltip.moderndamage.lifeline_ph16_xenodyne");
+        put("lifeline_ph18_neurostabil", "tooltip.moderndamage.lifeline_ph18_neurostabil");
     }
 
     private static void put(String itemPath, String key) {

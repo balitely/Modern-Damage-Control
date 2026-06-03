@@ -35,6 +35,21 @@ public class ModAttributes {
     public static final RegistryObject<Attribute> LEG_NATURAL_TOUGHNESS =
             register("leg_natural_toughness", 0.0, 0.0, 100.0);
 
+    public static final RegistryObject<Attribute> MAX_ARM_STAMINA =
+            register("max_arm_stamina", 100.0, 0.0, 10000.0);
+    public static final RegistryObject<Attribute> ARM_STAMINA_REGEN =
+            register("arm_stamina_regen", 5.0, 0.0, 1000.0);
+    public static final RegistryObject<Attribute> ARM_STAMINA_DRAIN_MULTIPLIER =
+            register("arm_stamina_drain_multiplier", 1.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> MAX_LEG_STAMINA =
+            register("max_leg_stamina", 100.0, 0.0, 10000.0);
+    public static final RegistryObject<Attribute> LEG_STAMINA_REGEN =
+            register("leg_stamina_regen", 5.0, 0.0, 1000.0);
+    public static final RegistryObject<Attribute> LEG_STAMINA_DRAIN_MULTIPLIER =
+            register("leg_stamina_drain_multiplier", 1.0, 0.0, 100.0);
+    public static final RegistryObject<Attribute> ERGONOMICS =
+            register("ergonomics", 100.0, 0.0, 1000.0);
+
     private static RegistryObject<Attribute> register(String name, double defaultValue, double min, double max) {
         return ATTRIBUTES.register(name, () -> new RangedAttribute(name, defaultValue, min, max).setSyncable(true));
     }

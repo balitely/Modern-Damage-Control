@@ -1,6 +1,7 @@
 package com.moderndamage.control.effect;
 
 import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.config.ModClothConfig;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -82,6 +83,59 @@ public class ModEffects {
             () -> new EpinephrineBoostEffect(MobEffectCategory.BENEFICIAL, 0xFF4500));
     public static final RegistryObject<MobEffect> CREATINE_BOOST = EFFECTS.register("creatine_boost",
             () -> new CreatineBoostEffect(MobEffectCategory.BENEFICIAL, 0xE67E22));
+
+    // 针剂效果
+    // VG-1 稳定剂（耐力恢复+20%）
+    public static final RegistryObject<MobEffect> VG1_BOOST = EFFECTS.register("vg1_boost",
+            () -> new VG1BoostEffect(MobEffectCategory.BENEFICIAL, 0x66CCFF));
+
+    // VG-3 屏障（全身+5天然护甲）
+    public static final RegistryObject<MobEffect> VG3_BOOST = EFFECTS.register("vg3_boost",
+            () -> new VG3BoostEffect(MobEffectCategory.BENEFICIAL, 0xFFAA66));
+
+    // VG-5 凯拉多再生
+    public static final RegistryObject<MobEffect> VG5_REGENERATION = EFFECTS.register("vg5_regeneration",
+            () -> new VG5RegenerationEffect(MobEffectCategory.BENEFICIAL, 0xFF5555));
+
+    // VG-6 哌甲酯（止痛+属性）
+    public static final RegistryObject<MobEffect> VG6_METHYLPHENIDATE = EFFECTS.register("vg6_methylphenidate",
+            () -> new VG6MethylphenidateEffect(MobEffectCategory.BENEFICIAL, 0x99FF99));
+
+    // VG-2 法莫辛（免疫恶心+饥饿+饱食度）
+    public static final RegistryObject<MobEffect> FAMEXIN_RESISTANCE = EFFECTS.register("famexin_resistance",
+            () -> new FamexinEffect(MobEffectCategory.BENEFICIAL, 0xFFAA33));
+
+    // PH-5 Newtype人造血再生
+    public static final RegistryObject<MobEffect> PH5_REGENERATION = EFFECTS.register("ph5_regeneration",
+            () -> new PH5RegenerationEffect(MobEffectCategory.BENEFICIAL, 0xAA66FF));
+
+    // PH-6 Vitalis 再生
+    public static final RegistryObject<MobEffect> PH6_REGENERATION = EFFECTS.register("ph6_regeneration",
+            () -> new PH6RegenerationEffect(MobEffectCategory.BENEFICIAL, 0x66CCFF));
+
+    // PH-11 C-1 化合物再生（5秒）
+    public static final RegistryObject<MobEffect> PH11_REGENERATION = EFFECTS.register("ph11_regeneration",
+            () -> new PH11RegenerationEffect(MobEffectCategory.BENEFICIAL, 0xFF66FF));
+
+    // PH-11 C-1 化合物正面增益
+    public static final RegistryObject<MobEffect> C1_BUFF = EFFECTS.register("c1_buff",
+            () -> new C1BuffEffect(MobEffectCategory.BENEFICIAL, 0xDDA0DD));
+
+    // PH-11 C-1 化合物副作用（周期性扣血）
+    public static final RegistryObject<MobEffect> C1_SIDE_EFFECT = EFFECTS.register("c1_side_effect",
+            () -> new C1SideEffectEffect(MobEffectCategory.HARMFUL, 0x8B0000));
+
+    // PH-16 泽诺戴恩再生
+    public static final RegistryObject<MobEffect> PH16_REGENERATION = EFFECTS.register("ph16_regeneration",
+            () -> new PH16RegenerationEffect(MobEffectCategory.BENEFICIAL, 0x66FF66));
+
+    // PH-16 自动治愈效果（每30秒触发）
+    public static final RegistryObject<MobEffect> PH16_HEAL_EFFECT = EFFECTS.register("ph16_heal_effect",
+            () -> new PH16HealEffect(MobEffectCategory.BENEFICIAL, 0x88FF88));
+
+    // PH-18 神经稳定剂（属性增益）
+    public static final RegistryObject<MobEffect> PH18_NEUROSTABIL = EFFECTS.register("ph18_neurostabil",
+            () -> new PH18NeurostabilEffect(MobEffectCategory.BENEFICIAL, 0xAAAAFF));
 
     public static void register(IEventBus bus) {
         EFFECTS.register(bus);

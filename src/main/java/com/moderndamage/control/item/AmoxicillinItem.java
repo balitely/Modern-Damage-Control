@@ -37,7 +37,7 @@ public class AmoxicillinItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(ModEffects.INFECTION_RESISTANCE.get(), 1800 * 20, 0));
+            player.addEffect(new MobEffectInstance(ModEffects.INFECTION_RESISTANCE.get(), 240 * 20, 0));
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 1.0f, 1.0f);
             if (!player.getAbilities().instabuild) {

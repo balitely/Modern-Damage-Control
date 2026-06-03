@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ag2_tranexamic_acid"
+  }
+}

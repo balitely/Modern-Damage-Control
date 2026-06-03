@@ -25,6 +25,16 @@ public class Networking {
                 .decoder(SyncPartHealthPacket::decode)
                 .consumerMainThread(SyncPartHealthPacket::handle)
                 .add();
+        INSTANCE.messageBuilder(SyncArmStaminaPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(SyncArmStaminaPacket::encode)
+                .decoder(SyncArmStaminaPacket::decode)
+                .consumerMainThread(SyncArmStaminaPacket::handle)
+                .add();
+        INSTANCE.messageBuilder(SyncLegStaminaPacket.class, id++, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(SyncLegStaminaPacket::encode)
+                .decoder(SyncLegStaminaPacket::decode)
+                .consumerMainThread(SyncLegStaminaPacket::handle)
+                .add();
     }
 
     public static void sendToPlayer(Object packet, ServerPlayer player) {

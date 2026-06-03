@@ -76,12 +76,27 @@ public class ModItems {
             () -> new NarMfakKitItem(new Item.Properties().durability(10)));
 
     // 注射器（一次性）
-    public static final RegistryObject<Item> EPINEPHRINE_AUTO_INJECTOR = ITEMS.register("epinephrine_auto_injector",
-            () -> new EpinephrineAutoInjectorItem(new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> MORPHINE_AUTO_INJECTOR = ITEMS.register("morphine_auto_injector",
-            () -> new MorphineAutoInjectorItem(new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> ATROPINE_AUTO_INJECTOR = ITEMS.register("atropine_auto_injector",
-            () -> new AtropineAutoInjectorItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> LIFELINE_VG1_STABILIZER = ITEMS.register("lifeline_vg1_stabilizer", LifelineVG1StabilizerItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG2_FAMEXIN = ITEMS.register("lifeline_vg2_famexin", LifelineVG2FamexinItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG3_BARRIER = ITEMS.register("lifeline_vg3_barrier", LifelineVG3BarrierItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG4_EPINEPHRINE = ITEMS.register("lifeline_vg4_epinephrine", LifelineVG4EpinephrineItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG5_KELADOR = ITEMS.register("lifeline_vg5_kelador", LifelineVG5KeladorItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG6_METHYLPHENIDATE = ITEMS.register("lifeline_vg6_methylphenidate", LifelineVG6MethylphenidateItem::new);
+    public static final RegistryObject<Item> LIFELINE_VG8_MODAFINIL_X = ITEMS.register("lifeline_vg8_modafinil_x", LifelineVG8ModafinilXItem::new);
+
+    public static final RegistryObject<Item> LIFELINE_AG1_THROMBIN = ITEMS.register("lifeline_ag1_thrombin", LifelineAG1ThrombinItem::new);
+    public static final RegistryObject<Item> LIFELINE_AG2_TRANEXAMIC_ACID = ITEMS.register("lifeline_ag2_tranexamic_acid", LifelineAG2TranexamicAcidItem::new);
+    public static final RegistryObject<Item> LIFELINE_AG3_MORPHINE = ITEMS.register("lifeline_ag3_morphine", LifelineAG3MorphineItem::new);
+    public static final RegistryObject<Item> LIFELINE_AG4_CIPROFLOXACIN = ITEMS.register("lifeline_ag4_ciprofloxacin", LifelineAG4CiprofloxacinItem::new);
+
+    public static final RegistryObject<Item> LIFELINE_PH1_ATROPINE = ITEMS.register("lifeline_ph1_atropine", LifelinePH1AtropineItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH3_CLARITY = ITEMS.register("lifeline_ph3_clarity", LifelinePH3ClarityItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH5_NEWTYPE_HEMOGEN = ITEMS.register("lifeline_ph5_newtype_hemogen", LifelinePH5NewtypeHemogenItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH6_VITALIS = ITEMS.register("lifeline_ph6_vitalis", LifelinePH6VitalisItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH11_C1_COMPOUND = ITEMS.register("lifeline_ph11_c1_compound", LifelinePH11C1CompoundItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH12_C1_EXTENDER = ITEMS.register("lifeline_ph12_c1_extender", LifelinePH12C1ExtenderItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH16_XENODYNE = ITEMS.register("lifeline_ph16_xenodyne", LifelinePH16XenodyneItem::new);
+    public static final RegistryObject<Item> LIFELINE_PH18_NEUROSTABIL = ITEMS.register("lifeline_ph18_neurostabil", LifelinePH18NeurostabilItem::new);
 
 
     public static void register(IEventBus bus) {

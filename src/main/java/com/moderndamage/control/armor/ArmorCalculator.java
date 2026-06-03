@@ -7,6 +7,7 @@ import com.moderndamage.control.api.event.GetArmorLevelEvent;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
 import com.moderndamage.control.capability.parthealth.PartHealthCapability;
 import com.moderndamage.control.config.ModClothConfig;
+import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.entity.EntityHitboxHelper;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;

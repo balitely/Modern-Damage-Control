@@ -1,7 +1,15 @@
 package com.moderndamage.control;
 
+import com.moderndamage.control.capability.armstamina.*;
+import com.moderndamage.control.capability.legstamina.ILegStamina;
+import com.moderndamage.control.capability.legstamina.LegStamina;
+import com.moderndamage.control.capability.legstamina.LegStaminaCapability;
+import com.moderndamage.control.capability.legstamina.LegStaminaProvider;
+import com.moderndamage.control.event.ArmStaminaEventHandler;
 import com.moderndamage.control.armor.ArmorDataLoader;
 import com.moderndamage.control.attribute.ModAttributes;
+import com.moderndamage.control.capability.armstamina.ArmStaminaCapability;
+import com.moderndamage.control.capability.armstamina.ArmStaminaProvider;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthProvider;
 import com.moderndamage.control.capability.parthealth.IPartHealth;
 import com.moderndamage.control.capability.parthealth.PartHealthCapability;
@@ -66,6 +74,9 @@ public class ModernDamage {
         MinecraftForge.EVENT_BUS.addListener(ModerndamageCommand::onRegisterCommands);
         MinecraftForge.EVENT_BUS.addListener(this::onEntityJoinLevel);
         MinecraftForge.EVENT_BUS.register(new HealEventHandler());
+        MinecraftForge.EVENT_BUS.register(new ArmStaminaEventHandler());
+        MinecraftForge.EVENT_BUS.register(new LegStaminaEventHandler());
+        MinecraftForge.EVENT_BUS.register(new ErgonomicsHandler());
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onEntityAttributeModification);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -77,11 +88,10 @@ public class ModernDamage {
 
     // ========== 集中注册所有药水效果的属性修饰符 ==========
     private void registerEffectModifiers() {
-        // 基础属性修饰符（不依赖其他模组）
         registerBasicModifiers();
-
-        // 条件性修饰符（依赖 taa / tacz_attributes）
         registerConditionalModifiers();
+        registerStaminaModifiers();
+        registerInjectorModifiers();
     }
 
     private void registerBasicModifiers() {
@@ -199,9 +209,7 @@ public class ModernDamage {
                         String.valueOf(UUID.fromString("a4a4a4a4-1111-2222-3333-aaaaaaaaaaaa")),
                         -0.05, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-        // ----- 兴奋剂效果（这些可能涉及耐久等，但基础属性在此添加）-----
-        // 咖啡因 (CaffeineBoostEffect) - 无基础属性，只做 stamina 联动（留在条件性）
-        // 莫达非尼 (ModafinilFocusEffect) - 无基础属性，全部依赖 TAA/TACZ
+        // ----- 兴奋剂效果（基础属性）-----
         // 肾上腺素 (EpinephrineBoostEffect)
         ModEffects.EPINEPHRINE_BOOST.get()
                 .addAttributeModifier(Attributes.MOVEMENT_SPEED,
@@ -227,7 +235,6 @@ public class ModernDamage {
     private void registerConditionalModifiers() {
         boolean hasTAA = ModList.get().isLoaded("taa");
         boolean hasTACZAttr = ModList.get().isLoaded("tacz_attributes");
-        boolean hasStamina = ModList.get().isLoaded("staminafortweakers");
 
         // ---- TAA 属性 ----
         if (hasTAA) {
@@ -458,90 +465,256 @@ public class ModernDamage {
                 ModEffects.MODAFINIL_FOCUS.get().addAttributeModifier(horizontalRecoil,
                         String.valueOf(UUID.fromString("c1c2c3d4-3333-4444-5555-cccccccccccc")), -0.2, AttributeModifier.Operation.ADDITION);
         }
+    }
 
-        if (hasStamina) {
-            Attribute maxStamina = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("staminafortweakers", "generic.max_stamina"));
-            Attribute recovery = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("staminafortweakers", "generic.stamina_recovery_rate"));
-
-            if (maxStamina != null) {
-                // 疲劳 (FatigueEffect)
-                ModEffects.FATIGUE.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("a4a4a4a4-2222-3333-4444-bbbbbbbbbbbb")),
-                        -0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 左腿骨折 (LeftLegFractureEffect)
-                ModEffects.LEFT_LEG_FRACTURE.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("f1f2f3f4-2222-3333-4444-bbbbbbbbbbbb")),
+    /**
+     * 新增：为内置耐力属性添加药水效果修饰符，替换 staminafortweakers 联动。
+     * 所有 UUID 均为临时生成，确保唯一性。
+     */
+    private void registerStaminaModifiers() {
+        // ----- 疲劳 (Fatigue) -----
+        ModEffects.FATIGUE.get()
+                .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("fatigue_max_arm".getBytes())),
+                        -0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("fatigue_max_leg".getBytes())),
+                        -0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("fatigue_regen_arm".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("fatigue_regen_leg".getBytes())),
                         -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 右腿骨折 (RightLegFractureEffect)
-                ModEffects.RIGHT_LEG_FRACTURE.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("f2f2f3f4-5555-6666-7777-cccccccccccc")),
+        // ----- 左腿骨折 (LeftLegFracture) -----
+        ModEffects.LEFT_LEG_FRACTURE.get()
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("left_leg_frac_max".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("left_leg_frac_regen".getBytes())),
                         -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 左腿创伤 (LeftLegTraumaEffect)
-                ModEffects.LEFT_LEG_TRAUMA.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("a1a2a3a4-2222-3333-4444-bbbbbbbbbbbb")),
+        // ----- 右腿骨折 (RightLegFracture) -----
+        ModEffects.RIGHT_LEG_FRACTURE.get()
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("right_leg_frac_max".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("right_leg_frac_regen".getBytes())),
                         -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 右腿创伤 (RightLegTraumaEffect)
-                ModEffects.RIGHT_LEG_TRAUMA.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("a2a2a3a4-5555-6666-7777-cccccccccccc")),
-                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        // ----- 左腿创伤 (LeftLegTrauma) -----
+        ModEffects.LEFT_LEG_TRAUMA.get()
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("left_leg_trauma_max".getBytes())),
+                        -0.3, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("left_leg_trauma_regen".getBytes())),
+                        -0.3, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 咖啡因 (CaffeineBoostEffect)
-                ModEffects.CAFFEINE_BOOST.get().addAttributeModifier(maxStamina,
-                        String.valueOf(UUID.fromString("b1b2c3d4-1111-2222-3333-aaaaaaaaaaaa")),
-                        0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
-            }
+        // ----- 右腿创伤 (RightLegTrauma) -----
+        ModEffects.RIGHT_LEG_TRAUMA.get()
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("right_leg_trauma_max".getBytes())),
+                        -0.3, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("right_leg_trauma_regen".getBytes())),
+                        -0.3, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-            if (recovery != null) {
-                // 疲劳 (FatigueEffect)
-                ModEffects.FATIGUE.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("a4a4a4a4-3333-4444-5555-cccccccccccc")),
-                        -0.35, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 左腿骨折 (LeftLegFractureEffect)
-                ModEffects.LEFT_LEG_FRACTURE.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("f1f2f3f4-3333-4444-5555-cccccccccccc")),
-                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 右腿骨折 (RightLegFractureEffect)
-                ModEffects.RIGHT_LEG_FRACTURE.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("f2f2f3f4-6666-7777-8888-dddddddddddd")),
-                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 左腿创伤 (LeftLegTraumaEffect)
-                ModEffects.LEFT_LEG_TRAUMA.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("a1a2a3a4-3333-4444-5555-cccccccccccc")),
-                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 右腿创伤 (RightLegTraumaEffect)
-                ModEffects.RIGHT_LEG_TRAUMA.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("a2a2a3a4-6666-7777-8888-dddddddddddd")),
-                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
-
-                // 咖啡因 (CaffeineBoostEffect)
-                ModEffects.CAFFEINE_BOOST.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("b1b2c3d4-2222-3333-4444-bbbbbbbbbbbb")),
+        // ----- 咖啡因 (CaffeineBoost) -----
+        ModEffects.CAFFEINE_BOOST.get()
+                .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("caffeine_max_arm".getBytes())),
+                        0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("caffeine_max_leg".getBytes())),
+                        0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("caffeine_regen_arm".getBytes())),
+                        0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("caffeine_regen_leg".getBytes())),
                         0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 肾上腺素 (EpinephrineBoostEffect)
-                ModEffects.EPINEPHRINE_BOOST.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("e1e2e3e4-cccc-dddd-eeee-ffffffffffff")),
+        // ----- 肾上腺素 (EpinephrineBoost) -----
+        ModEffects.EPINEPHRINE_BOOST.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("epi_regen_arm".getBytes())),
+                        0.5, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("epi_regen_leg".getBytes())),
                         0.5, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 肌酸 (CreatineBoostEffect)
-                ModEffects.CREATINE_BOOST.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("c1e2f3a4-1111-2222-3333-aaaaaaaaaaaa")),
+        // ----- 肌酸 (CreatineBoost) 侧重上肢 -----
+        ModEffects.CREATINE_BOOST.get()
+                .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("creatine_max_arm".getBytes())),
+                        0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("creatine_regen_arm".getBytes())),
                         0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
 
-                // 莫达非尼 (ModafinilFocusEffect)
-                ModEffects.MODAFINIL_FOCUS.get().addAttributeModifier(recovery,
-                        String.valueOf(UUID.fromString("c1c2c3d4-9999-aaaa-bbbb-cccccccccddd")),
+        // ----- 莫达非尼 (ModafinilFocus) -----
+        ModEffects.MODAFINIL_FOCUS.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("modafinil_regen_arm".getBytes())),
+                        0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("modafinil_regen_leg".getBytes())),
                         0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
-            }
+    }
+
+    // ========== 针剂药水效果属性修饰符 ==========
+    private void registerInjectorModifiers() {
+        // VG-1 稳定剂：耐力恢复 +20%
+        ModEffects.VG1_BOOST.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg1_arm_regen".getBytes())),
+                        0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg1_leg_regen".getBytes())),
+                        0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // VG-3 屏障：全身各部位 +5 天然护甲
+        ModEffects.VG3_BOOST.get()
+                .addAttributeModifier(ModAttributes.HEAD_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_head_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.CHEST_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_chest_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.STOMACH_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_stomach_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.ARM_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_arm_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.LEG_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_leg_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION);
+
+        // VG-6 哌甲酯：攻击力 +15%，攻击速度 +15%，最大手臂/腿部耐力 +20%
+        ModEffects.VG6_METHYLPHENIDATE.get()
+                .addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_attack_damage".getBytes())),
+                        0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.ATTACK_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_attack_speed".getBytes())),
+                        0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_max_arm".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_max_leg".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // C-1 化合物正面增益 (C1_BUFF)：攻击力 +20%，攻击速度 +20%，移动速度 +20%，全身 +10 天然护甲
+        ModEffects.C1_BUFF.get()
+                .addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_attack_damage".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.ATTACK_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_attack_speed".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.MOVEMENT_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_movement_speed".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.HEAD_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_head_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.CHEST_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_chest_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.STOMACH_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_stomach_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.ARM_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_arm_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.LEG_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_leg_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION);
+
+        // 如果有 TAA 属性，为 C1_BUFF 添加后坐力控制、开镜速度、换弹速度等
+        if (ModList.get().isLoaded("taa")) {
+            Attribute adsTime = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "ads_time"));
+            Attribute reloadSpeed = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "reload_speed"));
+            Attribute inaccuracyAim = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_aim"));
+            if (adsTime != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(adsTime,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_ads_time".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            if (reloadSpeed != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(reloadSpeed,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_reload_speed".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            if (inaccuracyAim != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(inaccuracyAim,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_inaccuracy".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
         }
+        if (ModList.get().isLoaded("tacz_attributes")) {
+            Attribute verticalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_vertical_recoil"));
+            Attribute horizontalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_horizontal_recoil"));
+            if (verticalRecoil != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(verticalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_vertical_recoil".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
+            if (horizontalRecoil != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(horizontalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_horizontal_recoil".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
+        }
+
+        // C-1 副作用：耐力消耗 +25%
+        ModEffects.C1_SIDE_EFFECT.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_arm_drain".getBytes())),
+                        0.25, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_leg_drain".getBytes())),
+                        0.25, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // PH-18 神经稳定剂：后坐力控制 +30%，非瞄准散步 -30%，耐力消耗 -20%
+        if (ModList.get().isLoaded("tacz_attributes")) {
+            Attribute verticalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_vertical_recoil"));
+            Attribute horizontalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_horizontal_recoil"));
+            if (verticalRecoil != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(verticalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_vertical_recoil".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (horizontalRecoil != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(horizontalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_horizontal_recoil".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+        }
+        if (ModList.get().isLoaded("taa")) {
+            Attribute inaccuracyAim = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_aim"));
+            Attribute inaccuracyMove = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_move"));
+            Attribute inaccuracyStand = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_stand"));
+            if (inaccuracyAim != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyAim,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_aim".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (inaccuracyMove != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyMove,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_move".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (inaccuracyStand != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyStand,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_stand".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+        }
+        // 耐力消耗 -20%
+        ModEffects.PH18_NEUROSTABIL.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_arm_drain".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_leg_drain".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -575,6 +748,13 @@ public class ModernDamage {
             event.add(type, ModAttributes.STOMACH_NATURAL_TOUGHNESS.get());
             event.add(type, ModAttributes.ARM_NATURAL_TOUGHNESS.get());
             event.add(type, ModAttributes.LEG_NATURAL_TOUGHNESS.get());
+            event.add(type, ModAttributes.MAX_ARM_STAMINA.get());
+            event.add(type, ModAttributes.ARM_STAMINA_REGEN.get());
+            event.add(type, ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get());
+            event.add(type, ModAttributes.MAX_LEG_STAMINA.get());
+            event.add(type, ModAttributes.LEG_STAMINA_REGEN.get());
+            event.add(type, ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get());
+            event.add(type, ModAttributes.ERGONOMICS.get());
         }
         LOGGER.info("添加天然护甲属性到所有实体");
     }
@@ -610,14 +790,29 @@ public class ModernDamage {
         @SubscribeEvent
         public void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
             ModClothConfig config = ModClothConfig.get();
-            if (config.damageModel != ModClothConfig.DamageModel.HARDCORE) return;
 
             if (event.getObject().level().isClientSide) return;
 
             if (event.getObject() instanceof Player player) {
-                event.addCapability(new ResourceLocation(ModernDamage.MODID, "part_health"), new PlayerPartHealthProvider(player));
-                ModernDamage.LOGGER.debug("附加玩家部位血量能力（服务端）");
-            } else if (config.creaturePartHealthEnabled && event.getObject() instanceof LivingEntity living && !(living instanceof Player)) {
+                // 硬核模式部位血量（仅在硬核模式下启用）
+                if (config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                    event.addCapability(new ResourceLocation(ModernDamage.MODID, "part_health"), new PlayerPartHealthProvider(player));
+                    ModernDamage.LOGGER.debug("附加玩家部位血量能力（服务端）");
+                }
+
+                // 手臂耐力（独立开关，不依赖硬核模式）
+                if (config.enableArmStamina) {
+                    event.addCapability(new ResourceLocation(ModernDamage.MODID, "arm_stamina"), new ArmStaminaProvider(player));
+                    ModernDamage.LOGGER.debug("附加玩家手臂耐力能力（服务端）");
+                }
+
+                // 腿部耐力（独立开关，不依赖硬核模式）
+                if (config.enableLegStamina) {
+                    event.addCapability(new ResourceLocation(ModernDamage.MODID, "leg_stamina"), new LegStaminaProvider(player));
+                    ModernDamage.LOGGER.debug("附加玩家腿部耐力能力（服务端）");
+                }
+
+            } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE && event.getObject() instanceof LivingEntity living && !(living instanceof Player)) {
                 event.addCapability(new ResourceLocation(ModernDamage.MODID, "creature_part_health"), new CreaturePartHealthProvider(living));
                 ModernDamage.LOGGER.debug("附加生物部位血量能力（服务端）");
             }
@@ -629,16 +824,39 @@ public class ModernDamage {
         Player player = event.player;
         if (player.level().isClientSide) return;
         player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(IPartHealth::tick);
+        player.getCapability(ArmStaminaCapability.ARM_STAMINA).ifPresent(IArmStamina::tick);
+        player.getCapability(LegStaminaCapability.LEG_STAMINA).ifPresent(ILegStamina::tick);
     }
 
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         Player player = event.getEntity();
         if (player.level().isClientSide) return;
-
+        player.getCapability(ArmStaminaCapability.ARM_STAMINA).ifPresent(IArmStamina::reset);
+        player.getCapability(LegStaminaCapability.LEG_STAMINA).ifPresent(ILegStamina::reset);
         player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> {
             cap.reset();
             ModernDamage.LOGGER.debug("Player {} respawned, part health reset and synced.", player.getName().getString());
+        });
+    }
+
+    @SubscribeEvent
+    public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+        Player player = event.getEntity();
+        if (player.level().isClientSide) return;
+
+        // 同步手臂耐力
+        player.getCapability(ArmStaminaCapability.ARM_STAMINA).ifPresent(stamina -> {
+            if (stamina instanceof ArmStamina armStamina) {
+                armStamina.sync();
+            }
+        });
+
+        // 同步腿部耐力
+        player.getCapability(LegStaminaCapability.LEG_STAMINA).ifPresent(stamina -> {
+            if (stamina instanceof LegStamina legStamina) {
+                legStamina.sync();
+            }
         });
     }
 }

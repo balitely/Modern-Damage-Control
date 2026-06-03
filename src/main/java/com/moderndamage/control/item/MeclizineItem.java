@@ -37,7 +37,7 @@ public class MeclizineItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
-            player.addEffect(new MobEffectInstance(ModEffects.DIZZINESS_RESISTANCE.get(), 600 * 20, 0));
+            player.addEffect(new MobEffectInstance(ModEffects.DIZZINESS_RESISTANCE.get(), 240 * 20, 0));
             level.playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 1.0f, 1.0f);
             if (!player.getAbilities().instabuild) {

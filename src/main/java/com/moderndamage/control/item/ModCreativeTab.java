@@ -50,9 +50,27 @@ public class ModCreativeTab {
                         output.accept(ModItems.NAR_RAPID_RESPONSE_KIT.get());
                         output.accept(ModItems.NAR_MFAK_KIT.get());
 
-                        output.accept(ModItems.EPINEPHRINE_AUTO_INJECTOR.get());
-                        output.accept(ModItems.MORPHINE_AUTO_INJECTOR.get());
-                        output.accept(ModItems.ATROPINE_AUTO_INJECTOR.get());
+                        output.accept(ModItems.LIFELINE_VG1_STABILIZER.get());
+                        output.accept(ModItems.LIFELINE_VG2_FAMEXIN.get());
+                        output.accept(ModItems.LIFELINE_VG3_BARRIER.get());
+                        output.accept(ModItems.LIFELINE_VG4_EPINEPHRINE.get());
+                        output.accept(ModItems.LIFELINE_VG5_KELADOR.get());
+                        output.accept(ModItems.LIFELINE_VG6_METHYLPHENIDATE.get());
+                        output.accept(ModItems.LIFELINE_VG8_MODAFINIL_X.get());
+
+                        output.accept(ModItems.LIFELINE_AG1_THROMBIN.get());
+                        output.accept(ModItems.LIFELINE_AG2_TRANEXAMIC_ACID.get());
+                        output.accept(ModItems.LIFELINE_AG3_MORPHINE.get());
+                        output.accept(ModItems.LIFELINE_AG4_CIPROFLOXACIN.get());
+
+                        output.accept(ModItems.LIFELINE_PH1_ATROPINE.get());
+                        output.accept(ModItems.LIFELINE_PH3_CLARITY.get());
+                        output.accept(ModItems.LIFELINE_PH5_NEWTYPE_HEMOGEN.get());
+                        output.accept(ModItems.LIFELINE_PH6_VITALIS.get());
+                        output.accept(ModItems.LIFELINE_PH11_C1_COMPOUND.get());
+                        output.accept(ModItems.LIFELINE_PH12_C1_EXTENDER.get());
+                        output.accept(ModItems.LIFELINE_PH16_XENODYNE.get());
+                        output.accept(ModItems.LIFELINE_PH18_NEUROSTABIL.get());
 
                     })
                     .build());

@@ -39,6 +39,19 @@ import java.util.Random;
 public class InjuryEventHandler {
     private static final Random RANDOM = new Random();
 
+    /**
+     * 判断伤害来源是否应该完全无视护甲（包括耐久消耗和减伤）。
+     */
+    private boolean isArmorIgnored(DamageSource source) {
+        String msgId = source.getMsgId();
+        return switch (msgId) {
+            case "inFire", "onFire", "lava", "hotFloor", "drown", "freeze",
+                 "fall", "stalagmite", "flyIntoWall", "magic", "indirectMagic",
+                 "sonic_boom", "wither", "starve", "outOfWorld" -> true;
+            default -> false;
+        };
+    }
+
     private boolean isFullBodyDamage(DamageSource source) {
         String msg = source.getMsgId();
         return switch (msg) {
@@ -136,6 +149,7 @@ public class InjuryEventHandler {
         ModClothConfig config = ModClothConfig.get();
         boolean isHardcore = config.damageModel == ModClothConfig.DamageModel.HARDCORE;
 
+        // ========== 子弹伤害（保留穿透计算） ==========
         if (directEntity instanceof EntityKineticBullet bullet) {
             ModDamagePart hitPart = ModDamagePart.CHEST;
             if (target instanceof Player player) {
@@ -195,107 +209,79 @@ public class InjuryEventHandler {
             return;
         }
 
-        ModDamagePart assignedPart = null;
-        boolean fullBody = false;
-        boolean legsAverage = false;
-        boolean randomLimbFlag = false;
-        boolean randomNonVitalFlag = false;
-        boolean explosionDistribution = false;
-        boolean lightningHeadChest = false;
-        boolean thornsArm = false;
-        boolean lowToHighLegOrStomach = false;
-        float explosionChestRatio = 0.5f;
-        float explosionLegsRatio = 0.3f;
-        float explosionOtherRatio = 0.2f;
-
-        String msgId = source.getMsgId();
-
-        if (isFullBodyDamage(source)) {
-            fullBody = true;
-        } else if (msgId.equals("hotFloor") || msgId.equals("fall") || msgId.equals("stalagmite")) {
-            legsAverage = true;
-        } else if (msgId.equals("inWall") || msgId.equals("flyIntoWall")) {
-            assignedPart = ModDamagePart.HEAD;
-        } else if (msgId.equals("cactus")) {
-            randomLimbFlag = true;
-        } else if (isExplosionDamage(source)) {
-            explosionDistribution = true;
-        } else if (msgId.equals("fireworks") || msgId.equals("sting")) {
-            randomNonVitalFlag = true;
-        } else if (msgId.equals("lightningBolt")) {
-            lightningHeadChest = true;
-        } else if (msgId.equals("indirectMagic")) {
-            assignedPart = ModDamagePart.CHEST;
-        } else if (msgId.equals("thorns")) {
-            thornsArm = true;
-        } else if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
-            assignedPart = ModDamagePart.CHEST;
-        } else if (msgId.equals("mobAttack") || msgId.equals("playerAttack")) {
-            if (isLowToHigh(attacker, target)) {
-                lowToHighLegOrStomach = true;
-            } else {
-                assignedPart = ModDamagePart.CHEST;
+        // ========== 非子弹伤害 ==========
+        boolean ignoreArmor = isArmorIgnored(source);
+        float finalDamage;
+        if (ignoreArmor) {
+            finalDamage = originalDamage;
+            if (config.debugMode && attacker instanceof Player attackerPlayer) {
+                ModernDamage.LOGGER.info("[ModernDamage] {} damaged {} with armor-ignoring source {}: {} -> {}",
+                        attackerPlayer.getName().getString(), target.getName().getString(), source.getMsgId(),
+                        originalDamage, finalDamage);
             }
         } else {
-            assignedPart = ModDamagePart.CHEST;
-        }
-
-        ModDamagePart primaryPart = (assignedPart != null) ? assignedPart : ModDamagePart.CHEST;
-        float penetration = 0f;
-        ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, primaryPart, originalDamage, penetration);
-        float finalDamage = result.finalDamage;
-
-        if (config.debugMode && attacker instanceof Player attackerPlayer) {
-            String distributionDesc = fullBody ? "FullBody" : (legsAverage ? "LegsAvg" : (assignedPart != null ? assignedPart.name() : "Unknown"));
-            String msg = String.format("[ModernDamage] %s damaged %s (%s): %.1f -> %.1f (%.0f%% reduction, distribution: %s)",
-                    attackerPlayer.getName().getString(), target.getName().getString(), msgId,
-                    originalDamage, finalDamage, (1 - finalDamage/originalDamage)*100, distributionDesc);
-            attackerPlayer.sendSystemMessage(Component.literal(msg));
-            ModernDamage.LOGGER.info(msg);
+            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, ModDamagePart.CHEST, originalDamage, 0f);
+            finalDamage = result.finalDamage;
+            if (config.debugMode && attacker instanceof Player attackerPlayer) {
+                ModernDamage.LOGGER.info("[ModernDamage] {} damaged {} ({}): {} -> {} (%.0f%% reduction, %s)",
+                        attackerPlayer.getName().getString(), target.getName().getString(), source.getMsgId(),
+                        originalDamage, finalDamage, (1 - finalDamage/originalDamage)*100,
+                        result.penetrated ? "PENETRATED" : (result.partial ? "PARTIAL" : "BLUNT"));
+            }
         }
 
         event.setCanceled(true);
-        applyPotionEffects(target, primaryPart, finalDamage, source);
+        applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
 
-        if (fullBody) {
+        // 根据伤害类型分配部位
+        if (isFullBodyDamage(source)) {
             applyFullBodyDamage(target, finalDamage, isHardcore, config);
-        } else if (legsAverage) {
+        } else if (source.getMsgId().equals("hotFloor") || source.getMsgId().equals("fall") || source.getMsgId().equals("stalagmite")) {
             applyLegsDamage(target, finalDamage, isHardcore, config);
-        } else if (randomLimbFlag) {
+        } else if (source.getMsgId().equals("inWall") || source.getMsgId().equals("flyIntoWall")) {
+            applyPartDamage(target, ModDamagePart.HEAD, finalDamage, isHardcore, config);
+        } else if (source.getMsgId().equals("cactus")) {
             applyPartDamage(target, randomLimb(), finalDamage, isHardcore, config);
-        } else if (randomNonVitalFlag) {
-            applyPartDamage(target, randomNonVital(), finalDamage, isHardcore, config);
-        } else if (explosionDistribution) {
-            float chestDamage = finalDamage * explosionChestRatio;
-            float legsTotal = finalDamage * explosionLegsRatio;
+        } else if (isExplosionDamage(source)) {
+            float chestDamage = finalDamage * 0.5f;
+            float legsTotal = finalDamage * 0.3f;
             float leftLegDamage = legsTotal / 2;
             float rightLegDamage = legsTotal / 2;
-            float otherTotal = finalDamage * explosionOtherRatio;
+            float otherTotal = finalDamage * 0.2f;
             applyPartDamage(target, ModDamagePart.CHEST, chestDamage, isHardcore, config);
             applyPartDamage(target, ModDamagePart.LEFT_LEG, leftLegDamage, isHardcore, config);
             applyPartDamage(target, ModDamagePart.RIGHT_LEG, rightLegDamage, isHardcore, config);
             if (otherTotal > 0) {
                 applyPartDamage(target, randomNonVital(), otherTotal, isHardcore, config);
             }
-        } else if (lightningHeadChest) {
+        } else if (source.getMsgId().equals("fireworks") || source.getMsgId().equals("sting")) {
+            applyPartDamage(target, randomNonVital(), finalDamage, isHardcore, config);
+        } else if (source.getMsgId().equals("lightningBolt")) {
             float half = finalDamage / 2;
             applyPartDamage(target, ModDamagePart.HEAD, half, isHardcore, config);
             applyPartDamage(target, ModDamagePart.CHEST, half, isHardcore, config);
-        } else if (thornsArm) {
+        } else if (source.getMsgId().equals("indirectMagic")) {
+            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
+        } else if (source.getMsgId().equals("thorns")) {
             ModDamagePart armPart = ModDamagePart.RIGHT_ARM;
             if (target instanceof Player player && player.getMainHandItem().isEmpty()) {
                 armPart = RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
             }
             applyPartDamage(target, armPart, finalDamage, isHardcore, config);
-        } else if (lowToHighLegOrStomach) {
-            if (RANDOM.nextBoolean()) {
-                applyLegsDamage(target, finalDamage, isHardcore, config);
+        } else if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
+            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
+        } else if (source.getMsgId().equals("mobAttack") || source.getMsgId().equals("playerAttack")) {
+            if (isLowToHigh(attacker, target)) {
+                if (RANDOM.nextBoolean()) {
+                    applyLegsDamage(target, finalDamage, isHardcore, config);
+                } else {
+                    applyPartDamage(target, ModDamagePart.STOMACH, finalDamage, isHardcore, config);
+                }
             } else {
-                applyPartDamage(target, ModDamagePart.STOMACH, finalDamage, isHardcore, config);
+                applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
             }
         } else {
-            if (assignedPart == null) assignedPart = ModDamagePart.CHEST;
-            applyPartDamage(target, assignedPart, finalDamage, isHardcore, config);
+            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
         }
 
         if (!isHardcore && target.getHealth() <= 0 && target instanceof ServerPlayer serverPlayer) {

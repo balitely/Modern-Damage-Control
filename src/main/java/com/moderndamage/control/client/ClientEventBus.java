@@ -1,6 +1,8 @@
 package com.moderndamage.control.client;
 
 import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.attribute.ModAttributes;
+import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.effect.ModEffects;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
@@ -34,13 +36,29 @@ public class ClientEventBus {
 
         if (shouldPrevent) {
             event.getInput().jumping = false;
-
             if (event.getInput().forwardImpulse > 0.7f) {
                 event.getInput().forwardImpulse = 0.7f;
             }
-
             if (player.isSprinting()) {
                 player.setSprinting(false);
+            }
+        }
+
+        // ========== 新增：腿部极低耐力禁止跳跃/奔跑 ==========
+        ModClothConfig config = ModClothConfig.get();
+        if (config.enableLegStamina && (config.disableJumpWhenLegStaminaCritical || config.disableSprintWhenLegStaminaCritical)) {
+            float legStamina = ClientLegStaminaCache.getStamina(player.getUUID());
+            float maxLegStamina = (float) player.getAttributeValue(ModAttributes.MAX_LEG_STAMINA.get());
+            if (maxLegStamina > 0) {
+                float legRatio = legStamina / maxLegStamina;
+                if (legRatio < config.legCriticallyLowStaminaThreshold) {
+                    if (config.disableJumpWhenLegStaminaCritical) {
+                        event.getInput().jumping = false;
+                    }
+                    if (config.disableSprintWhenLegStaminaCritical) {
+                        player.setSprinting(false);
+                    }
+                }
             }
         }
     }

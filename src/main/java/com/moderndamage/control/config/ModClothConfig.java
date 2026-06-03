@@ -55,9 +55,31 @@ public class ModClothConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public int splintedHealTimeSeconds = 300;
 
-    // ========== 输血效果治疗量缩放 ==========
+    // ========== 药水效果相关 ==========
     @ConfigEntry.Gui.Tooltip
     public float ivFluidHealMultiplier = 1.0f;
+
+    // VG-5
+    public float vg5RegenPerSecond = 1.0f;
+
+    // PH-5
+    public float ph5RegenPerSecond = 0.5f;
+
+    // PH-6
+    public float ph6RegenPerSecond = 0.3f;
+
+    // PH-11
+    public float ph11RegenPerSecond = 2.0f;
+    public int ph11SideEffectDamage = 10;
+    public int ph11SideEffectInterval = 100; // ticks, 100 = 5 seconds
+
+    // PH-16
+    public float ph16RegenPerSecond = 1.0f;
+    public int ph16HealInterval = 600; // ticks, 600 = 30 seconds
+
+    // VG-2 Famexin
+    public int famexinFoodRestoreInterval = 200;
+    public int famexinFoodRestoreAmount = 1;
 
     // ========== 钝伤与穿透相关配置 ==========
     @ConfigEntry.Gui.Tooltip
@@ -146,6 +168,140 @@ public class ModClothConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public float creatureRightLegRatio = 0.10f;
+
+    // ========== 耐力条 HUD 配置 ==========
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableStaminaHUD = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public int staminaHUDXOffset = 0;
+
+    @ConfigEntry.Gui.Tooltip
+    public int staminaHUDYOffset = -5;
+
+    @ConfigEntry.Gui.Tooltip
+    public double staminaHUDScale = 1.0;
+
+    // ========== 手臂耐力系统配置 ==========
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableArmStamina = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableDynamicAdsCost = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableWeightCost = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public float referenceWeight = 2.0f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float weightFactorPerKg = 0.05f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float meleeAttackCost = 5f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float bowDrawCostPerTick = 0.5f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float adsCostPerTick = 0.3f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float miningCostPerBlock = 30.0f;
+
+    @ConfigEntry.Gui.Tooltip
+    public int staminaRegenDelayTicks = 10;
+
+    @ConfigEntry.Gui.Tooltip
+    public float lowStaminaThreshold = 0.3f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float criticallyLowStaminaThreshold = 0.1f;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableStaminaSway = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public double lowStaminaSwayAmplitude = 0.05;
+
+    @ConfigEntry.Gui.Tooltip
+    public double criticallyLowStaminaSwayAmplitude = 0.1;
+
+    @ConfigEntry.Gui.Tooltip
+    public double staminaSwaySpeed = 0.3;
+
+    @ConfigEntry.Gui.Tooltip
+    public double staminaSwayMultiplier = 0.5;
+
+    public static class PenaltyModifier {
+        public String attribute;
+        public double amount;
+        public String operation;
+    }
+
+    public static class LowStaminaPenalties {
+        public List<PenaltyModifier> modifiers = new ArrayList<>();
+    }
+
+    public static class CriticallyLowStaminaPenalties {
+        public String effect;
+        public int effectDuration = 2400; // ticks
+        public int effectAmplifier = 0;
+        public List<PenaltyModifier> modifiers = new ArrayList<>();
+    }
+
+    @ConfigEntry.Gui.CollapsibleObject
+    public LowStaminaPenalties lowStaminaPenalties = new LowStaminaPenalties();
+
+    @ConfigEntry.Gui.CollapsibleObject
+    public CriticallyLowStaminaPenalties criticallyLowStaminaPenalties = new CriticallyLowStaminaPenalties();
+
+    // ========== 腿部耐力系统配置 ==========
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableLegStamina = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legSprintingCostPerTick = 0.5f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legSwimmingCostPerTick = 0.3f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legJumpCost = 10f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legCrouchEnterCost = 2f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legCrouchExitCost = 1f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legCrawlEnterCost = 3f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legCrawlExitCost = 1f;
+
+    @ConfigEntry.Gui.Tooltip
+    public int legStaminaRegenDelayTicks = 20;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legLowStaminaThreshold = 0.3f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float legCriticallyLowStaminaThreshold = 0.1f;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean disableJumpWhenLegStaminaCritical = true;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean disableSprintWhenLegStaminaCritical = true;
+
+    @ConfigEntry.Gui.CollapsibleObject
+    public LowStaminaPenalties legLowStaminaPenalties = new LowStaminaPenalties();
+
+    @ConfigEntry.Gui.CollapsibleObject
+    public CriticallyLowStaminaPenalties legCriticallyLowStaminaPenalties = new CriticallyLowStaminaPenalties();
 
     // ========== 玩家部位血量比例 ==========
     @ConfigEntry.Gui.CollapsibleObject
@@ -337,6 +493,58 @@ public class ModClothConfig implements ConfigData {
         zombieRatios.leftLeg = 0.10f;
         zombieRatios.rightLeg = 0.05f;
         entityPartRatios.put("minecraft:zombie", zombieRatios);
+
+        lowStaminaPenalties.modifiers.add(new PenaltyModifier());
+        lowStaminaPenalties.modifiers.get(0).attribute = "minecraft:generic.attack_speed";
+        lowStaminaPenalties.modifiers.get(0).amount = -0.2;
+        lowStaminaPenalties.modifiers.get(0).operation = "multiply_total";
+
+        lowStaminaPenalties.modifiers.clear();
+        PenaltyModifier reloadPenalty = new PenaltyModifier();
+        reloadPenalty.attribute = "taa:reload_speed";
+        reloadPenalty.amount = 0.5;
+        reloadPenalty.operation = "multiply_total";
+        lowStaminaPenalties.modifiers.add(reloadPenalty);
+
+        PenaltyModifier recoilPenalty = new PenaltyModifier();
+        recoilPenalty.attribute = "tacz_attributes:ads_vertical_recoil";
+        recoilPenalty.amount = 0.3;
+        recoilPenalty.operation = "addition";
+        lowStaminaPenalties.modifiers.add(recoilPenalty);
+
+        criticallyLowStaminaPenalties.effect = "moderndamage:fatigue";
+        criticallyLowStaminaPenalties.effectDuration = 2400;
+        criticallyLowStaminaPenalties.effectAmplifier = 0;
+        criticallyLowStaminaPenalties.modifiers.clear();
+
+        PenaltyModifier speedPenalty = new PenaltyModifier();
+        speedPenalty.attribute = "minecraft:generic.movement_speed";
+        speedPenalty.amount = -0.3;
+        speedPenalty.operation = "multiply_total";
+        criticallyLowStaminaPenalties.modifiers.add(speedPenalty);
+
+        PenaltyModifier damagePenalty = new PenaltyModifier();
+        damagePenalty.attribute = "minecraft:generic.attack_damage";
+        damagePenalty.amount = -0.5;
+        damagePenalty.operation = "multiply_total";
+        criticallyLowStaminaPenalties.modifiers.add(damagePenalty);
+
+        legLowStaminaPenalties.modifiers.clear();
+        PenaltyModifier legMoveSpeed = new PenaltyModifier();
+        legMoveSpeed.attribute = "minecraft:generic.movement_speed";
+        legMoveSpeed.amount = -0.2;
+        legMoveSpeed.operation = "multiply_total";
+        legLowStaminaPenalties.modifiers.add(legMoveSpeed);
+
+        legCriticallyLowStaminaPenalties.effect = "moderndamage:fatigue";
+        legCriticallyLowStaminaPenalties.effectDuration = 2400;
+        legCriticallyLowStaminaPenalties.effectAmplifier = 0;
+        legCriticallyLowStaminaPenalties.modifiers.clear();
+        PenaltyModifier legDamage = new PenaltyModifier();
+        legDamage.attribute = "minecraft:generic.attack_damage";
+        legDamage.amount = -0.3;
+        legDamage.operation = "multiply_total";
+        legCriticallyLowStaminaPenalties.modifiers.add(legDamage);
     }
 
     public static float getPlayerPartRatio(ModDamagePart part) {
