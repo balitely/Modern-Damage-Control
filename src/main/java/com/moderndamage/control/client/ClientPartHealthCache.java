@@ -4,7 +4,7 @@ import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.capability.parthealth.IPartHealth;
 import com.moderndamage.control.config.ModClothConfig;
-import net.minecraft.client.Minecraft;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -56,8 +56,8 @@ public class ClientPartHealthCache implements IPartHealth {
 
         if (changed) {
             cache.flashRemainingTicks = 2;
-            if (Minecraft.getInstance().player != null) {
-                cache.lastFlashTick = Minecraft.getInstance().player.tickCount;
+            if (net.minecraft.client.Minecraft.getInstance().player != null) {
+                cache.lastFlashTick = net.minecraft.client.Minecraft.getInstance().player.tickCount;
             }
         }
     }
@@ -100,6 +100,11 @@ public class ClientPartHealthCache implements IPartHealth {
     @Override
     public boolean isPartDestroyed(ModDamagePart part) {
         return getHealth(part) <= 0;
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
+        throw new UnsupportedOperationException("Client-side cache does not support damagePart with source");
     }
 
     @Override

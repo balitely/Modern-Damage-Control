@@ -43,9 +43,9 @@ public class BodypartHitbox {
     }
 
     private static final AABB HEAD_BOX = new AABB(-0.2, 1.5, -0.2, 0.2, 1.8, 0.2);
-    private static final AABB BODY_BOX = new AABB(-0.2, 0.7, -0.15, 0.2, 1.5, 0.15);
-    private static final AABB LEFT_ARM_BOX = new AABB(0.2, 0.7, -0.15, 0.4, 1.5, 0.15);
-    private static final AABB RIGHT_ARM_BOX = new AABB(-0.4, 0.7, -0.15, -0.2, 1.5, 0.15);
+    private static final AABB BODY_BOX = new AABB(-0.3, 0.7, -0.15, 0.3, 1.5, 0.15);
+    private static final AABB LEFT_ARM_BOX = new AABB(0.3, 0.7, -0.15, 0.4, 1.5, 0.15);
+    private static final AABB RIGHT_ARM_BOX = new AABB(-0.4, 0.7, -0.15, -0.3, 1.5, 0.15);
     private static final AABB LEFT_LEG_BOX = new AABB(0.0, 0.15, -0.15, 0.2, 0.7, 0.15);
     private static final AABB RIGHT_LEG_BOX = new AABB(-0.2, 0.15, -0.15, 0.0, 0.7, 0.15);
     private static final AABB LEFT_FOOT_BOX = new AABB(0.0, 0.0, -0.2, 0.2, 0.15, 0.2);

@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -57,6 +58,20 @@ public class ArmorDataLoader {
                     }
                 }
 
+                if (dataObj.has("coverage_sub")) {
+                    JsonObject subCoverage = dataObj.getAsJsonObject("coverage_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subCoverage.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name: {} in armor config for {}", subKey, itemId);
+                            continue;
+                        }
+                        int level = subEntry.getValue().getAsInt();
+                        armorData.setSubProtection(subPart, level);
+                    }
+                }
+
                 if (dataObj.has("toughness")) {
                     JsonObject toughnessObj = dataObj.getAsJsonObject("toughness");
                     for (Map.Entry<String, JsonElement> toughEntry : toughnessObj.entrySet()) {
@@ -68,6 +83,20 @@ public class ArmorDataLoader {
                         } catch (IllegalArgumentException e) {
                             ModernDamage.LOGGER.warn("Invalid part name for toughness: {} in {}", partName, itemId);
                         }
+                    }
+                }
+
+                if (dataObj.has("toughness_sub")) {
+                    JsonObject subToughness = dataObj.getAsJsonObject("toughness_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subToughness.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name for toughness: {} in {}", subKey, itemId);
+                            continue;
+                        }
+                        int value = subEntry.getValue().getAsInt();
+                        armorData.setSubToughness(subPart, value);
                     }
                 }
 
@@ -100,6 +129,20 @@ public class ArmorDataLoader {
                         } catch (IllegalArgumentException e) {
                             ModernDamage.LOGGER.warn("Invalid part name for ricochet_chance: {} in {}", partName, itemId);
                         }
+                    }
+                }
+
+                if (dataObj.has("ricochet_sub")) {
+                    JsonObject subRc = dataObj.getAsJsonObject("ricochet_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subRc.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name for ricochet: {} in {}", subKey, itemId);
+                            continue;
+                        }
+                        float chance = subEntry.getValue().getAsFloat();
+                        armorData.setSubRicochetChance(subPart, chance);
                     }
                 }
 

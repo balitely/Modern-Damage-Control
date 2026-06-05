@@ -1,6 +1,7 @@
 package com.moderndamage.control.armor;
 
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +12,10 @@ public class ArmorData {
     private final Map<ModDamagePart, Float> materialFactor = new HashMap<>();
     private final Map<ModDamagePart, Float> ricochetChance = new HashMap<>();
     private int durability;
+
+    private final Map<ModDamageSubPart, Integer> subCoverage = new HashMap<>();
+    private final Map<ModDamageSubPart, Integer> subToughness = new HashMap<>();
+    private final Map<ModDamageSubPart, Float> subRicochetChance = new HashMap<>();
 
     public ArmorData() {}
 
@@ -62,5 +67,39 @@ public class ArmorData {
     }
     public void setDurability(int durability) {
         this.durability = durability;
+    }
+
+    public void setSubProtection(ModDamageSubPart part, int level) {
+        subCoverage.put(part, level);
+    }
+    public int getSubProtectionLevel(ModDamageSubPart part) {
+        return subCoverage.getOrDefault(part, 0);
+    }
+    public boolean protectsSub(ModDamageSubPart part) {
+        return subCoverage.containsKey(part);
+    }
+
+    public void setSubToughness(ModDamageSubPart part, int value) {
+        subToughness.put(part, value);
+    }
+    public int getSubToughness(ModDamageSubPart part) {
+        return subToughness.getOrDefault(part, 0);
+    }
+
+    public void setSubRicochetChance(ModDamageSubPart part, float chance) {
+        subRicochetChance.put(part, Math.min(1.0f, Math.max(0.0f, chance)));
+    }
+    public float getSubRicochetChance(ModDamageSubPart part) {
+        return subRicochetChance.getOrDefault(part, 0.0f);
+    }
+
+    public int getEffectiveToughness(ModDamageSubPart subPart, ModDamagePart parent) {
+        int subTough = getSubToughness(subPart);
+        return subTough > 0 ? subTough : getBaseToughness(parent);
+    }
+
+    public float getEffectiveRicochetChance(ModDamageSubPart subPart, ModDamagePart parent) {
+        float subChance = getSubRicochetChance(subPart);
+        return subChance > 0 ? subChance : getRicochetChance(parent);
     }
 }

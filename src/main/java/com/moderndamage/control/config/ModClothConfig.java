@@ -27,6 +27,9 @@ public class ModClothConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip
     public DamageModel damageModel = DamageModel.SOFT;
 
+    @ConfigEntry.Gui.Tooltip
+    public boolean enablePreciseHitbox = true;
+
     // ========== 出血系统配置 ==========
     @ConfigEntry.Gui.Tooltip
     public int minorBleedingIntervalTicks = 100;

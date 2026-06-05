@@ -9,6 +9,7 @@ import com.moderndamage.control.network.Networking;
 import com.moderndamage.control.network.SyncPartHealthPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 
@@ -19,6 +20,7 @@ public class PlayerPartHealth implements IPartHealth {
     private final Map<ModDamagePart, Float> health = new EnumMap<>(ModDamagePart.class);
     private final Map<ModDamagePart, Boolean> destroyed = new EnumMap<>(ModDamagePart.class);
     private boolean dead = false;
+    private boolean hasDied = false;
     private boolean initialized = false;
     private int lastDamageTick = 0;
     private int lastSyncTick = 0;
@@ -77,6 +79,7 @@ public class PlayerPartHealth implements IPartHealth {
     public void reset() {
         if (player.getAttributes() == null) return;
         dead = false;
+        hasDied = false;
         for (ModDamagePart part : ModDamagePart.values()) {
             float max = getMaxHealthRaw(part);
             health.put(part, max);
@@ -86,6 +89,7 @@ public class PlayerPartHealth implements IPartHealth {
         lastDamageTick = 0;
         updateVanillaHealth();
         syncToClient(true);
+        ModernDamage.LOGGER.debug("PlayerPartHealth reset for {}", player.getName().getString());
     }
 
     private void updateVanillaHealth() {
@@ -133,8 +137,19 @@ public class PlayerPartHealth implements IPartHealth {
 
     @Override
     public boolean damagePart(ModDamagePart part, float amount) {
+        return damagePart(part, amount, player.damageSources().magic());
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
-        if (dead || amount <= 0) return false;
+        if (dead || hasDied || player.isDeadOrDying()) {
+            ModernDamage.LOGGER.warn("damagePart ignored, already dead/hasDied for {} part={}", player.getName().getString(), part);
+            return false;
+        }
+        if (amount <= 0) return false;
+
+        ModernDamage.LOGGER.info("damagePart called for {} part={} amount={} source={}", player.getName().getString(), part, amount, source.getMsgId());
 
         lastDamageTick = player.tickCount;
         float current = getHealth(part);
@@ -147,17 +162,23 @@ public class PlayerPartHealth implements IPartHealth {
             destroyed.put(part, true);
             float overflow = -newHealth;
             if (overflow > 0) {
-                distributeOverflowDamage(overflow);
+                distributeOverflowDamage(overflow, source);
             }
         } else {
             health.put(part, newHealth);
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            player.setHealth(0);
-            syncToClient();
-            return true;
+            if (!dead && !hasDied && !player.isDeadOrDying()) {
+                dead = true;
+                hasDied = true;
+                player.setHealth(0);
+                ModernDamage.LOGGER.info("Calling player.die for {} with source {}", player.getName().getString(), source.getMsgId());
+                return true;
+            } else {
+                ModernDamage.LOGGER.warn("Death already processed for {}, skipping duplicate die call", player.getName().getString());
+                return true;
+            }
         }
 
         updateVanillaHealth();
@@ -165,8 +186,10 @@ public class PlayerPartHealth implements IPartHealth {
         return false;
     }
 
-    private void distributeOverflowDamage(float overflow) {
-        if (overflow <= 0) return;
+    private void distributeOverflowDamage(float overflow, DamageSource source) {
+        if (dead || hasDied || overflow <= 0) return;
+
+        ModernDamage.LOGGER.debug("distributeOverflowDamage for {} overflow={}", player.getName().getString(), overflow);
 
         Map<ModDamagePart, Float> currentHealth = new EnumMap<>(ModDamagePart.class);
         Set<ModDamagePart> destroyedParts = new HashSet<>();
@@ -176,7 +199,7 @@ public class PlayerPartHealth implements IPartHealth {
         }
 
         float remaining = overflow;
-        while (remaining > 0.001f) {
+        while (remaining > 0.001f && !dead && !hasDied) {
             List<ModDamagePart> aliveParts = new ArrayList<>();
             float totalMaxHealth = 0f;
             boolean onlyHeadAlive = true;
@@ -265,7 +288,7 @@ public class PlayerPartHealth implements IPartHealth {
     @Override
     public boolean damageAll(float amount) {
         if (!tryInit()) return false;
-        if (dead || amount <= 0) return false;
+        if (dead || hasDied || amount <= 0) return false;
 
         lastDamageTick = player.tickCount;
 
@@ -333,10 +356,12 @@ public class PlayerPartHealth implements IPartHealth {
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            player.setHealth(0);
-            syncToClient();
-            return true;
+            if (!dead && !hasDied && !player.isDeadOrDying()) {
+                dead = true;
+                hasDied = true;
+                player.setHealth(0);
+                return true;
+            }
         }
 
         updateVanillaHealth();
@@ -493,6 +518,7 @@ public class PlayerPartHealth implements IPartHealth {
         }
         initialized = true;
         dead = false;
+        hasDied = false;
         updateVanillaHealth();
     }
 }

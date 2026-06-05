@@ -9,14 +9,20 @@ import com.moderndamage.control.config.ModClothConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 
 public class EntityHitboxHelper {
 
     public static ModDamagePart getHitPart(LivingEntity entity, Vec3 localPos) {
+        if (entity instanceof Player) {
+            return getHitPartForPlayer(localPos);
+        }
+
         EntityHitboxConfig cfg = EntityHitboxConfigLoader.getConfig(entity.getType());
         float y = (float) localPos.y;
         float absX = (float) Math.abs(localPos.x);
+
         if (y >= cfg.headHeight[0] && y <= cfg.headHeight[1]) {
             return ModDamagePart.HEAD;
         }
@@ -37,6 +43,50 @@ public class EntityHitboxHelper {
         if (y < cfg.bodyHeight[0] && absX >= cfg.legXRange[0] && absX <= cfg.legXRange[1]) {
             return localPos.x > 0 ? ModDamagePart.RIGHT_LEG : ModDamagePart.LEFT_LEG;
         }
+        return ModDamagePart.CHEST;
+    }
+
+    private static ModDamagePart getHitPartForPlayer(Vec3 localPos) {
+        float y = (float) localPos.y;
+        float absX = (float) Math.abs(localPos.x);
+
+        // 1. 头部
+        if (y >= 1.55625f && y <= 1.8f) {
+            return ModDamagePart.HEAD;
+        }
+
+        // 2. 扩展手臂命中箱（优先于躯干，且缩减宽度以避免与胸胃重叠）
+        if (y >= 0.45f && y <= 1.35f) {
+            // 右臂 (X 正方向) 缩减起始值至 0.5，避免覆盖胸部/胃部
+            if (localPos.x >= 0.5f && localPos.x <= 0.9f && localPos.z >= -0.35f && localPos.z <= 0.35f) {
+                return ModDamagePart.RIGHT_ARM;
+            }
+            // 左臂 (X 负方向)
+            if (localPos.x >= -0.9f && localPos.x <= -0.5f && localPos.z >= -0.35f && localPos.z <= 0.35f) {
+                return ModDamagePart.LEFT_ARM;
+            }
+        }
+
+        // 3. 胸部 (Y 不变，X 宽度扩展 2 像素：原 ±0.25 → ±0.3625)
+        if (y >= 1.00625f && y <= 1.55625f) {
+            if (absX <= 0.3625f) {  // 2 像素 ≈ 0.1125，0.25 + 0.1125 = 0.3625
+                return ModDamagePart.CHEST;
+            }
+        }
+
+        // 4. 胃部 (Y 不变，X 宽度同样扩展)
+        if (y >= 0.50625f && y <= 1.00625f) {
+            if (absX <= 0.3625f) {
+                return ModDamagePart.STOMACH;
+            }
+        }
+
+        // 5. 腿部 (Y 不变，X 范围保持原样)
+        if (y >= 0f && y <= 0.50625f && absX >= 0.1f && absX <= 0.35f) {
+            return localPos.x > 0 ? ModDamagePart.RIGHT_LEG : ModDamagePart.LEFT_LEG;
+        }
+
+        // 6. 默认
         return ModDamagePart.CHEST;
     }
 

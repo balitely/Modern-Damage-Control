@@ -239,131 +239,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e3c968b-a7bb-434d-8027-270244843631" name="更改" comment="ver 0.0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStaminaCapability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStaminaProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/IArmStamina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/ILegStamina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStamina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStaminaCapability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStaminaProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ArmStaminaCameraHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ArmStaminaOverlay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientArmStaminaCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientLegStaminaCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/StaminaSwayModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/C1BuffEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/C1SideEffectEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/FamexinEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH11RegenerationEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH16HealEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH16RegenerationEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH18NeurostabilEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH5RegenerationEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/PH6RegenerationEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/VG1BoostEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/VG3BoostEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/VG5RegenerationEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/VG6MethylphenidateEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ArmStaminaEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ErgonomicsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/LegStaminaEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineAG1ThrombinItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineAG2TranexamicAcidItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineAG3MorphineItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineAG4CiprofloxacinItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineInjectorItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH11C1CompoundItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH12C1ExtenderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH16XenodyneItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH18NeurostabilItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH1AtropineItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH3ClarityItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH5NewtypeHemogenItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelinePH6VitalisItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG1StabilizerItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG2FamexinItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG3BarrierItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG4EpinephrineItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG5KeladorItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG6MethylphenidateItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/LifelineVG8ModafinilXItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/network/SyncArmStaminaPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/network/SyncLegStaminaPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ag1_thrombin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ag2_tranexamic_acid.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ag3_morphine.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ag4_ciprofloxacin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph11_c1_compound.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph12_c1_extender.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph16_xenodyne.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph18_neurostabil.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph1_atropine.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph3_clarity.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph5_newtype_hemogen.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_ph6_vitalis.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg2_famexin.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg3_barrier.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg4_epinephrine.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg5_kelador.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg6_methylphenidate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg8_modafinil_x.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/gui/armstamina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/gui/legstamina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ag1_thrombin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ag2_tranexamic_acid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ag3_morphine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ag4_ciprofloxacin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph11_c1_compound.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph12_c1_extender.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph16_xenodyne.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph18_neurostabil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph1_atropine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph3_clarity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph5_newtype_hemogen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_ph6_vitalis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg1_stabilizer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg2_famexin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg3_barrier.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg4_epinephrine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg5_kelador.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg6_methylphenidate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/item/lifeline_vg8_modafinil_x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/c1_buff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/c1_side_effect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/famexin_resistance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/ph11_regeneration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/ph16_regeneration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/ph5_regeneration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/ph6_regeneration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/vg1_boost.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/vg3_boost.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/vg5_regeneration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/textures/mob_effect/vg6_methylphenidate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ModDamageSubPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/SubBodypartHitbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/MilkBlockHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merged.txt" beforeDir="false" afterPath="$PROJECT_DIR$/merged.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/ModernDamage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/ModernDamage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientEventBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientEventBus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorDataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/CreaturePartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/CreaturePartHealth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/IPartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/IPartHealth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/PlayerPartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/PlayerPartHealth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientPartHealthCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientPartHealthCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/BodypartHitbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/BodypartHitbox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/config/ModClothConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/config/ModClothConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/ModEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/effect/ModEffects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/entity/EntityHitboxHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/entity/EntityHitboxHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ArmorTooltipHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ArmorTooltipHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/MedicalItemTooltipHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/MedicalItemTooltipHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/AmoxicillinItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/AmoxicillinItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/AtropineAutoInjectorItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/EpinephrineAutoInjectorItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/MeclizineItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/MeclizineItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/ModCreativeTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/ModCreativeTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/ModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/item/MorphineAutoInjectorItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/network/Networking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/network/Networking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/atropine_auto_injector.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/lifeline_vg1_stabilizer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/epinephrine_auto_injector.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/models/item/morphine_auto_injector.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,17 +324,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Modern Damage Control 1.20.1 [createMcpToSrg].executor": "Run",
-    "Gradle.Modern Damage Control 1.20.1 [dependencies].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/a2746/Desktop/blackdustworkplace/Modern Damage Control 1.20.1/src/main/resources/assets/moderndamage/textures/mob_effect",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Modern Damage Control 1.20.1 [createMcpToSrg].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Modern Damage Control 1.20.1 [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a2746/Desktop/blackdustworkplace/Modern Damage Control 1.20.1/src/main/resources/assets/moderndamage/textures/mob_effect&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\a2746\Desktop\blackdustworkplace\Modern Damage Control 1.20.1\src\main\resources\assets\moderndamage\textures\mob_effect" />
@@ -560,6 +453,24 @@
   "tooltip.moderndamage.part.left_leg": "Left Leg",
   "tooltip.moderndamage.part.right_leg": "Right Leg",
 
+  "tooltip.moderndamage.subpart.head_top": "Head (Top)",
+  "tooltip.moderndamage.subpart.head_face": "Head (Face)",
+  "tooltip.moderndamage.subpart.head_neck": "Head (Neck)",
+  "tooltip.moderndamage.subpart.chest_front": "Chest (Front)",
+  "tooltip.moderndamage.subpart.chest_back": "Chest (Back)",
+  "tooltip.moderndamage.subpart.stomach_front": "Stomach (Front)",
+  "tooltip.moderndamage.subpart.stomach_back": "Stomach (Back)",
+  "tooltip.moderndamage.subpart.left_shoulder": "Left Shoulder",
+  "tooltip.moderndamage.subpart.left_forearm": "Left Forearm",
+  "tooltip.moderndamage.subpart.right_shoulder": "Right Shoulder",
+  "tooltip.moderndamage.subpart.right_forearm": "Right Forearm",
+  "tooltip.moderndamage.subpart.left_thigh": "Left Thigh",
+  "tooltip.moderndamage.subpart.left_calf": "Left Calf",
+  "tooltip.moderndamage.subpart.left_foot": "Left Foot",
+  "tooltip.moderndamage.subpart.right_thigh": "Right Thigh",
+  "tooltip.moderndamage.subpart.right_calf": "Right Calf",
+  "tooltip.moderndamage.subpart.right_foot": "Right Foot",
+
   "effect.moderndamage.minor_bleeding": "Minor Bleeding",
   "effect.moderndamage.major_bleeding": "Major Bleeding",
   "effect.moderndamage.left_arm_fracture": "Left Arm Fracture",
@@ -589,6 +500,19 @@
   "effect.moderndamage.modafinil_focus": "Modafinil Focus",
   "effect.moderndamage.epinephrine_boost": "Epinephrine Boost",
   "effect.moderndamage.creatine_boost": "Creatine Boost",
+  "effect.moderndamage.vg1_boost": "VG-1 Stabilizer",
+  "effect.moderndamage.vg3_boost": "VG-3 Barrier",
+  "effect.moderndamage.vg5_regeneration": "VG-5 Kelador Regen",
+  "effect.moderndamage.vg6_methylphenidate": "VG-6 Methylphenidate",
+  "effect.moderndamage.famexin_resistance": "VG-2 Famexin",
+  "effect.moderndamage.ph5_regeneration": "PH-5 Hemogen Regen",
+  "effect.moderndamage.ph6_regeneration": "PH-6 Vitalis Regen",
+  "effect.moderndamage.ph11_regeneration": "PH-11 Regen",
+  "effect.moderndamage.c1_buff": "C-1 Compound (Buff)",
+  "effect.moderndamage.c1_side_effect": "C-1 Compound (Side Effect)",
+  "effect.moderndamage.ph16_regeneration": "PH-16 Xenodyne Regen",
+  "effect.moderndamage.ph16_heal_effect": "PH-16 Automated Healing",
+  "effect.moderndamage.ph18_neurostabil": "PH-18 Neurostabil",
 
   "item.moderndamage.sterile_gauze": "Sterile Gauze",
   "item.moderndamage.cat7_tourniquet": "CAT-7 Tourniquet",
@@ -618,10 +542,9 @@
   "item.moderndamage.surviveware_small_kit": "Surviveware Small Kit",
   "item.moderndamage.nar_rapid_response_kit": "NAR Rapid Response Kit (Law Enforcement)",
   "item.moderndamage.nar_mfak_kit": "NAR M-FAK Kit",
-  "item.moderndamage.epinephrine_auto_injector": "Epinephrine Auto-Injector",
-  "item.moderndamage.morphine_auto_injector": "Morphine Auto-Injector",
-  "item.moderndamage.atropine_auto_injector": "Atropine Auto-Injector",
 
+  "tooltip.moderndamage.amoxicillin": "Right-click to consume. Provides infection resistance for 240 seconds.",
+  "tooltip.moderndamage.meclizine": "Right-click to use. Provides dizziness resistance for 240 seconds.",
   "tooltip.moderndamage.sterile_gauze": "Right-click to consume. Cures minor bleeding.",
   "tooltip.moderndamage.cat7_tourniquet": "Right-click to consume. Cures major and minor bleeding.",
   "tooltip.moderndamage.israeli_bandage": "Right-click to consume. Cures major and minor bleeding.",
@@ -635,8 +558,6 @@
   "tooltip.moderndamage.caffeine_pill": "Right-click to use. Provides stamina-boosting stimulant effect for 240 seconds.",
   "tooltip.moderndamage.homemade_caffeine_extract": "Right-click to use. Provides stamina-boosting stimulant effect for 180 seconds.",
   "tooltip.moderndamage.modafinil": "Right-click to use. Provides focus-enhancing stimulant effect for 300 seconds.",
-  "tooltip.moderndamage.amoxicillin": "Right-click to consume. Provides infection resistance for 1800 seconds.",
-  "tooltip.moderndamage.meclizine": "Right-click to use. Provides dizziness resistance for 600 seconds.",
   "tooltip.moderndamage.oral_rehydration_salts": "Right-click to consume. Provides Regeneration I for 5 seconds.",
   "tooltip.moderndamage.saline_iv": "Right-click to consume. Restores 1 health per second for 15 seconds.",
   "tooltip.moderndamage.ringers_iv": "Right-click to consume. Restores 1 health per second for 20 seconds.",
@@ -650,9 +571,46 @@
   "tooltip.moderndamage.surviveware_kit": "Right-click to use. Restores 3 health and cures either minor bleeding or infection.",
   "tooltip.moderndamage.nar_rapid_kit": "Right-click to use. Restores 4 health, provides pain suppression for 120 seconds, and cures major bleeding, minor bleeding, or one severe trauma.",
   "tooltip.moderndamage.nar_mfak_kit": "Right-click to use. Restores 4 health and cures major bleeding, minor bleeding, or one severe trauma.",
-  "tooltip.moderndamage.epinephrine_injector": "Right-click to consume. Provides a powerful adrenaline boost for 60 seconds with strong side effects.",
-  "tooltip.moderndamage.morphine_injector": "Right-click to consume. Provides pain suppression for 300 seconds with side effects.",
-  "tooltip.moderndamage.atropine_injector": "Right-click to consume. Provides poison and infection resistance for 300 seconds."
+
+  "item.moderndamage.lifeline_vg1_stabilizer": "Lifeline VG-1 Stabilizer",
+  "item.moderndamage.lifeline_vg2_famexin": "Lifeline VG-2 Famexin",
+  "item.moderndamage.lifeline_vg3_barrier": "Lifeline VG-3 Barrier",
+  "item.moderndamage.lifeline_vg4_epinephrine": "Lifeline VG-4 Epinephrine",
+  "item.moderndamage.lifeline_vg5_kelador": "Lifeline VG-5 Kelador",
+  "item.moderndamage.lifeline_vg6_methylphenidate": "Lifeline VG-6 Methylphenidate",
+  "item.moderndamage.lifeline_vg8_modafinil_x": "Lifeline VG-8 Modafinil-X",
+  "item.moderndamage.lifeline_ag1_thrombin": "Lifeline AG-1 Thrombin",
+  "item.moderndamage.lifeline_ag2_tranexamic_acid": "Lifeline AG-2 Tranexamic Acid",
+  "item.moderndamage.lifeline_ag3_morphine": "Lifeline AG-3 Morphine",
+  "item.moderndamage.lifeline_ag4_ciprofloxacin": "Lifeline AG-4 Ciprofloxacin",
+  "item.moderndamage.lifeline_ph1_atropine": "Lifeline PH-1 Atropine",
+  "item.moderndamage.lifeline_ph3_clarity": "Lifeline PH-3 Clarity",
+  "item.moderndamage.lifeline_ph5_newtype_hemogen": "Lifeline PH-5 Newtype Hemogen",
+  "item.moderndamage.lifeline_ph6_vitalis": "Lifeline PH-6 Vitalis",
+  "item.moderndamage.lifeline_ph11_c1_compound": "Lifeline PH-11 C-1 Compound",
+  "item.moderndamage.lifeline_ph12_c1_extender": "Lifeline PH-12 C-1 Extender",
+  "item.moderndamage.lifeline_ph16_xenodyne": "Lifeline PH-16 Xenodyne",
+  "item.moderndamage.lifeline_ph18_neurostabil": "Lifeline PH-18 Neurostabil",
+
+  "tooltip.moderndamage.lifeline_vg1_stabilizer": "Right-click to consume. Clears Fatigue and Pain, and increases arm and leg stamina regen for 120 seconds.",
+  "tooltip.moderndamage.lifeline_vg2_famexin": "Right-click to consume. Grants immunity to Nausea and Hunger, and slowly restores food over 300 seconds.",
+  "tooltip.moderndamage.lifeline_vg3_barrier": "Right-click to consume. Increases natural armor for 240 seconds with minor side effects.",
+  "tooltip.moderndamage.lifeline_vg4_epinephrine": "Right-click to consume. Provides a powerful adrenaline boost for 60 seconds with strong side effects.",
+  "tooltip.moderndamage.lifeline_vg5_kelador": "Right-click to consume. Rapidly restores health over 30 seconds.",
+  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "Right-click to consume. Provides pain suppression and enhances combat abilities for 120 seconds.",
+  "tooltip.moderndamage.lifeline_vg8_modafinil_x": "Right-click to consume. Provides Modafinil Focus for 360 seconds and pain suppression for 180 seconds.",
+  "tooltip.moderndamage.lifeline_ag1_thrombin": "Right-click to consume. Provides Coagulation Boost for 360 seconds with minor side effects.",
+  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "Right-click to consume. Stops bleeding and provides Coagulation Boost for 60 seconds.",
+  "tooltip.moderndamage.lifeline_ag3_morphine": "Right-click to consume. Provides pain suppression for 480 seconds with side effects.",
+  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "Right-click to consume. Cures infection and grants Infection Resistance for 1200 seconds.",
+  "tooltip.moderndamage.lifeline_ph1_atropine": "Right-click to consume. Cures poison and grants Poison & Infection Resistance for 300 seconds.",
+  "tooltip.moderndamage.lifeline_ph3_clarity": "Right-click to consume. Cures Dizziness and Nausea, and grants Dizziness Resistance & Pain Suppression for 280 seconds.",
+  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "Right-click to consume. Provides 180 seconds of regeneration, stops bleeding, grants Coagulation Boost and Poison Resistance with strong side effects.",
+  "tooltip.moderndamage.lifeline_ph6_vitalis": "Right-click to consume. Provides 300 seconds of regeneration and pain suppression.",
+  "tooltip.moderndamage.lifeline_ph11_c1_compound": "Right-click to consume. Provides 5 seconds of strong regeneration and powerful combat buffs for 120 seconds, with severe possibly fatal side effects.",
+  "tooltip.moderndamage.lifeline_ph12_c1_extender": "Right-click to consume. Extends the positive effects of PH-11 C-1 Compound by 90 seconds and removes its side effects.",
+  "tooltip.moderndamage.lifeline_ph16_xenodyne": "Right-click to consume. Every 30 seconds over 300 seconds, heals one trauma or fracture (or restores 5 health if none), plus regeneration and Coagulation Boost for the same duration.",
+  "tooltip.moderndamage.lifeline_ph18_neurostabil": "Right-click to consume. Improves upper body stability and aiming capabilities for 180 seconds."
 }==== ./build/resources/main/assets/moderndamage/lang/zh_cn.json ====
 {
   "itemGroup.moderndamage.medical": "现代伤害控制 - 医疗物品",
@@ -680,6 +638,24 @@
   "tooltip.moderndamage.part.right_arm": "右臂",
   "tooltip.moderndamage.part.left_leg": "左腿",
   "tooltip.moderndamage.part.right_leg": "右腿",
+
+  "tooltip.moderndamage.subpart.head_top": "头顶",
+  "tooltip.moderndamage.subpart.head_face": "面部",
+  "tooltip.moderndamage.subpart.head_neck": "颈部",
+  "tooltip.moderndamage.subpart.chest_front": "前胸",
+  "tooltip.moderndamage.subpart.chest_back": "后背",
+  "tooltip.moderndamage.subpart.stomach_front": "前胃部",
+  "tooltip.moderndamage.subpart.stomach_back": "后胃部",
+  "tooltip.moderndamage.subpart.left_shoulder": "左肩",
+  "tooltip.moderndamage.subpart.left_forearm": "左前臂",
+  "tooltip.moderndamage.subpart.right_shoulder": "右肩",
+  "tooltip.moderndamage.subpart.right_forearm": "右前臂",
+  "tooltip.moderndamage.subpart.left_thigh": "左大腿",
+  "tooltip.moderndamage.subpart.left_calf": "左小腿",
+  "tooltip.moderndamage.subpart.left_foot": "左脚",
+  "tooltip.moderndamage.subpart.right_thigh": "右大腿",
+  "tooltip.moderndamage.subpart.right_calf": "右小腿",
+  "tooltip.moderndamage.subpart.right_foot": "右脚",
 
   "effect.moderndamage.minor_bleeding": "轻微出血",
   "effect.moderndamage.major_bleeding": "大出血",
@@ -710,6 +686,19 @@
   "effect.moderndamage.modafinil_focus": "莫达非尼",
   "effect.moderndamage.epinephrine_boost": "肾上腺素",
   "effect.moderndamage.creatine_boost": "肌酸增强",
+  "effect.moderndamage.vg1_boost": "VG-1 稳定剂",
+  "effect.moderndamage.vg3_boost": "VG-3 屏障",
+  "effect.moderndamage.vg5_regeneration": "VG-5 凯拉多再生",
+  "effect.moderndamage.vg6_methylphenidate": "VG-6 哌甲酯",
+  "effect.moderndamage.famexin_resistance": "VG-2 法莫辛",
+  "effect.moderndamage.ph5_regeneration": "PH-5 Newtype人造血再生",
+  "effect.moderndamage.ph6_regeneration": "PH-6 Vitalis 再生",
+  "effect.moderndamage.ph11_regeneration": "PH-11 再生",
+  "effect.moderndamage.c1_buff": "C-1 化合物（增益）",
+  "effect.moderndamage.c1_side_effect": "C-1 化合物（副作用）",
+  "effect.moderndamage.ph16_regeneration": "PH-16 泽诺戴恩再生",
+  "effect.moderndamage.ph16_heal_effect": "PH-16 自动治愈",
+  "effect.moderndamage.ph18_neurostabil": "PH-18 神经稳定剂",
 
   "item.moderndamage.sterile_gauze": "强生无菌纱布",
   "item.moderndamage.cat7_tourniquet": "CAT-7止血带",
@@ -739,10 +728,9 @@
   "item.moderndamage.surviveware_small_kit": "Surviveware 小型急救包",
   "item.moderndamage.nar_rapid_response_kit": "北美救援快速反应包 执法版",
   "item.moderndamage.nar_mfak_kit": "北美救援 M-FAK 止血套装",
-  "item.moderndamage.epinephrine_auto_injector": "肾上腺素自动注射器",
-  "item.moderndamage.morphine_auto_injector": "吗啡自动注射器",
-  "item.moderndamage.atropine_auto_injector": "阿托品自动注射器",
 
+  "tooltip.moderndamage.amoxicillin": "长按右键一次性使用，服用后给予抗感染效果，持续 240 秒。",
+  "tooltip.moderndamage.meclizine": "长按右键一次性使用，服用后给予抗眩晕效果，持续 240 秒。",
   "tooltip.moderndamage.sterile_gauze": "长按右键一次性使用，用于治愈轻微出血",
   "tooltip.moderndamage.cat7_tourniquet": "长按右键一次性使用，用于治愈大出血与轻微出血",
   "tooltip.moderndamage.israeli_bandage": "长按右键一次性使用，用于治愈大出血与轻微出血",
@@ -756,24 +744,59 @@
   "tooltip.moderndamage.caffeine_pill": "长按右键使用，服用后给予提升耐力的兴奋效果，持续240S",
   "tooltip.moderndamage.homemade_caffeine_extract": "长按右键使用，服用后给予提升耐力的兴奋效果，持续180S",
   "tooltip.moderndamage.modafinil": "长按右键使用，服用后给予提升专注的兴奋效果，持续300S",
-  "tooltip.moderndamage.amoxicillin": "长按右键一次性使用，服用后给予抗感染效果，持续1800S",
-  "tooltip.moderndamage.meclizine": "长按右键一次性使用，服用后给予抗眩晕效果，持续600S",
   "tooltip.moderndamage.oral_rehydration_salts": "长按右键一次性使用，服用后给予生命恢复I效果，持续5S",
-  "tooltip.moderndamage.saline_iv": "长按右键一次性使用，注射后在15S内每秒回复1点生命值",
-  "tooltip.moderndamage.ringers_iv": "长按右键一次性使用，注射后在20S内每秒回复1点生命值",
-  "tooltip.moderndamage.voluven_hes": "长按右键一次性使用，注射后在24S内每秒回复1点生命值",
-  "tooltip.moderndamage.albutein_albumin": "长按右键一次性使用，注射后在5S内每秒回复2点生命值，并给予凝血增强效果，持续60S",
+  "tooltip.moderndamage.saline_iv": "长按右键一次性使用，注射后在15S内每秒回复生命值",
+  "tooltip.moderndamage.ringers_iv": "长按右键一次性使用，注射后在20S内每秒回复生命值",
+  "tooltip.moderndamage.voluven_hes": "长按右键一次性使用，注射后在24S内每秒回复生命值",
+  "tooltip.moderndamage.albutein_albumin": "长按右键一次性使用，注射后在5S内每秒快速回复生命值，并给予凝血增强效果，持续60S",
   "tooltip.moderndamage.octaplas_plasma": "长按右键一次性使用，注射后治愈大出血与轻微出血，并在11S内每秒回复2点生命值",
-  "tooltip.moderndamage.dextrose_iv": "长按右键一次性使用，注射后回复一定的饱食度，并在6S内每秒回复1点生命值",
-  "tooltip.moderndamage.johnson_kit": "长按右键使用，使用后回复2点生命值，并治愈轻微出血或感染",
-  "tooltip.moderndamage.adventure_kit": "长按右键使用，使用后回复3点生命值，并治愈大出血或轻微出血",
-  "tooltip.moderndamage.my_medic_kit": "长按右键使用，使用后回复2点生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或者感染",
-  "tooltip.moderndamage.surviveware_kit": "长按右键使用，使用后回复3点生命值，并治愈轻微出血或者染",
-  "tooltip.moderndamage.nar_rapid_kit": "长按右键使用，使用后回复4点生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或一处严重创伤",
-  "tooltip.moderndamage.nar_mfak_kit": "长按右键使用，使用后回复4点生命值，并治愈大出血、轻微出血或一处严重创伤",
-  "tooltip.moderndamage.epinephrine_injector": "长按右键一次性使用，注射后给予强力的肾上腺素增强效果，持续60S，有较强的副作用",
-  "tooltip.moderndamage.morphine_injector": "长按右键一次性使用，注射后给予止痛效果，持续300S，有一定的副作用",
-  "tooltip.moderndamage.atropine_injector": "长按右键一次性使用，注射后给予解毒与抗感染效果，持续300S"
+  "tooltip.moderndamage.dextrose_iv": "长按右键一次性使用，注射后回复一定的饱食度，并在6S内每秒回复生命值",
+  "tooltip.moderndamage.johnson_kit": "长按右键使用，使用后在2S内回复生命值，并治愈轻微出血或感染",
+  "tooltip.moderndamage.adventure_kit": "长按右键使用，使用后在3S内回复生命值，并治愈大出血或轻微出血",
+  "tooltip.moderndamage.my_medic_kit": "长按右键使用，使用后在2S内回复生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或者感染",
+  "tooltip.moderndamage.surviveware_kit": "长按右键使用，使用后在3S内回复生命值，并治愈轻微出血或者染",
+  "tooltip.moderndamage.nar_rapid_kit": "长按右键使用，使用后在4S内回复生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或一处严重创伤",
+  "tooltip.moderndamage.nar_mfak_kit": "长按右键使用，使用后在4S内回复生命值，并治愈大出血、轻微出血或一处严重创伤",
+
+  "item.moderndamage.lifeline_vg1_stabilizer": "生命线制药 VG-1 稳定剂",
+  "item.moderndamage.lifeline_vg2_famexin": "生命线制药 VG-2 法莫辛",
+  "item.moderndamage.lifeline_vg3_barrier": "生命线制药 VG-3 屏障",
+  "item.moderndamage.lifeline_vg4_epinephrine": "生命线制药 VG-4 肾上腺素",
+  "item.moderndamage.lifeline_vg5_kelador": "生命线制药 VG-5 凯拉多",
+  "item.moderndamage.lifeline_vg6_methylphenidate": "生命线制药 VG-6 哌甲酯",
+  "item.moderndamage.lifeline_vg8_modafinil_x": "生命线制药 VG-8 莫达非尼-X",
+  "item.moderndamage.lifeline_ag1_thrombin": "生命线制药 AG-1 凝血酶",
+  "item.moderndamage.lifeline_ag2_tranexamic_acid": "生命线制药 AG-2 氨甲环酸",
+  "item.moderndamage.lifeline_ag3_morphine": "生命线制药 AG-3 吗啡",
+  "item.moderndamage.lifeline_ag4_ciprofloxacin": "生命线制药 AG-4 环丙沙星",
+  "item.moderndamage.lifeline_ph1_atropine": "生命线制药 PH-1 阿托品",
+  "item.moderndamage.lifeline_ph3_clarity": "生命线制药 PH-3 清醒针",
+  "item.moderndamage.lifeline_ph5_newtype_hemogen": "生命线制药 PH-5 Newtype人造血",
+  "item.moderndamage.lifeline_ph6_vitalis": "生命线制药 PH-6 Vitalis",
+  "item.moderndamage.lifeline_ph11_c1_compound": "生命线制药 PH-11 C-1 化合物",
+  "item.moderndamage.lifeline_ph12_c1_extender": "生命线制药 PH-12 C-1 增强缓释剂",
+  "item.moderndamage.lifeline_ph16_xenodyne": "生命线制药 PH-16 泽诺戴恩",
+  "item.moderndamage.lifeline_ph18_neurostabil": "生命线制药 PH-18 神经稳定剂",
+
+  "tooltip.moderndamage.lifeline_vg1_stabilizer": "长按右键一次性使用。注射后清除疲劳和疼痛效果，给予增加手臂与腿部耐力恢复速度的效果，持续 120 秒。",
+  "tooltip.moderndamage.lifeline_vg2_famexin": "长按右键一次性使用。注射后给予免疫恶心和饥饿，并缓慢恢复饱食度的效果，持续 300 秒。",
+  "tooltip.moderndamage.lifeline_vg3_barrier": "长按右键一次性使用。注射后给予增加全身防护能力的效果，持续240秒，有一定副作用。",
+  "tooltip.moderndamage.lifeline_vg4_epinephrine": "长按右键一次性使用。注射后给予强大的肾上腺素增强效果，持续60S，有较大副作用。",
+  "tooltip.moderndamage.lifeline_vg5_kelador": "长按右键一次性使用。注射后在30S内快速回复生命值。",
+  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "长按右键一次性使用。注射后给予止痛与提升综合战斗能力的效果，持续 120 秒。",
+  "tooltip.moderndamage.lifeline_vg8_modafinil_x": "长按右键一次性使用。注射后给予360S的莫达非尼效果和180S的止痛效果。",
+  "tooltip.moderndamage.lifeline_ag1_thrombin": "长按右键一次性使用。注射后给予凝血增强效果，持续 360 秒，有一定副作用。",
+  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "长按右键一次性使用，注射后给予立即止血并给予凝血增强效果，持续 60 秒。",
+  "tooltip.moderndamage.lifeline_ag3_morphine": "长按右键一次性使用，注射后给予止痛效果，持续480 秒，有一定的副作用。",
+  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "长按右键一次性使用，注射后治愈感染并提供感染抵抗效果，持续1200 秒。",
+  "tooltip.moderndamage.lifeline_ph1_atropine": "长按右键一次性使用，注射后治愈中毒并提供 300 秒的中毒和感染抵抗效果。",
+  "tooltip.moderndamage.lifeline_ph3_clarity": "长按右键一次性使用，注射后治愈眩晕和恶心，并提供 280 秒眩晕抵抗和止痛效果。",
+  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "长按右键一次性使用，注射后给予 180 秒的再生、立即止血、凝血增强和中毒抵抗的多种效果，有较强的副作用。",
+  "tooltip.moderndamage.lifeline_ph6_vitalis": "长按右键一次性使用，注射后给予 300 秒的再生和止痛效果。",
+  "tooltip.moderndamage.lifeline_ph11_c1_compound": "长按右键一次性使用，注射后给予 5 秒强力再生与全面的强大战斗增益效果，持续120S，有极强的可致命负面作用。",
+  "tooltip.moderndamage.lifeline_ph12_c1_extender": "长按右键一次性使用，注射后给予将 PH-11 C-1 化合物的正面效果延长 90 秒，并移除其已产生的副作用。",
+  "tooltip.moderndamage.lifeline_ph16_xenodyne": "长按右键一次性使用，注射后给予在 300 秒内每 30 秒自动治愈一处严重创伤或骨折，无伤势时恢复 5 点生命值，以及相同时长的再生和凝血增强效果。",
+  "tooltip.moderndamage.lifeline_ph18_neurostabil": "长按右键一次性使用，注射后给予增强上肢稳定性，加强瞄准能力的效果，持续 180 秒。"
 }==== ./build/resources/main/assets/moderndamage/models/item/adventure_medical_kit.json ====
 {
   "parent": "item/generated",
@@ -791,12 +814,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "moderndamage:item/amoxicillin"
-  }
-}==== ./build/resources/main/assets/moderndamage/models/item/atropine_auto_injector.json ====
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "moderndamage:item/atropine_auto_injector"
   }
 }==== ./build/resources/main/assets/moderndamage/models/item/caffeine_pill.json ====
 {
@@ -834,12 +851,6 @@
   "textures": {
     "layer0": "moderndamage:item/dr_stitch_suture"
   }
-}==== ./build/resources/main/assets/moderndamage/models/item/epinephrine_auto_injector.json ====
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "moderndamage:item/epinephrine_auto_injector"
-  }
 }==== ./build/resources/main/assets/moderndamage/models/item/homemade_caffeine_extract.json ====
 {
   "parent": "item/generated",
@@ -858,6 +869,120 @@
   "textures": {
     "layer0": "moderndamage:item/johnson_first_aid_kit"
   }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ag1_thrombin.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ag1_thrombin"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ag2_tranexamic_acid.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ag2_tranexamic_acid"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ag3_morphine.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ag3_morphine"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ag4_ciprofloxacin.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ag4_ciprofloxacin"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph11_c1_compound.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph11_c1_compound"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph12_c1_extender.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph12_c1_extender"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph16_xenodyne.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph16_xenodyne"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph18_neurostabil.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph18_neurostabil"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph1_atropine.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph1_atropine"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph3_clarity.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph3_clarity"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph5_newtype_hemogen.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph5_newtype_hemogen"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_ph6_vitalis.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_ph6_vitalis"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg1_stabilizer.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg1_stabilizer"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg2_famexin.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg2_famexin"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg3_barrier.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg3_barrier"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg4_epinephrine.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg4_epinephrine"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg5_kelador.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg5_kelador"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg6_methylphenidate.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg6_methylphenidate"
+  }
+}==== ./build/resources/main/assets/moderndamage/models/item/lifeline_vg8_modafinil_x.json ====
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "moderndamage:item/lifeline_vg8_modafinil_x"
+  }
 }==== ./build/resources/main/assets/moderndamage/models/item/meclizine.json ====
 {
   "parent": "item/generated",
@@ -869,12 +994,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "moderndamage:item/modafinil"
-  }
-}==== ./build/resources/main/assets/moderndamage/models/item/morphine_auto_injector.json ====
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "moderndamage:item/morphine_auto_injector"
   }
 }==== ./build/resources/main/assets/moderndamage/models/item/my_medic_pro_kit.json ====
 {
@@ -1118,11 +1237,81 @@ public enum ModDamagePart {
         return name().toLowerCase();
     }
 }
-==== ./src/main/java/com/moderndamage/control/armor/ArmorCalculator.java ====
+==== ./src/main/java/com/moderndamage/control/api/ModDamageSubPart.java ====
+package com.moderndamage.control.api;
+
+import net.minecraft.resources.ResourceLocation;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 精细化子部位枚举（仅用于硬核模式精确命中判定和护甲配置）
+ * 每个子部位对应一个父部位（ModDamagePart）
+ */
+public enum ModDamageSubPart {
+    // 头部 (父部位 HEAD)
+    HEAD_TOP(ModDamagePart.HEAD, "head_top"),
+    HEAD_FACE(ModDamagePart.HEAD, "head_face"),
+    HEAD_NECK(ModDamagePart.HEAD, "head_neck"),
+
+    // 胸部 (父部位 CHEST)
+    CHEST_FRONT(ModDamagePart.CHEST, "chest_front"),
+    CHEST_BACK(ModDamagePart.CHEST, "chest_back"),
+
+    // 胃部 (父部位 STOMACH)
+    STOMACH_FRONT(ModDamagePart.STOMACH, "stomach_front"),
+    STOMACH_BACK(ModDamagePart.STOMACH, "stomach_back"),
+
+    // 左臂 (父部位 LEFT_ARM)
+    LEFT_SHOULDER(ModDamagePart.LEFT_ARM, "left_shoulder"),
+    LEFT_FOREARM(ModDamagePart.LEFT_ARM, "left_forearm"),
+
+    // 右臂 (父部位 RIGHT_ARM)
+    RIGHT_SHOULDER(ModDamagePart.RIGHT_ARM, "right_shoulder"),
+    RIGHT_FOREARM(ModDamagePart.RIGHT_ARM, "right_forearm"),
+
+    // 左腿 (父部位 LEFT_LEG)
+    LEFT_THIGH(ModDamagePart.LEFT_LEG, "left_thigh"),
+    LEFT_CALF(ModDamagePart.LEFT_LEG, "left_calf"),
+    LEFT_FOOT(ModDamagePart.LEFT_LEG, "left_foot"),
+
+    // 右腿 (父部位 RIGHT_LEG)
+    RIGHT_THIGH(ModDamagePart.RIGHT_LEG, "right_thigh"),
+    RIGHT_CALF(ModDamagePart.RIGHT_LEG, "right_calf"),
+    RIGHT_FOOT(ModDamagePart.RIGHT_LEG, "right_foot");
+
+    private final ModDamagePart parent;
+    private final String subKey;   // 用于 JSON 配置的键名
+
+    private static final Map<String, ModDamageSubPart> BY_SUBKEY = new HashMap<>();
+    static {
+        for (ModDamageSubPart sub : values()) {
+            BY_SUBKEY.put(sub.subKey, sub);
+        }
+    }
+
+    ModDamageSubPart(ModDamagePart parent, String subKey) {
+        this.parent = parent;
+        this.subKey = subKey;
+    }
+
+    public ModDamagePart getParent() {
+        return parent;
+    }
+
+    public String getSubKey() {
+        return subKey;
+    }
+
+    public static ModDamageSubPart bySubKey(String key) {
+        return BY_SUBKEY.get(key);
+    }
+}==== ./src/main/java/com/moderndamage/control/armor/ArmorCalculator.java ====
 package com.moderndamage.control.armor;
 
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 import com.moderndamage.control.api.event.ArmorHitEvent;
 import com.moderndamage.control.api.event.GetArmorLevelEvent;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
@@ -1503,10 +1692,333 @@ public class ArmorCalculator {
         }
         return result;
     }
+
+    public static class ProtectionSource {
+        public final ItemStack item;
+        public final int level;          // 当前防护等级（已考虑耐久）
+        public final int toughness;      // 韧性
+        public final float materialFactor;
+        public final float ricochetChance;
+        public final boolean isNatural;
+
+        public ProtectionSource(ItemStack item, int level, int toughness, float materialFactor, float ricochetChance, boolean isNatural) {
+            this.item = item;
+            this.level = level;
+            this.toughness = toughness;
+            this.materialFactor = materialFactor;
+            this.ricochetChance = ricochetChance;
+            this.isNatural = isNatural;
+        }
+    }
+
+    /**
+     * 获取针对子部位的所有防护源（包括自然护甲和装备）
+     */
+    private static List<ProtectionSource> getProtectionSourcesForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        List<ProtectionSource> sources = new ArrayList<>();
+        ModDamagePart parent = subPart.getParent();
+
+        // 1. 自然护甲（仍按父部位）
+        int natural = EntityHitboxHelper.getNaturalArmor(target, parent);
+        if (natural > 0) {
+            sources.add(new ProtectionSource(null, natural, 0, 1.0f, 0f, true));
+        }
+
+        // 2. 遍历盔甲槽位
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            ItemStack stack = target.getItemBySlot(slot);
+            if (stack.isEmpty()) continue;
+            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+            if (data == null) continue;
+
+            // 优先检查子部位配置，若无则检查父部位
+            int subLevel = data.getSubProtectionLevel(subPart);
+            int level = subLevel > 0 ? subLevel : data.getProtectionLevel(parent);
+            if (level == 0) continue;
+            level = getDynamicProtectionLevel(stack, level); // 应用耐久动态调整
+
+            int toughness = data.getEffectiveToughness(subPart, parent);
+            toughness = getDynamicToughness(stack, toughness); // 应用耐久动态调整（需要重载）
+
+            float materialFactor = data.getMaterialFactor(parent); // 材料因子不分子部位
+            float ricochet = data.getEffectiveRicochetChance(subPart, parent);
+
+            sources.add(new ProtectionSource(stack, level, toughness, materialFactor, ricochet, false));
+        }
+
+        // 3. 遍历 Curios 饰品槽位（如果 Curios 已加载）
+        if (ModList.get().isLoaded("curios")) {
+            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
+                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stackHandler.getSlots(); i++) {
+                        ItemStack stack = stackHandler.getStackInSlot(i);
+                        if (stack.isEmpty()) continue;
+                        ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+                        if (data == null) continue;
+                        int subLevel = data.getSubProtectionLevel(subPart);
+                        int level = subLevel > 0 ? subLevel : data.getProtectionLevel(parent);
+                        if (level == 0) continue;
+                        level = getDynamicProtectionLevel(stack, level);
+
+                        int toughness = data.getEffectiveToughness(subPart, parent);
+                        toughness = getDynamicToughness(stack, toughness);
+
+                        float materialFactor = data.getMaterialFactor(parent);
+                        float ricochet = data.getEffectiveRicochetChance(subPart, parent);
+
+                        sources.add(new ProtectionSource(stack, level, toughness, materialFactor, ricochet, false));
+                    }
+                }
+            });
+        }
+
+        return sources;
+    }
+
+    /**
+     * 根据子部位获取总护甲等级（自然护甲 + 装备，支持子部位优先）
+     */
+    public static int getArmorLevelForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
+        if (sources.isEmpty()) return 0;
+
+        // 按等级降序排序
+        sources.sort((a, b) -> Integer.compare(b.level, a.level));
+        int highest = sources.get(0).level;
+        if (sources.size() == 1) {
+            return highest;
+        }
+
+        ModClothConfig config = ModClothConfig.get();
+        float factor = config.armorStackingFactor;
+        int otherSum = 0;
+        for (int i = 1; i < sources.size(); i++) {
+            otherSum += sources.get(i).level;
+        }
+        int total = highest + Math.round(otherSum * factor);
+        int cap = config.armorCap;
+        if (cap > 0 && total > cap) total = cap;
+
+        // 触发事件（暂不传子部位，保持原事件签名）
+        if (!target.level().isClientSide) {
+            GetArmorLevelEvent event = new GetArmorLevelEvent(target, subPart.getParent(), total);
+            MinecraftForge.EVENT_BUS.post(event);
+            total = event.getArmorLevel();
+        }
+        return total;
+    }
+
+    /**
+     * 获取子部位的总韧性（自然韧性 + 装备韧性）
+     */
+    private static int getTotalToughnessForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        ModDamagePart parent = subPart.getParent();
+        int natural = EntityHitboxHelper.getNaturalToughness(target, parent);
+        int total = natural;
+
+        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
+        for (ProtectionSource source : sources) {
+            if (!source.isNatural) {
+                total += source.toughness;
+            }
+        }
+        return Math.min(total, 100);
+    }
+
+    /**
+     * 重载：针对子部位应用护甲穿透计算
+     */
+    public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamageSubPart subPart,
+                                                          float originalDamage, float penetration) {
+        if (originalDamage <= 0) return new PenetrationResult(0, false, false);
+
+        int armorLevel = getArmorLevelForSubPart(target, subPart);
+        ModClothConfig config = ModClothConfig.get();
+        ModDamagePart parent = subPart.getParent();
+
+        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
+
+        // ========== 跳弹判定（所有保护源，任意一个触发即跳弹） ==========
+        boolean ricochetTriggered = false;
+        if (config.enableRicochet) {
+            for (ProtectionSource source : sources) {
+                if (source.isNatural) continue;
+                if (source.ricochetChance > 0 && target.getRandom().nextFloat() < source.ricochetChance) {
+                    ricochetTriggered = true;
+                    break;
+                }
+            }
+        }
+        if (ricochetTriggered) {
+            float ricochetDamage = originalDamage * config.ricochetDamageRatio;
+            if (ricochetDamage < 1) ricochetDamage = 1;
+            final float finalRicochetDamage = ricochetDamage;   // 修复 lambda final 问题
+            if (config.debugMode) {
+                // 获取任意一个触发跳弹的物品（用于日志）
+                ItemStack anyItem = sources.stream()
+                        .filter(s -> !s.isNatural && s.item != null)
+                        .map(s -> s.item)
+                        .findFirst().orElse(null);
+                ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} (subPart {})! Damage: {} -> {}",
+                        target.getName().getString(),
+                        anyItem != null ? ForgeRegistries.ITEMS.getKey(anyItem.getItem()) : "unknown",
+                        subPart, originalDamage, finalRicochetDamage);
+            }
+            // 伤害分配（使用父部位）
+            if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
+            } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
+            } else {
+                target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
+            }
+            return new PenetrationResult(finalRicochetDamage, false, false);
+        }
+
+        // ========== 继续原有穿透计算 ==========
+        if (armorLevel == 0) {
+            return new PenetrationResult(originalDamage, false, false);
+        }
+
+        int penetrationValue = (int) (penetration * 100);
+        int baseDurabilityLoss = config.durabilityLossBase;
+        int maxLoss = config.maxDurabilityLoss;
+        float partialMin = config.partialPenetrationMinRatio;
+        float partialMax = config.partialPenetrationMaxRatio;
+
+        float finalDamageBeforeToughness;
+        boolean penetrated = false;
+        boolean partial = false;
+
+        if (penetrationValue >= armorLevel + 5) {
+            finalDamageBeforeToughness = originalDamage;
+            penetrated = true;
+        } else if (penetrationValue >= armorLevel - 10) {
+            int diff = (armorLevel + 6) - penetrationValue;
+            double chance = (16.0 - diff) / 15.0;
+            chance = Math.min(1.0, Math.max(0.0, chance));
+            if (RANDOM.nextDouble() <= chance) {
+                float ratio = partialMin + RANDOM.nextFloat() * (partialMax - partialMin);
+                finalDamageBeforeToughness = originalDamage * ratio;
+                partial = true;
+            } else {
+                int bluntDiff = armorLevel - penetrationValue;
+                finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+            }
+        } else {
+            int bluntDiff = armorLevel - penetrationValue;
+            finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+        }
+
+        // 耐久损耗
+        if (!sources.isEmpty()) {
+            float penRatio = (float) penetrationValue / (float) armorLevel;
+            boolean cancelDurabilityLoss = false;
+            if (!target.level().isClientSide) {
+                ArmorHitEvent event = new ArmorHitEvent(target, parent, originalDamage, finalDamageBeforeToughness, armorLevel);
+                MinecraftForge.EVENT_BUS.post(event);
+                if (event.isCanceled()) {
+                    cancelDurabilityLoss = true;
+                }
+                finalDamageBeforeToughness = event.getFinalDamage();
+            }
+
+            if (!cancelDurabilityLoss) {
+                // 主要物品（最高等级）损耗全额
+                ProtectionSource primary = sources.isEmpty() ? null : sources.get(0);
+                if (primary != null && !primary.isNatural && primary.item != null && !primary.item.isEmpty()) {
+                    int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.materialFactor);
+                    durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss));
+                    hurtItem(primary.item, target, durabilityLoss);
+                }
+                // 其他保护物品损耗减半
+                for (ProtectionSource source : sources) {
+                    if (source.isNatural) continue;
+                    if (source.item == primary.item) continue;
+                    int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * source.materialFactor);
+                    durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss / 2));
+                    hurtItem(source.item, target, durabilityLoss);
+                }
+            }
+        }
+
+        int totalToughness = getTotalToughnessForSubPart(target, subPart);
+        float finalDamage = finalDamageBeforeToughness;
+        if (totalToughness > 0) {
+            float reduction = totalToughness / 100.0f;
+            finalDamage = finalDamageBeforeToughness * (1 - reduction);
+            if (finalDamage < 0) finalDamage = 0;
+        }
+
+        if (config.debugMode) {
+            ModernDamage.LOGGER.info("[Penetration] target={}, subPart={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, penType={}",
+                    target.getName().getString(), subPart, armorLevel, penetrationValue,
+                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness,
+                    penetrated ? "FULL" : (partial ? "PARTIAL" : "BLUNT"));
+        }
+
+        return new PenetrationResult(finalDamage, penetrated, partial);
+    }
+
+    // 辅助方法：动态护甲等级（根据耐久百分比调整）
+    private static int getDynamicProtectionLevel(ItemStack stack, int baseLevel) {
+        if (baseLevel == 0) return 0;
+        int maxDurability = stack.getMaxDamage();
+        if (maxDurability <= 0) return baseLevel;
+        int currentDurability = maxDurability - stack.getDamageValue();
+        if (currentDurability <= 1) return 0;
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
+        float multiplier = 0.5f + 0.5f * durabilityPercent;
+        return Math.max(1, Math.round(baseLevel * multiplier));
+    }
+
+    // 辅助方法：动态韧性（根据耐久百分比调整）
+    private static int getDynamicToughness(ItemStack stack, int baseToughness) {
+        if (baseToughness == 0) return 0;
+        int maxDurability = stack.getMaxDamage();
+        if (maxDurability <= 0) return baseToughness;
+        int currentDurability = maxDurability - stack.getDamageValue();
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
+        return Math.round(baseToughness * durabilityPercent);
+    }
+
+    public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamageSubPart subPart) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 0;
+        int baseLevel = data.getSubProtectionLevel(subPart);
+        if (baseLevel == 0) return 0;
+        int maxDurability = armorStack.getMaxDamage();
+        if (maxDurability <= 0) return baseLevel;
+        int currentDurability = maxDurability - armorStack.getDamageValue();
+        if (currentDurability <= 1) return 0;
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
+        float multiplier = 0.5f + 0.5f * durabilityPercent;
+        return Math.max(1, Math.round(baseLevel * multiplier));
+    }
+
+
+    public static int getDynamicToughness(ItemStack armorStack, ModDamageSubPart subPart) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 0;
+        int base = data.getSubToughness(subPart);
+        if (base <= 0) {
+            // 回退到父部位韧性
+            base = data.getBaseToughness(subPart.getParent());
+        }
+        if (base <= 0) return 0;
+        int maxDurability = armorStack.getMaxDamage();
+        if (maxDurability <= 0) return base;
+        int currentDurability = maxDurability - armorStack.getDamageValue();
+        float durabilityPercent = (float) currentDurability / (float) maxDurability;
+        return Math.round(base * durabilityPercent);
+    }
 }==== ./src/main/java/com/moderndamage/control/armor/ArmorData.java ====
 package com.moderndamage.control.armor;
 
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -1517,6 +2029,10 @@ public class ArmorData {
     private final Map<ModDamagePart, Float> materialFactor = new HashMap<>();
     private final Map<ModDamagePart, Float> ricochetChance = new HashMap<>();
     private int durability;
+
+    private final Map<ModDamageSubPart, Integer> subCoverage = new HashMap<>();
+    private final Map<ModDamageSubPart, Integer> subToughness = new HashMap<>();
+    private final Map<ModDamageSubPart, Float> subRicochetChance = new HashMap<>();
 
     public ArmorData() {}
 
@@ -1569,6 +2085,40 @@ public class ArmorData {
     public void setDurability(int durability) {
         this.durability = durability;
     }
+
+    public void setSubProtection(ModDamageSubPart part, int level) {
+        subCoverage.put(part, level);
+    }
+    public int getSubProtectionLevel(ModDamageSubPart part) {
+        return subCoverage.getOrDefault(part, 0);
+    }
+    public boolean protectsSub(ModDamageSubPart part) {
+        return subCoverage.containsKey(part);
+    }
+
+    public void setSubToughness(ModDamageSubPart part, int value) {
+        subToughness.put(part, value);
+    }
+    public int getSubToughness(ModDamageSubPart part) {
+        return subToughness.getOrDefault(part, 0);
+    }
+
+    public void setSubRicochetChance(ModDamageSubPart part, float chance) {
+        subRicochetChance.put(part, Math.min(1.0f, Math.max(0.0f, chance)));
+    }
+    public float getSubRicochetChance(ModDamageSubPart part) {
+        return subRicochetChance.getOrDefault(part, 0.0f);
+    }
+
+    public int getEffectiveToughness(ModDamageSubPart subPart, ModDamagePart parent) {
+        int subTough = getSubToughness(subPart);
+        return subTough > 0 ? subTough : getBaseToughness(parent);
+    }
+
+    public float getEffectiveRicochetChance(ModDamageSubPart subPart, ModDamagePart parent) {
+        float subChance = getSubRicochetChance(subPart);
+        return subChance > 0 ? subChance : getRicochetChance(parent);
+    }
 }==== ./src/main/java/com/moderndamage/control/armor/ArmorDataLoader.java ====
 package com.moderndamage.control.armor;
 
@@ -1578,6 +2128,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -1629,6 +2180,20 @@ public class ArmorDataLoader {
                     }
                 }
 
+                if (dataObj.has("coverage_sub")) {
+                    JsonObject subCoverage = dataObj.getAsJsonObject("coverage_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subCoverage.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name: {} in armor config for {}", subKey, itemId);
+                            continue;
+                        }
+                        int level = subEntry.getValue().getAsInt();
+                        armorData.setSubProtection(subPart, level);
+                    }
+                }
+
                 if (dataObj.has("toughness")) {
                     JsonObject toughnessObj = dataObj.getAsJsonObject("toughness");
                     for (Map.Entry<String, JsonElement> toughEntry : toughnessObj.entrySet()) {
@@ -1640,6 +2205,20 @@ public class ArmorDataLoader {
                         } catch (IllegalArgumentException e) {
                             ModernDamage.LOGGER.warn("Invalid part name for toughness: {} in {}", partName, itemId);
                         }
+                    }
+                }
+
+                if (dataObj.has("toughness_sub")) {
+                    JsonObject subToughness = dataObj.getAsJsonObject("toughness_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subToughness.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name for toughness: {} in {}", subKey, itemId);
+                            continue;
+                        }
+                        int value = subEntry.getValue().getAsInt();
+                        armorData.setSubToughness(subPart, value);
                     }
                 }
 
@@ -1672,6 +2251,20 @@ public class ArmorDataLoader {
                         } catch (IllegalArgumentException e) {
                             ModernDamage.LOGGER.warn("Invalid part name for ricochet_chance: {} in {}", partName, itemId);
                         }
+                    }
+                }
+
+                if (dataObj.has("ricochet_sub")) {
+                    JsonObject subRc = dataObj.getAsJsonObject("ricochet_sub");
+                    for (Map.Entry<String, JsonElement> subEntry : subRc.entrySet()) {
+                        String subKey = subEntry.getKey();
+                        ModDamageSubPart subPart = ModDamageSubPart.bySubKey(subKey);
+                        if (subPart == null) {
+                            ModernDamage.LOGGER.warn("Invalid sub-part name for ricochet: {} in {}", subKey, itemId);
+                            continue;
+                        }
+                        float chance = subEntry.getValue().getAsFloat();
+                        armorData.setSubRicochetChance(subPart, chance);
                     }
                 }
 
@@ -2423,9 +3016,9 @@ import com.moderndamage.control.config.EffectEntry;
 import com.moderndamage.control.config.EntityBodyPartEffectConfig;
 import com.moderndamage.control.config.EntityEffectConfig;
 import com.moderndamage.control.config.ModClothConfig;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
@@ -2445,7 +3038,7 @@ public class CreaturePartHealth implements IPartHealth {
     private boolean tryInit() {
         if (initialized) return true;
         if (entity.getAttributes() == null) return false;
-        if (entity.getAttribute(Attributes.MAX_HEALTH) == null) return false;
+        if (entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH) == null) return false;
         for (ModDamagePart part : ModDamagePart.values()) {
             float max = calculateMaxHealth(part);
             health.put(part, max);
@@ -2541,6 +3134,11 @@ public class CreaturePartHealth implements IPartHealth {
 
     @Override
     public boolean damagePart(ModDamagePart part, float amount) {
+        return damagePart(part, amount, entity.damageSources().magic());
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
         if (dead || amount <= 0) return false;
 
@@ -2562,8 +3160,11 @@ public class CreaturePartHealth implements IPartHealth {
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            entity.setHealth(0);
+            if (!dead) {  // 防止重复
+                dead = true;
+                entity.setHealth(0);
+                entity.die(source);
+            }
             return true;
         }
         entity.setHealth(getTotalHealthPercent() * entity.getMaxHealth());
@@ -2666,7 +3267,6 @@ public class CreaturePartHealth implements IPartHealth {
             }
         }
     }
-
 
     @Override
     public boolean damageAll(float amount) {
@@ -2738,14 +3338,13 @@ public class CreaturePartHealthProvider implements ICapabilityProvider {
 package com.moderndamage.control.capability.parthealth;
 
 import com.moderndamage.control.api.ModDamagePart;
+import net.minecraft.world.damagesource.DamageSource;
 
 public interface IPartHealth {
+    boolean damagePart(ModDamagePart part, float amount, DamageSource source);
     boolean damagePart(ModDamagePart part, float amount);
-
     boolean damageAll(float amount);
-
     void healAll(float amount);
-
     float getHealth(ModDamagePart part);
     float getMaxHealth(ModDamagePart part);
     float getTotalHealthPercent();
@@ -2775,6 +3374,7 @@ import com.moderndamage.control.network.Networking;
 import com.moderndamage.control.network.SyncPartHealthPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 
@@ -2785,6 +3385,7 @@ public class PlayerPartHealth implements IPartHealth {
     private final Map<ModDamagePart, Float> health = new EnumMap<>(ModDamagePart.class);
     private final Map<ModDamagePart, Boolean> destroyed = new EnumMap<>(ModDamagePart.class);
     private boolean dead = false;
+    private boolean hasDied = false;
     private boolean initialized = false;
     private int lastDamageTick = 0;
     private int lastSyncTick = 0;
@@ -2843,6 +3444,7 @@ public class PlayerPartHealth implements IPartHealth {
     public void reset() {
         if (player.getAttributes() == null) return;
         dead = false;
+        hasDied = false;
         for (ModDamagePart part : ModDamagePart.values()) {
             float max = getMaxHealthRaw(part);
             health.put(part, max);
@@ -2852,6 +3454,7 @@ public class PlayerPartHealth implements IPartHealth {
         lastDamageTick = 0;
         updateVanillaHealth();
         syncToClient(true);
+        ModernDamage.LOGGER.debug("PlayerPartHealth reset for {}", player.getName().getString());
     }
 
     private void updateVanillaHealth() {
@@ -2899,8 +3502,19 @@ public class PlayerPartHealth implements IPartHealth {
 
     @Override
     public boolean damagePart(ModDamagePart part, float amount) {
+        return damagePart(part, amount, player.damageSources().magic());
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
-        if (dead || amount <= 0) return false;
+        if (dead || hasDied || player.isDeadOrDying()) {
+            ModernDamage.LOGGER.warn("damagePart ignored, already dead/hasDied for {} part={}", player.getName().getString(), part);
+            return false;
+        }
+        if (amount <= 0) return false;
+
+        ModernDamage.LOGGER.info("damagePart called for {} part={} amount={} source={}", player.getName().getString(), part, amount, source.getMsgId());
 
         lastDamageTick = player.tickCount;
         float current = getHealth(part);
@@ -2913,17 +3527,23 @@ public class PlayerPartHealth implements IPartHealth {
             destroyed.put(part, true);
             float overflow = -newHealth;
             if (overflow > 0) {
-                distributeOverflowDamage(overflow);
+                distributeOverflowDamage(overflow, source);
             }
         } else {
             health.put(part, newHealth);
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            player.setHealth(0);
-            syncToClient();
-            return true;
+            if (!dead && !hasDied && !player.isDeadOrDying()) {
+                dead = true;
+                hasDied = true;
+                player.setHealth(0);
+                ModernDamage.LOGGER.info("Calling player.die for {} with source {}", player.getName().getString(), source.getMsgId());
+                return true;
+            } else {
+                ModernDamage.LOGGER.warn("Death already processed for {}, skipping duplicate die call", player.getName().getString());
+                return true;
+            }
         }
 
         updateVanillaHealth();
@@ -2931,8 +3551,10 @@ public class PlayerPartHealth implements IPartHealth {
         return false;
     }
 
-    private void distributeOverflowDamage(float overflow) {
-        if (overflow <= 0) return;
+    private void distributeOverflowDamage(float overflow, DamageSource source) {
+        if (dead || hasDied || overflow <= 0) return;
+
+        ModernDamage.LOGGER.debug("distributeOverflowDamage for {} overflow={}", player.getName().getString(), overflow);
 
         Map<ModDamagePart, Float> currentHealth = new EnumMap<>(ModDamagePart.class);
         Set<ModDamagePart> destroyedParts = new HashSet<>();
@@ -2942,7 +3564,7 @@ public class PlayerPartHealth implements IPartHealth {
         }
 
         float remaining = overflow;
-        while (remaining > 0.001f) {
+        while (remaining > 0.001f && !dead && !hasDied) {
             List<ModDamagePart> aliveParts = new ArrayList<>();
             float totalMaxHealth = 0f;
             boolean onlyHeadAlive = true;
@@ -3031,7 +3653,7 @@ public class PlayerPartHealth implements IPartHealth {
     @Override
     public boolean damageAll(float amount) {
         if (!tryInit()) return false;
-        if (dead || amount <= 0) return false;
+        if (dead || hasDied || amount <= 0) return false;
 
         lastDamageTick = player.tickCount;
 
@@ -3099,10 +3721,12 @@ public class PlayerPartHealth implements IPartHealth {
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            player.setHealth(0);
-            syncToClient();
-            return true;
+            if (!dead && !hasDied && !player.isDeadOrDying()) {
+                dead = true;
+                hasDied = true;
+                player.setHealth(0);
+                return true;
+            }
         }
 
         updateVanillaHealth();
@@ -3259,6 +3883,7 @@ public class PlayerPartHealth implements IPartHealth {
         }
         initialized = true;
         dead = false;
+        hasDied = false;
         updateVanillaHealth();
     }
 }==== ./src/main/java/com/moderndamage/control/capability/parthealth/PlayerPartHealthProvider.java ====
@@ -3599,7 +4224,7 @@ import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.capability.parthealth.IPartHealth;
 import com.moderndamage.control.config.ModClothConfig;
-import net.minecraft.client.Minecraft;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -3651,8 +4276,8 @@ public class ClientPartHealthCache implements IPartHealth {
 
         if (changed) {
             cache.flashRemainingTicks = 2;
-            if (Minecraft.getInstance().player != null) {
-                cache.lastFlashTick = Minecraft.getInstance().player.tickCount;
+            if (net.minecraft.client.Minecraft.getInstance().player != null) {
+                cache.lastFlashTick = net.minecraft.client.Minecraft.getInstance().player.tickCount;
             }
         }
     }
@@ -3695,6 +4320,11 @@ public class ClientPartHealthCache implements IPartHealth {
     @Override
     public boolean isPartDestroyed(ModDamagePart part) {
         return getHealth(part) <= 0;
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
+        throw new UnsupportedOperationException("Client-side cache does not support damagePart with source");
     }
 
     @Override
@@ -4237,9 +4867,9 @@ public class BodypartHitbox {
     }
 
     private static final AABB HEAD_BOX = new AABB(-0.2, 1.5, -0.2, 0.2, 1.8, 0.2);
-    private static final AABB BODY_BOX = new AABB(-0.2, 0.7, -0.15, 0.2, 1.5, 0.15);
-    private static final AABB LEFT_ARM_BOX = new AABB(0.2, 0.7, -0.15, 0.4, 1.5, 0.15);
-    private static final AABB RIGHT_ARM_BOX = new AABB(-0.4, 0.7, -0.15, -0.2, 1.5, 0.15);
+    private static final AABB BODY_BOX = new AABB(-0.3, 0.7, -0.15, 0.3, 1.5, 0.15);
+    private static final AABB LEFT_ARM_BOX = new AABB(0.3, 0.7, -0.15, 0.4, 1.5, 0.15);
+    private static final AABB RIGHT_ARM_BOX = new AABB(-0.4, 0.7, -0.15, -0.3, 1.5, 0.15);
     private static final AABB LEFT_LEG_BOX = new AABB(0.0, 0.15, -0.15, 0.2, 0.7, 0.15);
     private static final AABB RIGHT_LEG_BOX = new AABB(-0.2, 0.15, -0.15, 0.0, 0.7, 0.15);
     private static final AABB LEFT_FOOT_BOX = new AABB(0.0, 0.0, -0.2, 0.2, 0.15, 0.2);
@@ -4376,6 +5006,131 @@ public enum EnumPlayerPart {
     RIGHT_LEG,
     LEFT_FOOT,
     RIGHT_FOOT
+}==== ./src/main/java/com/moderndamage/control/compat/hitbox/SubBodypartHitbox.java ====
+package com.moderndamage.control.compat.hitbox;
+
+import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.api.ModDamageSubPart;
+import com.moderndamage.control.config.ModClothConfig;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SubBodypartHitbox {
+    private static final List<Entry> SUB_PART_BOXES = new ArrayList<>();
+
+    static {
+        // ========== 头部 (Y: 1.35 ~ 1.8) ==========
+        // 颈部 (下段)
+        add(ModDamageSubPart.HEAD_NECK,
+                -0.4, 1.35, -0.4,
+                0.4, 1.5, 0.4);
+        // 面部 (前部，Z>0，Y范围从 1.5 开始)
+        add(ModDamageSubPart.HEAD_FACE,
+                -0.20, 1.5, 0.05,
+                0.20, 1.8, 0.30);
+        // 头顶 (整个头部剩余部分，Y范围从 1.5 开始，与面部重叠)
+        add(ModDamageSubPart.HEAD_TOP,
+                -0.4, 1.5, -0.4,
+                0.4, 2.0, 0.4);
+
+        // ========== 胸部 (Y: 1.00625 ~ 1.55625) ==========
+        add(ModDamageSubPart.CHEST_FRONT,
+                -0.28, 1.0, 0.0,
+                0.28, 1.5, 0.4);
+        add(ModDamageSubPart.CHEST_BACK,
+                -0.28, 1.0, -0.4,
+                0.28, 1.5, 0.0);
+
+        // ========== 胃部 (Y: 0.50625 ~ 1.00625) ==========
+        add(ModDamageSubPart.STOMACH_FRONT,
+                -0.28, 0.7, 0.0,
+                0.28, 1.0, 0.4);
+        add(ModDamageSubPart.STOMACH_BACK,
+                -0.28, 0.7, -0.4,
+                0.28, 1.0, 0.0);
+
+        // ========== 手臂 (Y: 0.45 ~ 1.35) ==========
+        // 左肩 (上部分)
+        add(ModDamageSubPart.LEFT_SHOULDER,
+                0.28, 0.9, -0.4,
+                0.4, 1.35, 0.4);
+        // 左前臂 (下部分)
+        add(ModDamageSubPart.LEFT_FOREARM,
+                0.28, 0.45, -0.4,
+                0.4, 0.9, 0.4);
+        // 右肩
+        add(ModDamageSubPart.RIGHT_SHOULDER,
+                -0.4, 0.9, -0.4,
+                -0.28, 1.35, 0.4);
+        // 右前臂
+        add(ModDamageSubPart.RIGHT_FOREARM,
+                -0.4, 0.45, -0.4,
+                -0.28, 0.9, 0.4);
+
+        // ========== 腿部 (Y: 0 ~ 0.50625) ==========
+        // 左大腿
+        add(ModDamageSubPart.LEFT_THIGH,
+                0.0, 0.3, -0.4,
+                0.4, 0.7, 0.4);
+        // 左小腿
+        add(ModDamageSubPart.LEFT_CALF,
+                0.0, 0.1, -0.4,
+                0.4, 0.3, 0.4);
+        // 左脚
+        add(ModDamageSubPart.LEFT_FOOT,
+                0.0, 0, -0.4,
+                0.4, 0.1, 0.4);
+        // 右大腿
+        add(ModDamageSubPart.RIGHT_THIGH,
+                -0.4, 0.3, -0.4,
+                -0.0, 0.7, 0.4);
+        // 右小腿
+        add(ModDamageSubPart.RIGHT_CALF,
+                -0.4, 0.1, -0.4,
+                -0.0, 0.3, 0.4);
+        // 右脚
+        add(ModDamageSubPart.RIGHT_FOOT,
+                -0.4, 0, -0.4,
+                -0.0, 0.1, 0.4);
+    }
+
+    private static void add(ModDamageSubPart sub, double x1, double y1, double z1, double x2, double y2, double z2) {
+        SUB_PART_BOXES.add(new Entry(sub, new AABB(x1, y1, z1, x2, y2, z2)));
+    }
+
+    public static ModDamageSubPart getSubPart(Vec3 localPoint, boolean isCrawling) {
+        boolean debug = ModClothConfig.get().debugMode;
+        if (debug) {
+            ModernDamage.LOGGER.info("[SubHitbox] Checking point: {} (crawling={})", localPoint, isCrawling);
+        }
+        for (Entry entry : SUB_PART_BOXES) {
+            if (entry.box.contains(localPoint)) {
+                if (debug) {
+                    ModernDamage.LOGGER.info("[SubHitbox] Matched: {} with box {}", entry.subPart, entry.box);
+                }
+                return entry.subPart;
+            }
+        }
+        if (debug) {
+            ModernDamage.LOGGER.warn("[SubHitbox] No match for point: {}. Available boxes:", localPoint);
+            for (Entry entry : SUB_PART_BOXES) {
+                ModernDamage.LOGGER.warn("  {}: {}", entry.subPart, entry.box);
+            }
+        }
+        return ModDamageSubPart.CHEST_FRONT;
+    }
+
+    private static class Entry {
+        final ModDamageSubPart subPart;
+        final AABB box;
+        Entry(ModDamageSubPart subPart, AABB box) {
+            this.subPart = subPart;
+            this.box = box;
+        }
+    }
 }==== ./src/main/java/com/moderndamage/control/config/EffectEntry.java ====
 package com.moderndamage.control.config;
 
@@ -4648,6 +5403,9 @@ public class ModClothConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public DamageModel damageModel = DamageModel.SOFT;
+
+    @ConfigEntry.Gui.Tooltip
+    public boolean enablePreciseHitbox = true;
 
     // ========== 出血系统配置 ==========
     @ConfigEntry.Gui.Tooltip
@@ -5361,17 +6119,29 @@ package com.moderndamage.control.effect;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 
 public class C1BuffEffect extends MobEffect {
     public C1BuffEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
+
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {}
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
+        if (entity.level().isClientSide) return;
+        entity.removeEffect(ModEffects.FATIGUE.get());
+        entity.removeEffect(ModEffects.PAIN.get());
+        entity.removeEffect(ModEffects.DIZZINESS.get());
+        entity.removeEffect(MobEffects.CONFUSION);   // 恶心
+        entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+        entity.removeEffect(MobEffects.WEAKNESS);
+        entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+    }
+
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return false;
+        return true;
     }
 }==== ./src/main/java/com/moderndamage/control/effect/C1SideEffectEffect.java ====
 package com.moderndamage.control.effect;
@@ -6163,6 +6933,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class PH11RegenerationEffect extends MobEffect {
+    private int tickCounter = 0;
+
     public PH11RegenerationEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -6170,8 +6942,12 @@ public class PH11RegenerationEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity.level().isClientSide) return;
-        float heal = (float) ModClothConfig.get().ph11RegenPerSecond / 20f;
-        entity.heal(heal);
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            float heal = (float) ModClothConfig.get().ph11RegenPerSecond;
+            if (heal > 0) entity.heal(heal);
+        }
     }
 
     @Override
@@ -6206,9 +6982,7 @@ public class PH16HealEffect extends MobEffect {
         if (healTimer >= interval) {
             healTimer = 0;
             if (entity instanceof Player player) {
-                // 优先级：严重创伤 > 未固定骨折 > 固定骨折
                 boolean healed = false;
-                // 严重创伤
                 if (player.hasEffect(ModEffects.LEFT_ARM_TRAUMA.get())) {
                     player.removeEffect(ModEffects.LEFT_ARM_TRAUMA.get());
                     healed = true;
@@ -6225,7 +6999,6 @@ public class PH16HealEffect extends MobEffect {
                     player.removeEffect(ModEffects.STOMACH_TRAUMA.get());
                     healed = true;
                 }
-                // 未固定骨折
                 if (!healed) {
                     if (player.hasEffect(ModEffects.LEFT_ARM_FRACTURE.get())) {
                         player.removeEffect(ModEffects.LEFT_ARM_FRACTURE.get());
@@ -6241,7 +7014,6 @@ public class PH16HealEffect extends MobEffect {
                         healed = true;
                     }
                 }
-                // 已固定骨折
                 if (!healed) {
                     if (player.hasEffect(ModEffects.LEFT_SPLINTED_ARM.get())) {
                         player.removeEffect(ModEffects.LEFT_SPLINTED_ARM.get());
@@ -6257,7 +7029,6 @@ public class PH16HealEffect extends MobEffect {
                         healed = true;
                     }
                 }
-                // 无伤势则回血
                 if (!healed) {
                     player.heal(5.0f);
                 }
@@ -6277,11 +7048,8 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
-/**
- * PH-16 泽诺戴恩的再生效果
- * 每秒恢复指定生命值（配置项 ph16RegenPerSecond）
- */
 public class PH16RegenerationEffect extends MobEffect {
+    private int tickCounter = 0;
 
     public PH16RegenerationEffect(MobEffectCategory category, int color) {
         super(category, color);
@@ -6290,16 +7058,17 @@ public class PH16RegenerationEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity.level().isClientSide) return;
-        ModClothConfig config = ModClothConfig.get();
-        float healPerSecond = (float) config.ph16RegenPerSecond;
-        if (healPerSecond <= 0) return;
-        float healPerTick = healPerSecond / 20f;
-        entity.heal(healPerTick);
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            float heal = (float) ModClothConfig.get().ph16RegenPerSecond;
+            if (heal > 0) entity.heal(heal);
+        }
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return true; // 每 tick 调用
+        return true;
     }
 }==== ./src/main/java/com/moderndamage/control/effect/PH18NeurostabilEffect.java ====
 package com.moderndamage.control.effect;
@@ -6327,6 +7096,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class PH5RegenerationEffect extends MobEffect {
+    private int tickCounter = 0;
+
     public PH5RegenerationEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -6334,8 +7105,12 @@ public class PH5RegenerationEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity.level().isClientSide) return;
-        float heal = (float) ModClothConfig.get().ph5RegenPerSecond / 20f;
-        entity.heal(heal);
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            float heal = (float) ModClothConfig.get().ph5RegenPerSecond;
+            if (heal > 0) entity.heal(heal);
+        }
     }
 
     @Override
@@ -6351,6 +7126,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class PH6RegenerationEffect extends MobEffect {
+    private int tickCounter = 0;
+
     public PH6RegenerationEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -6358,8 +7135,12 @@ public class PH6RegenerationEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity.level().isClientSide) return;
-        float heal = (float) ModClothConfig.get().ph6RegenPerSecond / 20f;
-        entity.heal(heal);
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            float heal = (float) ModClothConfig.get().ph6RegenPerSecond;
+            if (heal > 0) entity.heal(heal);
+        }
     }
 
     @Override
@@ -6671,6 +7452,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class VG5RegenerationEffect extends MobEffect {
+    private int tickCounter = 0;
+
     public VG5RegenerationEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
@@ -6678,13 +7461,17 @@ public class VG5RegenerationEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity.level().isClientSide) return;
-        float heal = (float) ModClothConfig.get().vg5RegenPerSecond / 20f;
-        entity.heal(heal);
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            float heal = (float) ModClothConfig.get().vg5RegenPerSecond;
+            if (heal > 0) entity.heal(heal);
+        }
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return true;
+        return true; // 每 tick 调用，但内部控制触发间隔
     }
 }==== ./src/main/java/com/moderndamage/control/effect/VG6MethylphenidateEffect.java ====
 package com.moderndamage.control.effect;
@@ -6715,14 +7502,20 @@ import com.moderndamage.control.config.ModClothConfig;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 
 public class EntityHitboxHelper {
 
     public static ModDamagePart getHitPart(LivingEntity entity, Vec3 localPos) {
+        if (entity instanceof Player) {
+            return getHitPartForPlayer(localPos);
+        }
+
         EntityHitboxConfig cfg = EntityHitboxConfigLoader.getConfig(entity.getType());
         float y = (float) localPos.y;
         float absX = (float) Math.abs(localPos.x);
+
         if (y >= cfg.headHeight[0] && y <= cfg.headHeight[1]) {
             return ModDamagePart.HEAD;
         }
@@ -6743,6 +7536,50 @@ public class EntityHitboxHelper {
         if (y < cfg.bodyHeight[0] && absX >= cfg.legXRange[0] && absX <= cfg.legXRange[1]) {
             return localPos.x > 0 ? ModDamagePart.RIGHT_LEG : ModDamagePart.LEFT_LEG;
         }
+        return ModDamagePart.CHEST;
+    }
+
+    private static ModDamagePart getHitPartForPlayer(Vec3 localPos) {
+        float y = (float) localPos.y;
+        float absX = (float) Math.abs(localPos.x);
+
+        // 1. 头部
+        if (y >= 1.55625f && y <= 1.8f) {
+            return ModDamagePart.HEAD;
+        }
+
+        // 2. 扩展手臂命中箱（优先于躯干，且缩减宽度以避免与胸胃重叠）
+        if (y >= 0.45f && y <= 1.35f) {
+            // 右臂 (X 正方向) 缩减起始值至 0.5，避免覆盖胸部/胃部
+            if (localPos.x >= 0.5f && localPos.x <= 0.9f && localPos.z >= -0.35f && localPos.z <= 0.35f) {
+                return ModDamagePart.RIGHT_ARM;
+            }
+            // 左臂 (X 负方向)
+            if (localPos.x >= -0.9f && localPos.x <= -0.5f && localPos.z >= -0.35f && localPos.z <= 0.35f) {
+                return ModDamagePart.LEFT_ARM;
+            }
+        }
+
+        // 3. 胸部 (Y 不变，X 宽度扩展 2 像素：原 ±0.25 → ±0.3625)
+        if (y >= 1.00625f && y <= 1.55625f) {
+            if (absX <= 0.3625f) {  // 2 像素 ≈ 0.1125，0.25 + 0.1125 = 0.3625
+                return ModDamagePart.CHEST;
+            }
+        }
+
+        // 4. 胃部 (Y 不变，X 宽度同样扩展)
+        if (y >= 0.50625f && y <= 1.00625f) {
+            if (absX <= 0.3625f) {
+                return ModDamagePart.STOMACH;
+            }
+        }
+
+        // 5. 腿部 (Y 不变，X 范围保持原样)
+        if (y >= 0f && y <= 0.50625f && absX >= 0.1f && absX <= 0.35f) {
+            return localPos.x > 0 ? ModDamagePart.RIGHT_LEG : ModDamagePart.LEFT_LEG;
+        }
+
+        // 6. 默认
         return ModDamagePart.CHEST;
     }
 
@@ -6824,6 +7661,8 @@ import com.moderndamage.control.armor.ArmorCalculator;
 import com.moderndamage.control.armor.ArmorData;
 import com.moderndamage.control.armor.ArmorDataLoader;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
+import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.util.RomanNumberHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -6841,18 +7680,38 @@ public class ArmorTooltipHandler {
         ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
         if (data == null) return;
 
+        ModClothConfig config = ModClothConfig.get();
+        boolean preciseMode = config.enablePreciseHitbox && config.damageModel == ModClothConfig.DamageModel.HARDCORE;
+
         event.getToolTip().add(Component.translatable("tooltip.moderndamage.armor_protection").withStyle(ChatFormatting.GRAY));
 
-        for (Map.Entry<ModDamagePart, Integer> entry : data.getCoverage().entrySet()) {
-            ModDamagePart part = entry.getKey();
-            int dynamicLevel = ArmorCalculator.getDynamicProtectionLevel(stack, part);
-            int toughness = ArmorCalculator.getDynamicToughness(stack, part);
-            String roman = RomanNumberHelper.toRomanGrade(dynamicLevel);
-            String partKey = "tooltip.moderndamage.part." + part.name().toLowerCase();
-            Component partName = Component.translatable(partKey);
-            Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", partName, roman, dynamicLevel)
-                    .append(Component.literal(" [" + toughness + "]").withStyle(ChatFormatting.GRAY));
-            event.getToolTip().add(line);
+        if (preciseMode) {
+            for (ModDamageSubPart subPart : ModDamageSubPart.values()) {
+                int baseLevel = data.getSubProtectionLevel(subPart);
+                if (baseLevel == 0) continue;
+
+                int dynamicLevel = ArmorCalculator.getDynamicProtectionLevel(stack, subPart);
+                int dynamicToughness = ArmorCalculator.getDynamicToughness(stack, subPart);
+                String roman = RomanNumberHelper.toRomanGrade(dynamicLevel);
+                String subPartKey = "tooltip.moderndamage.subpart." + subPart.getSubKey();
+                Component subPartName = Component.translatable(subPartKey);
+                Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", subPartName, roman, dynamicLevel)
+                        .append(Component.literal(" [" + dynamicToughness + "]").withStyle(ChatFormatting.GRAY));
+                event.getToolTip().add(line);
+            }
+        } else {
+            // 原有主部位显示
+            for (Map.Entry<ModDamagePart, Integer> entry : data.getCoverage().entrySet()) {
+                ModDamagePart part = entry.getKey();
+                int dynamicLevel = ArmorCalculator.getDynamicProtectionLevel(stack, part);
+                int dynamicToughness = ArmorCalculator.getDynamicToughness(stack, part);
+                String roman = RomanNumberHelper.toRomanGrade(dynamicLevel);
+                String partKey = "tooltip.moderndamage.part." + part.name().toLowerCase();
+                Component partName = Component.translatable(partKey);
+                Component line = Component.translatable("tooltip.moderndamage.protection_line_roman", partName, roman, dynamicLevel)
+                        .append(Component.literal(" [" + dynamicToughness + "]").withStyle(ChatFormatting.GRAY));
+                event.getToolTip().add(line);
+            }
         }
     }
 }==== ./src/main/java/com/moderndamage/control/event/ArmStaminaEventHandler.java ====
@@ -7135,6 +7994,7 @@ package com.moderndamage.control.event;
 
 import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 import com.moderndamage.control.armor.ArmorCalculator;
 import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
@@ -7142,6 +8002,7 @@ import com.moderndamage.control.capability.parthealth.PartHealthCapability;
 import com.moderndamage.control.compat.hitbox.BodypartHitbox;
 import com.moderndamage.control.compat.hitbox.CoordinateTransform;
 import com.moderndamage.control.compat.hitbox.EnumPlayerPart;
+import com.moderndamage.control.compat.hitbox.SubBodypartHitbox;
 import com.moderndamage.control.config.EffectEntry;
 import com.moderndamage.control.config.EntityBodyPartEffectConfig;
 import com.moderndamage.control.config.EntityEffectConfig;
@@ -7153,7 +8014,6 @@ import com.tacz.guns.api.entity.IGunOperator;
 import com.tacz.guns.entity.EntityKineticBullet;
 import com.tacz.guns.resource.modifier.AttachmentCacheProperty;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -7168,13 +8028,15 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class InjuryEventHandler {
     private static final Random RANDOM = new Random();
 
-    /**
-     * 判断伤害来源是否应该完全无视护甲（包括耐久消耗和减伤）。
-     */
+    // 用于防止软核模式下重复调用 die（子弹伤害手动处理时使用）
+    private static final ConcurrentHashMap<UUID, Boolean> SOFT_DEATH_MARK = new ConcurrentHashMap<>();
+
     private boolean isArmorIgnored(DamageSource source) {
         String msgId = source.getMsgId();
         return switch (msgId) {
@@ -7198,81 +8060,16 @@ public class InjuryEventHandler {
         return msg.equals("explosion") || msg.equals("explosion.player") || msg.equals("fireball") || msg.equals("fireball.player");
     }
 
-    private void applyLegsDamage(LivingEntity target, float amount, boolean isHardcore, ModClothConfig config) {
-        float half = amount / 2.0f;
-        if (isHardcore && target instanceof Player player) {
-            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> {
-                cap.damagePart(ModDamagePart.LEFT_LEG, half);
-                cap.damagePart(ModDamagePart.RIGHT_LEG, half);
-            });
-        } else if (isHardcore && config.creaturePartHealthEnabled && target instanceof LivingEntity) {
-            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> {
-                cap.damagePart(ModDamagePart.LEFT_LEG, half);
-                cap.damagePart(ModDamagePart.RIGHT_LEG, half);
-            });
-        } else {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) target.setHealth(0);
-            else target.setHealth(newHealth);
-        }
-    }
-
-    private void applyPartDamage(LivingEntity target, ModDamagePart part, float amount, boolean isHardcore, ModClothConfig config) {
-        if (!isHardcore) {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) target.setHealth(0);
-            else target.setHealth(newHealth);
-            return;
-        }
-        if (target instanceof Player player) {
-            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount));
-        } else if (config.creaturePartHealthEnabled) {
-            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount));
-        } else {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) target.setHealth(0);
-            else target.setHealth(newHealth);
-        }
-    }
-
-    private void applyFullBodyDamage(LivingEntity target, float amount, boolean isHardcore, ModClothConfig config) {
-        if (!isHardcore) {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) target.setHealth(0);
-            else target.setHealth(newHealth);
-            return;
-        }
-        if (target instanceof Player player) {
-            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damageAll(amount));
-        } else if (config.creaturePartHealthEnabled) {
-            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damageAll(amount));
-        } else {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) target.setHealth(0);
-            else target.setHealth(newHealth);
-        }
-    }
-
-    private boolean isLowToHigh(Entity attacker, Entity target) {
-        if (attacker == null || target == null) return false;
-        return attacker.getY() <= target.getY() - 0.5;
-    }
-
-    private ModDamagePart randomLimb() {
-        ModDamagePart[] limbs = {ModDamagePart.LEFT_ARM, ModDamagePart.RIGHT_ARM, ModDamagePart.LEFT_LEG, ModDamagePart.RIGHT_LEG};
-        return limbs[RANDOM.nextInt(limbs.length)];
-    }
-
-    private ModDamagePart randomNonVital() {
-        ModDamagePart[] parts = {ModDamagePart.STOMACH, ModDamagePart.LEFT_ARM, ModDamagePart.RIGHT_ARM, ModDamagePart.LEFT_LEG, ModDamagePart.RIGHT_LEG};
-        return parts[RANDOM.nextInt(parts.length)];
-    }
-
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onLivingHurt(LivingHurtEvent event) {
         LivingEntity target = event.getEntity();
         if (target.level().isClientSide) return;
-        if (!target.isAlive()) return;
+
+        // 已死亡或正在死亡中的实体不再处理任何伤害
+        if (!target.isAlive() || target.isDeadOrDying()) {
+            event.setCanceled(true);
+            return;
+        }
 
         float originalDamage = event.getAmount();
         DamageSource source = event.getSource();
@@ -7282,16 +8079,30 @@ public class InjuryEventHandler {
         ModClothConfig config = ModClothConfig.get();
         boolean isHardcore = config.damageModel == ModClothConfig.DamageModel.HARDCORE;
 
-        // ========== 子弹伤害（保留穿透计算） ==========
+        // ========== 子弹伤害（TaCZ） ==========
         if (directEntity instanceof EntityKineticBullet bullet) {
             ModDamagePart hitPart = ModDamagePart.CHEST;
+            ModDamageSubPart subPart = null;
+
             if (target instanceof Player player) {
                 Vec3 hitPos = getHitLocationFromBullet(bullet);
                 if (hitPos != null) {
                     Vec3 localPos = CoordinateTransform.worldToLocal(hitPos, player);
-                    EnumPlayerPart rawPart = BodypartHitbox.getHitPart(localPos);
-                    if (rawPart == null) rawPart = BodypartHitbox.getClosestPart(localPos);
-                    hitPart = refinePart(rawPart, localPos);
+                    if (config.enablePreciseHitbox && isHardcore) {
+                        boolean isCrawling = false;
+                        try {
+                            IGunOperator operator = IGunOperator.fromLivingEntity(player);
+                            if (operator != null && operator.getDataHolder() != null) {
+                                isCrawling = operator.getDataHolder().isCrawling;
+                            }
+                        } catch (Throwable ignored) {}
+                        subPart = SubBodypartHitbox.getSubPart(localPos, isCrawling);
+                        hitPart = subPart.getParent();
+                    } else {
+                        EnumPlayerPart rawPart = BodypartHitbox.getHitPart(localPos);
+                        if (rawPart == null) rawPart = BodypartHitbox.getClosestPart(localPos);
+                        hitPart = refinePart(rawPart, localPos);
+                    }
                 }
             } else {
                 Vec3 hitPos = getHitLocationFromBullet(bullet);
@@ -7317,26 +8128,32 @@ public class InjuryEventHandler {
                 }
                 penetration += (float) attrPen;
             }
-            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, hitPart, originalDamage, penetration);
+
+            ArmorCalculator.PenetrationResult result;
+            if (subPart != null) {
+                result = ArmorCalculator.applyArmorPenetration(target, subPart, originalDamage, penetration);
+            } else {
+                result = ArmorCalculator.applyArmorPenetration(target, hitPart, originalDamage, penetration);
+            }
             float finalDamage = result.finalDamage;
 
             if (config.debugMode && attacker instanceof Player attackerPlayer) {
                 float reductionPercent = originalDamage > 0 ? (1 - finalDamage / originalDamage) * 100 : 0;
                 String status = result.penetrated ? "PENETRATED" : (result.partial ? "PARTIAL" : "BLUNT");
+                String partInfo = (subPart != null) ? (hitPart + "(" + subPart + ")") : hitPart.toString();
                 String msg = String.format("[ModernDamage] %s hit %s(%s): %.1f -> %.1f (%.0f%% reduction, %s)",
-                        attackerPlayer.getName().getString(), target.getName().getString(), hitPart.name(),
+                        attackerPlayer.getName().getString(), target.getName().getString(), partInfo,
                         originalDamage, finalDamage, reductionPercent, status);
                 attackerPlayer.sendSystemMessage(Component.literal(msg));
                 ModernDamage.LOGGER.info(msg);
             }
 
+            // 子弹伤害必须手动处理
             event.setCanceled(true);
             if (isHardcore) {
-                applyPartDamage(target, hitPart, finalDamage, true, config);
+                applyPartDamage(target, hitPart, finalDamage, source, true, config);
             } else {
-                float newHealth = target.getHealth() - finalDamage;
-                if (newHealth <= 0) target.setHealth(0);
-                else target.setHealth(newHealth);
+                applySoftcoreDamage(target, finalDamage, source);
             }
             applyPotionEffects(target, hitPart, finalDamage, source);
             return;
@@ -7363,69 +8180,175 @@ public class InjuryEventHandler {
             }
         }
 
-        event.setCanceled(true);
-        applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
+        if (isHardcore) {
+            // 硬核模式：取消原事件，手动分配部位伤害
+            event.setCanceled(true);
+            boolean died = false;
 
-        // 根据伤害类型分配部位
-        if (isFullBodyDamage(source)) {
-            applyFullBodyDamage(target, finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("hotFloor") || source.getMsgId().equals("fall") || source.getMsgId().equals("stalagmite")) {
-            applyLegsDamage(target, finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("inWall") || source.getMsgId().equals("flyIntoWall")) {
-            applyPartDamage(target, ModDamagePart.HEAD, finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("cactus")) {
-            applyPartDamage(target, randomLimb(), finalDamage, isHardcore, config);
-        } else if (isExplosionDamage(source)) {
-            float chestDamage = finalDamage * 0.5f;
-            float legsTotal = finalDamage * 0.3f;
-            float leftLegDamage = legsTotal / 2;
-            float rightLegDamage = legsTotal / 2;
-            float otherTotal = finalDamage * 0.2f;
-            applyPartDamage(target, ModDamagePart.CHEST, chestDamage, isHardcore, config);
-            applyPartDamage(target, ModDamagePart.LEFT_LEG, leftLegDamage, isHardcore, config);
-            applyPartDamage(target, ModDamagePart.RIGHT_LEG, rightLegDamage, isHardcore, config);
-            if (otherTotal > 0) {
-                applyPartDamage(target, randomNonVital(), otherTotal, isHardcore, config);
-            }
-        } else if (source.getMsgId().equals("fireworks") || source.getMsgId().equals("sting")) {
-            applyPartDamage(target, randomNonVital(), finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("lightningBolt")) {
-            float half = finalDamage / 2;
-            applyPartDamage(target, ModDamagePart.HEAD, half, isHardcore, config);
-            applyPartDamage(target, ModDamagePart.CHEST, half, isHardcore, config);
-        } else if (source.getMsgId().equals("indirectMagic")) {
-            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("thorns")) {
-            ModDamagePart armPart = ModDamagePart.RIGHT_ARM;
-            if (target instanceof Player player && player.getMainHandItem().isEmpty()) {
-                armPart = RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
-            }
-            applyPartDamage(target, armPart, finalDamage, isHardcore, config);
-        } else if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
-            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
-        } else if (source.getMsgId().equals("mobAttack") || source.getMsgId().equals("playerAttack")) {
-            if (isLowToHigh(attacker, target)) {
-                if (RANDOM.nextBoolean()) {
-                    applyLegsDamage(target, finalDamage, isHardcore, config);
+            if (isFullBodyDamage(source)) {
+                died = applyFullBodyDamage(target, finalDamage, source, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("hotFloor") || source.getMsgId().equals("fall") || source.getMsgId().equals("stalagmite")) {
+                died = applyLegsDamage(target, finalDamage, source, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("inWall") || source.getMsgId().equals("flyIntoWall")) {
+                died = applyPartDamage(target, ModDamagePart.HEAD, finalDamage, source, true, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("cactus")) {
+                died = applyPartDamage(target, randomLimb(), finalDamage, source, true, config);
+                if (died) return;
+            } else if (isExplosionDamage(source)) {
+                float chestDamage = finalDamage * 0.5f;
+                float legsTotal = finalDamage * 0.3f;
+                float leftLegDamage = legsTotal / 2;
+                float rightLegDamage = legsTotal / 2;
+                float otherTotal = finalDamage * 0.2f;
+                died = applyPartDamage(target, ModDamagePart.CHEST, chestDamage, source, true, config);
+                if (died) return;
+                died = applyPartDamage(target, ModDamagePart.LEFT_LEG, leftLegDamage, source, true, config);
+                if (died) return;
+                died = applyPartDamage(target, ModDamagePart.RIGHT_LEG, rightLegDamage, source, true, config);
+                if (died) return;
+                if (otherTotal > 0) {
+                    died = applyPartDamage(target, randomNonVital(), otherTotal, source, true, config);
+                    if (died) return;
+                }
+            } else if (source.getMsgId().equals("fireworks") || source.getMsgId().equals("sting")) {
+                died = applyPartDamage(target, randomNonVital(), finalDamage, source, true, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("lightningBolt")) {
+                float half = finalDamage / 2;
+                died = applyPartDamage(target, ModDamagePart.HEAD, half, source, true, config);
+                if (died) return;
+                died = applyPartDamage(target, ModDamagePart.CHEST, half, source, true, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("indirectMagic")) {
+                died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("thorns")) {
+                ModDamagePart armPart = ModDamagePart.RIGHT_ARM;
+                if (target instanceof Player player && player.getMainHandItem().isEmpty()) {
+                    armPart = RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
+                }
+                died = applyPartDamage(target, armPart, finalDamage, source, true, config);
+                if (died) return;
+            } else if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
+                died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
+                if (died) return;
+            } else if (source.getMsgId().equals("mobAttack") || source.getMsgId().equals("playerAttack")) {
+                if (isLowToHigh(attacker, target)) {
+                    if (RANDOM.nextBoolean()) {
+                        died = applyLegsDamage(target, finalDamage, source, config);
+                        if (died) return;
+                    } else {
+                        died = applyPartDamage(target, ModDamagePart.STOMACH, finalDamage, source, true, config);
+                        if (died) return;
+                    }
                 } else {
-                    applyPartDamage(target, ModDamagePart.STOMACH, finalDamage, isHardcore, config);
+                    died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
+                    if (died) return;
                 }
             } else {
-                applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
+                died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
+                if (died) return;
             }
-        } else {
-            applyPartDamage(target, ModDamagePart.CHEST, finalDamage, isHardcore, config);
-        }
 
-        if (!isHardcore && target.getHealth() <= 0 && target instanceof ServerPlayer serverPlayer) {
-            serverPlayer.setHealth(0);
-            serverPlayer.connection.send(new net.minecraft.network.protocol.game.ClientboundPlayerCombatKillPacket(
-                    serverPlayer.getId(),
-                    serverPlayer.getCombatTracker().getDeathMessage()
-            ));
+            // 如果没有死亡，才应用药水效果
+            applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
+        } else {
+            // ========== 软核模式：只修改伤害值，让原版处理死亡 ==========
+            event.setAmount(finalDamage);
+            applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
+            // 直接返回，不取消事件
+            return;
         }
     }
 
+    // ========== 硬核模式下的伤害分配方法（返回是否死亡） ==========
+    private boolean applyPartDamage(LivingEntity target, ModDamagePart part, float amount, DamageSource source, boolean isHardcore, ModClothConfig config) {
+        if (!isHardcore) {
+            // 软核模式不应进入此分支，但安全起见直接处理伤害并返回死亡状态
+            float newHealth = target.getHealth() - amount;
+            if (newHealth <= 0) {
+                target.die(source);
+                return true;
+            }
+            target.setHealth(newHealth);
+            return false;
+        }
+        if (target instanceof Player player) {
+            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount, source));
+        } else if (config.creaturePartHealthEnabled) {
+            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount, source));
+        } else {
+            float newHealth = target.getHealth() - amount;
+            if (newHealth <= 0) {
+                target.die(source);
+                return true;
+            }
+            target.setHealth(newHealth);
+            return false;
+        }
+        return !target.isAlive();
+    }
+
+    private boolean applyLegsDamage(LivingEntity target, float amount, DamageSource source, ModClothConfig config) {
+        float half = amount / 2.0f;
+        if (target instanceof Player player) {
+            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> {
+                cap.damagePart(ModDamagePart.LEFT_LEG, half, source);
+                cap.damagePart(ModDamagePart.RIGHT_LEG, half, source);
+            });
+        } else if (config.creaturePartHealthEnabled) {
+            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> {
+                cap.damagePart(ModDamagePart.LEFT_LEG, half, source);
+                cap.damagePart(ModDamagePart.RIGHT_LEG, half, source);
+            });
+        } else {
+            float newHealth = target.getHealth() - amount;
+            if (newHealth <= 0) {
+                target.die(source);
+                return true;
+            }
+            target.setHealth(newHealth);
+            return false;
+        }
+        return !target.isAlive();
+    }
+
+    private boolean applyFullBodyDamage(LivingEntity target, float amount, DamageSource source, ModClothConfig config) {
+        if (target instanceof Player player) {
+            player.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damageAll(amount));
+        } else if (config.creaturePartHealthEnabled) {
+            target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damageAll(amount));
+        } else {
+            float newHealth = target.getHealth() - amount;
+            if (newHealth <= 0) {
+                target.die(source);
+                return true;
+            }
+            target.setHealth(newHealth);
+            return false;
+        }
+        return !target.isAlive();
+    }
+
+    // ========== 软核模式伤害处理（用于子弹等必须手动处理的情况） ==========
+    private void applySoftcoreDamage(LivingEntity target, float amount, DamageSource source) {
+        if (SOFT_DEATH_MARK.containsKey(target.getUUID())) {
+            return;
+        }
+        float newHealth = target.getHealth() - amount;
+        if (newHealth <= 0) {
+            SOFT_DEATH_MARK.put(target.getUUID(), true);
+            target.setHealth(0);
+            target.die(source);
+        } else {
+            target.setHealth(newHealth);
+        }
+    }
+
+    // ========== 辅助方法 ==========
     private Vec3 getHitLocationFromBullet(EntityKineticBullet bullet) {
         if (bullet instanceof EntityKineticBulletExtension ext) {
             return ext.moderndamage$getLastHitLocation();
@@ -7468,6 +8391,21 @@ public class InjuryEventHandler {
                 }
             }
         }
+    }
+
+    private ModDamagePart randomLimb() {
+        ModDamagePart[] limbs = {ModDamagePart.LEFT_ARM, ModDamagePart.RIGHT_ARM, ModDamagePart.LEFT_LEG, ModDamagePart.RIGHT_LEG};
+        return limbs[RANDOM.nextInt(limbs.length)];
+    }
+
+    private ModDamagePart randomNonVital() {
+        ModDamagePart[] parts = {ModDamagePart.STOMACH, ModDamagePart.LEFT_ARM, ModDamagePart.RIGHT_ARM, ModDamagePart.LEFT_LEG, ModDamagePart.RIGHT_LEG};
+        return parts[RANDOM.nextInt(parts.length)];
+    }
+
+    private boolean isLowToHigh(Entity attacker, Entity target) {
+        if (attacker == null || target == null) return false;
+        return attacker.getY() <= target.getY() - 0.5;
     }
 }==== ./src/main/java/com/moderndamage/control/event/LegStaminaEventHandler.java ====
 package com.moderndamage.control.event;
@@ -7641,6 +8579,48 @@ public class MedicalItemTooltipHandler {
         if (registryName != null && TOOLTIP_KEYS.containsKey(registryName)) {
             String key = TOOLTIP_KEYS.get(registryName);
             event.getToolTip().add(Component.translatable(key).withStyle(style -> style.withColor(0x7F7F7F)));
+        }
+    }
+}==== ./src/main/java/com/moderndamage/control/event/MilkBlockHandler.java ====
+package com.moderndamage.control.event;
+
+import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.config.ModClothConfig;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.MilkBucketItem;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
+
+@Mod.EventBusSubscriber(modid = ModernDamage.MODID)
+public class MilkBlockHandler {
+
+    @SubscribeEvent
+    public static void onEffectRemove(MobEffectEvent.Remove event) {
+        LivingEntity entity = event.getEntity();
+        if (entity.level().isClientSide) return;
+
+        boolean isDrinkingMilk = !entity.getUseItem().isEmpty() &&
+                entity.getUseItem().getItem() instanceof MilkBucketItem;
+        if (!isDrinkingMilk) return;
+
+        MobEffect effect = event.getEffect();
+        if (effect == null) return;
+
+        var effectKey = ForgeRegistries.MOB_EFFECTS.getKey(effect);
+        if (effectKey == null) return;
+
+        if (effect.getCategory() == MobEffectCategory.HARMFUL &&
+                effectKey.getNamespace().equals(ModernDamage.MODID)) {
+
+            event.setCanceled(true);
+            if (ModClothConfig.get().debugMode) {
+                ModernDamage.LOGGER.debug("Milk prevented removing {} from {}",
+                        effectKey, entity.getName().getString());
+            }
         }
     }
 }==== ./src/main/java/com/moderndamage/control/event/ResistanceEventHandler.java ====
@@ -10173,7 +11153,8 @@ public class ModernDamage {
     private void registerEffectModifiers() {
         registerBasicModifiers();
         registerConditionalModifiers();
-        registerStaminaModifiers();   // 新增：替换 staminafortweakers 联动
+        registerStaminaModifiers();
+        registerInjectorModifiers();
     }
 
     private void registerBasicModifiers() {
@@ -10557,7 +11538,6 @@ public class ModernDamage {
         // ----- 疲劳 (Fatigue) -----
         ModEffects.FATIGUE.get()
                 .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
-                        // TODO: 临时生成的 UUID，请确保不与现有修饰符冲突
                         String.valueOf(UUID.nameUUIDFromBytes("fatigue_max_arm".getBytes())),
                         -0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)
                 .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
@@ -10647,6 +11627,157 @@ public class ModernDamage {
                 .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
                         String.valueOf(UUID.nameUUIDFromBytes("modafinil_regen_leg".getBytes())),
                         0.1, AttributeModifier.Operation.MULTIPLY_TOTAL);
+    }
+
+    // ========== 针剂药水效果属性修饰符 ==========
+    private void registerInjectorModifiers() {
+        // VG-1 稳定剂：耐力恢复 +20%
+        ModEffects.VG1_BOOST.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg1_arm_regen".getBytes())),
+                        0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_REGEN.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg1_leg_regen".getBytes())),
+                        0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // VG-3 屏障：全身各部位 +5 天然护甲
+        ModEffects.VG3_BOOST.get()
+                .addAttributeModifier(ModAttributes.HEAD_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_head_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.CHEST_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_chest_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.STOMACH_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_stomach_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.ARM_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_arm_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.LEG_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg3_leg_armor".getBytes())),
+                        5.0, AttributeModifier.Operation.ADDITION);
+
+        // VG-6 哌甲酯：攻击力 +15%，攻击速度 +15%，最大手臂/腿部耐力 +20%
+        ModEffects.VG6_METHYLPHENIDATE.get()
+                .addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_attack_damage".getBytes())),
+                        0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.ATTACK_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_attack_speed".getBytes())),
+                        0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_ARM_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_max_arm".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.MAX_LEG_STAMINA.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("vg6_max_leg".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // C-1 化合物正面增益 (C1_BUFF)：攻击力 +20%，攻击速度 +20%，移动速度 +20%，全身 +10 天然护甲
+        ModEffects.C1_BUFF.get()
+                .addAttributeModifier(Attributes.ATTACK_DAMAGE,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_attack_damage".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.ATTACK_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_attack_speed".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(Attributes.MOVEMENT_SPEED,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_movement_speed".getBytes())),
+                        0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.HEAD_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_head_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.CHEST_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_chest_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.STOMACH_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_stomach_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.ARM_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_arm_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION)
+                .addAttributeModifier(ModAttributes.LEG_NATURAL_ARMOR.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_leg_armor".getBytes())),
+                        10.0, AttributeModifier.Operation.ADDITION);
+
+        // 如果有 TAA 属性，为 C1_BUFF 添加后坐力控制、开镜速度、换弹速度等
+        if (ModList.get().isLoaded("taa")) {
+            Attribute adsTime = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "ads_time"));
+            Attribute reloadSpeed = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "reload_speed"));
+            Attribute inaccuracyAim = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_aim"));
+            if (adsTime != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(adsTime,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_ads_time".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            if (reloadSpeed != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(reloadSpeed,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_reload_speed".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            if (inaccuracyAim != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(inaccuracyAim,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_inaccuracy".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
+        }
+        if (ModList.get().isLoaded("tacz_attributes")) {
+            Attribute verticalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_vertical_recoil"));
+            Attribute horizontalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_horizontal_recoil"));
+            if (verticalRecoil != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(verticalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_vertical_recoil".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
+            if (horizontalRecoil != null)
+                ModEffects.C1_BUFF.get().addAttributeModifier(horizontalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_horizontal_recoil".getBytes())),
+                        -0.2, AttributeModifier.Operation.ADDITION);
+        }
+
+        // C-1 副作用：耐力消耗 +25%
+        ModEffects.C1_SIDE_EFFECT.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_arm_drain".getBytes())),
+                        0.25, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("c1_leg_drain".getBytes())),
+                        0.25, AttributeModifier.Operation.MULTIPLY_TOTAL);
+
+        // PH-18 神经稳定剂：后坐力控制 +30%，非瞄准散步 -30%，耐力消耗 -20%
+        if (ModList.get().isLoaded("tacz_attributes")) {
+            Attribute verticalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_vertical_recoil"));
+            Attribute horizontalRecoil = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("tacz_attributes", "ads_horizontal_recoil"));
+            if (verticalRecoil != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(verticalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_vertical_recoil".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (horizontalRecoil != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(horizontalRecoil,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_horizontal_recoil".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+        }
+        if (ModList.get().isLoaded("taa")) {
+            Attribute inaccuracyAim = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_aim"));
+            Attribute inaccuracyMove = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_move"));
+            Attribute inaccuracyStand = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation("taa", "inaccuracy_stand"));
+            if (inaccuracyAim != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyAim,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_aim".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (inaccuracyMove != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyMove,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_move".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+            if (inaccuracyStand != null)
+                ModEffects.PH18_NEUROSTABIL.get().addAttributeModifier(inaccuracyStand,
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_inaccuracy_stand".getBytes())),
+                        -0.3, AttributeModifier.Operation.ADDITION);
+        }
+        // 耐力消耗 -20%
+        ModEffects.PH18_NEUROSTABIL.get()
+                .addAttributeModifier(ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_arm_drain".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL)
+                .addAttributeModifier(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get(),
+                        String.valueOf(UUID.nameUUIDFromBytes("ph18_leg_drain".getBytes())),
+                        -0.2, AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -11101,6 +12232,24 @@ public class RomanNumberHelper {
   "tooltip.moderndamage.part.left_leg": "Left Leg",
   "tooltip.moderndamage.part.right_leg": "Right Leg",
 
+  "tooltip.moderndamage.subpart.head_top": "Head (Top)",
+  "tooltip.moderndamage.subpart.head_face": "Head (Face)",
+  "tooltip.moderndamage.subpart.head_neck": "Head (Neck)",
+  "tooltip.moderndamage.subpart.chest_front": "Chest (Front)",
+  "tooltip.moderndamage.subpart.chest_back": "Chest (Back)",
+  "tooltip.moderndamage.subpart.stomach_front": "Stomach (Front)",
+  "tooltip.moderndamage.subpart.stomach_back": "Stomach (Back)",
+  "tooltip.moderndamage.subpart.left_shoulder": "Left Shoulder",
+  "tooltip.moderndamage.subpart.left_forearm": "Left Forearm",
+  "tooltip.moderndamage.subpart.right_shoulder": "Right Shoulder",
+  "tooltip.moderndamage.subpart.right_forearm": "Right Forearm",
+  "tooltip.moderndamage.subpart.left_thigh": "Left Thigh",
+  "tooltip.moderndamage.subpart.left_calf": "Left Calf",
+  "tooltip.moderndamage.subpart.left_foot": "Left Foot",
+  "tooltip.moderndamage.subpart.right_thigh": "Right Thigh",
+  "tooltip.moderndamage.subpart.right_calf": "Right Calf",
+  "tooltip.moderndamage.subpart.right_foot": "Right Foot",
+
   "effect.moderndamage.minor_bleeding": "Minor Bleeding",
   "effect.moderndamage.major_bleeding": "Major Bleeding",
   "effect.moderndamage.left_arm_fracture": "Left Arm Fracture",
@@ -11222,25 +12371,25 @@ public class RomanNumberHelper {
   "item.moderndamage.lifeline_ph16_xenodyne": "Lifeline PH-16 Xenodyne",
   "item.moderndamage.lifeline_ph18_neurostabil": "Lifeline PH-18 Neurostabil",
 
-  "tooltip.moderndamage.lifeline_vg1_stabilizer": "Right-click to consume. Clears Fatigue and Pain. Increases arm and leg stamina regen by 20% for 120 seconds.",
-  "tooltip.moderndamage.lifeline_vg2_famexin": "Right-click to consume. Removes Nausea and Hunger, and restores 1 food point every 10 seconds for 300 seconds.",
-  "tooltip.moderndamage.lifeline_vg3_barrier": "Right-click to consume. Grants +5 natural armor to all body parts for 240 seconds. Causes 5 seconds of Nausea.",
-  "tooltip.moderndamage.lifeline_vg4_epinephrine": "Right-click to consume. Provides a powerful adrenaline boost for 60 seconds. Causes 120 seconds of Fatigue afterwards.",
-  "tooltip.moderndamage.lifeline_vg5_kelador": "Right-click to consume. Provides 1 second of IV fluid and 30 seconds of regeneration (restores health per second, configurable).",
-  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "Right-click to consume. Provides pain suppression for 120 seconds, and increases attack damage, attack speed, and max stamina by 15-20% for 120 seconds.",
+  "tooltip.moderndamage.lifeline_vg1_stabilizer": "Right-click to consume. Clears Fatigue and Pain, and increases arm and leg stamina regen for 120 seconds.",
+  "tooltip.moderndamage.lifeline_vg2_famexin": "Right-click to consume. Grants immunity to Nausea and Hunger, and slowly restores food over 300 seconds.",
+  "tooltip.moderndamage.lifeline_vg3_barrier": "Right-click to consume. Increases natural armor for 240 seconds with minor side effects.",
+  "tooltip.moderndamage.lifeline_vg4_epinephrine": "Right-click to consume. Provides a powerful adrenaline boost for 60 seconds with strong side effects.",
+  "tooltip.moderndamage.lifeline_vg5_kelador": "Right-click to consume. Rapidly restores health over 30 seconds.",
+  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "Right-click to consume. Provides pain suppression and enhances combat abilities for 120 seconds.",
   "tooltip.moderndamage.lifeline_vg8_modafinil_x": "Right-click to consume. Provides Modafinil Focus for 360 seconds and pain suppression for 180 seconds.",
-  "tooltip.moderndamage.lifeline_ag1_thrombin": "Right-click to consume. Provides Coagulation Boost for 360 seconds. Causes 30 seconds of Hunger.",
-  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "Right-click to consume. Stops all bleeding and provides Coagulation Boost for 60 seconds.",
+  "tooltip.moderndamage.lifeline_ag1_thrombin": "Right-click to consume. Provides Coagulation Boost for 360 seconds with minor side effects.",
+  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "Right-click to consume. Stops bleeding and provides Coagulation Boost for 60 seconds.",
   "tooltip.moderndamage.lifeline_ag3_morphine": "Right-click to consume. Provides pain suppression for 480 seconds with side effects.",
-  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "Right-click to consume. Cures fungal infection and provides infection resistance for 1200 seconds.",
-  "tooltip.moderndamage.lifeline_ph1_atropine": "Right-click to consume. Removes poison and provides poison & infection resistance for 300 seconds.",
-  "tooltip.moderndamage.lifeline_ph3_clarity": "Right-click to consume. Removes Dizziness and Nausea, provides Dizziness Resistance and Pain Suppression for 280 seconds.",
-  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "Right-click to consume. Provides 180 seconds of regeneration, stops bleeding, provides Coagulation Boost and Poison Resistance. Causes 60 seconds of Hunger III as side effect.",
+  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "Right-click to consume. Cures infection and grants Infection Resistance for 1200 seconds.",
+  "tooltip.moderndamage.lifeline_ph1_atropine": "Right-click to consume. Cures poison and grants Poison & Infection Resistance for 300 seconds.",
+  "tooltip.moderndamage.lifeline_ph3_clarity": "Right-click to consume. Cures Dizziness and Nausea, and grants Dizziness Resistance & Pain Suppression for 280 seconds.",
+  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "Right-click to consume. Provides 180 seconds of regeneration, stops bleeding, grants Coagulation Boost and Poison Resistance with strong side effects.",
   "tooltip.moderndamage.lifeline_ph6_vitalis": "Right-click to consume. Provides 300 seconds of regeneration and pain suppression.",
-  "tooltip.moderndamage.lifeline_ph11_c1_compound": "Right-click to consume. Grants 5 seconds of strong regeneration, 120 seconds of powerful combat buffs, and 300 seconds of side effects (periodic damage + stamina drain). 15% chance of no side effects, 20% chance of taking 999 instant damage.",
-  "tooltip.moderndamage.lifeline_ph12_c1_extender": "Right-click to consume. Extends the duration of PH-11 C-1 Compound's positive effects by 90 seconds and removes its side effects.",
-  "tooltip.moderndamage.lifeline_ph16_xenodyne": "Right-click to consume. Provides 300 seconds of regeneration and Coagulation Boost. Every 30 seconds, heals one trauma or fracture (prioritizing trauma > fracture > splinted), or heals 5 health if none.",
-  "tooltip.moderndamage.lifeline_ph18_neurostabil": "Right-click to consume. Increases recoil control by 30%, reduces non-aiming spread by 30%, and reduces arm/leg stamina drain by 20% for 180 seconds."
+  "tooltip.moderndamage.lifeline_ph11_c1_compound": "Right-click to consume. Provides 5 seconds of strong regeneration and powerful combat buffs for 120 seconds, with severe possibly fatal side effects.",
+  "tooltip.moderndamage.lifeline_ph12_c1_extender": "Right-click to consume. Extends the positive effects of PH-11 C-1 Compound by 90 seconds and removes its side effects.",
+  "tooltip.moderndamage.lifeline_ph16_xenodyne": "Right-click to consume. Every 30 seconds over 300 seconds, heals one trauma or fracture (or restores 5 health if none), plus regeneration and Coagulation Boost for the same duration.",
+  "tooltip.moderndamage.lifeline_ph18_neurostabil": "Right-click to consume. Improves upper body stability and aiming capabilities for 180 seconds."
 }==== ./src/main/resources/assets/moderndamage/lang/zh_cn.json ====
 {
   "itemGroup.moderndamage.medical": "现代伤害控制 - 医疗物品",
@@ -11268,6 +12417,24 @@ public class RomanNumberHelper {
   "tooltip.moderndamage.part.right_arm": "右臂",
   "tooltip.moderndamage.part.left_leg": "左腿",
   "tooltip.moderndamage.part.right_leg": "右腿",
+
+  "tooltip.moderndamage.subpart.head_top": "头顶",
+  "tooltip.moderndamage.subpart.head_face": "面部",
+  "tooltip.moderndamage.subpart.head_neck": "颈部",
+  "tooltip.moderndamage.subpart.chest_front": "前胸",
+  "tooltip.moderndamage.subpart.chest_back": "后背",
+  "tooltip.moderndamage.subpart.stomach_front": "前胃部",
+  "tooltip.moderndamage.subpart.stomach_back": "后胃部",
+  "tooltip.moderndamage.subpart.left_shoulder": "左肩",
+  "tooltip.moderndamage.subpart.left_forearm": "左前臂",
+  "tooltip.moderndamage.subpart.right_shoulder": "右肩",
+  "tooltip.moderndamage.subpart.right_forearm": "右前臂",
+  "tooltip.moderndamage.subpart.left_thigh": "左大腿",
+  "tooltip.moderndamage.subpart.left_calf": "左小腿",
+  "tooltip.moderndamage.subpart.left_foot": "左脚",
+  "tooltip.moderndamage.subpart.right_thigh": "右大腿",
+  "tooltip.moderndamage.subpart.right_calf": "右小腿",
+  "tooltip.moderndamage.subpart.right_foot": "右脚",
 
   "effect.moderndamage.minor_bleeding": "轻微出血",
   "effect.moderndamage.major_bleeding": "大出血",
@@ -11298,6 +12465,19 @@ public class RomanNumberHelper {
   "effect.moderndamage.modafinil_focus": "莫达非尼",
   "effect.moderndamage.epinephrine_boost": "肾上腺素",
   "effect.moderndamage.creatine_boost": "肌酸增强",
+  "effect.moderndamage.vg1_boost": "VG-1 稳定剂",
+  "effect.moderndamage.vg3_boost": "VG-3 屏障",
+  "effect.moderndamage.vg5_regeneration": "VG-5 凯拉多再生",
+  "effect.moderndamage.vg6_methylphenidate": "VG-6 哌甲酯",
+  "effect.moderndamage.famexin_resistance": "VG-2 法莫辛",
+  "effect.moderndamage.ph5_regeneration": "PH-5 Newtype人造血再生",
+  "effect.moderndamage.ph6_regeneration": "PH-6 Vitalis 再生",
+  "effect.moderndamage.ph11_regeneration": "PH-11 再生",
+  "effect.moderndamage.c1_buff": "C-1 化合物（增益）",
+  "effect.moderndamage.c1_side_effect": "C-1 化合物（副作用）",
+  "effect.moderndamage.ph16_regeneration": "PH-16 泽诺戴恩再生",
+  "effect.moderndamage.ph16_heal_effect": "PH-16 自动治愈",
+  "effect.moderndamage.ph18_neurostabil": "PH-18 神经稳定剂",
 
   "item.moderndamage.sterile_gauze": "强生无菌纱布",
   "item.moderndamage.cat7_tourniquet": "CAT-7止血带",
@@ -11344,18 +12524,18 @@ public class RomanNumberHelper {
   "tooltip.moderndamage.homemade_caffeine_extract": "长按右键使用，服用后给予提升耐力的兴奋效果，持续180S",
   "tooltip.moderndamage.modafinil": "长按右键使用，服用后给予提升专注的兴奋效果，持续300S",
   "tooltip.moderndamage.oral_rehydration_salts": "长按右键一次性使用，服用后给予生命恢复I效果，持续5S",
-  "tooltip.moderndamage.saline_iv": "长按右键一次性使用，注射后在15S内每秒回复1点生命值",
-  "tooltip.moderndamage.ringers_iv": "长按右键一次性使用，注射后在20S内每秒回复1点生命值",
-  "tooltip.moderndamage.voluven_hes": "长按右键一次性使用，注射后在24S内每秒回复1点生命值",
-  "tooltip.moderndamage.albutein_albumin": "长按右键一次性使用，注射后在5S内每秒回复2点生命值，并给予凝血增强效果，持续60S",
+  "tooltip.moderndamage.saline_iv": "长按右键一次性使用，注射后在15S内每秒回复生命值",
+  "tooltip.moderndamage.ringers_iv": "长按右键一次性使用，注射后在20S内每秒回复生命值",
+  "tooltip.moderndamage.voluven_hes": "长按右键一次性使用，注射后在24S内每秒回复生命值",
+  "tooltip.moderndamage.albutein_albumin": "长按右键一次性使用，注射后在5S内每秒快速回复生命值，并给予凝血增强效果，持续60S",
   "tooltip.moderndamage.octaplas_plasma": "长按右键一次性使用，注射后治愈大出血与轻微出血，并在11S内每秒回复2点生命值",
-  "tooltip.moderndamage.dextrose_iv": "长按右键一次性使用，注射后回复一定的饱食度，并在6S内每秒回复1点生命值",
-  "tooltip.moderndamage.johnson_kit": "长按右键使用，使用后回复2点生命值，并治愈轻微出血或感染",
-  "tooltip.moderndamage.adventure_kit": "长按右键使用，使用后回复3点生命值，并治愈大出血或轻微出血",
-  "tooltip.moderndamage.my_medic_kit": "长按右键使用，使用后回复2点生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或者感染",
-  "tooltip.moderndamage.surviveware_kit": "长按右键使用，使用后回复3点生命值，并治愈轻微出血或者染",
-  "tooltip.moderndamage.nar_rapid_kit": "长按右键使用，使用后回复4点生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或一处严重创伤",
-  "tooltip.moderndamage.nar_mfak_kit": "长按右键使用，使用后回复4点生命值，并治愈大出血、轻微出血或一处严重创伤",
+  "tooltip.moderndamage.dextrose_iv": "长按右键一次性使用，注射后回复一定的饱食度，并在6S内每秒回复生命值",
+  "tooltip.moderndamage.johnson_kit": "长按右键使用，使用后在2S内回复生命值，并治愈轻微出血或感染",
+  "tooltip.moderndamage.adventure_kit": "长按右键使用，使用后在3S内回复生命值，并治愈大出血或轻微出血",
+  "tooltip.moderndamage.my_medic_kit": "长按右键使用，使用后在2S内回复生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或者感染",
+  "tooltip.moderndamage.surviveware_kit": "长按右键使用，使用后在3S内回复生命值，并治愈轻微出血或者染",
+  "tooltip.moderndamage.nar_rapid_kit": "长按右键使用，使用后在4S内回复生命值，给予持续120S的止痛效果，并治愈大出血、轻微出血或一处严重创伤",
+  "tooltip.moderndamage.nar_mfak_kit": "长按右键使用，使用后在4S内回复生命值，并治愈大出血、轻微出血或一处严重创伤",
 
   "item.moderndamage.lifeline_vg1_stabilizer": "生命线制药 VG-1 稳定剂",
   "item.moderndamage.lifeline_vg2_famexin": "生命线制药 VG-2 法莫辛",
@@ -11377,25 +12557,25 @@ public class RomanNumberHelper {
   "item.moderndamage.lifeline_ph16_xenodyne": "生命线制药 PH-16 泽诺戴恩",
   "item.moderndamage.lifeline_ph18_neurostabil": "生命线制药 PH-18 神经稳定剂",
 
-  "tooltip.moderndamage.lifeline_vg1_stabilizer": "长按右键一次性使用。清除疲劳和疼痛，手臂与腿部耐力恢复速度 +20%，持续 120 秒。",
-  "tooltip.moderndamage.lifeline_vg2_famexin": "长按右键一次性使用。免疫恶心和饥饿效果，每 10 秒恢复 1 点饱食度，持续 300 秒。",
-  "tooltip.moderndamage.lifeline_vg3_barrier": "长按右键一次性使用。全身 +5 天然护甲，持续 240 秒。使用时造成 5 秒恶心。",
-  "tooltip.moderndamage.lifeline_vg4_epinephrine": "长按右键一次性使用。60 秒肾上腺素增强效果，结束后产生 120 秒疲劳。",
-  "tooltip.moderndamage.lifeline_vg5_kelador": "长按右键一次性使用。提供 1 秒输液效果和 30 秒再生（每秒恢复生命值，可配置）。",
-  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "长按右键一次性使用。提供 120 秒止痛，同时攻击力、攻击速度、最大耐力提升 15-20%，持续 120 秒。",
-  "tooltip.moderndamage.lifeline_vg8_modafinil_x": "长按右键一次性使用。提供 360 秒莫达非尼效果和 180 秒止痛。",
-  "tooltip.moderndamage.lifeline_ag1_thrombin": "长按右键一次性使用。提供 360 秒凝血增强，造成 30 秒饥饿。",
-  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "长按右键一次性使用，立即止血并给予 60 秒凝血增强。",
-  "tooltip.moderndamage.lifeline_ag3_morphine": "长按右键一次性使用，提供 480 秒止痛效果，有一定的副作用。",
-  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "长按右键一次性使用，治愈真菌感染并提供 1200 秒感染抵抗。",
-  "tooltip.moderndamage.lifeline_ph1_atropine": "长按右键一次性使用，清除中毒并提供 300 秒中毒和感染抵抗。",
-  "tooltip.moderndamage.lifeline_ph3_clarity": "长按右键一次性使用，移除眩晕和恶心，提供 280 秒眩晕抵抗和止痛。",
-  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "长按右键一次性使用，提供 180 秒再生、立即止血、凝血增强和中毒抵抗。副作用：60 秒饥饿 III。",
-  "tooltip.moderndamage.lifeline_ph6_vitalis": "长按右键一次性使用，提供 300 秒再生和止痛。",
-  "tooltip.moderndamage.lifeline_ph11_c1_compound": "长按右键一次性使用，提供 5 秒强力再生、120 秒战斗增益和 300 秒副作用（周期伤害+耐力消耗）。15% 概率无副作用，20% 概率额外受到 999 点伤害。",
-  "tooltip.moderndamage.lifeline_ph12_c1_extender": "长按右键一次性使用，将 PH-11 C-1 化合物的正面效果延长 90 秒，并移除其副作用。",
-  "tooltip.moderndamage.lifeline_ph16_xenodyne": "长按右键一次性使用，提供 300 秒再生和凝血增强。每 30 秒自动治愈一处严重创伤或骨折，无伤势时恢复 5 点生命值。",
-  "tooltip.moderndamage.lifeline_ph18_neurostabil": "长按右键一次性使用，后坐力控制 +30%，非瞄准姿态子弹散步 -30%，手臂与腿部耐力消耗 -20%，持续 180 秒。"
+  "tooltip.moderndamage.lifeline_vg1_stabilizer": "长按右键一次性使用。注射后清除疲劳和疼痛效果，给予增加手臂与腿部耐力恢复速度的效果，持续 120 秒。",
+  "tooltip.moderndamage.lifeline_vg2_famexin": "长按右键一次性使用。注射后给予免疫恶心和饥饿，并缓慢恢复饱食度的效果，持续 300 秒。",
+  "tooltip.moderndamage.lifeline_vg3_barrier": "长按右键一次性使用。注射后给予增加全身防护能力的效果，持续240秒，有一定副作用。",
+  "tooltip.moderndamage.lifeline_vg4_epinephrine": "长按右键一次性使用。注射后给予强大的肾上腺素增强效果，持续60S，有较大副作用。",
+  "tooltip.moderndamage.lifeline_vg5_kelador": "长按右键一次性使用。注射后在30S内快速回复生命值。",
+  "tooltip.moderndamage.lifeline_vg6_methylphenidate": "长按右键一次性使用。注射后给予止痛与提升综合战斗能力的效果，持续 120 秒。",
+  "tooltip.moderndamage.lifeline_vg8_modafinil_x": "长按右键一次性使用。注射后给予360S的莫达非尼效果和180S的止痛效果。",
+  "tooltip.moderndamage.lifeline_ag1_thrombin": "长按右键一次性使用。注射后给予凝血增强效果，持续 360 秒，有一定副作用。",
+  "tooltip.moderndamage.lifeline_ag2_tranexamic_acid": "长按右键一次性使用，注射后给予立即止血并给予凝血增强效果，持续 60 秒。",
+  "tooltip.moderndamage.lifeline_ag3_morphine": "长按右键一次性使用，注射后给予止痛效果，持续480 秒，有一定的副作用。",
+  "tooltip.moderndamage.lifeline_ag4_ciprofloxacin": "长按右键一次性使用，注射后治愈感染并提供感染抵抗效果，持续1200 秒。",
+  "tooltip.moderndamage.lifeline_ph1_atropine": "长按右键一次性使用，注射后治愈中毒并提供 300 秒的中毒和感染抵抗效果。",
+  "tooltip.moderndamage.lifeline_ph3_clarity": "长按右键一次性使用，注射后治愈眩晕和恶心，并提供 280 秒眩晕抵抗和止痛效果。",
+  "tooltip.moderndamage.lifeline_ph5_newtype_hemogen": "长按右键一次性使用，注射后给予 180 秒的再生、立即止血、凝血增强和中毒抵抗的多种效果，有较强的副作用。",
+  "tooltip.moderndamage.lifeline_ph6_vitalis": "长按右键一次性使用，注射后给予 300 秒的再生和止痛效果。",
+  "tooltip.moderndamage.lifeline_ph11_c1_compound": "长按右键一次性使用，注射后给予 5 秒强力再生与全面的强大战斗增益效果，持续120S，有极强的可致命负面作用。",
+  "tooltip.moderndamage.lifeline_ph12_c1_extender": "长按右键一次性使用，注射后给予将 PH-11 C-1 化合物的正面效果延长 90 秒，并移除其已产生的副作用。",
+  "tooltip.moderndamage.lifeline_ph16_xenodyne": "长按右键一次性使用，注射后给予在 300 秒内每 30 秒自动治愈一处严重创伤或骨折，无伤势时恢复 5 点生命值，以及相同时长的再生和凝血增强效果。",
+  "tooltip.moderndamage.lifeline_ph18_neurostabil": "长按右键一次性使用，注射后给予增强上肢稳定性，加强瞄准能力的效果，持续 180 秒。"
 }==== ./src/main/resources/assets/moderndamage/models/item/adventure_medical_kit.json ====
 {
   "parent": "item/generated",

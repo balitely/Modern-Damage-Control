@@ -19,7 +19,7 @@ license="MIT"
 [[mods]] #mandatory
 # The modid of the mod
 modId="moderndamage"
-version="1.0.0"
+version="1.0.1"
 displayName="Modern Damage Control"
 logoFile="moderndamage_logo.png"
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/

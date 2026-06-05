@@ -5,9 +5,9 @@ import com.moderndamage.control.config.EffectEntry;
 import com.moderndamage.control.config.EntityBodyPartEffectConfig;
 import com.moderndamage.control.config.EntityEffectConfig;
 import com.moderndamage.control.config.ModClothConfig;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
@@ -27,7 +27,7 @@ public class CreaturePartHealth implements IPartHealth {
     private boolean tryInit() {
         if (initialized) return true;
         if (entity.getAttributes() == null) return false;
-        if (entity.getAttribute(Attributes.MAX_HEALTH) == null) return false;
+        if (entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH) == null) return false;
         for (ModDamagePart part : ModDamagePart.values()) {
             float max = calculateMaxHealth(part);
             health.put(part, max);
@@ -123,6 +123,11 @@ public class CreaturePartHealth implements IPartHealth {
 
     @Override
     public boolean damagePart(ModDamagePart part, float amount) {
+        return damagePart(part, amount, entity.damageSources().magic());
+    }
+
+    @Override
+    public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
         if (dead || amount <= 0) return false;
 
@@ -144,8 +149,11 @@ public class CreaturePartHealth implements IPartHealth {
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            dead = true;
-            entity.setHealth(0);
+            if (!dead) {  // 防止重复
+                dead = true;
+                entity.setHealth(0);
+                entity.die(source);
+            }
             return true;
         }
         entity.setHealth(getTotalHealthPercent() * entity.getMaxHealth());
@@ -248,7 +256,6 @@ public class CreaturePartHealth implements IPartHealth {
             }
         }
     }
-
 
     @Override
     public boolean damageAll(float amount) {
