@@ -239,22 +239,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e3c968b-a7bb-434d-8027-270244843631" name="更改" comment="ver 0.0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ModDamageSubPart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/SubBodypartHitbox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/MilkBlockHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/IProtectionSourceProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ProtectionSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ProtectionSourceProviderRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/merged.txt" beforeDir="false" afterPath="$PROJECT_DIR$/merged.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/event/ArmorHitEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/event/ArmorHitEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorDataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/CreaturePartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/CreaturePartHealth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/IPartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/IPartHealth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/PlayerPartHealth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/parthealth/PlayerPartHealth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientPartHealthCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/client/ClientPartHealthCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/BodypartHitbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/compat/hitbox/BodypartHitbox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/config/ModClothConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/config/ModClothConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/entity/EntityHitboxHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/entity/EntityHitboxHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ArmorTooltipHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/ArmorTooltipHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStamina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" afterDir="false" />
     </list>
@@ -421,7 +417,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="ver 0.0.1" />
   </component>
 </project>==== ./build/downloadMCMeta/version.json ====
-{"arguments": {"game": ["--username", "${auth_player_name}", "--version", "${version_name}", "--gameDir", "${game_directory}", "--assetsDir", "${assets_root}", "--assetIndex", "${assets_index_name}", "--uuid", "${auth_uuid}", "--accessToken", "${auth_access_token}", "--clientId", "${clientid}", "--xuid", "${auth_xuid}", "--userType", "${user_type}", "--versionType", "${version_type}", {"rules": [{"action": "allow", "features": {"is_demo_user": true}}], "value": "--demo"}, {"rules": [{"action": "allow", "features": {"has_custom_resolution": true}}], "value": ["--width", "${resolution_width}", "--height", "${resolution_height}"]}, {"rules": [{"action": "allow", "features": {"has_quick_plays_support": true}}], "value": ["--quickPlayPath", "${quickPlayPath}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_singleplayer": true}}], "value": ["--quickPlaySingleplayer", "${quickPlaySingleplayer}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_multiplayer": true}}], "value": ["--quickPlayMultiplayer", "${quickPlayMultiplayer}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_realms": true}}], "value": ["--quickPlayRealms", "${quickPlayRealms}"]}], "jvm": [{"rules": [{"action": "allow", "os": {"name": "osx"}}], "value": ["-XstartOnFirstThread"]}, {"rules": [{"action": "allow", "os": {"name": "windows"}}], "value": "-XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump"}, {"rules": [{"action": "allow", "os": {"arch": "x86"}}], "value": "-Xss1M"}, "-Djava.library.path=${natives_directory}", "-Djna.tmpdir=${natives_directory}", "-Dorg.lwjgl.system.SharedLibraryExtractPath=${natives_directory}", "-Dio.netty.native.workdir=${natives_directory}", "-Dminecraft.launcher.brand=${launcher_name}", "-Dminecraft.launcher.version=${launcher_version}", "-cp", "${classpath}"]}, "assetIndex": {"id": "5", "sha1": "22bcf7c3dd8d2a3be2eb3df9e5742e0ff755a4f9", "size": 412671, "totalSize": 641218901, "url": "https://piston-meta.mojang.com/v1/packages/22bcf7c3dd8d2a3be2eb3df9e5742e0ff755a4f9/5.json"}, "assets": "5", "complianceLevel": 1, "downloads": {"client": {"sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838", "size": 23028853, "url": "https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar"}, "client_mappings": {"sha1": "6c48521eed01fe2e8ecdadbd5ae348415f3c47da", "size": 8001795, "url": "https://piston-data.mojang.com/v1/objects/6c48521eed01fe2e8ecdadbd5ae348415f3c47da/client.txt"}, "server": {"sha1": "84194a2f286ef7c14ed7ce0090dba59902951553", "size": 47791053, "url": "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"}, "server_mappings": {"sha1": "0b4dba049482496c507b2387a73a913230ebbd76", "size": 6154195, "url": "https://piston-data.mojang.com/v1/objects/0b4dba049482496c507b2387a73a913230ebbd76/server.txt"}}, "id": "1.20.1", "javaVersion": {"component": "java-runtime-gamma", "majorVersion": 17}, "libraries": [{"downloads": {"artifact": {"path": "ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar", "sha1": "1227f9e0666314f9de41477e3ec277e542ed7f7b", "size": 1330045, "url": "https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar"}}, "name": "ca.weblite:java-objc-bridge:1.1", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar", "sha1": "54f5efc19bca95d709d9a37d19ffcbba3d21c1a6", "size": 947865, "url": "https://libraries.minecraft.net/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar"}}, "name": "com.github.oshi:oshi-core:6.2.2"}, {"downloads": {"artifact": {"path": "com/google/code/gson/gson/2.10/gson-2.10.jar", "sha1": "dd9b193aef96e973d5a11ab13cd17430c2e4306b", "size": 286235, "url": "https://libraries.minecraft.net/com/google/code/gson/gson/2.10/gson-2.10.jar"}}, "name": "com.google.code.gson:gson:2.10"}, {"downloads": {"artifact": {"path": "com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar", "sha1": "1dcf1de382a0bf95a3d8b0849546c88bac1292c9", "size": 4617, "url": "https://libraries.minecraft.net/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"}}, "name": "com.google.guava:failureaccess:1.0.1"}, {"downloads": {"artifact": {"path": "com/google/guava/guava/31.1-jre/guava-31.1-jre.jar", "sha1": "60458f877d055d0c9114d9e1a2efb737b4bc282c", "size": 2959479, "url": "https://libraries.minecraft.net/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"}}, "name": "com.google.guava:guava:31.1-jre"}, {"downloads": {"artifact": {"path": "com/ibm/icu/icu4j/71.1/icu4j-71.1.jar", "sha1": "9e7d3304c23f9ba5cb71915f7cce23231a57a445", "size": 13963762, "url": "https://libraries.minecraft.net/com/ibm/icu/icu4j/71.1/icu4j-71.1.jar"}}, "name": "com.ibm.icu:icu4j:71.1"}, {"downloads": {"artifact": {"path": "com/mojang/authlib/4.0.43/authlib-4.0.43.jar", "sha1": "2ff9d747a77570a07a60d32ac77eb6162ad2a2d9", "size": 121766, "url": "https://libraries.minecraft.net/com/mojang/authlib/4.0.43/authlib-4.0.43.jar"}}, "name": "com.mojang:authlib:4.0.43"}, {"downloads": {"artifact": {"path": "com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar", "sha1": "5c685c5ffa94c4cd39496c7184c1d122e515ecef", "size": 964, "url": "https://libraries.minecraft.net/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar"}}, "name": "com.mojang:blocklist:1.0.10"}, {"downloads": {"artifact": {"path": "com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar", "sha1": "5244ce82c3337bba4a196a3ce858bfaecc74404a", "size": 77121, "url": "https://libraries.minecraft.net/com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar"}}, "name": "com.mojang:brigadier:1.1.8"}, {"downloads": {"artifact": {"path": "com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar", "sha1": "3ba4a30557a9b057760af4011f909ba619fc5125", "size": 689960, "url": "https://libraries.minecraft.net/com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar"}}, "name": "com.mojang:datafixerupper:6.0.8"}, {"downloads": {"artifact": {"path": "com/mojang/logging/1.1.1/logging-1.1.1.jar", "sha1": "832b8e6674a9b325a5175a3a6267dfaf34c85139", "size": 15343, "url": "https://libraries.minecraft.net/com/mojang/logging/1.1.1/logging-1.1.1.jar"}}, "name": "com.mojang:logging:1.1.1"}, {"downloads": {"artifact": {"path": "com/mojang/patchy/2.2.10/patchy-2.2.10.jar", "sha1": "da05971b07cbb379d002cf7eaec6a2048211fefc", "size": 4439, "url": "https://libraries.minecraft.net/com/mojang/patchy/2.2.10/patchy-2.2.10.jar"}}, "name": "com.mojang:patchy:2.2.10"}, {"downloads": {"artifact": {"path": "com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar", "sha1": "3cad216e3a7f0c19b4b394388bc9ffc446f13b14", "size": 12243, "url": "https://libraries.minecraft.net/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar"}}, "name": "com.mojang:text2speech:1.17.9"}, {"downloads": {"artifact": {"path": "commons-codec/commons-codec/1.15/commons-codec-1.15.jar", "sha1": "49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d", "size": 353793, "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.15/commons-codec-1.15.jar"}}, "name": "commons-codec:commons-codec:1.15"}, {"downloads": {"artifact": {"path": "commons-io/commons-io/2.11.0/commons-io-2.11.0.jar", "sha1": "a2503f302b11ebde7ebc3df41daebe0e4eea3689", "size": 327135, "url": "https://libraries.minecraft.net/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar"}}, "name": "commons-io:commons-io:2.11.0"}, {"downloads": {"artifact": {"path": "commons-logging/commons-logging/1.2/commons-logging-1.2.jar", "sha1": "4bfc12adfe4842bf07b657f0369c4cb522955686", "size": 61829, "url": "https://libraries.minecraft.net/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"}}, "name": "commons-logging:commons-logging:1.2"}, {"downloads": {"artifact": {"path": "io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar", "sha1": "a544270cf1ae8b8077082f5036436a9a9971ea71", "size": 304664, "url": "https://libraries.minecraft.net/io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar"}}, "name": "io.netty:netty-buffer:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar", "sha1": "b77200379acb345a9ffdece1c605e591ac3e4e0a", "size": 339155, "url": "https://libraries.minecraft.net/io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar"}}, "name": "io.netty:netty-codec:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar", "sha1": "022d148e85c3f5ebdacc0ce1f5aabb1d420f73f3", "size": 653880, "url": "https://libraries.minecraft.net/io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar"}}, "name": "io.netty:netty-common:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar", "sha1": "644041d1fa96a5d3130a29e8978630d716d76e38", "size": 538569, "url": "https://libraries.minecraft.net/io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar"}}, "name": "io.netty:netty-handler:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar", "sha1": "38f665ae8dcd29032eea31245ba7806bed2e0fa8", "size": 37776, "url": "https://libraries.minecraft.net/io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar"}}, "name": "io.netty:netty-resolver:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar", "sha1": "e7c7dd18deac93105797f30057c912651ea76521", "size": 142066, "url": "https://libraries.minecraft.net/io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport-classes-epoll:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar", "sha1": "476409d6255001ca53a55f65b01c13822f8dc93a", "size": 39489, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar"}}, "name": "io.netty:netty-transport-native-epoll:4.1.82.Final:linux-aarch_64", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar", "sha1": "c7350a71920f3ae9142945e25fed4846cce53374", "size": 37922, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar"}}, "name": "io.netty:netty-transport-native-epoll:4.1.82.Final:linux-x86_64", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar", "sha1": "3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce", "size": 43684, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport-native-unix-common:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar", "sha1": "e431a218d91acb6476ccad5f5aafde50aa3945ca", "size": 485752, "url": "https://libraries.minecraft.net/io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport:4.1.82.Final"}, {"downloads": {"artifact": {"path": "it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar", "sha1": "bb7ea75ecdb216654237830b3a96d87ad91f8cc5", "size": 23376043, "url": "https://libraries.minecraft.net/it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar"}}, "name": "it.unimi.dsi:fastutil:8.5.9"}, {"downloads": {"artifact": {"path": "net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar", "sha1": "097406a297c852f4a41e688a176ec675f72e8329", "size": 1356627, "url": "https://libraries.minecraft.net/net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar"}}, "name": "net.java.dev.jna:jna-platform:5.12.1"}, {"downloads": {"artifact": {"path": "net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar", "sha1": "b1e93a735caea94f503e95e6fe79bf9cdc1e985d", "size": 1866196, "url": "https://libraries.minecraft.net/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar"}}, "name": "net.java.dev.jna:jna:5.12.1"}, {"downloads": {"artifact": {"path": "net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar", "sha1": "4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c", "size": 78146, "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar"}}, "name": "net.sf.jopt-simple:jopt-simple:5.0.4"}, {"downloads": {"artifact": {"path": "org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar", "sha1": "4ec95b60d4e86b5c95a0e919cb172a0af98011ef", "size": 1018316, "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar"}}, "name": "org.apache.commons:commons-compress:1.21"}, {"downloads": {"artifact": {"path": "org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar", "sha1": "c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e", "size": 587402, "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar"}}, "name": "org.apache.commons:commons-lang3:3.12.0"}, {"downloads": {"artifact": {"path": "org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar", "sha1": "e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada", "size": 780321, "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"}}, "name": "org.apache.httpcomponents:httpclient:4.5.13"}, {"downloads": {"artifact": {"path": "org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar", "sha1": "7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d", "size": 328324, "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar"}}, "name": "org.apache.httpcomponents:httpcore:4.4.15"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar", "sha1": "ea1b37f38c327596b216542bc636cfdc0b8036fa", "size": 317566, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-api:2.19.0"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar", "sha1": "3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb", "size": 1864386, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-core:2.19.0"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar", "sha1": "5c04bfdd63ce9dceb2e284b81e96b6a70010ee10", "size": 27721, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-slf4j2-impl:2.19.0"}, {"downloads": {"artifact": {"path": "org/joml/joml/1.10.5/joml-1.10.5.jar", "sha1": "22566d58af70ad3d72308bab63b8339906deb649", "size": 712082, "url": "https://libraries.minecraft.net/org/joml/joml/1.10.5/joml-1.10.5.jar"}}, "name": "org.joml:joml:1.10.5"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1.jar", "sha1": "cbac1b8d30cb4795149c1ef540f912671a8616d0", "size": 128801, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-linux.jar", "sha1": "81716978214ecbda15050ca394b06ef61501a49e", "size": 119817, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos.jar", "sha1": "9ec4ce1fc8c85fdef03ef4ff2aace6f5775fb280", "size": 131655, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos-arm64.jar", "sha1": "cac0d3f712a3da7641fa174735a5f315de7ffe0a", "size": 129077, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows.jar", "sha1": "ed892f945cf7e79c8756796f32d00fa4ceaf573b", "size": 145512, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-arm64.jar", "sha1": "beda65ee503443e60aa196d58ed31f8d001dc22a", "size": 123808, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-x86.jar", "sha1": "b997e3391d6ce8f05487e7335d95c606043884a1", "size": 139251, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1.jar", "sha1": "a817bcf213db49f710603677457567c37d53e103", "size": 36601, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-linux.jar", "sha1": "33dbb017b6ed6b25f993ad9d56741a49e7937718", "size": 166524, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos.jar", "sha1": "56424dc8db3cfb8e7b594aa6d59a4f4387b7f544", "size": 117480, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos-arm64.jar", "sha1": "e577b87d8ad2ade361aaea2fcf226c660b15dee8", "size": 103475, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows.jar", "sha1": "948a89b76a16aa324b046ae9308891216ffce5f9", "size": 135585, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar", "sha1": "cae85c4edb219c88b6a0c26a87955ad98dc9519d", "size": 114250, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-x86.jar", "sha1": "fb476c8ec110e1c137ad3ce8a7f7bfe6b11c6324", "size": 110405, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1.jar", "sha1": "2623a6b8ae1dfcd880738656a9f0243d2e6840bd", "size": 88237, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-linux.jar", "sha1": "f906b6439f6daa66001182ea7727e3467a93681b", "size": 476825, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos.jar", "sha1": "3a57b8911835fb58b5e558d0ca0d28157e263d45", "size": 397196, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos-arm64.jar", "sha1": "23d55e7490b57495320f6c9e1936d78fd72c4ef8", "size": 346125, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows.jar", "sha1": "30a474d0e57193d7bc128849a3ab66bc9316fdb1", "size": 576872, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-arm64.jar", "sha1": "40d65f1a7368a2aa47336f9cb69f5a190cf9975a", "size": 505234, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-x86.jar", "sha1": "888349f7b1be6fbae58bf8edfb9ef12def04c4e3", "size": 520313, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1.jar", "sha1": "831a5533a21a5f4f81bbc51bb13e9899319b5411", "size": 921563, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-linux.jar", "sha1": "ab9ab6fde3743e3550fa5d46d785ecb45b047d99", "size": 79125, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos.jar", "sha1": "a0d12697ea019a7362eff26475b0531340e876a6", "size": 40709, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos-arm64.jar", "sha1": "eafe34b871d966292e8db0f1f3d6b8b110d4e91d", "size": 41665, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows.jar", "sha1": "c1807e9bd571402787d7e37e3029776ae2513bb8", "size": 100205, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-arm64.jar", "sha1": "527d78f1e9056aff3ed02ce93019c73c5e8f1721", "size": 82445, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-x86.jar", "sha1": "deef3eb9b178ff2ff3ce893cc72ae741c3a17974", "size": 87463, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1.jar", "sha1": "b119297cf8ed01f247abe8685857f8e7fcf5980f", "size": 112380, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-linux.jar", "sha1": "3ee7aec8686e52867677110415566a5342a80230", "size": 227237, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos.jar", "sha1": "def8879b8d38a47a4cc1d48b1f9a7b772e51258e", "size": 203582, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos-arm64.jar", "sha1": "fcf073ed911752abdca5f0b00a53cfdf17ff8e8b", "size": 178408, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows.jar", "sha1": "86315914ac119efdb02dc9e8e978ade84f1702af", "size": 256301, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-arm64.jar", "sha1": "fde63cdd2605c00636721a6c8b961e41d1f6b247", "size": 216848, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-x86.jar", "sha1": "a8d41f419eecb430b7c91ea2ce2c5c451cae2091", "size": 225147, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1.jar", "sha1": "0ff1914111ef2e3e0110ef2dabc8d8cdaad82347", "size": 6767, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-linux.jar", "sha1": "a35110b9471bea8cde826ab297550ee8c22f5035", "size": 45389, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos.jar", "sha1": "78641a0fa5e9afa714adfdd152c357930c97a1ce", "size": 44821, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos-arm64.jar", "sha1": "972ecc17bad3571e81162153077b4d47b7b9eaa9", "size": 41380, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows.jar", "sha1": "a5d830475ec0958d9fdba1559efa99aef211e6ff", "size": 127930, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar", "sha1": "83a5e780df610829ff3a737822b4f931cffecd91", "size": 109139, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-x86.jar", "sha1": "842eedd876fae354abc308c98a263f6bbc9e8a4d", "size": 110042, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar", "sha1": "ae58664f88e18a9bb2c77b063833ca7aaec484cb", "size": 724243, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-linux.jar", "sha1": "1de885aba434f934201b99f2f1afb142036ac189", "size": 110704, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos.jar", "sha1": "fc6bb723dec2cd031557dccb2a95f0ab80acb9db", "size": 55706, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos-arm64.jar", "sha1": "71d0d5e469c9c95351eb949064497e3391616ac9", "size": 42693, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows.jar", "sha1": "0036c37f16ab611b3aa11f3bcf80b1d509b4ce6b", "size": 159361, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-arm64.jar", "sha1": "0f46cadcf95675908fd3a550d63d9d709cb68998", "size": 130064, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-x86.jar", "sha1": "3b14f4beae9dd39791ec9e12190a9380cd8a3ce6", "size": 134695, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar", "sha1": "f48d81adce2abf5ad3cfe463df517952749e03bc", "size": 61388, "url": "https://libraries.minecraft.net/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar"}}, "name": "org.slf4j:slf4j-api:2.0.1"}], "logging": {"client": {"argument": "-Dlog4j.configurationFile=${path}", "file": {"id": "client-1.12.xml", "sha1": "bd65e7d2e3c237be76cfbef4c2405033d7f91521", "size": 888, "url": "https://piston-data.mojang.com/v1/objects/bd65e7d2e3c237be76cfbef4c2405033d7f91521/client-1.12.xml"}, "type": "log4j2-xml"}}, "mainClass": "net.minecraft.client.main.Main", "minimumLauncherVersion": 21, "releaseTime": "2023-06-12T13:25:51+00:00", "time": "2023-06-12T13:25:51+00:00", "type": "release"}==== ./build/jarjar/jarJar/metadata.json ====
+{"arguments": {"game": ["--username", "${auth_player_name}", "--version", "${version_name}", "--gameDir", "${game_directory}", "--assetsDir", "${assets_root}", "--assetIndex", "${assets_index_name}", "--uuid", "${auth_uuid}", "--accessToken", "${auth_access_token}", "--clientId", "${clientid}", "--xuid", "${auth_xuid}", "--userType", "${user_type}", "--versionType", "${version_type}", {"rules": [{"action": "allow", "features": {"is_demo_user": true}}], "value": "--demo"}, {"rules": [{"action": "allow", "features": {"has_custom_resolution": true}}], "value": ["--width", "${resolution_width}", "--height", "${resolution_height}"]}, {"rules": [{"action": "allow", "features": {"has_quick_plays_support": true}}], "value": ["--quickPlayPath", "${quickPlayPath}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_singleplayer": true}}], "value": ["--quickPlaySingleplayer", "${quickPlaySingleplayer}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_multiplayer": true}}], "value": ["--quickPlayMultiplayer", "${quickPlayMultiplayer}"]}, {"rules": [{"action": "allow", "features": {"is_quick_play_realms": true}}], "value": ["--quickPlayRealms", "${quickPlayRealms}"]}], "jvm": [{"rules": [{"action": "allow", "os": {"name": "osx"}}], "value": ["-XstartOnFirstThread"]}, {"rules": [{"action": "allow", "os": {"name": "windows"}}], "value": "-XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump"}, {"rules": [{"action": "allow", "os": {"arch": "x86"}}], "value": "-Xss1M"}, "-Djava.library.path=${natives_directory}", "-Djna.tmpdir=${natives_directory}", "-Dorg.lwjgl.system.SharedLibraryExtractPath=${natives_directory}", "-Dio.netty.native.workdir=${natives_directory}", "-Dminecraft.launcher.brand=${launcher_name}", "-Dminecraft.launcher.version=${launcher_version}", "-cp", "${classpath}"]}, "assetIndex": {"id": "5", "sha1": "ad45963b4513a361c188d03cbe630f47a99d18ff", "size": 412966, "totalSize": 645013319, "url": "https://piston-meta.mojang.com/v1/packages/ad45963b4513a361c188d03cbe630f47a99d18ff/5.json"}, "assets": "5", "complianceLevel": 1, "downloads": {"client": {"sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838", "size": 23028853, "url": "https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar"}, "client_mappings": {"sha1": "6c48521eed01fe2e8ecdadbd5ae348415f3c47da", "size": 8001795, "url": "https://piston-data.mojang.com/v1/objects/6c48521eed01fe2e8ecdadbd5ae348415f3c47da/client.txt"}, "server": {"sha1": "84194a2f286ef7c14ed7ce0090dba59902951553", "size": 47791053, "url": "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar"}, "server_mappings": {"sha1": "0b4dba049482496c507b2387a73a913230ebbd76", "size": 6154195, "url": "https://piston-data.mojang.com/v1/objects/0b4dba049482496c507b2387a73a913230ebbd76/server.txt"}}, "id": "1.20.1", "javaVersion": {"component": "java-runtime-gamma", "majorVersion": 17}, "libraries": [{"downloads": {"artifact": {"path": "ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar", "sha1": "1227f9e0666314f9de41477e3ec277e542ed7f7b", "size": 1330045, "url": "https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar"}}, "name": "ca.weblite:java-objc-bridge:1.1", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar", "sha1": "54f5efc19bca95d709d9a37d19ffcbba3d21c1a6", "size": 947865, "url": "https://libraries.minecraft.net/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar"}}, "name": "com.github.oshi:oshi-core:6.2.2"}, {"downloads": {"artifact": {"path": "com/google/code/gson/gson/2.10/gson-2.10.jar", "sha1": "dd9b193aef96e973d5a11ab13cd17430c2e4306b", "size": 286235, "url": "https://libraries.minecraft.net/com/google/code/gson/gson/2.10/gson-2.10.jar"}}, "name": "com.google.code.gson:gson:2.10"}, {"downloads": {"artifact": {"path": "com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar", "sha1": "1dcf1de382a0bf95a3d8b0849546c88bac1292c9", "size": 4617, "url": "https://libraries.minecraft.net/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar"}}, "name": "com.google.guava:failureaccess:1.0.1"}, {"downloads": {"artifact": {"path": "com/google/guava/guava/31.1-jre/guava-31.1-jre.jar", "sha1": "60458f877d055d0c9114d9e1a2efb737b4bc282c", "size": 2959479, "url": "https://libraries.minecraft.net/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"}}, "name": "com.google.guava:guava:31.1-jre"}, {"downloads": {"artifact": {"path": "com/ibm/icu/icu4j/71.1/icu4j-71.1.jar", "sha1": "9e7d3304c23f9ba5cb71915f7cce23231a57a445", "size": 13963762, "url": "https://libraries.minecraft.net/com/ibm/icu/icu4j/71.1/icu4j-71.1.jar"}}, "name": "com.ibm.icu:icu4j:71.1"}, {"downloads": {"artifact": {"path": "com/mojang/authlib/4.0.43/authlib-4.0.43.jar", "sha1": "2ff9d747a77570a07a60d32ac77eb6162ad2a2d9", "size": 121766, "url": "https://libraries.minecraft.net/com/mojang/authlib/4.0.43/authlib-4.0.43.jar"}}, "name": "com.mojang:authlib:4.0.43"}, {"downloads": {"artifact": {"path": "com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar", "sha1": "5c685c5ffa94c4cd39496c7184c1d122e515ecef", "size": 964, "url": "https://libraries.minecraft.net/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar"}}, "name": "com.mojang:blocklist:1.0.10"}, {"downloads": {"artifact": {"path": "com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar", "sha1": "5244ce82c3337bba4a196a3ce858bfaecc74404a", "size": 77121, "url": "https://libraries.minecraft.net/com/mojang/brigadier/1.1.8/brigadier-1.1.8.jar"}}, "name": "com.mojang:brigadier:1.1.8"}, {"downloads": {"artifact": {"path": "com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar", "sha1": "3ba4a30557a9b057760af4011f909ba619fc5125", "size": 689960, "url": "https://libraries.minecraft.net/com/mojang/datafixerupper/6.0.8/datafixerupper-6.0.8.jar"}}, "name": "com.mojang:datafixerupper:6.0.8"}, {"downloads": {"artifact": {"path": "com/mojang/logging/1.1.1/logging-1.1.1.jar", "sha1": "832b8e6674a9b325a5175a3a6267dfaf34c85139", "size": 15343, "url": "https://libraries.minecraft.net/com/mojang/logging/1.1.1/logging-1.1.1.jar"}}, "name": "com.mojang:logging:1.1.1"}, {"downloads": {"artifact": {"path": "com/mojang/patchy/2.2.10/patchy-2.2.10.jar", "sha1": "da05971b07cbb379d002cf7eaec6a2048211fefc", "size": 4439, "url": "https://libraries.minecraft.net/com/mojang/patchy/2.2.10/patchy-2.2.10.jar"}}, "name": "com.mojang:patchy:2.2.10"}, {"downloads": {"artifact": {"path": "com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar", "sha1": "3cad216e3a7f0c19b4b394388bc9ffc446f13b14", "size": 12243, "url": "https://libraries.minecraft.net/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar"}}, "name": "com.mojang:text2speech:1.17.9"}, {"downloads": {"artifact": {"path": "commons-codec/commons-codec/1.15/commons-codec-1.15.jar", "sha1": "49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d", "size": 353793, "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.15/commons-codec-1.15.jar"}}, "name": "commons-codec:commons-codec:1.15"}, {"downloads": {"artifact": {"path": "commons-io/commons-io/2.11.0/commons-io-2.11.0.jar", "sha1": "a2503f302b11ebde7ebc3df41daebe0e4eea3689", "size": 327135, "url": "https://libraries.minecraft.net/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar"}}, "name": "commons-io:commons-io:2.11.0"}, {"downloads": {"artifact": {"path": "commons-logging/commons-logging/1.2/commons-logging-1.2.jar", "sha1": "4bfc12adfe4842bf07b657f0369c4cb522955686", "size": 61829, "url": "https://libraries.minecraft.net/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"}}, "name": "commons-logging:commons-logging:1.2"}, {"downloads": {"artifact": {"path": "io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar", "sha1": "a544270cf1ae8b8077082f5036436a9a9971ea71", "size": 304664, "url": "https://libraries.minecraft.net/io/netty/netty-buffer/4.1.82.Final/netty-buffer-4.1.82.Final.jar"}}, "name": "io.netty:netty-buffer:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar", "sha1": "b77200379acb345a9ffdece1c605e591ac3e4e0a", "size": 339155, "url": "https://libraries.minecraft.net/io/netty/netty-codec/4.1.82.Final/netty-codec-4.1.82.Final.jar"}}, "name": "io.netty:netty-codec:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar", "sha1": "022d148e85c3f5ebdacc0ce1f5aabb1d420f73f3", "size": 653880, "url": "https://libraries.minecraft.net/io/netty/netty-common/4.1.82.Final/netty-common-4.1.82.Final.jar"}}, "name": "io.netty:netty-common:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar", "sha1": "644041d1fa96a5d3130a29e8978630d716d76e38", "size": 538569, "url": "https://libraries.minecraft.net/io/netty/netty-handler/4.1.82.Final/netty-handler-4.1.82.Final.jar"}}, "name": "io.netty:netty-handler:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar", "sha1": "38f665ae8dcd29032eea31245ba7806bed2e0fa8", "size": 37776, "url": "https://libraries.minecraft.net/io/netty/netty-resolver/4.1.82.Final/netty-resolver-4.1.82.Final.jar"}}, "name": "io.netty:netty-resolver:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar", "sha1": "e7c7dd18deac93105797f30057c912651ea76521", "size": 142066, "url": "https://libraries.minecraft.net/io/netty/netty-transport-classes-epoll/4.1.82.Final/netty-transport-classes-epoll-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport-classes-epoll:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar", "sha1": "476409d6255001ca53a55f65b01c13822f8dc93a", "size": 39489, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar"}}, "name": "io.netty:netty-transport-native-epoll:4.1.82.Final:linux-aarch_64", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar", "sha1": "c7350a71920f3ae9142945e25fed4846cce53374", "size": 37922, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.82.Final/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar"}}, "name": "io.netty:netty-transport-native-epoll:4.1.82.Final:linux-x86_64", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar", "sha1": "3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce", "size": 43684, "url": "https://libraries.minecraft.net/io/netty/netty-transport-native-unix-common/4.1.82.Final/netty-transport-native-unix-common-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport-native-unix-common:4.1.82.Final"}, {"downloads": {"artifact": {"path": "io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar", "sha1": "e431a218d91acb6476ccad5f5aafde50aa3945ca", "size": 485752, "url": "https://libraries.minecraft.net/io/netty/netty-transport/4.1.82.Final/netty-transport-4.1.82.Final.jar"}}, "name": "io.netty:netty-transport:4.1.82.Final"}, {"downloads": {"artifact": {"path": "it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar", "sha1": "bb7ea75ecdb216654237830b3a96d87ad91f8cc5", "size": 23376043, "url": "https://libraries.minecraft.net/it/unimi/dsi/fastutil/8.5.9/fastutil-8.5.9.jar"}}, "name": "it.unimi.dsi:fastutil:8.5.9"}, {"downloads": {"artifact": {"path": "net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar", "sha1": "097406a297c852f4a41e688a176ec675f72e8329", "size": 1356627, "url": "https://libraries.minecraft.net/net/java/dev/jna/jna-platform/5.12.1/jna-platform-5.12.1.jar"}}, "name": "net.java.dev.jna:jna-platform:5.12.1"}, {"downloads": {"artifact": {"path": "net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar", "sha1": "b1e93a735caea94f503e95e6fe79bf9cdc1e985d", "size": 1866196, "url": "https://libraries.minecraft.net/net/java/dev/jna/jna/5.12.1/jna-5.12.1.jar"}}, "name": "net.java.dev.jna:jna:5.12.1"}, {"downloads": {"artifact": {"path": "net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar", "sha1": "4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c", "size": 78146, "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar"}}, "name": "net.sf.jopt-simple:jopt-simple:5.0.4"}, {"downloads": {"artifact": {"path": "org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar", "sha1": "4ec95b60d4e86b5c95a0e919cb172a0af98011ef", "size": 1018316, "url": "https://libraries.minecraft.net/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar"}}, "name": "org.apache.commons:commons-compress:1.21"}, {"downloads": {"artifact": {"path": "org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar", "sha1": "c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e", "size": 587402, "url": "https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar"}}, "name": "org.apache.commons:commons-lang3:3.12.0"}, {"downloads": {"artifact": {"path": "org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar", "sha1": "e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada", "size": 780321, "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar"}}, "name": "org.apache.httpcomponents:httpclient:4.5.13"}, {"downloads": {"artifact": {"path": "org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar", "sha1": "7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d", "size": 328324, "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar"}}, "name": "org.apache.httpcomponents:httpcore:4.4.15"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar", "sha1": "ea1b37f38c327596b216542bc636cfdc0b8036fa", "size": 317566, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-api/2.19.0/log4j-api-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-api:2.19.0"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar", "sha1": "3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb", "size": 1864386, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-core/2.19.0/log4j-core-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-core:2.19.0"}, {"downloads": {"artifact": {"path": "org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar", "sha1": "5c04bfdd63ce9dceb2e284b81e96b6a70010ee10", "size": 27721, "url": "https://libraries.minecraft.net/org/apache/logging/log4j/log4j-slf4j2-impl/2.19.0/log4j-slf4j2-impl-2.19.0.jar"}}, "name": "org.apache.logging.log4j:log4j-slf4j2-impl:2.19.0"}, {"downloads": {"artifact": {"path": "org/joml/joml/1.10.5/joml-1.10.5.jar", "sha1": "22566d58af70ad3d72308bab63b8339906deb649", "size": 712082, "url": "https://libraries.minecraft.net/org/joml/joml/1.10.5/joml-1.10.5.jar"}}, "name": "org.joml:joml:1.10.5"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1.jar", "sha1": "cbac1b8d30cb4795149c1ef540f912671a8616d0", "size": 128801, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-linux.jar", "sha1": "81716978214ecbda15050ca394b06ef61501a49e", "size": 119817, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos.jar", "sha1": "9ec4ce1fc8c85fdef03ef4ff2aace6f5775fb280", "size": 131655, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos-arm64.jar", "sha1": "cac0d3f712a3da7641fa174735a5f315de7ffe0a", "size": 129077, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows.jar", "sha1": "ed892f945cf7e79c8756796f32d00fa4ceaf573b", "size": 145512, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-arm64.jar", "sha1": "beda65ee503443e60aa196d58ed31f8d001dc22a", "size": 123808, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-x86.jar", "sha1": "b997e3391d6ce8f05487e7335d95c606043884a1", "size": 139251, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.1/lwjgl-glfw-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-glfw:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1.jar", "sha1": "a817bcf213db49f710603677457567c37d53e103", "size": 36601, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-linux.jar", "sha1": "33dbb017b6ed6b25f993ad9d56741a49e7937718", "size": 166524, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos.jar", "sha1": "56424dc8db3cfb8e7b594aa6d59a4f4387b7f544", "size": 117480, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos-arm64.jar", "sha1": "e577b87d8ad2ade361aaea2fcf226c660b15dee8", "size": 103475, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows.jar", "sha1": "948a89b76a16aa324b046ae9308891216ffce5f9", "size": 135585, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar", "sha1": "cae85c4edb219c88b6a0c26a87955ad98dc9519d", "size": 114250, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-x86.jar", "sha1": "fb476c8ec110e1c137ad3ce8a7f7bfe6b11c6324", "size": 110405, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.1/lwjgl-jemalloc-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-jemalloc:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1.jar", "sha1": "2623a6b8ae1dfcd880738656a9f0243d2e6840bd", "size": 88237, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-linux.jar", "sha1": "f906b6439f6daa66001182ea7727e3467a93681b", "size": 476825, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos.jar", "sha1": "3a57b8911835fb58b5e558d0ca0d28157e263d45", "size": 397196, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos-arm64.jar", "sha1": "23d55e7490b57495320f6c9e1936d78fd72c4ef8", "size": 346125, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows.jar", "sha1": "30a474d0e57193d7bc128849a3ab66bc9316fdb1", "size": 576872, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-arm64.jar", "sha1": "40d65f1a7368a2aa47336f9cb69f5a190cf9975a", "size": 505234, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-x86.jar", "sha1": "888349f7b1be6fbae58bf8edfb9ef12def04c4e3", "size": 520313, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.1/lwjgl-openal-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-openal:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1.jar", "sha1": "831a5533a21a5f4f81bbc51bb13e9899319b5411", "size": 921563, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-linux.jar", "sha1": "ab9ab6fde3743e3550fa5d46d785ecb45b047d99", "size": 79125, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos.jar", "sha1": "a0d12697ea019a7362eff26475b0531340e876a6", "size": 40709, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos-arm64.jar", "sha1": "eafe34b871d966292e8db0f1f3d6b8b110d4e91d", "size": 41665, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows.jar", "sha1": "c1807e9bd571402787d7e37e3029776ae2513bb8", "size": 100205, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-arm64.jar", "sha1": "527d78f1e9056aff3ed02ce93019c73c5e8f1721", "size": 82445, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-x86.jar", "sha1": "deef3eb9b178ff2ff3ce893cc72ae741c3a17974", "size": 87463, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.1/lwjgl-opengl-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-opengl:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1.jar", "sha1": "b119297cf8ed01f247abe8685857f8e7fcf5980f", "size": 112380, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-linux.jar", "sha1": "3ee7aec8686e52867677110415566a5342a80230", "size": 227237, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos.jar", "sha1": "def8879b8d38a47a4cc1d48b1f9a7b772e51258e", "size": 203582, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos-arm64.jar", "sha1": "fcf073ed911752abdca5f0b00a53cfdf17ff8e8b", "size": 178408, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows.jar", "sha1": "86315914ac119efdb02dc9e8e978ade84f1702af", "size": 256301, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-arm64.jar", "sha1": "fde63cdd2605c00636721a6c8b961e41d1f6b247", "size": 216848, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-x86.jar", "sha1": "a8d41f419eecb430b7c91ea2ce2c5c451cae2091", "size": 225147, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.1/lwjgl-stb-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-stb:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1.jar", "sha1": "0ff1914111ef2e3e0110ef2dabc8d8cdaad82347", "size": 6767, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-linux.jar", "sha1": "a35110b9471bea8cde826ab297550ee8c22f5035", "size": 45389, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos.jar", "sha1": "78641a0fa5e9afa714adfdd152c357930c97a1ce", "size": 44821, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos-arm64.jar", "sha1": "972ecc17bad3571e81162153077b4d47b7b9eaa9", "size": 41380, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows.jar", "sha1": "a5d830475ec0958d9fdba1559efa99aef211e6ff", "size": 127930, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar", "sha1": "83a5e780df610829ff3a737822b4f931cffecd91", "size": 109139, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-x86.jar", "sha1": "842eedd876fae354abc308c98a263f6bbc9e8a4d", "size": 110042, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.1/lwjgl-tinyfd-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl-tinyfd:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar", "sha1": "ae58664f88e18a9bb2c77b063833ca7aaec484cb", "size": 724243, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1"}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-linux.jar", "sha1": "1de885aba434f934201b99f2f1afb142036ac189", "size": 110704, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-linux.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-linux", "rules": [{"action": "allow", "os": {"name": "linux"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos.jar", "sha1": "fc6bb723dec2cd031557dccb2a95f0ab80acb9db", "size": 55706, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-macos", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos-arm64.jar", "sha1": "71d0d5e469c9c95351eb949064497e3391616ac9", "size": 42693, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-macos-arm64.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-macos-arm64", "rules": [{"action": "allow", "os": {"name": "osx"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows.jar", "sha1": "0036c37f16ab611b3aa11f3bcf80b1d509b4ce6b", "size": 159361, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-arm64.jar", "sha1": "0f46cadcf95675908fd3a550d63d9d709cb68998", "size": 130064, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-arm64.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows-arm64", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-x86.jar", "sha1": "3b14f4beae9dd39791ec9e12190a9380cd8a3ce6", "size": 134695, "url": "https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.1/lwjgl-3.3.1-natives-windows-x86.jar"}}, "name": "org.lwjgl:lwjgl:3.3.1:natives-windows-x86", "rules": [{"action": "allow", "os": {"name": "windows"}}]}, {"downloads": {"artifact": {"path": "org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar", "sha1": "f48d81adce2abf5ad3cfe463df517952749e03bc", "size": 61388, "url": "https://libraries.minecraft.net/org/slf4j/slf4j-api/2.0.1/slf4j-api-2.0.1.jar"}}, "name": "org.slf4j:slf4j-api:2.0.1"}], "logging": {"client": {"argument": "-Dlog4j.configurationFile=${path}", "file": {"id": "client-1.12.xml", "sha1": "bd65e7d2e3c237be76cfbef4c2405033d7f91521", "size": 888, "url": "https://piston-data.mojang.com/v1/objects/bd65e7d2e3c237be76cfbef4c2405033d7f91521/client-1.12.xml"}, "type": "log4j2-xml"}}, "mainClass": "net.minecraft.client.main.Main", "minimumLauncherVersion": 21, "releaseTime": "2023-06-12T13:25:51+00:00", "time": "2023-06-12T13:25:51+00:00", "type": "release"}==== ./build/jarjar/jarJar/metadata.json ====
 {
   "jars": []
 }
@@ -442,6 +438,11 @@
   "attribute.moderndamage.leg_stamina_regen": "Leg Stamina Regen",
   "attribute.moderndamage.leg_stamina_drain_multiplier": "Leg Stamina Drain Multiplier",
   "attribute.moderndamage.ergonomics": "Ergonomics",
+  "attribute.moderndamage.head_natural_toughness": "Head Natural Toughness",
+  "attribute.moderndamage.chest_natural_toughness": "Chest Natural Toughness",
+  "attribute.moderndamage.stomach_natural_toughness": "Stomach Natural Toughness",
+  "attribute.moderndamage.arm_natural_toughness": "Arm Natural Toughness",
+  "attribute.moderndamage.leg_natural_toughness": "Leg Natural Toughness",
 
   "tooltip.moderndamage.armor_protection": "§7ModernDamageControl Protection:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",
@@ -628,6 +629,11 @@
   "attribute.moderndamage.leg_stamina_regen": "腿部耐力回复",
   "attribute.moderndamage.leg_stamina_drain_multiplier": "腿部耐力消耗倍率",
   "attribute.moderndamage.ergonomics": "人机功效",
+  "attribute.moderndamage.head_natural_toughness": "头部天然韧性",
+  "attribute.moderndamage.chest_natural_toughness": "胸部天然韧性",
+  "attribute.moderndamage.stomach_natural_toughness": "胃部天然韧性",
+  "attribute.moderndamage.arm_natural_toughness": "手臂天然韧性",
+  "attribute.moderndamage.leg_natural_toughness": "腿部天然韧性",
 
   "tooltip.moderndamage.armor_protection": "§7[现代伤害控制] 防护水平:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",
@@ -1092,34 +1098,7 @@
   "injectors": {
     "defaultRequire": 1
   }
-}==== ./build/tmp/.cache/expanded/zip_e38c7b1572572a9143f4c4d90e354b25/mcp/client/Start.java ====
-package mcp.client;
-
-import java.util.Arrays;
-
-import net.minecraft.client.main.Main;
-
-public class Start
-{
-    public static void main(String[] args)
-    {
-        /*
-         * start minecraft game application
-         * --version is just used as 'launched version' in snoop data and is required
-         * Working directory is used as gameDir if not provided
-         */
-        String assets = System.getenv().containsKey("assetDirectory") ? System.getenv("assetDirectory") : "assets";
-        Main.main(concat(new String[]{"--version", "mcp", "--accessToken", "0", "--assetsDir", assets, "--assetIndex", "5", "--userProperties", "{}"}, args));
-    }
-
-    public static <T> T[] concat(T[] first, T[] second)
-    {
-        T[] result = Arrays.copyOf(first, first.length + second.length);
-        System.arraycopy(second, 0, result, first.length, second.length);
-        return result;
-    }
-}
-==== ./build/tmp/compileJava/compileJava-refmap.json ====
+}==== ./build/tmp/compileJava/compileJava-refmap.json ====
 {
   "mappings": {},
   "data": {}
@@ -1131,6 +1110,7 @@ public class Start
 package com.moderndamage.control.api.event;
 
 import com.moderndamage.control.api.ModDamagePart;
+import com.moderndamage.control.api.ModDamageSubPart;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.Cancelable;
@@ -1138,37 +1118,32 @@ import net.minecraftforge.eventbus.api.Cancelable;
 @Cancelable
 public class ArmorHitEvent extends LivingEvent {
     private final ModDamagePart hitPart;
+    private final ModDamageSubPart subPart;
     private final float originalDamage;
     private float finalDamage;
     private final int armorLevel;
 
-    public ArmorHitEvent(LivingEntity entity, ModDamagePart hitPart, float originalDamage, float finalDamage, int armorLevel) {
+    public ArmorHitEvent(LivingEntity entity, ModDamagePart hitPart, ModDamageSubPart subPart,
+                         float originalDamage, float finalDamage, int armorLevel) {
         super(entity);
         this.hitPart = hitPart;
+        this.subPart = subPart;
         this.originalDamage = originalDamage;
         this.finalDamage = finalDamage;
         this.armorLevel = armorLevel;
     }
 
-    public ModDamagePart getHitPart() {
-        return hitPart;
+    public ArmorHitEvent(LivingEntity entity, ModDamagePart hitPart,
+                         float originalDamage, float finalDamage, int armorLevel) {
+        this(entity, hitPart, null, originalDamage, finalDamage, armorLevel);
     }
 
-    public float getOriginalDamage() {
-        return originalDamage;
-    }
-
-    public float getFinalDamage() {
-        return finalDamage;
-    }
-
-    public void setFinalDamage(float finalDamage) {
-        this.finalDamage = finalDamage;
-    }
-
-    public int getArmorLevel() {
-        return armorLevel;
-    }
+    public ModDamagePart getHitPart() { return hitPart; }
+    public ModDamageSubPart getSubPart() { return subPart; }
+    public float getOriginalDamage() { return originalDamage; }
+    public float getFinalDamage() { return finalDamage; }
+    public void setFinalDamage(float finalDamage) { this.finalDamage = finalDamage; }
+    public int getArmorLevel() { return armorLevel; }
 }==== ./src/main/java/com/moderndamage/control/api/event/GetArmorLevelEvent.java ====
 package com.moderndamage.control.api.event;
 
@@ -1197,6 +1172,15 @@ public class GetArmorLevelEvent extends LivingEvent {
     public void setArmorLevel(int armorLevel) {
         this.armorLevel = armorLevel;
     }
+}==== ./src/main/java/com/moderndamage/control/api/IProtectionSourceProvider.java ====
+package com.moderndamage.control.api;
+
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.LivingEntity;
+import java.util.List;
+
+public interface IProtectionSourceProvider {
+    List<ProtectionSource> getAdditionalSources(ItemStack stack, LivingEntity target);
 }==== ./src/main/java/com/moderndamage/control/api/ModDamagePart.java ====
 package com.moderndamage.control.api;
 
@@ -1306,18 +1290,114 @@ public enum ModDamageSubPart {
     public static ModDamageSubPart bySubKey(String key) {
         return BY_SUBKEY.get(key);
     }
+}==== ./src/main/java/com/moderndamage/control/api/ProtectionSource.java ====
+package com.moderndamage.control.api;
+
+import net.minecraft.world.item.ItemStack;
+import java.util.Map;
+import java.util.function.IntConsumer;
+
+public class ProtectionSource {
+    private final ItemStack sourceStack;
+    private final Map<ModDamageSubPart, Integer> subProtection;
+    private final Map<ModDamageSubPart, Integer> subToughness;
+    private final Map<ModDamageSubPart, Float> subRicochetChance;
+    private final float materialFactor;
+    private final IntConsumer durabilityConsumer;
+    private final int primaryProtectionLevel;
+    private final int toughness;
+    private final float ricochetChance;
+    private final boolean isNatural;
+
+    public ProtectionSource(ItemStack sourceStack,
+                            Map<ModDamageSubPart, Integer> subProtection,
+                            Map<ModDamageSubPart, Integer> subToughness,
+                            Map<ModDamageSubPart, Float> subRicochetChance,
+                            float materialFactor,
+                            IntConsumer durabilityConsumer,
+                            int primaryProtectionLevel,
+                            int toughness,
+                            float ricochetChance,
+                            boolean isNatural) {
+        this.sourceStack = sourceStack;
+        this.subProtection = subProtection;
+        this.subToughness = subToughness;
+        this.subRicochetChance = subRicochetChance;
+        this.materialFactor = materialFactor;
+        this.durabilityConsumer = durabilityConsumer;
+        this.primaryProtectionLevel = primaryProtectionLevel;
+        this.toughness = toughness;
+        this.ricochetChance = ricochetChance;
+        this.isNatural = isNatural;
+    }
+
+    public ProtectionSource(ItemStack sourceStack,
+                            Map<ModDamageSubPart, Integer> subProtection,
+                            Map<ModDamageSubPart, Integer> subToughness,
+                            Map<ModDamageSubPart, Float> subRicochetChance,
+                            float materialFactor,
+                            IntConsumer durabilityConsumer) {
+        this(sourceStack, subProtection, subToughness, subRicochetChance,
+                materialFactor, durabilityConsumer, 0, 0, 0.0f, false);
+    }
+
+    public ProtectionSource(ItemStack sourceStack,
+                            float materialFactor,
+                            IntConsumer durabilityConsumer,
+                            int primaryProtectionLevel,
+                            int toughness,
+                            float ricochetChance,
+                            boolean isNatural) {
+        this(sourceStack, Map.of(), Map.of(), Map.of(),
+                materialFactor, durabilityConsumer,
+                primaryProtectionLevel, toughness, ricochetChance, isNatural);
+    }
+
+    public ItemStack getSourceStack() { return sourceStack; }
+    public Map<ModDamageSubPart, Integer> getSubProtection() { return subProtection; }
+    public Map<ModDamageSubPart, Integer> getSubToughness() { return subToughness; }
+    public Map<ModDamageSubPart, Float> getSubRicochetChance() { return subRicochetChance; }
+    public float getMaterialFactor() { return materialFactor; }
+    public IntConsumer getDurabilityConsumer() { return durabilityConsumer; }
+    public int getPrimaryProtectionLevel() { return primaryProtectionLevel; }
+    public int getToughness() { return toughness; }
+    public float getRicochetChance() { return ricochetChance; }
+    public boolean isNatural() { return isNatural; }
+}==== ./src/main/java/com/moderndamage/control/api/ProtectionSourceProviderRegistry.java ====
+package com.moderndamage.control.api;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProtectionSourceProviderRegistry {
+    private static final List<IProtectionSourceProvider> PROVIDERS = new ArrayList<>();
+
+    public static void register(IProtectionSourceProvider provider) {
+        PROVIDERS.add(provider);
+    }
+
+    public static List<IProtectionSourceProvider> getProviders() {
+        return PROVIDERS;
+    }
+
+    public static void clear() {
+        PROVIDERS.clear();
+    }
 }==== ./src/main/java/com/moderndamage/control/armor/ArmorCalculator.java ====
 package com.moderndamage.control.armor;
 
 import com.moderndamage.control.ModernDamage;
+import com.moderndamage.control.api.IProtectionSourceProvider;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.api.ModDamageSubPart;
+import com.moderndamage.control.api.ProtectionSource;
+import com.moderndamage.control.api.ProtectionSourceProviderRegistry;
 import com.moderndamage.control.api.event.ArmorHitEvent;
 import com.moderndamage.control.api.event.GetArmorLevelEvent;
+import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
 import com.moderndamage.control.capability.parthealth.PartHealthCapability;
 import com.moderndamage.control.config.ModClothConfig;
-import com.moderndamage.control.attribute.ModAttributes;
 import com.moderndamage.control.entity.EntityHitboxHelper;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -1330,10 +1410,8 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.function.IntConsumer;
 
 public class ArmorCalculator {
     private static final Random RANDOM = new Random();
@@ -1350,205 +1428,254 @@ public class ArmorCalculator {
         }
     }
 
-    private static int getTotalToughness(LivingEntity target, ModDamagePart hitPart) {
-        int naturalToughness = EntityHitboxHelper.getNaturalToughness(target, hitPart);
-        ModernDamage.LOGGER.info("getTotalToughness: natural toughness = {}", naturalToughness);
+    // ========================= 主部位公共 API（非精确模式） =========================
 
-        int[] total = {naturalToughness};
+    private static List<ProtectionSource> getAllProtectionSources(LivingEntity target, ModDamagePart part) {
+        ModernDamage.LOGGER.info("getAllProtectionSources called for target={}, part={}", target.getName().getString(), part);
+        ModernDamage.LOGGER.info("Provider count: {}", ProtectionSourceProviderRegistry.getProviders().size());
+        List<ProtectionSource> sources = new ArrayList<>();
+        ModClothConfig config = ModClothConfig.get();
 
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
+        int natural = EntityHitboxHelper.getNaturalArmor(target, part);
+        if (natural > 0) {
+            Map<ModDamageSubPart, Integer> emptyInt = Map.of();
+            Map<ModDamageSubPart, Float> emptyFloat = Map.of();
+            sources.add(new ProtectionSource(null, emptyInt, emptyInt, emptyFloat, 1.0f, null, natural, 0, 0.0f, true));
+        }
+
+        java.util.function.Consumer<ItemStack> processStack = (stack) -> {
+            if (stack.isEmpty()) return;
             ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data != null && data.protects(hitPart)) {
-                int toughness = getDynamicToughness(stack, hitPart);
-                if (toughness > 0) {
-                    total[0] += toughness;
-                    if (ModClothConfig.get().debugMode) {
-                        ModernDamage.LOGGER.debug("[Toughness] Added armor toughness from {} (part {}): +{} → total {}",
-                                ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total[0]);
+            if (data == null) return;
+
+            int level = data.getProtectionLevel(part);
+            if (level > 0) {
+                int dynamicLevel = getDynamicProtectionLevel(stack, level);
+                int toughness = getDynamicToughness(stack, data.getBaseToughness(part));
+                float materialFactor = data.getMaterialFactor(part);
+                float ricochet = data.getRicochetChance(part);
+                sources.add(new ProtectionSource(stack, Map.of(), Map.of(), Map.of(), materialFactor, null,
+                        dynamicLevel, toughness, ricochet, false));
+            }
+
+            for (IProtectionSourceProvider provider : ProtectionSourceProviderRegistry.getProviders()) {
+                List<ProtectionSource> additional = provider.getAdditionalSources(stack, target);
+                if (additional != null) {
+                    for (ProtectionSource src : additional) {
+                        if (src.getSubProtection() != null && !src.getSubProtection().isEmpty()) {
+                            int subMax = src.getSubProtection().values().stream().max(Integer::compare).orElse(0);
+                            if (subMax > 0) {
+                                sources.add(new ProtectionSource(src.getSourceStack(), Map.of(), Map.of(), Map.of(),
+                                        src.getMaterialFactor(), src.getDurabilityConsumer(),
+                                        subMax, src.getToughness(), src.getRicochetChance(), false));
+                            }
+                        } else {
+                            sources.add(src);
+                        }
                     }
                 }
             }
+        };
+
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            processStack.accept(target.getItemBySlot(slot));
         }
 
         if (ModList.get().isLoaded("curios")) {
             CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
                 for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks(); // 只取普通槽位
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
                     for (int i = 0; i < stackHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.isEmpty()) continue;
-                        ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-                        if (data != null && data.protects(hitPart)) {
-                            int toughness = getDynamicToughness(stack, hitPart);
-                            if (toughness > 0) {
-                                total[0] += toughness;
-                                if (ModClothConfig.get().debugMode) {
-                                    ModernDamage.LOGGER.debug("[Toughness] Added curio toughness from {} (part {}): +{} → total {}",
-                                            ForgeRegistries.ITEMS.getKey(stack.getItem()), hitPart, toughness, total[0]);
-                                }
-                            }
-                        }
+                        processStack.accept(stackHandler.getStackInSlot(i));
                     }
                 }
             });
         }
 
-        return Math.min(total[0], 100);
+        return sources;
     }
 
-    public static int getDynamicToughness(ItemStack armorStack, ModDamagePart part) {
-        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
-        if (data == null) return 0;
-        int base = data.getBaseToughness(part);
-        if (base <= 0) return 0;
-        int maxDurability = armorStack.getMaxDamage();
-        if (maxDurability <= 0) return base;
-        int currentDurability = maxDurability - armorStack.getDamageValue();
-        float durabilityPercent = (float) currentDurability / (float) maxDurability;
-        return Math.round(base * durabilityPercent);
-    }
+    public static int getArmorLevel(LivingEntity target, ModDamagePart part) {
+        List<ProtectionSource> sources = getAllProtectionSources(target, part);
+        if (sources.isEmpty()) return 0;
 
-    private static float getMaterialFactor(ItemStack armorStack, ModDamagePart part) {
-        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
-        if (data == null) return 1.0f;
-        return data.getMaterialFactor(part);
-    }
-
-    private static ItemStack getProtectingItem(LivingEntity target, ModDamagePart hitPart) {
-        int bestLevel = 0;
-        ItemStack bestItem = ItemStack.EMPTY;
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data != null && data.protects(hitPart)) {
-                int level = data.getProtectionLevel(hitPart);
-                if (level > bestLevel) {
-                    bestLevel = level;
-                    bestItem = stack;
-                }
-            }
+        List<Integer> levels = new ArrayList<>();
+        for (ProtectionSource src : sources) {
+            int level = src.getPrimaryProtectionLevel();
+            if (level > 0) levels.add(level);
         }
-        return bestItem;
+        levels.sort(Collections.reverseOrder());
+
+        if (levels.isEmpty()) return 0;
+        int highest = levels.get(0);
+        if (levels.size() == 1) {
+            int total = highest;
+            if (!target.level().isClientSide) {
+                GetArmorLevelEvent event = new GetArmorLevelEvent(target, part, total);
+                MinecraftForge.EVENT_BUS.post(event);
+                total = event.getArmorLevel();
+            }
+            return total;
+        }
+        int otherSum = 0;
+        for (int i = 1; i < levels.size(); i++) otherSum += levels.get(i);
+        ModClothConfig config = ModClothConfig.get();
+        float factor = config.armorStackingFactor;
+        int total = highest + Math.round(otherSum * factor);
+        int cap = config.armorCap;
+        if (cap > 0 && total > cap) total = cap;
+
+        if (!target.level().isClientSide) {
+            GetArmorLevelEvent event = new GetArmorLevelEvent(target, part, total);
+            MinecraftForge.EVENT_BUS.post(event);
+            total = event.getArmorLevel();
+        }
+        return total;
     }
 
+    private static int getTotalToughness(LivingEntity target, ModDamagePart part) {
+        int natural = EntityHitboxHelper.getNaturalToughness(target, part);
+        int total = natural;
+        List<ProtectionSource> sources = getAllProtectionSources(target, part);
+        for (ProtectionSource src : sources) {
+            total += src.getToughness();
+        }
+        return Math.min(total, 100);
+    }
+
+    /**
+     * 主部位护甲穿透计算（非精确模式）
+     */
     public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamagePart hitPart,
                                                           float originalDamage, float penetration) {
         if (originalDamage <= 0) return new PenetrationResult(0, false, false);
 
         int armorLevel = getArmorLevel(target, hitPart);
         ModClothConfig config = ModClothConfig.get();
+        List<ProtectionSource> sources = getAllProtectionSources(target, hitPart);
 
-        List<ItemStack> allProtecting = getAllProtectingItems(target, hitPart);
-        ItemStack primaryItem = null;
-        int maxLevel = 0;
-        for (ItemStack stack : allProtecting) {
-            int level = getDynamicProtectionLevel(stack, hitPart);
-            if (level > maxLevel) {
-                maxLevel = level;
-                primaryItem = stack;
-            }
-        }
-
-        if (config.enableRicochet && primaryItem != null && !primaryItem.isEmpty()) {
-            ArmorData data = ArmorDataLoader.getArmorData(primaryItem.getItem());
-            if (data != null) {
-                float chance = data.getRicochetChance(hitPart);
-                if (chance > 0 && target.getRandom().nextFloat() < chance) {
-                    float ricochetDamage = originalDamage * config.ricochetDamageRatio;
-                    if (ricochetDamage < 1) ricochetDamage = 1;
-                    final float finalRicochetDamage = ricochetDamage;
-                    final ModDamagePart finalHitPart = hitPart;
-                    if (config.debugMode) {
-                        ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} {}! Damage: {} -> {}",
-                                target.getName().getString(),
-                                ForgeRegistries.ITEMS.getKey(primaryItem.getItem()),
-                                hitPart, originalDamage, finalRicochetDamage);
-                    }
-                    if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                        target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
-                    } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                        target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(finalHitPart, finalRicochetDamage));
-                    } else {
-                        target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
-                    }
-                    return new PenetrationResult(finalRicochetDamage, false, false);
+        boolean ricochetTriggered = false;
+        if (config.enableRicochet) {
+            for (ProtectionSource src : sources) {
+                if (src.isNatural()) continue;
+                if (src.getRicochetChance() > 0 && target.getRandom().nextFloat() < src.getRicochetChance()) {
+                    ricochetTriggered = true;
+                    break;
                 }
             }
         }
-
-        if (armorLevel == 0) {
-            return new PenetrationResult(originalDamage, false, false);
+        if (ricochetTriggered) {
+            float ricochetDamage = originalDamage * config.ricochetDamageRatio;
+            if (ricochetDamage < 1) ricochetDamage = 1;
+            final float finalRicochetDamage = ricochetDamage;
+            if (config.debugMode) {
+                ModernDamage.LOGGER.info("[Ricochet] {} ricocheted! Damage: {} -> {}",
+                        target.getName().getString(), originalDamage, finalRicochetDamage);
+            }
+            if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(hitPart, finalRicochetDamage));
+            } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(hitPart, finalRicochetDamage));
+            } else {
+                target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
+            }
+            return new PenetrationResult(finalRicochetDamage, false, false);
         }
 
-        int penetrationValue = (int) (penetration * 100);
-        int baseDurabilityLoss = config.durabilityLossBase;
-        int maxLoss = config.maxDurabilityLoss;
-
-        float partialMin = config.partialPenetrationMinRatio;
-        float partialMax = config.partialPenetrationMaxRatio;
-
-        float finalDamageBeforeToughness;
+        // ========== 关键修改：无论 armorLevel 是否为 0，都先发送事件 ==========
+        float finalDamageBeforeToughness = originalDamage;
         boolean penetrated = false;
         boolean partial = false;
+        boolean cancelDurabilityLoss = false;
 
-        if (penetrationValue >= armorLevel + 5) {
-            finalDamageBeforeToughness = originalDamage;
-            penetrated = true;
-        } else if (penetrationValue >= armorLevel - 10) {
-            int diff = (armorLevel + 6) - penetrationValue;
-            double chance = (16.0 - diff) / 15.0;
-            chance = Math.min(1.0, Math.max(0.0, chance));
-            if (RANDOM.nextDouble() <= chance) {
-                float ratio = partialMin + RANDOM.nextFloat() * (partialMax - partialMin);
-                finalDamageBeforeToughness = originalDamage * ratio;
-                partial = true;
+        // 仅在 armorLevel > 0 时才计算穿透/钝伤，否则保持原始伤害
+        if (armorLevel > 0) {
+            int penetrationValue = (int) (penetration * 100);
+
+            if (penetrationValue >= armorLevel + 5) {
+                finalDamageBeforeToughness = originalDamage;
+                penetrated = true;
+            } else if (penetrationValue >= armorLevel - 10) {
+                int diff = (armorLevel + 6) - penetrationValue;
+                double chance = (16.0 - diff) / 15.0;
+                chance = Math.min(1.0, Math.max(0.0, chance));
+                if (RANDOM.nextDouble() <= chance) {
+                    float ratio = config.partialPenetrationMinRatio + RANDOM.nextFloat() * (config.partialPenetrationMaxRatio - config.partialPenetrationMinRatio);
+                    finalDamageBeforeToughness = originalDamage * ratio;
+                    partial = true;
+                } else {
+                    int bluntDiff = armorLevel - penetrationValue;
+                    finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+                }
             } else {
                 int bluntDiff = armorLevel - penetrationValue;
                 finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
             }
         } else {
-            int bluntDiff = armorLevel - penetrationValue;
-            finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+            // armorLevel == 0：无护甲，不改变伤害，不扣除耐久
+            finalDamageBeforeToughness = originalDamage;
         }
 
-        float primaryMaterialFactor = 1.0f;
-        if (primaryItem != null && !primaryItem.isEmpty()) {
-            primaryMaterialFactor = getMaterialFactor(primaryItem, hitPart);
-        }
-
-        float penRatio = (float) penetrationValue / (float) armorLevel;
-
-        int primaryDurabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primaryMaterialFactor);
-        primaryDurabilityLoss = Math.min(maxLoss, Math.max(1, primaryDurabilityLoss));
-
-        boolean cancelDurabilityLoss = false;
+        // 发送 ArmorHitEvent（无论 armorLevel 是否大于 0）
         if (!target.level().isClientSide) {
-            ArmorHitEvent event = new ArmorHitEvent(target, hitPart, originalDamage, finalDamageBeforeToughness, armorLevel);
+            ArmorHitEvent event = new ArmorHitEvent(target, hitPart, null, originalDamage, finalDamageBeforeToughness, armorLevel);
+            ModernDamage.LOGGER.error("========================================");
+            ModernDamage.LOGGER.error("MDC: Sending ArmorHitEvent (NON-PRECISE)");
+            ModernDamage.LOGGER.error("  target: {}", target.getName().getString());
+            ModernDamage.LOGGER.error("  hitPart: {}", hitPart);
+            ModernDamage.LOGGER.error("  originalDamage: {}", originalDamage);
+            ModernDamage.LOGGER.error("  finalDamageBeforeToughness: {}", finalDamageBeforeToughness);
+            ModernDamage.LOGGER.error("  armorLevel: {}", armorLevel);
+            ModernDamage.LOGGER.error("  event class: {}", event.getClass().getName());
+            ModernDamage.LOGGER.error("  event hashCode: {}", System.identityHashCode(event));
+            ModernDamage.LOGGER.error("  Forge EVENT_BUS hashCode: {}", System.identityHashCode(MinecraftForge.EVENT_BUS));
+            ModernDamage.LOGGER.error("Posting event...");
             MinecraftForge.EVENT_BUS.post(event);
+            ModernDamage.LOGGER.error("  posted, event.isCanceled = {}", event.isCanceled());
             if (event.isCanceled()) {
                 cancelDurabilityLoss = true;
             }
             finalDamageBeforeToughness = event.getFinalDamage();
+            ModernDamage.LOGGER.error("  finalDamageAfterEvent: {}", finalDamageBeforeToughness);
+            ModernDamage.LOGGER.error("========================================");
         }
 
-        if (!cancelDurabilityLoss && !allProtecting.isEmpty()) {
-            if (primaryItem != null && !primaryItem.isEmpty()) {
-                hurtItem(primaryItem, target, primaryDurabilityLoss);
+        // 耐久损耗（仅当有护甲且未被取消时）
+        if (armorLevel > 0 && !cancelDurabilityLoss && !sources.isEmpty()) {
+            float penRatio = armorLevel > 0 ? (float) (penetration * 100) / (float) armorLevel : 0;
+            // 主要物品（最高等级）损耗全额
+            ProtectionSource primary = null;
+            int maxLevel = 0;
+            for (ProtectionSource src : sources) {
+                if (src.isNatural()) continue;
+                int level = src.getPrimaryProtectionLevel();
+                if (level > maxLevel) {
+                    maxLevel = level;
+                    primary = src;
+                }
             }
-
-            for (ItemStack stack : allProtecting) {
-                if (stack == primaryItem) continue;
-
-                float materialFactor = getMaterialFactor(stack, hitPart);
-                int itemDurabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * materialFactor);
-                itemDurabilityLoss = Math.min(maxLoss, Math.max(1, itemDurabilityLoss));
-                int halfLoss = Math.max(1, itemDurabilityLoss / 2);
-                hurtItem(stack, target, halfLoss);
+            if (primary != null && primary.getSourceStack() != null) {
+                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.getMaterialFactor());
+                durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss));
+                if (primary.getDurabilityConsumer() != null) {
+                    primary.getDurabilityConsumer().accept(durabilityLoss);
+                } else {
+                    hurtItem(primary.getSourceStack(), target, durabilityLoss);
+                }
+            }
+            // 其他保护物品损耗减半
+            for (ProtectionSource src : sources) {
+                if (src == primary) continue;
+                if (src.isNatural()) continue;
+                if (src.getSourceStack() == null) continue;
+                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * src.getMaterialFactor());
+                durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss / 2));
+                if (src.getDurabilityConsumer() != null) {
+                    src.getDurabilityConsumer().accept(durabilityLoss);
+                } else {
+                    hurtItem(src.getSourceStack(), target, durabilityLoss);
+                }
             }
         }
 
@@ -1561,12 +1688,295 @@ public class ArmorCalculator {
         }
 
         if (config.debugMode) {
-            ModernDamage.LOGGER.info("[Penetration] target={}, part={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, durLoss(primary)={}, penType={}",
-                    target.getName().getString(), hitPart, armorLevel, penetrationValue,
-                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness, primaryDurabilityLoss,
-                    penetrated ? "FULL" : (partial ? "PARTIAL" : "BLUNT"));
+            ModernDamage.LOGGER.info("[Penetration] target={}, part={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, penType={}",
+                    target.getName().getString(), hitPart, armorLevel, (int)(penetration*100),
+                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness,
+                    penetrated ? "FULL" : (partial ? "PARTIAL" : (armorLevel>0?"BLUNT":"NONE")));
+        }
+        return new PenetrationResult(finalDamage, penetrated, partial);
+    }
+
+    // ========================= 子部位专用 API（精确模式） =========================
+
+    /**
+     * 获取针对子部位的所有保护源（自然护甲 + 装备本体 + 配件）
+     * 每个 ProtectionSource 包含该子部位的防护等级（来自自身或配件映射）
+     */
+    private static List<ProtectionSource> getAllProtectionSourcesForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        List<ProtectionSource> sources = new ArrayList<>();
+        ModDamagePart parent = subPart.getParent();
+        ModClothConfig config = ModClothConfig.get();
+
+        int natural = EntityHitboxHelper.getNaturalArmor(target, parent);
+        if (natural > 0) {
+            sources.add(new ProtectionSource(null, Map.of(), Map.of(), Map.of(), 1.0f, null, natural, 0, 0.0f, true));
         }
 
+        java.util.function.Consumer<ItemStack> processStack = (stack) -> {
+            if (stack.isEmpty()) return;
+            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
+            if (data == null) return;
+
+            int level = 0;
+            int toughness = 0;
+            float ricochet = 0.0f;
+            int subLevel = data.getSubProtectionLevel(subPart);
+            if (subLevel > 0) {
+                level = subLevel;
+                toughness = data.getEffectiveToughness(subPart, parent);
+                ricochet = data.getEffectiveRicochetChance(subPart, parent);
+            } else {
+                int parentLevel = data.getProtectionLevel(parent);
+                if (parentLevel > 0) {
+                    level = parentLevel;
+                    toughness = data.getBaseToughness(parent);
+                    ricochet = data.getRicochetChance(parent);
+                }
+            }
+            if (level > 0) {
+                int dynamicLevel = getDynamicProtectionLevel(stack, level);
+                int dynamicToughness = getDynamicToughness(stack, toughness);
+                float materialFactor = data.getMaterialFactor(parent);
+                sources.add(new ProtectionSource(stack, Map.of(), Map.of(), Map.of(), materialFactor, null,
+                        dynamicLevel, dynamicToughness, ricochet, false));
+            }
+
+            for (IProtectionSourceProvider provider : ProtectionSourceProviderRegistry.getProviders()) {
+                List<ProtectionSource> additional = provider.getAdditionalSources(stack, target);
+                if (additional != null) {
+                    for (ProtectionSource src : additional) {
+                        if (src.getSubProtection() != null && src.getSubProtection().containsKey(subPart)) {
+                            int plateLevel = src.getSubProtection().get(subPart);
+                            if (plateLevel > 0) {
+                                int plateTough = src.getSubToughness() != null ? src.getSubToughness().getOrDefault(subPart, 0) : 0;
+                                float plateRicochet = src.getSubRicochetChance() != null ? src.getSubRicochetChance().getOrDefault(subPart, 0.0f) : 0.0f;
+                                sources.add(new ProtectionSource(src.getSourceStack(), Map.of(), Map.of(), Map.of(),
+                                        src.getMaterialFactor(), src.getDurabilityConsumer(),
+                                        plateLevel, plateTough, plateRicochet, false));
+                            }
+                        } else if (src.getPrimaryProtectionLevel() > 0) {
+                            if (src.getSourceStack() != null) {
+                                ArmorData attData = ArmorDataLoader.getArmorData(src.getSourceStack().getItem());
+                                if (attData != null && attData.protects(parent)) {
+                                    sources.add(src);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        for (EquipmentSlot slot : EquipmentSlot.values()) {
+            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
+            processStack.accept(target.getItemBySlot(slot));
+        }
+
+        if (ModList.get().isLoaded("curios")) {
+            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
+                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
+                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
+                    for (int i = 0; i < stackHandler.getSlots(); i++) {
+                        processStack.accept(stackHandler.getStackInSlot(i));
+                    }
+                }
+            });
+        }
+
+        return sources;
+    }
+
+    /**
+     * 获取子部位的总护甲等级
+     */
+    public static int getArmorLevelForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        List<ProtectionSource> sources = getAllProtectionSourcesForSubPart(target, subPart);
+        if (sources.isEmpty()) return 0;
+
+        List<Integer> levels = new ArrayList<>();
+        for (ProtectionSource src : sources) {
+            int level = src.getPrimaryProtectionLevel();
+            if (level > 0) levels.add(level);
+        }
+        levels.sort(Collections.reverseOrder());
+
+        if (levels.isEmpty()) return 0;
+        int highest = levels.get(0);
+        if (levels.size() == 1) {
+            return highest;
+        }
+        int otherSum = 0;
+        for (int i = 1; i < levels.size(); i++) otherSum += levels.get(i);
+        ModClothConfig config = ModClothConfig.get();
+        float factor = config.armorStackingFactor;
+        int total = highest + Math.round(otherSum * factor);
+        int cap = config.armorCap;
+        if (cap > 0 && total > cap) total = cap;
+        if (!target.level().isClientSide) {
+            GetArmorLevelEvent event = new GetArmorLevelEvent(target, subPart.getParent(), total);
+            MinecraftForge.EVENT_BUS.post(event);
+            total = event.getArmorLevel();
+        }
+        return total;
+    }
+
+    /**
+     * 获取子部位的总韧性
+     */
+    private static int getTotalToughnessForSubPart(LivingEntity target, ModDamageSubPart subPart) {
+        int natural = EntityHitboxHelper.getNaturalToughness(target, subPart.getParent());
+        int total = natural;
+        List<ProtectionSource> sources = getAllProtectionSourcesForSubPart(target, subPart);
+        for (ProtectionSource src : sources) {
+            total += src.getToughness();
+        }
+        return Math.min(total, 100);
+    }
+
+    /**
+     * 子部位护甲穿透计算（精确模式）
+     */
+    public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamageSubPart subPart,
+                                                          float originalDamage, float penetration) {
+        if (originalDamage <= 0) return new PenetrationResult(0, false, false);
+
+        int armorLevel = getArmorLevelForSubPart(target, subPart);
+        ModClothConfig config = ModClothConfig.get();
+        ModDamagePart parent = subPart.getParent();
+        List<ProtectionSource> sources = getAllProtectionSourcesForSubPart(target, subPart);
+
+        boolean ricochetTriggered = false;
+        if (config.enableRicochet) {
+            for (ProtectionSource src : sources) {
+                if (src.isNatural()) continue;
+                if (src.getRicochetChance() > 0 && target.getRandom().nextFloat() < src.getRicochetChance()) {
+                    ricochetTriggered = true;
+                    break;
+                }
+            }
+        }
+        if (ricochetTriggered) {
+            float ricochetDamage = originalDamage * config.ricochetDamageRatio;
+            if (ricochetDamage < 1) ricochetDamage = 1;
+            final float finalRicochetDamage = ricochetDamage;
+            if (config.debugMode) {
+                ModernDamage.LOGGER.info("[Ricochet] {} ricocheted (subPart {})! Damage: {} -> {}",
+                        target.getName().getString(), subPart, originalDamage, finalRicochetDamage);
+            }
+            if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
+            } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
+                target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
+            } else {
+                target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
+            }
+            return new PenetrationResult(finalRicochetDamage, false, false);
+        }
+
+        float finalDamageBeforeToughness = originalDamage;
+        boolean penetrated = false;
+        boolean partial = false;
+        boolean cancelDurabilityLoss = false;
+
+        if (armorLevel > 0) {
+            int penetrationValue = (int) (penetration * 100);
+
+            if (penetrationValue >= armorLevel + 5) {
+                finalDamageBeforeToughness = originalDamage;
+                penetrated = true;
+            } else if (penetrationValue >= armorLevel - 10) {
+                int diff = (armorLevel + 6) - penetrationValue;
+                double chance = (16.0 - diff) / 15.0;
+                chance = Math.min(1.0, Math.max(0.0, chance));
+                if (RANDOM.nextDouble() <= chance) {
+                    float ratio = config.partialPenetrationMinRatio + RANDOM.nextFloat() * (config.partialPenetrationMaxRatio - config.partialPenetrationMinRatio);
+                    finalDamageBeforeToughness = originalDamage * ratio;
+                    partial = true;
+                } else {
+                    int bluntDiff = armorLevel - penetrationValue;
+                    finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+                }
+            } else {
+                int bluntDiff = armorLevel - penetrationValue;
+                finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
+            }
+        } else {
+            finalDamageBeforeToughness = originalDamage;
+        }
+
+        if (!target.level().isClientSide) {
+            ArmorHitEvent event = new ArmorHitEvent(target, parent, subPart, originalDamage, finalDamageBeforeToughness, armorLevel);
+            ModernDamage.LOGGER.error("========================================");
+            ModernDamage.LOGGER.error("MDC: Sending ArmorHitEvent (PRECISE)");
+            ModernDamage.LOGGER.error("  target: {}", target.getName().getString());
+            ModernDamage.LOGGER.error("  parent: {}", parent);
+            ModernDamage.LOGGER.error("  subPart: {}", subPart);
+            ModernDamage.LOGGER.error("  originalDamage: {}", originalDamage);
+            ModernDamage.LOGGER.error("  finalDamageBeforeToughness: {}", finalDamageBeforeToughness);
+            ModernDamage.LOGGER.error("  armorLevel: {}", armorLevel);
+            ModernDamage.LOGGER.error("  event class: {}", event.getClass().getName());
+            ModernDamage.LOGGER.error("  event hashCode: {}", System.identityHashCode(event));
+            ModernDamage.LOGGER.error("  Forge EVENT_BUS hashCode: {}", System.identityHashCode(MinecraftForge.EVENT_BUS));
+            ModernDamage.LOGGER.error("Posting event...");
+            MinecraftForge.EVENT_BUS.post(event);
+            ModernDamage.LOGGER.error("  posted, event.isCanceled = {}", event.isCanceled());
+            if (event.isCanceled()) {
+                cancelDurabilityLoss = true;
+            }
+            finalDamageBeforeToughness = event.getFinalDamage();
+            ModernDamage.LOGGER.error("  finalDamageAfterEvent: {}", finalDamageBeforeToughness);
+            ModernDamage.LOGGER.error("========================================");
+        }
+
+        if (armorLevel > 0 && !cancelDurabilityLoss && !sources.isEmpty()) {
+            float penRatio = armorLevel > 0 ? (float) (penetration * 100) / (float) armorLevel : 0;
+            ProtectionSource primary = null;
+            int maxLevel = 0;
+            for (ProtectionSource src : sources) {
+                if (src.isNatural()) continue;
+                int level = src.getPrimaryProtectionLevel();
+                if (level > maxLevel) {
+                    maxLevel = level;
+                    primary = src;
+                }
+            }
+            if (primary != null && primary.getSourceStack() != null) {
+                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.getMaterialFactor());
+                durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss));
+                if (primary.getDurabilityConsumer() != null) {
+                    primary.getDurabilityConsumer().accept(durabilityLoss);
+                } else {
+                    hurtItem(primary.getSourceStack(), target, durabilityLoss);
+                }
+            }
+            for (ProtectionSource src : sources) {
+                if (src == primary) continue;
+                if (src.isNatural()) continue;
+                if (src.getSourceStack() == null) continue;
+                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * src.getMaterialFactor());
+                durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss / 2));
+                if (src.getDurabilityConsumer() != null) {
+                    src.getDurabilityConsumer().accept(durabilityLoss);
+                } else {
+                    hurtItem(src.getSourceStack(), target, durabilityLoss);
+                }
+            }
+        }
+
+        int totalToughness = getTotalToughnessForSubPart(target, subPart);
+        float finalDamage = finalDamageBeforeToughness;
+        if (totalToughness > 0) {
+            float reduction = totalToughness / 100.0f;
+            finalDamage = finalDamageBeforeToughness * (1 - reduction);
+            if (finalDamage < 0) finalDamage = 0;
+        }
+
+        if (config.debugMode) {
+            ModernDamage.LOGGER.info("[Penetration] target={}, subPart={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, penType={}",
+                    target.getName().getString(), subPart, armorLevel, (int)(penetration*100),
+                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness,
+                    penetrated ? "FULL" : (partial ? "PARTIAL" : (armorLevel>0?"BLUNT":"NONE")));
+        }
         return new PenetrationResult(finalDamage, penetrated, partial);
     }
 
@@ -1574,12 +1984,9 @@ public class ArmorCalculator {
         if (stack.isEmpty()) return;
         int maxDamage = stack.getMaxDamage();
         if (maxDamage <= 0) return;
-
         int currentDamage = stack.getDamageValue();
         int remaining = maxDamage - currentDamage;
-
         if (remaining <= 1) return;
-
         int actualAmount = Math.min(amount, remaining - 1);
         if (actualAmount > 0) {
             stack.hurtAndBreak(actualAmount, target, (p) -> {});
@@ -1595,374 +2002,6 @@ public class ArmorCalculator {
         return Math.max(ratio, minRatio);
     }
 
-    public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamagePart part) {
-        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
-        if (data == null) return 0;
-        int baseLevel = data.getProtectionLevel(part);
-        if (baseLevel == 0) return 0;
-        int maxDurability = armorStack.getMaxDamage();
-        if (maxDurability <= 0) return baseLevel;
-        int currentDurability = maxDurability - armorStack.getDamageValue();
-        if (currentDurability <= 1) return 0;
-        float durabilityPercent = (float) currentDurability / (float) maxDurability;
-        float multiplier = 0.5f + 0.5f * durabilityPercent;
-        return Math.max(1, Math.round(baseLevel * multiplier));
-    }
-
-    public static int getProtectionLevel(LivingEntity target, ModDamagePart hitPart) {
-        return getArmorLevel(target, hitPart);
-    }
-
-    public static int getArmorLevel(LivingEntity target, ModDamagePart hitPart) {
-        List<Integer> levels = new ArrayList<>();
-        int natural = EntityHitboxHelper.getNaturalArmor(target, hitPart);
-        if (natural > 0) levels.add(natural);
-
-        List<ItemStack> protectingItems = getAllProtectingItems(target, hitPart);
-        for (ItemStack stack : protectingItems) {
-            int level = getDynamicProtectionLevel(stack, hitPart);
-            if (level > 0) levels.add(level);
-        }
-
-        if (levels.isEmpty()) return 0;
-        levels.sort(Collections.reverseOrder());
-        int base = levels.get(0);
-        if (levels.size() == 1) {
-            int total = base;
-            if (!target.level().isClientSide) {
-                GetArmorLevelEvent event = new GetArmorLevelEvent(target, hitPart, total);
-                MinecraftForge.EVENT_BUS.post(event);
-                total = event.getArmorLevel();
-            }
-            return total;
-        }
-        int otherSum = 0;
-        for (int i = 1; i < levels.size(); i++) otherSum += levels.get(i);
-        ModClothConfig config = ModClothConfig.get();
-        float factor = config.armorStackingFactor;
-        int total = base + Math.round(otherSum * factor);
-        int cap = config.armorCap;
-        if (cap > 0 && total > cap) total = cap;
-
-        if (!target.level().isClientSide) {
-            GetArmorLevelEvent event = new GetArmorLevelEvent(target, hitPart, total);
-            MinecraftForge.EVENT_BUS.post(event);
-            total = event.getArmorLevel();
-        }
-        return total;
-    }
-
-    private static EquipmentSlot getSlotForItem(LivingEntity target, ItemStack itemStack) {
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (target.getItemBySlot(slot) == itemStack) return slot;
-        }
-        return null;
-    }
-
-    private static List<ItemStack> getAllProtectingItems(LivingEntity target, ModDamagePart hitPart) {
-        List<ItemStack> result = new ArrayList<>();
-
-        // 1. 遍历盔甲槽位
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data != null && data.protects(hitPart)) {
-                result.add(stack);
-            }
-        }
-
-        // 2. 遍历 Curios 饰品槽位（如果 Curios 已加载）
-        if (ModList.get().isLoaded("curios")) {
-            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
-                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks(); // 只取普通槽位，不取 cosmetic
-                    for (int i = 0; i < stackHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (!stack.isEmpty()) {
-                            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-                            if (data != null && data.protects(hitPart)) {
-                                result.add(stack);
-                            }
-                        }
-                    }
-                }
-            });
-        }
-        return result;
-    }
-
-    public static class ProtectionSource {
-        public final ItemStack item;
-        public final int level;          // 当前防护等级（已考虑耐久）
-        public final int toughness;      // 韧性
-        public final float materialFactor;
-        public final float ricochetChance;
-        public final boolean isNatural;
-
-        public ProtectionSource(ItemStack item, int level, int toughness, float materialFactor, float ricochetChance, boolean isNatural) {
-            this.item = item;
-            this.level = level;
-            this.toughness = toughness;
-            this.materialFactor = materialFactor;
-            this.ricochetChance = ricochetChance;
-            this.isNatural = isNatural;
-        }
-    }
-
-    /**
-     * 获取针对子部位的所有防护源（包括自然护甲和装备）
-     */
-    private static List<ProtectionSource> getProtectionSourcesForSubPart(LivingEntity target, ModDamageSubPart subPart) {
-        List<ProtectionSource> sources = new ArrayList<>();
-        ModDamagePart parent = subPart.getParent();
-
-        // 1. 自然护甲（仍按父部位）
-        int natural = EntityHitboxHelper.getNaturalArmor(target, parent);
-        if (natural > 0) {
-            sources.add(new ProtectionSource(null, natural, 0, 1.0f, 0f, true));
-        }
-
-        // 2. 遍历盔甲槽位
-        for (EquipmentSlot slot : EquipmentSlot.values()) {
-            if (slot.getType() != EquipmentSlot.Type.ARMOR) continue;
-            ItemStack stack = target.getItemBySlot(slot);
-            if (stack.isEmpty()) continue;
-            ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-            if (data == null) continue;
-
-            // 优先检查子部位配置，若无则检查父部位
-            int subLevel = data.getSubProtectionLevel(subPart);
-            int level = subLevel > 0 ? subLevel : data.getProtectionLevel(parent);
-            if (level == 0) continue;
-            level = getDynamicProtectionLevel(stack, level); // 应用耐久动态调整
-
-            int toughness = data.getEffectiveToughness(subPart, parent);
-            toughness = getDynamicToughness(stack, toughness); // 应用耐久动态调整（需要重载）
-
-            float materialFactor = data.getMaterialFactor(parent); // 材料因子不分子部位
-            float ricochet = data.getEffectiveRicochetChance(subPart, parent);
-
-            sources.add(new ProtectionSource(stack, level, toughness, materialFactor, ricochet, false));
-        }
-
-        // 3. 遍历 Curios 饰品槽位（如果 Curios 已加载）
-        if (ModList.get().isLoaded("curios")) {
-            CuriosApi.getCuriosInventory(target).ifPresent(handler -> {
-                for (ICurioStacksHandler stacksHandler : handler.getCurios().values()) {
-                    IDynamicStackHandler stackHandler = stacksHandler.getStacks();
-                    for (int i = 0; i < stackHandler.getSlots(); i++) {
-                        ItemStack stack = stackHandler.getStackInSlot(i);
-                        if (stack.isEmpty()) continue;
-                        ArmorData data = ArmorDataLoader.getArmorData(stack.getItem());
-                        if (data == null) continue;
-                        int subLevel = data.getSubProtectionLevel(subPart);
-                        int level = subLevel > 0 ? subLevel : data.getProtectionLevel(parent);
-                        if (level == 0) continue;
-                        level = getDynamicProtectionLevel(stack, level);
-
-                        int toughness = data.getEffectiveToughness(subPart, parent);
-                        toughness = getDynamicToughness(stack, toughness);
-
-                        float materialFactor = data.getMaterialFactor(parent);
-                        float ricochet = data.getEffectiveRicochetChance(subPart, parent);
-
-                        sources.add(new ProtectionSource(stack, level, toughness, materialFactor, ricochet, false));
-                    }
-                }
-            });
-        }
-
-        return sources;
-    }
-
-    /**
-     * 根据子部位获取总护甲等级（自然护甲 + 装备，支持子部位优先）
-     */
-    public static int getArmorLevelForSubPart(LivingEntity target, ModDamageSubPart subPart) {
-        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
-        if (sources.isEmpty()) return 0;
-
-        // 按等级降序排序
-        sources.sort((a, b) -> Integer.compare(b.level, a.level));
-        int highest = sources.get(0).level;
-        if (sources.size() == 1) {
-            return highest;
-        }
-
-        ModClothConfig config = ModClothConfig.get();
-        float factor = config.armorStackingFactor;
-        int otherSum = 0;
-        for (int i = 1; i < sources.size(); i++) {
-            otherSum += sources.get(i).level;
-        }
-        int total = highest + Math.round(otherSum * factor);
-        int cap = config.armorCap;
-        if (cap > 0 && total > cap) total = cap;
-
-        // 触发事件（暂不传子部位，保持原事件签名）
-        if (!target.level().isClientSide) {
-            GetArmorLevelEvent event = new GetArmorLevelEvent(target, subPart.getParent(), total);
-            MinecraftForge.EVENT_BUS.post(event);
-            total = event.getArmorLevel();
-        }
-        return total;
-    }
-
-    /**
-     * 获取子部位的总韧性（自然韧性 + 装备韧性）
-     */
-    private static int getTotalToughnessForSubPart(LivingEntity target, ModDamageSubPart subPart) {
-        ModDamagePart parent = subPart.getParent();
-        int natural = EntityHitboxHelper.getNaturalToughness(target, parent);
-        int total = natural;
-
-        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
-        for (ProtectionSource source : sources) {
-            if (!source.isNatural) {
-                total += source.toughness;
-            }
-        }
-        return Math.min(total, 100);
-    }
-
-    /**
-     * 重载：针对子部位应用护甲穿透计算
-     */
-    public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamageSubPart subPart,
-                                                          float originalDamage, float penetration) {
-        if (originalDamage <= 0) return new PenetrationResult(0, false, false);
-
-        int armorLevel = getArmorLevelForSubPart(target, subPart);
-        ModClothConfig config = ModClothConfig.get();
-        ModDamagePart parent = subPart.getParent();
-
-        List<ProtectionSource> sources = getProtectionSourcesForSubPart(target, subPart);
-
-        // ========== 跳弹判定（所有保护源，任意一个触发即跳弹） ==========
-        boolean ricochetTriggered = false;
-        if (config.enableRicochet) {
-            for (ProtectionSource source : sources) {
-                if (source.isNatural) continue;
-                if (source.ricochetChance > 0 && target.getRandom().nextFloat() < source.ricochetChance) {
-                    ricochetTriggered = true;
-                    break;
-                }
-            }
-        }
-        if (ricochetTriggered) {
-            float ricochetDamage = originalDamage * config.ricochetDamageRatio;
-            if (ricochetDamage < 1) ricochetDamage = 1;
-            final float finalRicochetDamage = ricochetDamage;   // 修复 lambda final 问题
-            if (config.debugMode) {
-                // 获取任意一个触发跳弹的物品（用于日志）
-                ItemStack anyItem = sources.stream()
-                        .filter(s -> !s.isNatural && s.item != null)
-                        .map(s -> s.item)
-                        .findFirst().orElse(null);
-                ModernDamage.LOGGER.info("[Ricochet] {} ricocheted off {} (subPart {})! Damage: {} -> {}",
-                        target.getName().getString(),
-                        anyItem != null ? ForgeRegistries.ITEMS.getKey(anyItem.getItem()) : "unknown",
-                        subPart, originalDamage, finalRicochetDamage);
-            }
-            // 伤害分配（使用父部位）
-            if (target instanceof Player && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                target.getCapability(PartHealthCapability.PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
-            } else if (config.creaturePartHealthEnabled && config.damageModel == ModClothConfig.DamageModel.HARDCORE) {
-                target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(parent, finalRicochetDamage));
-            } else {
-                target.setHealth(Math.max(0, target.getHealth() - finalRicochetDamage));
-            }
-            return new PenetrationResult(finalRicochetDamage, false, false);
-        }
-
-        // ========== 继续原有穿透计算 ==========
-        if (armorLevel == 0) {
-            return new PenetrationResult(originalDamage, false, false);
-        }
-
-        int penetrationValue = (int) (penetration * 100);
-        int baseDurabilityLoss = config.durabilityLossBase;
-        int maxLoss = config.maxDurabilityLoss;
-        float partialMin = config.partialPenetrationMinRatio;
-        float partialMax = config.partialPenetrationMaxRatio;
-
-        float finalDamageBeforeToughness;
-        boolean penetrated = false;
-        boolean partial = false;
-
-        if (penetrationValue >= armorLevel + 5) {
-            finalDamageBeforeToughness = originalDamage;
-            penetrated = true;
-        } else if (penetrationValue >= armorLevel - 10) {
-            int diff = (armorLevel + 6) - penetrationValue;
-            double chance = (16.0 - diff) / 15.0;
-            chance = Math.min(1.0, Math.max(0.0, chance));
-            if (RANDOM.nextDouble() <= chance) {
-                float ratio = partialMin + RANDOM.nextFloat() * (partialMax - partialMin);
-                finalDamageBeforeToughness = originalDamage * ratio;
-                partial = true;
-            } else {
-                int bluntDiff = armorLevel - penetrationValue;
-                finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
-            }
-        } else {
-            int bluntDiff = armorLevel - penetrationValue;
-            finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
-        }
-
-        // 耐久损耗
-        if (!sources.isEmpty()) {
-            float penRatio = (float) penetrationValue / (float) armorLevel;
-            boolean cancelDurabilityLoss = false;
-            if (!target.level().isClientSide) {
-                ArmorHitEvent event = new ArmorHitEvent(target, parent, originalDamage, finalDamageBeforeToughness, armorLevel);
-                MinecraftForge.EVENT_BUS.post(event);
-                if (event.isCanceled()) {
-                    cancelDurabilityLoss = true;
-                }
-                finalDamageBeforeToughness = event.getFinalDamage();
-            }
-
-            if (!cancelDurabilityLoss) {
-                // 主要物品（最高等级）损耗全额
-                ProtectionSource primary = sources.isEmpty() ? null : sources.get(0);
-                if (primary != null && !primary.isNatural && primary.item != null && !primary.item.isEmpty()) {
-                    int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.materialFactor);
-                    durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss));
-                    hurtItem(primary.item, target, durabilityLoss);
-                }
-                // 其他保护物品损耗减半
-                for (ProtectionSource source : sources) {
-                    if (source.isNatural) continue;
-                    if (source.item == primary.item) continue;
-                    int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * source.materialFactor);
-                    durabilityLoss = Math.min(maxLoss, Math.max(1, durabilityLoss / 2));
-                    hurtItem(source.item, target, durabilityLoss);
-                }
-            }
-        }
-
-        int totalToughness = getTotalToughnessForSubPart(target, subPart);
-        float finalDamage = finalDamageBeforeToughness;
-        if (totalToughness > 0) {
-            float reduction = totalToughness / 100.0f;
-            finalDamage = finalDamageBeforeToughness * (1 - reduction);
-            if (finalDamage < 0) finalDamage = 0;
-        }
-
-        if (config.debugMode) {
-            ModernDamage.LOGGER.info("[Penetration] target={}, subPart={}, armor={}, pen={}, dmg: orig={}, beforeTough={}, final={}, toughness={}, penType={}",
-                    target.getName().getString(), subPart, armorLevel, penetrationValue,
-                    originalDamage, finalDamageBeforeToughness, finalDamage, totalToughness,
-                    penetrated ? "FULL" : (partial ? "PARTIAL" : "BLUNT"));
-        }
-
-        return new PenetrationResult(finalDamage, penetrated, partial);
-    }
-
-    // 辅助方法：动态护甲等级（根据耐久百分比调整）
     private static int getDynamicProtectionLevel(ItemStack stack, int baseLevel) {
         if (baseLevel == 0) return 0;
         int maxDurability = stack.getMaxDamage();
@@ -1974,7 +2013,6 @@ public class ArmorCalculator {
         return Math.max(1, Math.round(baseLevel * multiplier));
     }
 
-    // 辅助方法：动态韧性（根据耐久百分比调整）
     private static int getDynamicToughness(ItemStack stack, int baseToughness) {
         if (baseToughness == 0) return 0;
         int maxDurability = stack.getMaxDamage();
@@ -1984,35 +2022,47 @@ public class ArmorCalculator {
         return Math.round(baseToughness * durabilityPercent);
     }
 
+    public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamagePart part) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 0;
+        int baseLevel = data.getProtectionLevel(part);
+        return getDynamicProtectionLevel(armorStack, baseLevel);
+    }
+
+    public static int getDynamicToughness(ItemStack armorStack, ModDamagePart part) {
+        ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
+        if (data == null) return 0;
+        int base = data.getBaseToughness(part);
+        return getDynamicToughness(armorStack, base);
+    }
+
     public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamageSubPart subPart) {
         ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
         if (data == null) return 0;
         int baseLevel = data.getSubProtectionLevel(subPart);
-        if (baseLevel == 0) return 0;
-        int maxDurability = armorStack.getMaxDamage();
-        if (maxDurability <= 0) return baseLevel;
-        int currentDurability = maxDurability - armorStack.getDamageValue();
-        if (currentDurability <= 1) return 0;
-        float durabilityPercent = (float) currentDurability / (float) maxDurability;
-        float multiplier = 0.5f + 0.5f * durabilityPercent;
-        return Math.max(1, Math.round(baseLevel * multiplier));
+        if (baseLevel == 0) {
+            baseLevel = data.getProtectionLevel(subPart.getParent());
+        }
+        return getDynamicProtectionLevel(armorStack, baseLevel);
     }
-
 
     public static int getDynamicToughness(ItemStack armorStack, ModDamageSubPart subPart) {
         ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
         if (data == null) return 0;
         int base = data.getSubToughness(subPart);
         if (base <= 0) {
-            // 回退到父部位韧性
             base = data.getBaseToughness(subPart.getParent());
         }
-        if (base <= 0) return 0;
-        int maxDurability = armorStack.getMaxDamage();
-        if (maxDurability <= 0) return base;
-        int currentDurability = maxDurability - armorStack.getDamageValue();
-        float durabilityPercent = (float) currentDurability / (float) maxDurability;
-        return Math.round(base * durabilityPercent);
+        return getDynamicToughness(armorStack, base);
+    }
+
+    public static int getProtectionLevel(LivingEntity target, ModDamagePart hitPart) {
+        return getArmorLevel(target, hitPart);
+    }
+
+    @Deprecated
+    private static List<ItemStack> getAllProtectingItems(LivingEntity target, ModDamagePart hitPart) {
+        return Collections.emptyList();
     }
 }==== ./src/main/java/com/moderndamage/control/armor/ArmorData.java ====
 package com.moderndamage.control.armor;
@@ -2380,7 +2430,8 @@ public class ModAttributes {
             register("ergonomics", 100.0, 0.0, 1000.0);
 
     private static RegistryObject<Attribute> register(String name, double defaultValue, double min, double max) {
-        return ATTRIBUTES.register(name, () -> new RangedAttribute(name, defaultValue, min, max).setSyncable(true));
+        String translationKey = "attribute." + ModernDamage.MODID + "." + name;
+        return ATTRIBUTES.register(name, () -> new RangedAttribute(translationKey, defaultValue, min, max).setSyncable(true));
     }
 }==== ./src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java ====
 package com.moderndamage.control.capability.armstamina;
@@ -2393,7 +2444,6 @@ import com.moderndamage.control.network.Networking;
 import com.moderndamage.control.network.SyncArmStaminaPacket;
 import com.tacz.guns.api.entity.IGunOperator;
 import com.tacz.guns.entity.shooter.ShooterDataHolder;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -2403,7 +2453,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
@@ -2415,7 +2464,6 @@ public class ArmStamina implements IArmStamina {
     private boolean initialized = false;
     private boolean lastSyncedAiming = false;
 
-    // 缓存已添加的惩罚修饰符，用于移除
     private final Map<UUID, AttributeModifier> activeLowPenalties = new HashMap<>();
     private final Map<UUID, AttributeModifier> activeCriticalPenalties = new HashMap<>();
     private boolean wasLow = false;
@@ -2448,7 +2496,6 @@ public class ArmStamina implements IArmStamina {
         init();
         float max = getMaxStamina();
         this.stamina = Math.max(0, Math.min(value, max));
-        // 耐力变化时重新评估惩罚（在 tick 中也会做，但这里立即触发可提升响应）
         if (!entity.level().isClientSide) {
             updatePenalties();
         }
@@ -2462,6 +2509,9 @@ public class ArmStamina implements IArmStamina {
 
     @Override
     public boolean consumeStamina(float cost, boolean simulate) {
+        if (entity instanceof Player && ((Player) entity).isSpectator()) {
+            return true;
+        }
         init();
         float multiplier = (float) entity.getAttributeValue(ModAttributes.ARM_STAMINA_DRAIN_MULTIPLIER.get());
         float actualCost = cost * multiplier;
@@ -2483,14 +2533,12 @@ public class ArmStamina implements IArmStamina {
         ModClothConfig config = ModClothConfig.get();
         if (!config.enableArmStamina) return;
 
-        // 恢复耐力（根据配置的延迟 ticks）
         int delay = config.staminaRegenDelayTicks;
         if (entity.tickCount - lastDrainTick > delay) {
             float regenPerTick = (float) entity.getAttributeValue(ModAttributes.ARM_STAMINA_REGEN.get()) / 20f;
             addStamina(regenPerTick);
         }
 
-        // 检测瞄准状态变化，并同步给客户端（用于镜头晃动）
         boolean currentAiming = false;
         try {
             IGunOperator operator = IGunOperator.fromLivingEntity(entity);
@@ -2501,71 +2549,99 @@ public class ArmStamina implements IArmStamina {
         } catch (Throwable ignored) {}
         if (currentAiming != lastSyncedAiming) {
             lastSyncedAiming = currentAiming;
-            sync(); // 触发一次同步（同时发送耐力值和瞄准状态）
+            sync();
         }
 
-        // 根据当前耐力比例应用或移除惩罚效果
         updatePenalties();
     }
 
-    private void updatePenalties() {
-        ModClothConfig config = ModClothConfig.get();
-        float ratio = getStamina() / getMaxStamina();
-        boolean isLow = ratio <= config.lowStaminaThreshold;
-        boolean isCritical = ratio <= config.criticallyLowStaminaThreshold;
-
-        // 低耐力惩罚（非极低时也应用低惩罚）
-        if (isLow && !isCritical) {
-            applyPenalty(config.lowStaminaPenalties.modifiers, activeLowPenalties, false);
-            // 如果之前是极低，移除极低惩罚
-            if (wasCritical) {
-                removePenalty(activeCriticalPenalties);
-                wasCritical = false;
+    private void removeAllPossiblePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            for (PenaltyModifier mod : config.lowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, false);
             }
-            wasLow = true;
-        } else if (!isLow) {
-            // 移除所有惩罚
-            if (wasLow || wasCritical) {
-                removePenalty(activeLowPenalties);
-                removePenalty(activeCriticalPenalties);
+            for (PenaltyModifier mod : config.criticallyLowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, true);
+            }
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in removeAllPossiblePenalties for {}", entity.getName().getString(), e);
+        }
+    }
+
+    private void removePenaltyByModifier(PenaltyModifier mod, boolean isCritical) {
+        if (mod == null || mod.attribute == null) return;
+        Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
+        if (attribute == null) return;
+        UUID uuid = UUID.nameUUIDFromBytes(("arm_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
+        var instance = entity.getAttribute(attribute);
+        if (instance != null && instance.getModifier(uuid) != null) {
+            instance.removeModifier(uuid);
+        }
+    }
+
+    private void updatePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            float ratio = getStamina() / getMaxStamina();
+            boolean isLow = ratio <= config.lowStaminaThreshold;
+            boolean isCritical = ratio <= config.criticallyLowStaminaThreshold;
+
+            if (!isLow) {
+                removeAllPossiblePenalties();
+                activeLowPenalties.clear();
+                activeCriticalPenalties.clear();
                 wasLow = false;
                 wasCritical = false;
+                return;
             }
-        }
 
-        // 极低耐力惩罚（独立于低耐力，会叠加）
-        if (isCritical) {
-            applyPenalty(config.criticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
-            // 施加药水效果（周期性，避免每 tick 重复添加）
-            if (entity instanceof Player player && config.criticallyLowStaminaPenalties.effect != null) {
-                long now = entity.tickCount;
-                // 每 100 tick (5秒) 重新施加一次，保证持续时间刷新
-                if (now - lastCriticalEffectTime > 100) {
-                    lastCriticalEffectTime = now;
-                    MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.criticallyLowStaminaPenalties.effect));
-                    if (effect != null) {
-                        player.addEffect(new MobEffectInstance(effect,
-                                config.criticallyLowStaminaPenalties.effectDuration,
-                                config.criticallyLowStaminaPenalties.effectAmplifier,
-                                false, true, true));
+            if (!isCritical) {
+                applyPenalty(config.lowStaminaPenalties.modifiers, activeLowPenalties, false);
+                wasLow = true;
+            }
+
+            if (isCritical) {
+                applyPenalty(config.criticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
+                if (entity instanceof Player player && config.criticallyLowStaminaPenalties.effect != null) {
+                    long now = entity.tickCount;
+                    if (now - lastCriticalEffectTime > 100) {
+                        lastCriticalEffectTime = now;
+                        MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.criticallyLowStaminaPenalties.effect));
+                        if (effect != null) {
+                            player.addEffect(new MobEffectInstance(effect,
+                                    config.criticallyLowStaminaPenalties.effectDuration,
+                                    config.criticallyLowStaminaPenalties.effectAmplifier,
+                                    false, true, true));
+                        }
                     }
                 }
+                wasCritical = true;
+                wasLow = true;
             }
-            wasCritical = true;
-            wasLow = true; // 低标记也置为 true，以便退出极低时能清除低惩罚
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in updatePenalties for {}", entity.getName().getString(), e);
         }
     }
 
     private void applyPenalty(List<PenaltyModifier> modifiers, Map<UUID, AttributeModifier> cache, boolean isCritical) {
         if (modifiers == null) return;
         for (PenaltyModifier mod : modifiers) {
+            if (mod == null || mod.attribute == null) continue;
             Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
             if (attribute == null) continue;
             AttributeModifier.Operation op;
             switch (mod.operation.toLowerCase()) {
-                case "multiply_base": op = AttributeModifier.Operation.MULTIPLY_BASE; break;
-                case "multiply_total": op = AttributeModifier.Operation.MULTIPLY_TOTAL; break;
-                default: op = AttributeModifier.Operation.ADDITION;
+                case "multiply_base":
+                    op = AttributeModifier.Operation.MULTIPLY_BASE;
+                    break;
+                case "multiply_total":
+                    op = AttributeModifier.Operation.MULTIPLY_TOTAL;
+                    break;
+                default:
+                    op = AttributeModifier.Operation.ADDITION;
             }
             UUID uuid = UUID.nameUUIDFromBytes(("arm_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
             if (!cache.containsKey(uuid)) {
@@ -2577,19 +2653,6 @@ public class ArmStamina implements IArmStamina {
                 }
             }
         }
-    }
-
-    private void removePenalty(Map<UUID, AttributeModifier> cache) {
-        for (Map.Entry<UUID, AttributeModifier> entry : cache.entrySet()) {
-            Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(entry.getValue().getName()));
-            if (attribute != null) {
-                var instance = entity.getAttribute(attribute);
-                if (instance != null) {
-                    instance.removeModifier(entry.getKey());
-                }
-            }
-        }
-        cache.clear();
     }
 
     public void sync() {
@@ -2611,8 +2674,9 @@ public class ArmStamina implements IArmStamina {
     public void reset() {
         stamina = getMaxStamina();
         lastDrainTick = -1000;
-        removePenalty(activeLowPenalties);
-        removePenalty(activeCriticalPenalties);
+        removeAllPossiblePenalties();
+        activeLowPenalties.clear();
+        activeCriticalPenalties.clear();
         wasLow = false;
         wasCritical = false;
         sync();
@@ -2641,10 +2705,16 @@ public class ArmStamina implements IArmStamina {
     }
 
     public void deserializeNBT(CompoundTag tag) {
-        stamina = tag.getFloat("Stamina");
-        lastDrainTick = tag.getInt("LastDrainTick");
-        initialized = true;
-        // 重生后需要重新评估惩罚（在 tick 中会自动处理）
+        try {
+            stamina = tag.getFloat("Stamina");
+            lastDrainTick = tag.getInt("LastDrainTick");
+            initialized = true;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Failed to deserialize arm stamina for entity {}", entity.getName().getString(), e);
+            stamina = getMaxStamina();
+            lastDrainTick = -1000;
+            initialized = true;
+        }
     }
 }==== ./src/main/java/com/moderndamage/control/capability/armstamina/ArmStaminaCapability.java ====
 package com.moderndamage.control.capability.armstamina;
@@ -2740,8 +2810,6 @@ import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.config.ModClothConfig.PenaltyModifier;
 import com.moderndamage.control.network.Networking;
 import com.moderndamage.control.network.SyncLegStaminaPacket;
-import com.tacz.guns.api.entity.IGunOperator;
-import com.tacz.guns.entity.shooter.ShooterDataHolder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -2806,6 +2874,9 @@ public class LegStamina implements ILegStamina {
 
     @Override
     public boolean consumeStamina(float cost, boolean simulate) {
+        if (entity instanceof Player && ((Player) entity).isSpectator()) {
+            return true;
+        }
         init();
         float multiplier = (float) entity.getAttributeValue(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get());
         float actualCost = cost * multiplier;
@@ -2836,58 +2907,93 @@ public class LegStamina implements ILegStamina {
         updatePenalties();
     }
 
-    private void updatePenalties() {
-        ModClothConfig config = ModClothConfig.get();
-        float ratio = getStamina() / getMaxStamina();
-        boolean isLow = ratio <= config.legLowStaminaThreshold;
-        boolean isCritical = ratio <= config.legCriticallyLowStaminaThreshold;
-
-        if (isLow && !isCritical) {
-            applyPenalty(config.legLowStaminaPenalties.modifiers, activeLowPenalties, false);
-            if (wasCritical) {
-                removePenalty(activeCriticalPenalties);
-                wasCritical = false;
+    private void removeAllPossiblePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            for (PenaltyModifier mod : config.legLowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, false);
             }
-            wasLow = true;
-        } else if (!isLow) {
-            if (wasLow || wasCritical) {
-                removePenalty(activeLowPenalties);
-                removePenalty(activeCriticalPenalties);
+            for (PenaltyModifier mod : config.legCriticallyLowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, true);
+            }
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in removeAllPossiblePenalties for {}", entity.getName().getString(), e);
+        }
+    }
+
+    private void removePenaltyByModifier(PenaltyModifier mod, boolean isCritical) {
+        if (mod == null || mod.attribute == null) return;
+        Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
+        if (attribute == null) return;
+        UUID uuid = UUID.nameUUIDFromBytes(("leg_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
+        var instance = entity.getAttribute(attribute);
+        if (instance != null && instance.getModifier(uuid) != null) {
+            instance.removeModifier(uuid);
+        }
+    }
+
+    private void updatePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            float ratio = getStamina() / getMaxStamina();
+            boolean isLow = ratio <= config.legLowStaminaThreshold;
+            boolean isCritical = ratio <= config.legCriticallyLowStaminaThreshold;
+
+            if (!isLow) {
+                removeAllPossiblePenalties();
+                activeLowPenalties.clear();
+                activeCriticalPenalties.clear();
                 wasLow = false;
                 wasCritical = false;
+                return;
             }
-        }
 
-        if (isCritical) {
-            applyPenalty(config.legCriticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
-            if (entity instanceof Player player && config.legCriticallyLowStaminaPenalties.effect != null) {
-                long now = entity.tickCount;
-                if (now - lastCriticalEffectTime > 100) {
-                    lastCriticalEffectTime = now;
-                    MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.legCriticallyLowStaminaPenalties.effect));
-                    if (effect != null) {
-                        player.addEffect(new MobEffectInstance(effect,
-                                config.legCriticallyLowStaminaPenalties.effectDuration,
-                                config.legCriticallyLowStaminaPenalties.effectAmplifier,
-                                false, true, true));
+            if (!isCritical) {
+                applyPenalty(config.legLowStaminaPenalties.modifiers, activeLowPenalties, false);
+                wasLow = true;
+            }
+
+            if (isCritical) {
+                applyPenalty(config.legCriticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
+                if (entity instanceof Player player && config.legCriticallyLowStaminaPenalties.effect != null) {
+                    long now = entity.tickCount;
+                    if (now - lastCriticalEffectTime > 100) {
+                        lastCriticalEffectTime = now;
+                        MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.legCriticallyLowStaminaPenalties.effect));
+                        if (effect != null) {
+                            player.addEffect(new MobEffectInstance(effect,
+                                    config.legCriticallyLowStaminaPenalties.effectDuration,
+                                    config.legCriticallyLowStaminaPenalties.effectAmplifier,
+                                    false, true, true));
+                        }
                     }
                 }
+                wasCritical = true;
+                wasLow = true;
             }
-            wasCritical = true;
-            wasLow = true;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in updatePenalties for {}", entity.getName().getString(), e);
         }
     }
 
     private void applyPenalty(List<PenaltyModifier> modifiers, Map<UUID, AttributeModifier> cache, boolean isCritical) {
         if (modifiers == null) return;
         for (PenaltyModifier mod : modifiers) {
+            if (mod == null || mod.attribute == null) continue;
             Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
             if (attribute == null) continue;
             AttributeModifier.Operation op;
             switch (mod.operation.toLowerCase()) {
-                case "multiply_base": op = AttributeModifier.Operation.MULTIPLY_BASE; break;
-                case "multiply_total": op = AttributeModifier.Operation.MULTIPLY_TOTAL; break;
-                default: op = AttributeModifier.Operation.ADDITION;
+                case "multiply_base":
+                    op = AttributeModifier.Operation.MULTIPLY_BASE;
+                    break;
+                case "multiply_total":
+                    op = AttributeModifier.Operation.MULTIPLY_TOTAL;
+                    break;
+                default:
+                    op = AttributeModifier.Operation.ADDITION;
             }
             UUID uuid = UUID.nameUUIDFromBytes(("leg_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
             if (!cache.containsKey(uuid)) {
@@ -2901,19 +3007,6 @@ public class LegStamina implements ILegStamina {
         }
     }
 
-    private void removePenalty(Map<UUID, AttributeModifier> cache) {
-        for (Map.Entry<UUID, AttributeModifier> entry : cache.entrySet()) {
-            Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(entry.getValue().getName()));
-            if (attribute != null) {
-                var instance = entity.getAttribute(attribute);
-                if (instance != null) {
-                    instance.removeModifier(entry.getKey());
-                }
-            }
-        }
-        cache.clear();
-    }
-
     public void sync() {
         if (entity.level().isClientSide) return;
         if (entity instanceof ServerPlayer serverPlayer) {
@@ -2925,8 +3018,9 @@ public class LegStamina implements ILegStamina {
     public void reset() {
         stamina = getMaxStamina();
         lastDrainTick = -1000;
-        removePenalty(activeLowPenalties);
-        removePenalty(activeCriticalPenalties);
+        removeAllPossiblePenalties();
+        activeLowPenalties.clear();
+        activeCriticalPenalties.clear();
         wasLow = false;
         wasCritical = false;
         sync();
@@ -2955,9 +3049,16 @@ public class LegStamina implements ILegStamina {
     }
 
     public void deserializeNBT(CompoundTag tag) {
-        stamina = tag.getFloat("Stamina");
-        lastDrainTick = tag.getInt("LastDrainTick");
-        initialized = true;
+        try {
+            stamina = tag.getFloat("Stamina");
+            lastDrainTick = tag.getInt("LastDrainTick");
+            initialized = true;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Failed to deserialize leg stamina for entity {}", entity.getName().getString(), e);
+            stamina = getMaxStamina();
+            lastDrainTick = -1000;
+            initialized = true;
+        }
     }
 }==== ./src/main/java/com/moderndamage/control/capability/legstamina/LegStaminaCapability.java ====
 package com.moderndamage.control.capability.legstamina;
@@ -8020,7 +8121,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -8033,9 +8136,44 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class InjuryEventHandler {
     private static final Random RANDOM = new Random();
-
-    // 用于防止软核模式下重复调用 die（子弹伤害手动处理时使用）
     private static final ConcurrentHashMap<UUID, Boolean> SOFT_DEATH_MARK = new ConcurrentHashMap<>();
+
+    private Vec3 getHitLocationFromProjectile(Projectile projectile, LivingEntity target) {
+        Vec3 projPos = projectile.position();
+        AABB targetBox = target.getBoundingBox();
+        Vec3 targetCenter = target.position().add(0, target.getBbHeight() / 2, 0);
+        Vec3 direction = targetCenter.subtract(projPos).normalize();
+        return targetBox.clip(projPos, projPos.add(direction.scale(5.0))).orElse(targetCenter);
+    }
+
+    private ModDamagePart getRandomPartByPosition(LivingEntity attacker, LivingEntity target) {
+        if (attacker == null) {
+            ModernDamage.LOGGER.warn("getRandomPartByPosition: attacker is null, using target Y for estimation");
+            int roll = RANDOM.nextInt(100);
+            if (roll < 34) return ModDamagePart.CHEST;
+            if (roll < 67) return ModDamagePart.STOMACH;
+            return RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
+        }
+        double dy = attacker.getY() - target.getY();
+        double threshold = 1.0;
+        ModernDamage.LOGGER.info("getRandomPartByPosition: attackerY={}, targetY={}, dy={}", attacker.getY(), target.getY(), dy);
+        if (dy >= threshold) {
+            int roll = RANDOM.nextInt(100);
+            if (roll < 40) return ModDamagePart.HEAD;
+            if (roll < 70) return ModDamagePart.CHEST;
+            return RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
+        } else if (dy <= -threshold) {
+            int roll = RANDOM.nextInt(100);
+            if (roll < 30) return ModDamagePart.STOMACH;
+            return RANDOM.nextBoolean() ? ModDamagePart.LEFT_LEG : ModDamagePart.RIGHT_LEG;
+        } else {
+            int roll = RANDOM.nextInt(100);
+            if (roll < 15) return ModDamagePart.HEAD;
+            if (roll < 55) return ModDamagePart.CHEST;
+            if (roll < 70) return ModDamagePart.STOMACH;
+            return RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
+        }
+    }
 
     private boolean isArmorIgnored(DamageSource source) {
         String msgId = source.getMsgId();
@@ -8065,14 +8203,15 @@ public class InjuryEventHandler {
         LivingEntity target = event.getEntity();
         if (target.level().isClientSide) return;
 
-        // 已死亡或正在死亡中的实体不再处理任何伤害
+        DamageSource source = event.getSource();
+        ModernDamage.LOGGER.info("=== Hurt Event: target={}, source={}, originalDamage={}", target.getName().getString(), source.getMsgId(), event.getAmount());
+
         if (!target.isAlive() || target.isDeadOrDying()) {
             event.setCanceled(true);
             return;
         }
 
         float originalDamage = event.getAmount();
-        DamageSource source = event.getSource();
         Entity directEntity = source.getDirectEntity();
         Entity attacker = source.getEntity();
 
@@ -8148,7 +8287,6 @@ public class InjuryEventHandler {
                 ModernDamage.LOGGER.info(msg);
             }
 
-            // 子弹伤害必须手动处理
             event.setCanceled(true);
             if (isHardcore) {
                 applyPartDamage(target, hitPart, finalDamage, source, true, config);
@@ -8159,7 +8297,72 @@ public class InjuryEventHandler {
             return;
         }
 
-        // ========== 非子弹伤害 ==========
+        // ========== 原版弹射物伤害（箭、三叉戟）精准判定 ==========
+        if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
+            Projectile projectile = (Projectile) directEntity;
+            ModDamagePart hitPart = ModDamagePart.CHEST;
+            ModDamageSubPart subPart = null;
+
+            Vec3 hitPos = getHitLocationFromProjectile(projectile, target);
+            if (target instanceof Player player) {
+                Vec3 localPos = CoordinateTransform.worldToLocal(hitPos, player);
+                if (config.enablePreciseHitbox && isHardcore) {
+                    boolean isCrawling = false;
+                    try {
+                        IGunOperator operator = IGunOperator.fromLivingEntity(player);
+                        if (operator != null && operator.getDataHolder() != null) {
+                            isCrawling = operator.getDataHolder().isCrawling;
+                        }
+                    } catch (Throwable ignored) {}
+                    subPart = SubBodypartHitbox.getSubPart(localPos, isCrawling);
+                    hitPart = subPart.getParent();
+                } else {
+                    EnumPlayerPart rawPart = BodypartHitbox.getHitPart(localPos);
+                    if (rawPart == null) rawPart = BodypartHitbox.getClosestPart(localPos);
+                    hitPart = refinePart(rawPart, localPos);
+                }
+            } else {
+                Vec3 localPos = hitPos.subtract(target.position());
+                hitPart = EntityHitboxHelper.getHitPart(target, localPos);
+            }
+
+            // 获取发射者的穿透属性（仅当发射者为生物时）
+            float penetration = 0f;
+            if (attacker instanceof LivingEntity livingAttacker) {
+                double attrPen = livingAttacker.getAttributeValue(ModAttributes.PENETRATION.get());
+                penetration = (float) attrPen;
+            }
+
+            ArmorCalculator.PenetrationResult result;
+            if (subPart != null) {
+                result = ArmorCalculator.applyArmorPenetration(target, subPart, originalDamage, penetration);
+            } else {
+                result = ArmorCalculator.applyArmorPenetration(target, hitPart, originalDamage, penetration);
+            }
+            float finalDamage = result.finalDamage;
+
+            if (config.debugMode && attacker instanceof Player attackerPlayer) {
+                float reductionPercent = originalDamage > 0 ? (1 - finalDamage / originalDamage) * 100 : 0;
+                String status = result.penetrated ? "PENETRATED" : (result.partial ? "PARTIAL" : "BLUNT");
+                String partInfo = (subPart != null) ? (hitPart + "(" + subPart + ")") : hitPart.toString();
+                String msg = String.format("[ModernDamage] %s hit %s(%s) with projectile: %.1f -> %.1f (%.0f%% reduction, %s)",
+                        attackerPlayer.getName().getString(), target.getName().getString(), partInfo,
+                        originalDamage, finalDamage, reductionPercent, status);
+                attackerPlayer.sendSystemMessage(Component.literal(msg));
+                ModernDamage.LOGGER.info(msg);
+            }
+
+            event.setCanceled(true);
+            if (isHardcore) {
+                applyPartDamage(target, hitPart, finalDamage, source, true, config);
+            } else {
+                applySoftcoreDamage(target, finalDamage, source);
+            }
+            applyPotionEffects(target, hitPart, finalDamage, source);
+            return;
+        }
+
+        // ========== 非子弹、非弹射物伤害 ==========
         boolean ignoreArmor = isArmorIgnored(source);
         float finalDamage;
         if (ignoreArmor) {
@@ -8170,7 +8373,13 @@ public class InjuryEventHandler {
                         originalDamage, finalDamage);
             }
         } else {
-            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, ModDamagePart.CHEST, originalDamage, 0f);
+            // 获取攻击者的穿透属性（仅当攻击者为生物时）
+            float penetration = 0f;
+            if (attacker instanceof LivingEntity livingAttacker) {
+                double attrPen = livingAttacker.getAttributeValue(ModAttributes.PENETRATION.get());
+                penetration = (float) attrPen;
+            }
+            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, ModDamagePart.CHEST, originalDamage, penetration);
             finalDamage = result.finalDamage;
             if (config.debugMode && attacker instanceof Player attackerPlayer) {
                 ModernDamage.LOGGER.info("[ModernDamage] {} damaged {} ({}): {} -> {} (%.0f%% reduction, %s)",
@@ -8181,20 +8390,20 @@ public class InjuryEventHandler {
         }
 
         if (isHardcore) {
-            // 硬核模式：取消原事件，手动分配部位伤害
             event.setCanceled(true);
             boolean died = false;
+            String msgId = source.getMsgId();
 
             if (isFullBodyDamage(source)) {
                 died = applyFullBodyDamage(target, finalDamage, source, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("hotFloor") || source.getMsgId().equals("fall") || source.getMsgId().equals("stalagmite")) {
+            } else if (msgId.equals("hotFloor") || msgId.equals("fall") || msgId.equals("stalagmite")) {
                 died = applyLegsDamage(target, finalDamage, source, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("inWall") || source.getMsgId().equals("flyIntoWall")) {
+            } else if (msgId.equals("inWall") || msgId.equals("flyIntoWall")) {
                 died = applyPartDamage(target, ModDamagePart.HEAD, finalDamage, source, true, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("cactus")) {
+            } else if (msgId.equals("cactus")) {
                 died = applyPartDamage(target, randomLimb(), finalDamage, source, true, config);
                 if (died) return;
             } else if (isExplosionDamage(source)) {
@@ -8213,61 +8422,50 @@ public class InjuryEventHandler {
                     died = applyPartDamage(target, randomNonVital(), otherTotal, source, true, config);
                     if (died) return;
                 }
-            } else if (source.getMsgId().equals("fireworks") || source.getMsgId().equals("sting")) {
+            } else if (msgId.equals("fireworks") || msgId.equals("sting")) {
                 died = applyPartDamage(target, randomNonVital(), finalDamage, source, true, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("lightningBolt")) {
+            } else if (msgId.equals("lightningBolt")) {
                 float half = finalDamage / 2;
                 died = applyPartDamage(target, ModDamagePart.HEAD, half, source, true, config);
                 if (died) return;
                 died = applyPartDamage(target, ModDamagePart.CHEST, half, source, true, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("indirectMagic")) {
+            } else if (msgId.equals("indirectMagic")) {
                 died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
                 if (died) return;
-            } else if (source.getMsgId().equals("thorns")) {
+            } else if (msgId.equals("thorns")) {
                 ModDamagePart armPart = ModDamagePart.RIGHT_ARM;
                 if (target instanceof Player player && player.getMainHandItem().isEmpty()) {
                     armPart = RANDOM.nextBoolean() ? ModDamagePart.LEFT_ARM : ModDamagePart.RIGHT_ARM;
                 }
                 died = applyPartDamage(target, armPart, finalDamage, source, true, config);
                 if (died) return;
-            } else if (directEntity instanceof AbstractArrow || directEntity instanceof ThrownTrident) {
-                died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
-                if (died) return;
-            } else if (source.getMsgId().equals("mobAttack") || source.getMsgId().equals("playerAttack")) {
-                if (isLowToHigh(attacker, target)) {
-                    if (RANDOM.nextBoolean()) {
-                        died = applyLegsDamage(target, finalDamage, source, config);
-                        if (died) return;
-                    } else {
-                        died = applyPartDamage(target, ModDamagePart.STOMACH, finalDamage, source, true, config);
-                        if (died) return;
-                    }
-                } else {
-                    died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
-                    if (died) return;
-                }
             } else {
-                died = applyPartDamage(target, ModDamagePart.CHEST, finalDamage, source, true, config);
+                // 所有其他伤害（包括近战攻击），如果有攻击者则根据高度随机部位
+                ModDamagePart randomPart = ModDamagePart.CHEST;
+                if (attacker instanceof LivingEntity livingAttacker) {
+                    randomPart = getRandomPartByPosition(livingAttacker, target);
+                    ModernDamage.LOGGER.info("未分类伤害类型: {}，根据位置随机部位: {}", msgId, randomPart);
+                } else {
+                    ModernDamage.LOGGER.warn("未分类伤害类型且无攻击者: {}，默认使用胸部", msgId);
+                }
+                died = applyPartDamage(target, randomPart, finalDamage, source, true, config);
                 if (died) return;
             }
 
-            // 如果没有死亡，才应用药水效果
             applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
         } else {
-            // ========== 软核模式：只修改伤害值，让原版处理死亡 ==========
+            // 软核模式
             event.setAmount(finalDamage);
             applyPotionEffects(target, ModDamagePart.CHEST, finalDamage, source);
-            // 直接返回，不取消事件
             return;
         }
     }
 
-    // ========== 硬核模式下的伤害分配方法（返回是否死亡） ==========
+    // ========== 硬核模式下的伤害分配方法 ==========
     private boolean applyPartDamage(LivingEntity target, ModDamagePart part, float amount, DamageSource source, boolean isHardcore, ModClothConfig config) {
         if (!isHardcore) {
-            // 软核模式不应进入此分支，但安全起见直接处理伤害并返回死亡状态
             float newHealth = target.getHealth() - amount;
             if (newHealth <= 0) {
                 target.die(source);
@@ -8281,13 +8479,8 @@ public class InjuryEventHandler {
         } else if (config.creaturePartHealthEnabled) {
             target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount, source));
         } else {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) {
-                target.die(source);
-                return true;
-            }
-            target.setHealth(newHealth);
-            return false;
+            boolean died = target.hurt(source, amount);
+            return died;
         }
         return !target.isAlive();
     }
@@ -8333,7 +8526,6 @@ public class InjuryEventHandler {
         return !target.isAlive();
     }
 
-    // ========== 软核模式伤害处理（用于子弹等必须手动处理的情况） ==========
     private void applySoftcoreDamage(LivingEntity target, float amount, DamageSource source) {
         if (SOFT_DEATH_MARK.containsKey(target.getUUID())) {
             return;
@@ -8348,7 +8540,6 @@ public class InjuryEventHandler {
         }
     }
 
-    // ========== 辅助方法 ==========
     private Vec3 getHitLocationFromBullet(EntityKineticBullet bullet) {
         if (bullet instanceof EntityKineticBulletExtension ext) {
             return ext.moderndamage$getLastHitLocation();
@@ -8401,11 +8592,6 @@ public class InjuryEventHandler {
     private ModDamagePart randomNonVital() {
         ModDamagePart[] parts = {ModDamagePart.STOMACH, ModDamagePart.LEFT_ARM, ModDamagePart.RIGHT_ARM, ModDamagePart.LEFT_LEG, ModDamagePart.RIGHT_LEG};
         return parts[RANDOM.nextInt(parts.length)];
-    }
-
-    private boolean isLowToHigh(Entity attacker, Entity target) {
-        if (attacker == null || target == null) return false;
-        return attacker.getY() <= target.getY() - 0.5;
     }
 }==== ./src/main/java/com/moderndamage/control/event/LegStaminaEventHandler.java ====
 package com.moderndamage.control.event;
@@ -12221,6 +12407,11 @@ public class RomanNumberHelper {
   "attribute.moderndamage.leg_stamina_regen": "Leg Stamina Regen",
   "attribute.moderndamage.leg_stamina_drain_multiplier": "Leg Stamina Drain Multiplier",
   "attribute.moderndamage.ergonomics": "Ergonomics",
+  "attribute.moderndamage.head_natural_toughness": "Head Natural Toughness",
+  "attribute.moderndamage.chest_natural_toughness": "Chest Natural Toughness",
+  "attribute.moderndamage.stomach_natural_toughness": "Stomach Natural Toughness",
+  "attribute.moderndamage.arm_natural_toughness": "Arm Natural Toughness",
+  "attribute.moderndamage.leg_natural_toughness": "Leg Natural Toughness",
 
   "tooltip.moderndamage.armor_protection": "§7ModernDamageControl Protection:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",
@@ -12407,6 +12598,11 @@ public class RomanNumberHelper {
   "attribute.moderndamage.leg_stamina_regen": "腿部耐力回复",
   "attribute.moderndamage.leg_stamina_drain_multiplier": "腿部耐力消耗倍率",
   "attribute.moderndamage.ergonomics": "人机功效",
+  "attribute.moderndamage.head_natural_toughness": "头部天然韧性",
+  "attribute.moderndamage.chest_natural_toughness": "胸部天然韧性",
+  "attribute.moderndamage.stomach_natural_toughness": "胃部天然韧性",
+  "attribute.moderndamage.arm_natural_toughness": "手臂天然韧性",
+  "attribute.moderndamage.leg_natural_toughness": "腿部天然韧性",
 
   "tooltip.moderndamage.armor_protection": "§7[现代伤害控制] 防护水平:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",

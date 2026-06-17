@@ -14,6 +14,11 @@
   "attribute.moderndamage.leg_stamina_regen": "腿部耐力回复",
   "attribute.moderndamage.leg_stamina_drain_multiplier": "腿部耐力消耗倍率",
   "attribute.moderndamage.ergonomics": "人机功效",
+  "attribute.moderndamage.head_natural_toughness": "头部天然韧性",
+  "attribute.moderndamage.chest_natural_toughness": "胸部天然韧性",
+  "attribute.moderndamage.stomach_natural_toughness": "胃部天然韧性",
+  "attribute.moderndamage.arm_natural_toughness": "手臂天然韧性",
+  "attribute.moderndamage.leg_natural_toughness": "腿部天然韧性",
 
   "tooltip.moderndamage.armor_protection": "§7[现代伤害控制] 防护水平:",
   "tooltip.moderndamage.protection_line_roman": " §8- §7%s: %s (%d)",

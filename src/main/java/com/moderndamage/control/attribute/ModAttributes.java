@@ -51,6 +51,7 @@ public class ModAttributes {
             register("ergonomics", 100.0, 0.0, 1000.0);
 
     private static RegistryObject<Attribute> register(String name, double defaultValue, double min, double max) {
-        return ATTRIBUTES.register(name, () -> new RangedAttribute(name, defaultValue, min, max).setSyncable(true));
+        String translationKey = "attribute." + ModernDamage.MODID + "." + name;
+        return ATTRIBUTES.register(name, () -> new RangedAttribute(translationKey, defaultValue, min, max).setSyncable(true));
     }
 }

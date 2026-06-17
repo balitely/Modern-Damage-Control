@@ -110,7 +110,6 @@ public class InjuryEventHandler {
         LivingEntity target = event.getEntity();
         if (target.level().isClientSide) return;
 
-        // 【调试】打印伤害源信息
         DamageSource source = event.getSource();
         ModernDamage.LOGGER.info("=== Hurt Event: target={}, source={}, originalDamage={}", target.getName().getString(), source.getMsgId(), event.getAmount());
 
@@ -234,7 +233,13 @@ public class InjuryEventHandler {
                 hitPart = EntityHitboxHelper.getHitPart(target, localPos);
             }
 
-            float penetration = 0f; // 箭矢无额外穿透，可后续扩展
+            // 获取发射者的穿透属性（仅当发射者为生物时）
+            float penetration = 0f;
+            if (attacker instanceof LivingEntity livingAttacker) {
+                double attrPen = livingAttacker.getAttributeValue(ModAttributes.PENETRATION.get());
+                penetration = (float) attrPen;
+            }
+
             ArmorCalculator.PenetrationResult result;
             if (subPart != null) {
                 result = ArmorCalculator.applyArmorPenetration(target, subPart, originalDamage, penetration);
@@ -275,7 +280,13 @@ public class InjuryEventHandler {
                         originalDamage, finalDamage);
             }
         } else {
-            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, ModDamagePart.CHEST, originalDamage, 0f);
+            // 获取攻击者的穿透属性（仅当攻击者为生物时）
+            float penetration = 0f;
+            if (attacker instanceof LivingEntity livingAttacker) {
+                double attrPen = livingAttacker.getAttributeValue(ModAttributes.PENETRATION.get());
+                penetration = (float) attrPen;
+            }
+            ArmorCalculator.PenetrationResult result = ArmorCalculator.applyArmorPenetration(target, ModDamagePart.CHEST, originalDamage, penetration);
             finalDamage = result.finalDamage;
             if (config.debugMode && attacker instanceof Player attackerPlayer) {
                 ModernDamage.LOGGER.info("[ModernDamage] {} damaged {} ({}): {} -> {} (%.0f%% reduction, %s)",
@@ -338,7 +349,7 @@ public class InjuryEventHandler {
                 died = applyPartDamage(target, armPart, finalDamage, source, true, config);
                 if (died) return;
             } else {
-                // ========== 关键修改：所有其他伤害，如果有攻击者则随机部位 ==========
+                // 所有其他伤害（包括近战攻击），如果有攻击者则根据高度随机部位
                 ModDamagePart randomPart = ModDamagePart.CHEST;
                 if (attacker instanceof LivingEntity livingAttacker) {
                     randomPart = getRandomPartByPosition(livingAttacker, target);
@@ -375,13 +386,8 @@ public class InjuryEventHandler {
         } else if (config.creaturePartHealthEnabled) {
             target.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP).ifPresent(cap -> cap.damagePart(part, amount, source));
         } else {
-            float newHealth = target.getHealth() - amount;
-            if (newHealth <= 0) {
-                target.die(source);
-                return true;
-            }
-            target.setHealth(newHealth);
-            return false;
+            boolean died = target.hurt(source, amount);
+            return died;
         }
         return !target.isAlive();
     }

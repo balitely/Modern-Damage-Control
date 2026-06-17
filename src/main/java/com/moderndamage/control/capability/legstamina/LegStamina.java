@@ -6,8 +6,6 @@ import com.moderndamage.control.config.ModClothConfig;
 import com.moderndamage.control.config.ModClothConfig.PenaltyModifier;
 import com.moderndamage.control.network.Networking;
 import com.moderndamage.control.network.SyncLegStaminaPacket;
-import com.tacz.guns.api.entity.IGunOperator;
-import com.tacz.guns.entity.shooter.ShooterDataHolder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -72,6 +70,9 @@ public class LegStamina implements ILegStamina {
 
     @Override
     public boolean consumeStamina(float cost, boolean simulate) {
+        if (entity instanceof Player && ((Player) entity).isSpectator()) {
+            return true;
+        }
         init();
         float multiplier = (float) entity.getAttributeValue(ModAttributes.LEG_STAMINA_DRAIN_MULTIPLIER.get());
         float actualCost = cost * multiplier;
@@ -102,58 +103,93 @@ public class LegStamina implements ILegStamina {
         updatePenalties();
     }
 
-    private void updatePenalties() {
-        ModClothConfig config = ModClothConfig.get();
-        float ratio = getStamina() / getMaxStamina();
-        boolean isLow = ratio <= config.legLowStaminaThreshold;
-        boolean isCritical = ratio <= config.legCriticallyLowStaminaThreshold;
-
-        if (isLow && !isCritical) {
-            applyPenalty(config.legLowStaminaPenalties.modifiers, activeLowPenalties, false);
-            if (wasCritical) {
-                removePenalty(activeCriticalPenalties);
-                wasCritical = false;
+    private void removeAllPossiblePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            for (PenaltyModifier mod : config.legLowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, false);
             }
-            wasLow = true;
-        } else if (!isLow) {
-            if (wasLow || wasCritical) {
-                removePenalty(activeLowPenalties);
-                removePenalty(activeCriticalPenalties);
+            for (PenaltyModifier mod : config.legCriticallyLowStaminaPenalties.modifiers) {
+                removePenaltyByModifier(mod, true);
+            }
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in removeAllPossiblePenalties for {}", entity.getName().getString(), e);
+        }
+    }
+
+    private void removePenaltyByModifier(PenaltyModifier mod, boolean isCritical) {
+        if (mod == null || mod.attribute == null) return;
+        Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
+        if (attribute == null) return;
+        UUID uuid = UUID.nameUUIDFromBytes(("leg_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
+        var instance = entity.getAttribute(attribute);
+        if (instance != null && instance.getModifier(uuid) != null) {
+            instance.removeModifier(uuid);
+        }
+    }
+
+    private void updatePenalties() {
+        try {
+            ModClothConfig config = ModClothConfig.get();
+            if (config == null) return;
+            float ratio = getStamina() / getMaxStamina();
+            boolean isLow = ratio <= config.legLowStaminaThreshold;
+            boolean isCritical = ratio <= config.legCriticallyLowStaminaThreshold;
+
+            if (!isLow) {
+                removeAllPossiblePenalties();
+                activeLowPenalties.clear();
+                activeCriticalPenalties.clear();
                 wasLow = false;
                 wasCritical = false;
+                return;
             }
-        }
 
-        if (isCritical) {
-            applyPenalty(config.legCriticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
-            if (entity instanceof Player player && config.legCriticallyLowStaminaPenalties.effect != null) {
-                long now = entity.tickCount;
-                if (now - lastCriticalEffectTime > 100) {
-                    lastCriticalEffectTime = now;
-                    MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.legCriticallyLowStaminaPenalties.effect));
-                    if (effect != null) {
-                        player.addEffect(new MobEffectInstance(effect,
-                                config.legCriticallyLowStaminaPenalties.effectDuration,
-                                config.legCriticallyLowStaminaPenalties.effectAmplifier,
-                                false, true, true));
+            if (!isCritical) {
+                applyPenalty(config.legLowStaminaPenalties.modifiers, activeLowPenalties, false);
+                wasLow = true;
+            }
+
+            if (isCritical) {
+                applyPenalty(config.legCriticallyLowStaminaPenalties.modifiers, activeCriticalPenalties, true);
+                if (entity instanceof Player player && config.legCriticallyLowStaminaPenalties.effect != null) {
+                    long now = entity.tickCount;
+                    if (now - lastCriticalEffectTime > 100) {
+                        lastCriticalEffectTime = now;
+                        MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(config.legCriticallyLowStaminaPenalties.effect));
+                        if (effect != null) {
+                            player.addEffect(new MobEffectInstance(effect,
+                                    config.legCriticallyLowStaminaPenalties.effectDuration,
+                                    config.legCriticallyLowStaminaPenalties.effectAmplifier,
+                                    false, true, true));
+                        }
                     }
                 }
+                wasCritical = true;
+                wasLow = true;
             }
-            wasCritical = true;
-            wasLow = true;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Error in updatePenalties for {}", entity.getName().getString(), e);
         }
     }
 
     private void applyPenalty(List<PenaltyModifier> modifiers, Map<UUID, AttributeModifier> cache, boolean isCritical) {
         if (modifiers == null) return;
         for (PenaltyModifier mod : modifiers) {
+            if (mod == null || mod.attribute == null) continue;
             Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(mod.attribute));
             if (attribute == null) continue;
             AttributeModifier.Operation op;
             switch (mod.operation.toLowerCase()) {
-                case "multiply_base": op = AttributeModifier.Operation.MULTIPLY_BASE; break;
-                case "multiply_total": op = AttributeModifier.Operation.MULTIPLY_TOTAL; break;
-                default: op = AttributeModifier.Operation.ADDITION;
+                case "multiply_base":
+                    op = AttributeModifier.Operation.MULTIPLY_BASE;
+                    break;
+                case "multiply_total":
+                    op = AttributeModifier.Operation.MULTIPLY_TOTAL;
+                    break;
+                default:
+                    op = AttributeModifier.Operation.ADDITION;
             }
             UUID uuid = UUID.nameUUIDFromBytes(("leg_stamina_penalty_" + mod.attribute + (isCritical ? "_critical" : "_low")).getBytes());
             if (!cache.containsKey(uuid)) {
@@ -167,19 +203,6 @@ public class LegStamina implements ILegStamina {
         }
     }
 
-    private void removePenalty(Map<UUID, AttributeModifier> cache) {
-        for (Map.Entry<UUID, AttributeModifier> entry : cache.entrySet()) {
-            Attribute attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(entry.getValue().getName()));
-            if (attribute != null) {
-                var instance = entity.getAttribute(attribute);
-                if (instance != null) {
-                    instance.removeModifier(entry.getKey());
-                }
-            }
-        }
-        cache.clear();
-    }
-
     public void sync() {
         if (entity.level().isClientSide) return;
         if (entity instanceof ServerPlayer serverPlayer) {
@@ -191,8 +214,9 @@ public class LegStamina implements ILegStamina {
     public void reset() {
         stamina = getMaxStamina();
         lastDrainTick = -1000;
-        removePenalty(activeLowPenalties);
-        removePenalty(activeCriticalPenalties);
+        removeAllPossiblePenalties();
+        activeLowPenalties.clear();
+        activeCriticalPenalties.clear();
         wasLow = false;
         wasCritical = false;
         sync();
@@ -221,8 +245,15 @@ public class LegStamina implements ILegStamina {
     }
 
     public void deserializeNBT(CompoundTag tag) {
-        stamina = tag.getFloat("Stamina");
-        lastDrainTick = tag.getInt("LastDrainTick");
-        initialized = true;
+        try {
+            stamina = tag.getFloat("Stamina");
+            lastDrainTick = tag.getInt("LastDrainTick");
+            initialized = true;
+        } catch (Exception e) {
+            ModernDamage.LOGGER.error("Failed to deserialize leg stamina for entity {}", entity.getName().getString(), e);
+            stamina = getMaxStamina();
+            lastDrainTick = -1000;
+            initialized = true;
+        }
     }
 }
