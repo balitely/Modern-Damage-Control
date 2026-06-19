@@ -1,5 +1,6 @@
 package com.moderndamage.control.capability.parthealth;
 
+import com.moderndamage.control.ModernDamage;
 import com.moderndamage.control.api.ModDamagePart;
 import com.moderndamage.control.config.EffectEntry;
 import com.moderndamage.control.config.EntityBodyPartEffectConfig;
@@ -129,6 +130,21 @@ public class CreaturePartHealth implements IPartHealth {
     @Override
     public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
+
+        if (entity.isAlive()) {
+            boolean needReset = false;
+            for (ModDamagePart vital : java.util.Arrays.asList(ModDamagePart.HEAD, ModDamagePart.CHEST)) {
+                if (getHealth(vital) <= 0) {
+                    needReset = true;
+                    break;
+                }
+            }
+            if (needReset) {
+                ModernDamage.LOGGER.warn("Auto-resetting part health for {} due to vital part destroyed but alive", entity.getName().getString());
+                reset();
+            }
+        }
+
         if (dead || amount <= 0) return false;
 
         lastDamageTick = entity.tickCount;
@@ -149,7 +165,7 @@ public class CreaturePartHealth implements IPartHealth {
         }
 
         if (getHealth(ModDamagePart.HEAD) <= 0 || getHealth(ModDamagePart.CHEST) <= 0 || getTotalHealthPercent() <= 0) {
-            if (!dead) {  // 防止重复
+            if (!dead) {
                 dead = true;
                 entity.setHealth(0);
                 entity.die(source);
@@ -287,5 +303,11 @@ public class CreaturePartHealth implements IPartHealth {
     @Override
     public void tick() {
         if (!initialized) tryInit();
+    }
+
+    @Override
+    public void resetDeathState() {
+        reset();
+        ModernDamage.LOGGER.debug("CreaturePartHealth reset due to resurrection for {}", entity.getName().getString());
     }
 }

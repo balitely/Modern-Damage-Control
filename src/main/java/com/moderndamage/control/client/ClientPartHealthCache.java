@@ -126,4 +126,8 @@ public class ClientPartHealthCache implements IPartHealth {
     public void reset() {
         throw new UnsupportedOperationException("Client-side cache does not support reset");
     }
+
+    @Override
+    public void resetDeathState() {
+    }
 }

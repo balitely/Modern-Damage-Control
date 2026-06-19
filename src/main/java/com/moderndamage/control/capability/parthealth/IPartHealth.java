@@ -15,4 +15,6 @@ public interface IPartHealth {
     void reset();
     int getLastDamageTick();
     void tick();
+
+    void resetDeathState();
 }

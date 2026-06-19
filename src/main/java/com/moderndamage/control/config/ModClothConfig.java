@@ -85,6 +85,13 @@ public class ModClothConfig implements ConfigData {
     public int famexinFoodRestoreAmount = 1;
 
     // ========== 钝伤与穿透相关配置 ==========
+
+    public float fallArmorReductionCap = 0.2f;
+    public float flyIntoWallArmorReductionCap = 0.2f;
+
+    public float explosionBlastRatio = 0.75f;
+    public float explosionFragPenetration = 0.1f;
+
     @ConfigEntry.Gui.Tooltip
     public float partialPenetrationMinRatio = 0.5f;
 
@@ -120,6 +127,15 @@ public class ModClothConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public int maxDurabilityLoss = 999;
+
+    @ConfigEntry.Gui.Tooltip
+    public float durabilityBaseMultiplier = 1.0f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float durabilityPenFactorMultiplier = 2.0f;
+
+    @ConfigEntry.Gui.Tooltip
+    public float durabilityArmorResistFactor = 0.01f;
 
     // ========== 玩家额外最大生命值==========
     @ConfigEntry.Gui.Tooltip

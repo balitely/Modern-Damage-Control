@@ -143,6 +143,21 @@ public class PlayerPartHealth implements IPartHealth {
     @Override
     public boolean damagePart(ModDamagePart part, float amount, DamageSource source) {
         if (!tryInit()) return false;
+
+        if (player.isAlive()) {
+            boolean needReset = false;
+            for (ModDamagePart vital : java.util.Arrays.asList(ModDamagePart.HEAD, ModDamagePart.CHEST)) {
+                if (getHealth(vital) <= 0) {
+                    needReset = true;
+                    break;
+                }
+            }
+            if (needReset) {
+                ModernDamage.LOGGER.warn("Auto-resetting part health for {} due to vital part destroyed but alive", player.getName().getString());
+                reset();
+            }
+        }
+
         if (dead || hasDied || player.isDeadOrDying()) {
             ModernDamage.LOGGER.warn("damagePart ignored, already dead/hasDied for {} part={}", player.getName().getString(), part);
             return false;
@@ -520,5 +535,11 @@ public class PlayerPartHealth implements IPartHealth {
         dead = false;
         hasDied = false;
         updateVanillaHealth();
+    }
+
+    @Override
+    public void resetDeathState() {
+        reset();
+        ModernDamage.LOGGER.debug("PlayerPartHealth reset due to resurrection for {}", player.getName().getString());
     }
 }

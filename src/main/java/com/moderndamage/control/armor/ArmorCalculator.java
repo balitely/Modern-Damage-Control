@@ -19,7 +19,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
@@ -42,7 +41,7 @@ public class ArmorCalculator {
         }
     }
 
-    // ========================= 主部位公共 API（非精确模式） =========================
+    // ========================= 主部位公共 API =========================
 
     private static List<ProtectionSource> getAllProtectionSources(LivingEntity target, ModDamagePart part) {
         ModernDamage.LOGGER.info("getAllProtectionSources called for target={}, part={}", target.getName().getString(), part);
@@ -158,9 +157,7 @@ public class ArmorCalculator {
         return Math.min(total, 100);
     }
 
-    /**
-     * 主部位护甲穿透计算（非精确模式）
-     */
+    // 主部位护甲穿透计算
     public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamagePart hitPart,
                                                           float originalDamage, float penetration) {
         if (originalDamage <= 0) return new PenetrationResult(0, false, false);
@@ -169,6 +166,7 @@ public class ArmorCalculator {
         ModClothConfig config = ModClothConfig.get();
         List<ProtectionSource> sources = getAllProtectionSources(target, hitPart);
 
+        // 跳弹判定
         boolean ricochetTriggered = false;
         if (config.enableRicochet) {
             for (ProtectionSource src : sources) {
@@ -197,16 +195,14 @@ public class ArmorCalculator {
             return new PenetrationResult(finalRicochetDamage, false, false);
         }
 
-        // ========== 关键修改：无论 armorLevel 是否为 0，都先发送事件 ==========
+        // 计算穿甲后伤害（先穿透再韧性）
         float finalDamageBeforeToughness = originalDamage;
         boolean penetrated = false;
         boolean partial = false;
         boolean cancelDurabilityLoss = false;
 
-        // 仅在 armorLevel > 0 时才计算穿透/钝伤，否则保持原始伤害
         if (armorLevel > 0) {
             int penetrationValue = (int) (penetration * 100);
-
             if (penetrationValue >= armorLevel + 5) {
                 finalDamageBeforeToughness = originalDamage;
                 penetrated = true;
@@ -227,38 +223,27 @@ public class ArmorCalculator {
                 finalDamageBeforeToughness = originalDamage * calculateBluntRatio(config, bluntDiff);
             }
         } else {
-            // armorLevel == 0：无护甲，不改变伤害，不扣除耐久
+            // 无护甲，保持原始伤害
             finalDamageBeforeToughness = originalDamage;
         }
 
-        // 发送 ArmorHitEvent（无论 armorLevel 是否大于 0）
+        // 发送事件
         if (!target.level().isClientSide) {
             ArmorHitEvent event = new ArmorHitEvent(target, hitPart, null, originalDamage, finalDamageBeforeToughness, armorLevel);
-            ModernDamage.LOGGER.error("========================================");
-            ModernDamage.LOGGER.error("MDC: Sending ArmorHitEvent (NON-PRECISE)");
-            ModernDamage.LOGGER.error("  target: {}", target.getName().getString());
-            ModernDamage.LOGGER.error("  hitPart: {}", hitPart);
-            ModernDamage.LOGGER.error("  originalDamage: {}", originalDamage);
-            ModernDamage.LOGGER.error("  finalDamageBeforeToughness: {}", finalDamageBeforeToughness);
-            ModernDamage.LOGGER.error("  armorLevel: {}", armorLevel);
-            ModernDamage.LOGGER.error("  event class: {}", event.getClass().getName());
-            ModernDamage.LOGGER.error("  event hashCode: {}", System.identityHashCode(event));
-            ModernDamage.LOGGER.error("  Forge EVENT_BUS hashCode: {}", System.identityHashCode(MinecraftForge.EVENT_BUS));
-            ModernDamage.LOGGER.error("Posting event...");
             MinecraftForge.EVENT_BUS.post(event);
-            ModernDamage.LOGGER.error("  posted, event.isCanceled = {}", event.isCanceled());
             if (event.isCanceled()) {
                 cancelDurabilityLoss = true;
             }
             finalDamageBeforeToughness = event.getFinalDamage();
-            ModernDamage.LOGGER.error("  finalDamageAfterEvent: {}", finalDamageBeforeToughness);
-            ModernDamage.LOGGER.error("========================================");
         }
 
-        // 耐久损耗（仅当有护甲且未被取消时）
+        // ========== 耐久损耗（使用新公式） ==========
         if (armorLevel > 0 && !cancelDurabilityLoss && !sources.isEmpty()) {
-            float penRatio = armorLevel > 0 ? (float) (penetration * 100) / (float) armorLevel : 0;
-            // 主要物品（最高等级）损耗全额
+            // 计算穿透因子和护甲抵抗因子
+            float penFactor = 1.0f + penetration * config.durabilityPenFactorMultiplier;
+            float armorResist = 1.0f / (1.0f + armorLevel * config.durabilityArmorResistFactor);
+
+            // 对主防具（最高等级）扣除耐久
             ProtectionSource primary = null;
             int maxLevel = 0;
             for (ProtectionSource src : sources) {
@@ -270,7 +255,8 @@ public class ArmorCalculator {
                 }
             }
             if (primary != null && primary.getSourceStack() != null) {
-                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.getMaterialFactor());
+                float baseLoss = 1 + originalDamage * primary.getMaterialFactor() * penFactor * armorResist * config.durabilityBaseMultiplier;
+                int durabilityLoss = (int) Math.ceil(baseLoss);
                 durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss));
                 if (primary.getDurabilityConsumer() != null) {
                     primary.getDurabilityConsumer().accept(durabilityLoss);
@@ -278,12 +264,14 @@ public class ArmorCalculator {
                     hurtItem(primary.getSourceStack(), target, durabilityLoss);
                 }
             }
-            // 其他保护物品损耗减半
+
+            // 对其它防具扣除耐久（减半）
             for (ProtectionSource src : sources) {
                 if (src == primary) continue;
                 if (src.isNatural()) continue;
                 if (src.getSourceStack() == null) continue;
-                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * src.getMaterialFactor());
+                float baseLoss = 1 + originalDamage * src.getMaterialFactor() * penFactor * armorResist * config.durabilityBaseMultiplier;
+                int durabilityLoss = (int) Math.ceil(baseLoss);
                 durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss / 2));
                 if (src.getDurabilityConsumer() != null) {
                     src.getDurabilityConsumer().accept(durabilityLoss);
@@ -293,6 +281,7 @@ public class ArmorCalculator {
             }
         }
 
+        // 韧性减伤
         int totalToughness = getTotalToughness(target, hitPart);
         float finalDamage = finalDamageBeforeToughness;
         if (totalToughness > 0) {
@@ -310,12 +299,8 @@ public class ArmorCalculator {
         return new PenetrationResult(finalDamage, penetrated, partial);
     }
 
-    // ========================= 子部位专用 API（精确模式） =========================
+    // ========================= 子部位专用 API =========================
 
-    /**
-     * 获取针对子部位的所有保护源（自然护甲 + 装备本体 + 配件）
-     * 每个 ProtectionSource 包含该子部位的防护等级（来自自身或配件映射）
-     */
     private static List<ProtectionSource> getAllProtectionSourcesForSubPart(LivingEntity target, ModDamageSubPart subPart) {
         List<ProtectionSource> sources = new ArrayList<>();
         ModDamagePart parent = subPart.getParent();
@@ -400,9 +385,6 @@ public class ArmorCalculator {
         return sources;
     }
 
-    /**
-     * 获取子部位的总护甲等级
-     */
     public static int getArmorLevelForSubPart(LivingEntity target, ModDamageSubPart subPart) {
         List<ProtectionSource> sources = getAllProtectionSourcesForSubPart(target, subPart);
         if (sources.isEmpty()) return 0;
@@ -434,9 +416,6 @@ public class ArmorCalculator {
         return total;
     }
 
-    /**
-     * 获取子部位的总韧性
-     */
     private static int getTotalToughnessForSubPart(LivingEntity target, ModDamageSubPart subPart) {
         int natural = EntityHitboxHelper.getNaturalToughness(target, subPart.getParent());
         int total = natural;
@@ -447,9 +426,7 @@ public class ArmorCalculator {
         return Math.min(total, 100);
     }
 
-    /**
-     * 子部位护甲穿透计算（精确模式）
-     */
+    // 子部位护甲穿透计算
     public static PenetrationResult applyArmorPenetration(LivingEntity target, ModDamageSubPart subPart,
                                                           float originalDamage, float penetration) {
         if (originalDamage <= 0) return new PenetrationResult(0, false, false);
@@ -459,6 +436,7 @@ public class ArmorCalculator {
         ModDamagePart parent = subPart.getParent();
         List<ProtectionSource> sources = getAllProtectionSourcesForSubPart(target, subPart);
 
+        // 跳弹判定
         boolean ricochetTriggered = false;
         if (config.enableRicochet) {
             for (ProtectionSource src : sources) {
@@ -494,7 +472,6 @@ public class ArmorCalculator {
 
         if (armorLevel > 0) {
             int penetrationValue = (int) (penetration * 100);
-
             if (penetrationValue >= armorLevel + 5) {
                 finalDamageBeforeToughness = originalDamage;
                 penetrated = true;
@@ -518,6 +495,7 @@ public class ArmorCalculator {
             finalDamageBeforeToughness = originalDamage;
         }
 
+        // 发送事件
         if (!target.level().isClientSide) {
             ArmorHitEvent event = new ArmorHitEvent(target, parent, subPart, originalDamage, finalDamageBeforeToughness, armorLevel);
             MinecraftForge.EVENT_BUS.post(event);
@@ -528,7 +506,9 @@ public class ArmorCalculator {
         }
 
         if (armorLevel > 0 && !cancelDurabilityLoss && !sources.isEmpty()) {
-            float penRatio = armorLevel > 0 ? (float) (penetration * 100) / (float) armorLevel : 0;
+            float penFactor = 1.0f + penetration * config.durabilityPenFactorMultiplier;
+            float armorResist = 1.0f / (1.0f + armorLevel * config.durabilityArmorResistFactor);
+
             ProtectionSource primary = null;
             int maxLevel = 0;
             for (ProtectionSource src : sources) {
@@ -540,7 +520,8 @@ public class ArmorCalculator {
                 }
             }
             if (primary != null && primary.getSourceStack() != null) {
-                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * primary.getMaterialFactor());
+                float baseLoss = 1 + originalDamage * primary.getMaterialFactor() * penFactor * armorResist * config.durabilityBaseMultiplier;
+                int durabilityLoss = (int) Math.ceil(baseLoss);
                 durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss));
                 if (primary.getDurabilityConsumer() != null) {
                     primary.getDurabilityConsumer().accept(durabilityLoss);
@@ -548,11 +529,13 @@ public class ArmorCalculator {
                     hurtItem(primary.getSourceStack(), target, durabilityLoss);
                 }
             }
+
             for (ProtectionSource src : sources) {
                 if (src == primary) continue;
                 if (src.isNatural()) continue;
                 if (src.getSourceStack() == null) continue;
-                int durabilityLoss = (int) Math.ceil(1 + finalDamageBeforeToughness * penRatio * src.getMaterialFactor());
+                float baseLoss = 1 + originalDamage * src.getMaterialFactor() * penFactor * armorResist * config.durabilityBaseMultiplier;
+                int durabilityLoss = (int) Math.ceil(baseLoss);
                 durabilityLoss = Math.min(config.maxDurabilityLoss, Math.max(1, durabilityLoss / 2));
                 if (src.getDurabilityConsumer() != null) {
                     src.getDurabilityConsumer().accept(durabilityLoss);
@@ -562,6 +545,7 @@ public class ArmorCalculator {
             }
         }
 
+        // 韧性减伤
         int totalToughness = getTotalToughnessForSubPart(target, subPart);
         float finalDamage = finalDamageBeforeToughness;
         if (totalToughness > 0) {
@@ -578,6 +562,8 @@ public class ArmorCalculator {
         }
         return new PenetrationResult(finalDamage, penetrated, partial);
     }
+
+    // ========================= 辅助方法 =========================
 
     private static void hurtItem(ItemStack stack, LivingEntity target, int amount) {
         if (stack.isEmpty()) return;
@@ -601,6 +587,7 @@ public class ArmorCalculator {
         return Math.max(ratio, minRatio);
     }
 
+    // 动态等级（根据耐久百分比）
     private static int getDynamicProtectionLevel(ItemStack stack, int baseLevel) {
         if (baseLevel == 0) return 0;
         int maxDurability = stack.getMaxDamage();
@@ -621,6 +608,7 @@ public class ArmorCalculator {
         return Math.round(baseToughness * durabilityPercent);
     }
 
+    // 以下为向后兼容的公共方法
     public static int getDynamicProtectionLevel(ItemStack armorStack, ModDamagePart part) {
         ArmorData data = ArmorDataLoader.getArmorData(armorStack.getItem());
         if (data == null) return 0;
