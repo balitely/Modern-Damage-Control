@@ -251,7 +251,7 @@ public class InjuryEventHandler {
             }
         }
 
-        float penetration = getPenetrationFromShooter(attacker);
+        float penetration = getPenetrationFromShooter(attacker); // 已修改，包含枪械穿透
         ArmorCalculator.PenetrationResult result;
         if (subPart != null) {
             result = ArmorCalculator.applyArmorPenetration(target, subPart, originalDamage, penetration);
@@ -399,13 +399,34 @@ public class InjuryEventHandler {
         return msg.equals("explosion") || msg.equals("explosion.player") || msg.equals("fireball") || msg.equals("fireball.player");
     }
 
+    /**
+     * 获取射击者的总穿透值（枪械自身穿透 + 玩家属性加成）
+     * 修改点：恢复了旧版本中从 TACZ 枪械获取 ARMOR_IGNORE 的逻辑
+     */
     private float getPenetrationFromShooter(Entity attacker) {
         float pen = 0f;
-        if (attacker instanceof LivingEntity living) {
-            double attrPen = living.getAttributeValue(ModAttributes.PENETRATION.get());
-            pen = (float) attrPen;
+        if (attacker instanceof LivingEntity livingShooter) {
+            // 1. 如果是玩家且手持枪械，获取枪械自身的护甲穿透
             if (attacker instanceof Player player) {
-                // 可附加物品穿透等
+                IGunOperator operator = IGunOperator.fromLivingEntity(player);
+                if (operator != null) {
+                    AttachmentCacheProperty cache = operator.getCacheProperty();
+                    if (cache != null) {
+                        Object val = cache.getCache(GunProperties.ARMOR_IGNORE.name());
+                        if (val instanceof Float) {
+                            pen = (Float) val;
+                            if (ModClothConfig.get().debugMode) {
+                                ModernDamage.LOGGER.debug("枪械穿透 (ARMOR_IGNORE): {}", pen);
+                            }
+                        }
+                    }
+                }
+            }
+            // 2. 叠加玩家属性穿透（配件、药水等）
+            double attrPen = livingShooter.getAttributeValue(ModAttributes.PENETRATION.get());
+            pen += (float) attrPen;
+            if (ModClothConfig.get().debugMode) {
+                ModernDamage.LOGGER.debug("总穿透: {} (属性加成: {})", pen, attrPen);
             }
         }
         return pen;

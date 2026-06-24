@@ -238,22 +238,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e3c968b-a7bb-434d-8027-270244843631" name="更改" comment="ver 0.0.1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/IProtectionSourceProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ProtectionSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/ProtectionSourceProviderRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/merged.txt" beforeDir="false" afterPath="$PROJECT_DIR$/merged.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/event/ArmorHitEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/api/event/ArmorHitEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/armor/ArmorCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/attribute/ModAttributes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/armstamina/ArmStamina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStamina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/capability/legstamina/LegStamina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moderndamage/control/event/InjuryEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/moderndamage/lang/zh_cn.json" afterDir="false" />
-    </list>
+    <list default="true" id="3e3c968b-a7bb-434d-8027-270244843631" name="更改" comment="ver 0.0.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,7 +312,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/a2746/Desktop/blackdustworkplace/Modern Damage Control 1.20.1/src/main/resources/assets/moderndamage/textures/mob_effect&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a2746/Desktop/blackdustworkplace/Modern Equipment System 1.20.1&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
@@ -8915,41 +8900,6 @@ public class MilkBlockHandler {
                 ModernDamage.LOGGER.debug("Milk prevented removing {} from {}",
                         effectKey, entity.getName().getString());
             }
-        }
-    }
-}==== ./src/main/java/com/moderndamage/control/event/ResetDeathHandler.java ====
-package com.moderndamage.control.event;
-
-import com.moderndamage.control.ModernDamage;
-import com.moderndamage.control.capability.parthealth.CreaturePartHealthCapability;
-import com.moderndamage.control.capability.parthealth.IPartHealth;
-import com.moderndamage.control.capability.parthealth.PartHealthCapability;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-
-@Mod.EventBusSubscriber(modid = ModernDamage.MODID)
-public class ResetDeathHandler {
-
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void onLivingDeath(LivingDeathEvent event) {
-        if (event.isCanceled()) {
-            LivingEntity entity = event.getEntity();
-
-            InjuryEventHandler.clearDeathMark(entity.getUUID());
-
-            if (entity instanceof Player player) {
-                player.getCapability(PartHealthCapability.PART_HEALTH_CAP)
-                        .ifPresent(IPartHealth::resetDeathState);
-            } else {
-                entity.getCapability(CreaturePartHealthCapability.CREATURE_PART_HEALTH_CAP)
-                        .ifPresent(IPartHealth::resetDeathState);
-            }
-
-            ModernDamage.LOGGER.debug("Reset death state for revived entity: {}", entity.getName().getString());
         }
     }
 }==== ./src/main/java/com/moderndamage/control/event/ResistanceEventHandler.java ====

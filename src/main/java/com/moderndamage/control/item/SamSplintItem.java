@@ -46,17 +46,17 @@ public class SamSplintItem extends Item {
             } else if (player.hasEffect(ModEffects.RIGHT_ARM_FRACTURE.get())) {
                 player.removeEffect(ModEffects.RIGHT_ARM_FRACTURE.get());
                 int healTime = ModClothConfig.get().splintedHealTimeSeconds * 20;
-                player.addEffect(new MobEffectInstance(ModEffects.LEFT_SPLINTED_ARM.get(), healTime, 0, false, true, true));
+                player.addEffect(new MobEffectInstance(ModEffects.RIGHT_SPLINTED_ARM.get(), healTime, 0, false, true, true));
                 applyDamageAndSound(stack, player, level);
             } else if (player.hasEffect(ModEffects.LEFT_LEG_FRACTURE.get())) {
                 player.removeEffect(ModEffects.LEFT_LEG_FRACTURE.get());
                 int healTime = ModClothConfig.get().splintedHealTimeSeconds * 20;
-                player.addEffect(new MobEffectInstance(ModEffects.LEFT_SPLINTED_ARM.get(), healTime, 0, false, true, true));
+                player.addEffect(new MobEffectInstance(ModEffects.LEFT_SPLINTED_LEG.get(), healTime, 0, false, true, true));
                 applyDamageAndSound(stack, player, level);
             } else if (player.hasEffect(ModEffects.RIGHT_LEG_FRACTURE.get())) {
                 player.removeEffect(ModEffects.RIGHT_LEG_FRACTURE.get());
                 int healTime = ModClothConfig.get().splintedHealTimeSeconds * 20;
-                player.addEffect(new MobEffectInstance(ModEffects.LEFT_SPLINTED_ARM.get(), healTime, 0, false, true, true));
+                player.addEffect(new MobEffectInstance(ModEffects.RIGHT_SPLINTED_LEG.get(), healTime, 0, false, true, true));
                 applyDamageAndSound(stack, player, level);
             }
         }
